@@ -47,6 +47,7 @@ performed as individual or batch calls and how to search and retrieve results af
 - Get entity configuration
 - Get application metadata
 - Get version information for components of the application
+- Health check
 - Map from a starting terminology and code
 - Map from a starting terminology and inactive code
 - Map from a starting terminology and invalid code

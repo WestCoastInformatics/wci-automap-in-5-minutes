@@ -26,6 +26,7 @@ The following examples can be typed into the command line of any terminal that h
 - [Get entity configuration](#get-entity-configuration)
 - [Get application metadata](#get-application-metadata)
 - [Get version information for components of the application](#get-version-information-for-components-of-the-application)
+- [Health check](#health-check)
 - [Map from a starting terminology and code](#map-from-a-starting-terminology-and-code)
 - [Map from a starting terminology and inactive code](#map-from-a-starting-terminology-and-inactive-code)
 - [Map from a starting terminology and invalid code](#map-from-a-starting-terminology-and-invalid-code)
@@ -93,9 +94,23 @@ See sample payload data from this call in [`samples/get-version-information.txt`
 
 [Back to Top](#automap-in-5-minutes-curl-tutorial)
 
+# Health check
+
+Performs a health check on the service.  It reports a health check object that indicates "true" or "false" 
+whether the service is healthy.
+
+```
+curl -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/health" | jq
+```
+
+See sample payload data from this call in [`samples/health-check.txt`](samples/health-check.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
 # Map from a starting terminology and code
 
 Perform mapping to verify that a terminology and code are valid for a known entity type.
+In this example 22298006 is the code for "myocardial infarction" in SNOMEDCT.
 
 ```
 curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
@@ -104,7 +119,6 @@ curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
   "terms": [
     {
       "entityType": "condition",
-	  "term": "",
       "terminology": "http://snomed.info/sct",
       "code": "22298006",
       "inputType": "string"
@@ -113,16 +127,131 @@ curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 }' | jq
 ```
 
-See sample payload data from this call in [`samples/get-version-information.txt`](samples/get-version-information.txt)
+See sample payload data from this call in [`samples/map-simple-terminology-code.txt`](samples/map-simple-terminology-code.txt)
 
 [Back to Top](#automap-in-5-minutes-curl-tutorial)
 
 
-- Map from a starting terminology and inactive code
-- Map from a starting terminology and invalid code
-- Map from a simple bodyPart text string
-- Map from a simple condition text string
-- Map from a simple labResult text string
+# Map from a starting terminology and inactive code
+
+Perform mapping on an inactive code in a terminology for a known entity type.
+In this example 194801005 is a retired code that resolves in SNOMEDCT to the active
+code for "myocardial infarction".
+
+```
+curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/task" -d '
+{
+  "terms": [
+    {
+      "entityType": "condition",
+      "terminology": "http://snomed.info/sct",
+      "code": "194801005",
+      "inputType": "string"
+    }
+  ]
+}' | jq
+```
+
+See sample payload data from this call in [`samples/map-simple-terminology-inactive-code.txt`](samples/map-simple-terminology-inactive-code.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a starting terminology and invalid code
+
+Perform mapping on an invalid code in a terminology for a known entity type.
+In this example, "abcdef" is an obviously bad code. The result is a map to no target.
+
+```
+curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/task" -d '
+{
+  "terms": [
+    {
+      "entityType": "condition",
+      "terminology": "http://snomed.info/sct",
+      "code": "abcdef",
+      "inputType": "string"
+    }
+  ]
+}' | jq
+```
+
+See sample payload data from this call in [`samples/map-simple-terminology-invalid-code.txt`](samples/map-simple-terminology-invalid-code.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a simple bodyPart text string
+
+Perform mapping on a text string for a body part entity type.
+
+```
+curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/task" -d '
+{
+  "terms": [
+    {
+      "entityType": "bodyPart",
+      "term": "left ear",
+      "inputType": "string"
+    }
+  ]
+}' | jq
+```
+
+See sample payload data from this call in [`samples/map-bodyPart-text.txt`](samples/map-bodyPart-text.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a simple condition text string
+
+Perform mapping on a text string for a condition entity type.
+
+```
+curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/task" -d '
+{
+  "terms": [
+    {
+      "entityType": "condition",
+      "term": "heart attack",
+      "inputType": "string"
+    }
+  ]
+}' | jq
+```
+
+See sample payload data from this call in [`samples/map-condition-text.txt`](samples/map-condition-text.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a simple labResult text string
+
+Perform mapping on a text string for a lab result entity type.
+
+```
+curl -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/task" -d '
+{
+  "terms": [
+    {
+      "entityType": "labResult",
+      "term": "sodium",
+      "inputType": "string"
+    }
+  ]
+}' | jq
+```
+
+See sample payload data from this call in [`samples/map-labResult-text.txt`](samples/map-labResult-text.txt)
+
+[Back to Top](#automap-in-5-minutes-curl-tutorial)
+
+
 - Map from a simple medication text string
 - Map from a simple procedure text string
 - Map from a complex text string
