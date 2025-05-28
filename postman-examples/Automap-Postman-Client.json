@@ -1,0 +1,725 @@
+{
+	"info": {
+		"_postman_id": "0eb05564-5578-4542-87d9-8536a05856d0",
+		"name": "Automap Postman Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11076096"
+	},
+	"item": [
+		{
+			"name": "Get entity configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/config",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get application metadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/metadata",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get version information for components of the application",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/version",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/health",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a starting terminology and code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"terminology\": \"http://snomed.info/sct\",\r\n            \"code\": \"22298006\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a starting terminology and inactive code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"terminology\": \"http://snomed.info/sct\",\r\n            \"code\": \"194801005\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a starting terminology and invalid code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"terminology\": \"http://snomed.info/sct\",\r\n            \"code\": \"abcdef\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple bodyPart text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"bodyPart\",\r\n            \"term\": \"left ear\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple condition text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple labResult text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"labResult\",\r\n            \"term\": \"sodium\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple medication text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"medication\",\r\n            \"term\": \"aspirin 81mg po\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple procedure text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"procedure\",\r\n            \"term\": \"chest mri\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a complex text string",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"fever, cough, and headache\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple text string without specifying entity type",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"term\": \"chest mri\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple text string with extra tagging information",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\",\r\n            \"tags\": [\r\n                {\r\n                    \"key\": \"termTagKey1\",\r\n                    \"value\": \"termTagValue1\"\r\n                },\r\n                {\r\n                    \"key\": \"termTagKey2\",\r\n                    \"value\": \"termTagValue2\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7,\r\n    \"tags\": [\r\n        {\r\n            \"key\": \"taskTagKey1\",\r\n            \"value\": \"taskTagValue1\"\r\n        },\r\n        {\r\n            \"key\": \"taskTagKey2\",\r\n            \"value\": \"taskTagValue2\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map from a simple text string with auditing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7,\r\n    \"audit\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find audit trail for a $taskId and $termId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7,\r\n    \"audit\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task/$taskId/term/$termId/audit",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task",
+						"$taskId",
+						"term",
+						"$termId",
+						"audit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7,\r\n    \"audit\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/task?limit=10&query=terms.term:heart",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"task"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "query",
+							"value": "terms.term:heart"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find terms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"terms\": [\r\n        {\r\n            \"entityType\": \"condition\",\r\n            \"term\": \"heart attack\",\r\n            \"inputType\": \"string\"\r\n        }\r\n    ],\r\n    \"minConfidence\": 0.7,\r\n    \"audit\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/api/v1/mapping/term?limit=10&query=term:heart",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"mapping",
+						"term"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "query",
+							"value": "term:heart"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessTokenUrl",
+				"value": "https://automap.terminology.tools/auth/token",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "password_credentials",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "https://automap.terminology.tools",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
