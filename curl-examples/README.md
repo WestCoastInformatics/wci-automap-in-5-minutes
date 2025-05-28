@@ -70,7 +70,8 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/config" | jq
 
 See sample payload data from this call in [`samples/get-entity-configuration.txt`](samples/get-entity-configuration.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
 
 # Get application metadata
 
@@ -82,7 +83,8 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/metadata" | j
 
 See sample payload data from this call in [`samples/get-application-metadata.txt`](samples/get-application-metadata.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
 
 # Get version information for components of the application
 
@@ -94,7 +96,8 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/version" | jq
 
 See sample payload data from this call in [`samples/get-version-information.txt`](samples/get-version-information.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
 
 # Health check
 
@@ -107,7 +110,8 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/health" | jq
 
 See sample payload data from this call in [`samples/health-check.txt`](samples/health-check.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
 
 # Map from a starting terminology and code
 
@@ -131,7 +135,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-simple-terminology-code.txt`](samples/map-simple-terminology-code.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a starting terminology and inactive code
@@ -157,7 +161,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-simple-terminology-inactive-code.txt`](samples/map-simple-terminology-inactive-code.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a starting terminology and invalid code
@@ -182,7 +186,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-simple-terminology-invalid-code.txt`](samples/map-simple-terminology-invalid-code.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple bodyPart text string
@@ -206,7 +210,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-bodyPart-text.txt`](samples/map-bodyPart-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple condition text string
@@ -230,7 +234,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-condition-text.txt`](samples/map-condition-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple labResult text string
@@ -254,7 +258,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-labResult-text.txt`](samples/map-labResult-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple medication text string
@@ -278,7 +282,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-medication-text.txt`](samples/map-medication-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 # Map from a simple procedure text string
 
@@ -301,7 +305,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-procedure-text.txt`](samples/map-procedure-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a complex text string
@@ -325,7 +329,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-conditionComplex-text.txt`](samples/map-conditionComplex-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple text string without specifying entity type
@@ -351,7 +355,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-noEntityType-text.txt`](samples/map-noEntityType-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple text string with extra tagging information
@@ -385,7 +389,7 @@ curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
 
 See sample payload data from this call in [`samples/map-withTags-text.txt`](samples/map-withTags-text.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Map from a simple text string with auditing
@@ -424,7 +428,7 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/task/$taskId/
 
 See sample payload data from this call in [`samples/map-audit-trail.txt`](samples/map-audit-trail.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Find tasks
@@ -444,7 +448,7 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/task?limit=10
 
 See sample payload data from this call in [`samples/find-tasks.txt`](samples/find-tasks.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
 
 
 # Find terms
@@ -464,4 +468,4 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/term?limit=10
 
 See sample payload data from this call in [`samples/find-terms.txt`](samples/find-terms.txt)
 
-[Back to Top](#automap-in-5-minutes-curl-tutorial)
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
