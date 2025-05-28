@@ -1,0 +1,53 @@
+{
+  "id": "2ac0adc4-e24c-4ff1-94af-4fd04827dcd1",
+  "modified": "2025-05-27T18:52:04.429-07:00",
+  "created": "2025-05-27T18:52:04.296-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "terms": [
+    {
+      "id": "200f67e3-399c-444c-b34b-d89e18809cd3",
+      "modified": "2025-05-27T18:52:04.321-07:00",
+      "created": "2025-05-27T18:52:04.093-07:00",
+      "modifiedBy": "system",
+      "taskId": "2ac0adc4-e24c-4ff1-94af-4fd04827dcd1",
+      "entityType": "condition",
+      "inputType": "string",
+      "code": "abcdef",
+      "terminology": "http://snomed.info/sct",
+      "mappings": [
+        {
+          "id": "702419de-e07d-4cba-a507-a59c4be26243",
+          "confidence": 0.7,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "name": "No target",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "87c8c1dd-9748-46a6-926e-07a90bf9b52a",
+          "confidence": 0.7,
+          "terminology": "http://snomed.info/sct",
+          "name": "No target",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        }
+      ],
+      "status": "final",
+      "mappingCt": 0
+    }
+  ],
+  "status": "final"
+}

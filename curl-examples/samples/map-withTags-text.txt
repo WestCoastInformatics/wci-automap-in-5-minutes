@@ -1,0 +1,153 @@
+{
+  "id": "4e2fabe5-c616-4062-a744-07d442573b3c",
+  "modified": "2025-05-27T18:44:24.462-07:00",
+  "created": "2025-05-27T18:44:23.396-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "taskTagKey1",
+      "value": "taskTagValue1"
+    },
+    {
+      "key": "taskTagKey2",
+      "value": "taskTagValue2"
+    },
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "53881f0d-5ad9-4c2e-a1e4-a5af45423d95",
+      "modified": "2025-05-27T18:44:24.330-07:00",
+      "created": "2025-05-27T18:44:23.153-07:00",
+      "modifiedBy": "system",
+      "taskId": "4e2fabe5-c616-4062-a744-07d442573b3c",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "tags": [
+        {
+          "key": "termTagKey1",
+          "value": "termTagValue1"
+        },
+        {
+          "key": "termTagKey2",
+          "value": "termTagValue2"
+        }
+      ],
+      "mappings": [
+        {
+          "id": "0dc7eba0-1c62-444e-8c20-664449b94418",
+          "confidence": 0.747959770278495,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "M10",
+          "name": "Gout",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "a02ffd24-598a-4c91-b1d2-dc59ef205da2",
+          "confidence": 0.7134070035931478,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I50",
+          "name": "Heart failure",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "c540fb97-d9ca-4e50-8c18-404629db36ec",
+          "confidence": 0.7002443714598791,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "S26",
+          "name": "Injury of heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "3ea93e46-64d3-4df8-b25a-8bf52c5f4c8e",
+          "confidence": 0.965680019675233,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "80c877d6-e02a-4eba-9299-f414442f1cdd",
+          "confidence": 0.7509408466558319,
+          "terminology": "http://snomed.info/sct",
+          "code": "225624000",
+          "name": "Panic attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "917f4e17-ad19-4b24-b6ff-efb6afe70768",
+          "confidence": 0.7468575862604179,
+          "terminology": "http://snomed.info/sct",
+          "code": "300895004",
+          "name": "Anxiety attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "d1029e5a-df3c-4830-af3b-e886be7eb4b4",
+          "confidence": 0.7253100056441498,
+          "terminology": "http://snomed.info/sct",
+          "code": "29889000",
+          "name": "Rupture of heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "f4049bb8-17cc-4d46-b894-4bd2d75636b1",
+          "confidence": 0.7090196745688842,
+          "terminology": "http://snomed.info/sct",
+          "code": "233916004",
+          "name": "Heart block",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "bd9a41c5-a707-4261-b4a9-b7af874ac34d",
+          "confidence": 0.7066428479926332,
+          "terminology": "http://snomed.info/sct",
+          "code": "248657009",
+          "name": "Pounding heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "c192352c-5176-49be-b387-035f4698c93a",
+          "confidence": 0.704063023983047,
+          "terminology": "http://snomed.info/sct",
+          "code": "17414004",
+          "name": "Contusion to heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 10
+    }
+  ],
+  "status": "final"
+}

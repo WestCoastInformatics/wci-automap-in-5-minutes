@@ -1,0 +1,5 @@
+{
+  "name": "wci-mapping-service",
+  "timestamp": "2025-05-27T18:52:34.991-07:00",
+  "status": true
+}

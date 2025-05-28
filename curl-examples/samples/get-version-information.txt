@@ -1,0 +1,11 @@
+{
+  "CPT": "2024",
+  "CVX": "latest",
+  "ICD10CM": "2025",
+  "LNC": "278",
+  "RXNORM": "20AA_240903F",
+  "SNOMEDCT": "2024_09_01",
+  "UCUM": "latest",
+  "data.version": "AUTOMAP-202503",
+  "server.version": "unset"
+}

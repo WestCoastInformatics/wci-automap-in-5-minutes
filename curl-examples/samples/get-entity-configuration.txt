@@ -1,0 +1,98 @@
+[
+  {
+    "entityType": "vitalSign",
+    "terminology": "LNC",
+    "scope": "^VitalSignsLnc OR ^VitalSignsFhir OR ^VitalSignsPanel",
+    "activeOnly": true
+  },
+  {
+    "entityType": "medication",
+    "terminology": "RXNORM",
+    "scope": "^MedicationsRxnorm",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "mapFromMap": {
+      "NDC": "RXCUI"
+    },
+    "activeOnly": false
+  },
+  {
+    "entityType": "unit",
+    "terminology": "UCUM",
+    "scope": "*",
+    "activeOnly": true
+  },
+  {
+    "entityType": "immunization",
+    "terminology": "CVX",
+    "scope": "*",
+    "activeOnly": false
+  },
+  {
+    "entityType": "bodyPart",
+    "terminology": "SNOMEDCT",
+    "scope": "<442083009  | Anatomical or acquired body structure | MINUS (<<116007004 | Combined site | OR ^EntireBodyPartsSnomedct)",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "condition",
+    "terminology": "SNOMEDCT",
+    "scope": "<<404684003 | Clinical Finding |",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "mapFromMap": {
+      "ICD10CM": "Icd10cmToSnomedct"
+    },
+    "secondaryMapToMap": {
+      "ICD10CM": "6011000124106"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "condition",
+    "terminology": "ICD10CM",
+    "scope": "*",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "labResult",
+    "terminology": "LNC",
+    "scope": "^LabResultsLnc OR ^LabComponentsLnc",
+    "labeledScope": {
+      "blank": "true",
+      "parts": "^LabComponentsLnc"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "procedure",
+    "terminology": "SNOMEDCT",
+    "scope": "<71388002 | Procedure | OR (<243796009 : 363589002=*)",
+    "labeledScope": {
+      "search": "(<442083009  | Anatomical or acquired body structure | OR <71388002 | Procedure | OR (<243796009 : 363589002=*))",
+      "blank": "true",
+      "entityType": "bodyPart"
+    },
+    "mapFromMap": {
+      "CPT": "CptToSnomedct"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "procedure",
+    "terminology": "CPT",
+    "scope": "*",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "activeOnly": true
+  }
+]

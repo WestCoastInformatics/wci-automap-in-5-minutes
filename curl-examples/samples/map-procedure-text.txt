@@ -1,0 +1,185 @@
+{
+  "id": "15a351cb-8f6f-4260-a331-78a58c4db4d3",
+  "modified": "2025-05-27T18:50:59.391-07:00",
+  "created": "2025-05-27T18:50:58.656-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "6fda87cb-59bc-4231-a550-18697d34570c",
+      "modified": "2025-05-27T18:50:59.280-07:00",
+      "created": "2025-05-27T18:50:58.396-07:00",
+      "modifiedBy": "system",
+      "taskId": "15a351cb-8f6f-4260-a331-78a58c4db4d3",
+      "entityType": "procedure",
+      "inputType": "string",
+      "term": "chest mri",
+      "mappings": [
+        {
+          "id": "39267681-a16d-4ac9-8861-2137e0740b58",
+          "confidence": 0.7898486128187037,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71551",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); with contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "b04f6399-b1f0-4718-acd2-1f9b7a994ae3",
+          "confidence": 0.7733401609524504,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71550",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); without contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "368d21be-409c-4fcf-8334-865701d5f0f1",
+          "confidence": 0.7564368462422304,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71552",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); without contrast material(s), followed by contrast material(s) and further sequences",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "42f747c2-58c3-489c-a115-87818ef26ae5",
+          "confidence": 0.7282512530128711,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71555",
+          "name": "Magnetic resonance angiography, chest (excluding myocardium), with or without contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "57146dee-8eb2-4943-9316-62dbb3257b77",
+          "confidence": 0.9792900388556683,
+          "terminology": "http://snomed.info/sct",
+          "code": "6007000",
+          "name": "MRI of chest",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "01707464-24f8-43b4-a654-941d4d1a4f23",
+          "confidence": 0.8348887965280566,
+          "terminology": "http://snomed.info/sct",
+          "code": "62658002",
+          "name": "MRI of chest and myocardium",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "07d8c84e-c514-4f77-b140-ec41cde54195",
+          "confidence": 0.8310832589874838,
+          "terminology": "http://snomed.info/sct",
+          "code": "16334561000119101",
+          "name": "MRI of chest without contrast",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "d0f74a76-9b1a-4c08-965f-a87c8f9bfe6f",
+          "confidence": 0.8222599671912435,
+          "terminology": "http://snomed.info/sct",
+          "code": "432815006",
+          "name": "MRI of chest with contrast",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "38d33309-1d39-4b78-a12d-e9195d3d3b72",
+          "confidence": 0.8184778765954649,
+          "terminology": "http://snomed.info/sct",
+          "code": "609220009",
+          "name": "MRI of chest for mediastinal lymphadenopathy",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "61936c46-252d-4ac8-9b9b-c78b2efef43b",
+          "confidence": 0.7833863281399345,
+          "terminology": "http://snomed.info/sct",
+          "code": "413815006",
+          "name": "Chest imaging",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "91562ca8-285c-4f36-b1b9-165237b7cef1",
+          "confidence": 0.7798997806603819,
+          "terminology": "http://snomed.info/sct",
+          "code": "241616006",
+          "name": "MRI of lungs",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "e102a6ee-ceb9-4d54-8eb4-e22310c3c53f",
+          "confidence": 0.76470530030442,
+          "terminology": "http://snomed.info/sct",
+          "code": "65867009",
+          "name": "MRI of mediastinum",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "77fa216f-4608-4892-88c7-47623dc288e9",
+          "confidence": 0.7618189557295506,
+          "terminology": "http://snomed.info/sct",
+          "code": "432314002",
+          "name": "MRI of sternum",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "42d4255f-a065-49b6-b3ac-f48f7c30aa07",
+          "confidence": 0.7501849686266464,
+          "terminology": "http://snomed.info/sct",
+          "code": "241647000",
+          "name": "MRI of thoracic spine",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "0ab85ee1-f5fc-4355-a945-3f31559bc6d9",
+          "confidence": 0.7114756609312924,
+          "terminology": "http://snomed.info/sct",
+          "code": "169037009",
+          "name": "Tomography - chest",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        }
+      ],
+      "status": "final",
+      "mappingCt": 15
+    }
+  ],
+  "status": "final"
+}

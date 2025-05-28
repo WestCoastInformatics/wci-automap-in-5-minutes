@@ -1,0 +1,34 @@
+{
+  "models": {
+    "text_embedding": "hf.co/fudanjx/med-embed-models",
+    "llm": "phi4"
+  },
+  "term.entityType": {
+    "vitalSign": "Observations about vital signs",
+    "unit": "Unit",
+    "condition": "Statements about the state of a patient",
+    "immunization": "Vaccine administrations",
+    "medication": "Specific drug or medication",
+    "procedure": "Actions performed by or upon a patient",
+    "labResult": "Observations resulting from lab tests",
+    "bodyPart": "Anatomical sites"
+  },
+  "term.status": {
+    "provisional": "Term mapping has begun but additional workflow steps are required to complete it",
+    "final": "Term is completely mapped",
+    "out_of_scope": "Term mapping has begun but additional workflow steps are required to complete it",
+    "error": "Something unexpected occurred when mapping the term",
+    "conflict": "Term mapping detected conflice in the input code/terminology/name"
+  },
+  "versions": {
+    "data.version": "AUTOMAP-202503",
+    "server.version": "unset"
+  },
+  "term.inputType": {
+    "boolean": "Term is Yes/No",
+    "string": "Term is free text in phrase or paragraph form",
+    "phrase": "Term is free text in phrase form only",
+    "fhirCoding": "Term is embedded json payload with code,system,display",
+    "picklist": "Term comes from a picklist selection"
+  }
+}

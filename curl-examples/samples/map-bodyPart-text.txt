@@ -1,0 +1,235 @@
+{
+  "id": "013795dd-fb1d-4709-8e44-1eca939ef09e",
+  "modified": "2025-05-27T18:51:46.916-07:00",
+  "created": "2025-05-27T18:51:46.260-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "2c67ebb2-4f2b-4a54-b4e2-50ef110bfd8a",
+      "modified": "2025-05-27T18:51:46.789-07:00",
+      "created": "2025-05-27T18:51:46.035-07:00",
+      "modifiedBy": "system",
+      "taskId": "013795dd-fb1d-4709-8e44-1eca939ef09e",
+      "entityType": "bodyPart",
+      "inputType": "string",
+      "term": "left ear",
+      "mappings": [
+        {
+          "id": "beec0c57-d323-4022-a567-f5d16b9e8433",
+          "confidence": 0.9764597965039927,
+          "terminology": "http://snomed.info/sct",
+          "code": "89644007",
+          "name": "Left ear structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "c6846959-016a-45d4-9d3a-a0f94d9e3ea2",
+          "confidence": 0.8902357128673365,
+          "terminology": "http://snomed.info/sct",
+          "code": "50460003",
+          "name": "Left middle ear structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "bb4cb634-9af1-4eb8-94d4-95d4fd461898",
+          "confidence": 0.8875312293015748,
+          "terminology": "http://snomed.info/sct",
+          "code": "73401004",
+          "name": "Left inner ear structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "26de68ef-d978-4b5f-873c-aec770472877",
+          "confidence": 0.8823511614142932,
+          "terminology": "http://snomed.info/sct",
+          "code": "772183005",
+          "name": "Left ear lobule structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "d07d9278-74f2-4353-85b4-6db80a30b8ad",
+          "confidence": 0.8731869010767364,
+          "terminology": "http://snomed.info/sct",
+          "code": "49521004",
+          "name": "Left external ear structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "1c6e20a0-dff0-49d9-92a7-1cca711ee115",
+          "confidence": 0.8607674249918301,
+          "terminology": "http://snomed.info/sct",
+          "code": "1259883005",
+          "name": "Structure of left stapes",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "e20bd6ec-b249-4d76-ae32-c96e8b8c1bb6",
+          "confidence": 0.8544126841063859,
+          "terminology": "http://snomed.info/sct",
+          "code": "117590005",
+          "name": "Ear structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "4d3627f6-0db7-425f-8076-294d6fb2b833",
+          "confidence": 0.8313210949668675,
+          "terminology": "http://snomed.info/sct",
+          "code": "763800001",
+          "name": "Structure of left pinna",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "e07131bd-ba5f-4272-9d6e-ff1a61df107c",
+          "confidence": 0.8244598740680569,
+          "terminology": "http://snomed.info/sct",
+          "code": "763817008",
+          "name": "Structure of left temporal bone",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "9e981ea7-222d-42f1-b22b-10d5cb436ac8",
+          "confidence": 0.8038803212581407,
+          "terminology": "http://snomed.info/sct",
+          "code": "1268788000",
+          "name": "Structure of left auditory system",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "4dfb4756-8b40-4626-85d6-f0116910faca",
+          "confidence": 0.7912739921707793,
+          "terminology": "http://snomed.info/sct",
+          "code": "763849008",
+          "name": "Structure of left vestibulocochlear nerve",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "ae180975-ddcd-4573-8bed-acdf8ccd0468",
+          "confidence": 0.7849219903319689,
+          "terminology": "http://snomed.info/sct",
+          "code": "22335008",
+          "name": "Structure of left foot",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "ee1f9328-3ac6-4e0b-b6fa-1f11b9dc8f15",
+          "confidence": 0.7848223927791794,
+          "terminology": "http://snomed.info/sct",
+          "code": "85151006",
+          "name": "Structure of left hand",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "dcf4741f-5a42-40df-a20b-7f24dab116f4",
+          "confidence": 0.7826465617389163,
+          "terminology": "http://snomed.info/sct",
+          "code": "43525003",
+          "name": "Left Eustachian canal structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "aae12305-2c19-40c1-8351-34e817f00657",
+          "confidence": 0.745173233827127,
+          "terminology": "http://snomed.info/sct",
+          "code": "423781004",
+          "name": "Structure of left half of face",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "0c51151e-d091-42d4-9e5c-0980b6ab9f99",
+          "confidence": 0.7406688170200731,
+          "terminology": "http://snomed.info/sct",
+          "code": "789216008",
+          "name": "Structure of palm of left hand",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "00d67924-93ae-4f97-8080-ccd37f1d1218",
+          "confidence": 0.7375132401554862,
+          "terminology": "http://snomed.info/sct",
+          "code": "80248007",
+          "name": "Left breast structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "b16ce5b7-0539-4c27-a343-9837df225bd1",
+          "confidence": 0.7366912216311794,
+          "terminology": "http://snomed.info/sct",
+          "code": "32153003",
+          "name": "Structure of left lower limb",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "7f758068-1376-44be-ab40-98fe5eddf40d",
+          "confidence": 0.7336962532399542,
+          "terminology": "http://snomed.info/sct",
+          "code": "34338003",
+          "name": "Both ears",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        },
+        {
+          "id": "02ceb569-ba15-464a-a850-e1308159904e",
+          "confidence": 0.7305759469456253,
+          "terminology": "http://snomed.info/sct",
+          "code": "65820005",
+          "name": "Structure of left upper eyelid",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 8
+        }
+      ],
+      "status": "final",
+      "mappingCt": 20
+    }
+  ],
+  "status": "final"
+}

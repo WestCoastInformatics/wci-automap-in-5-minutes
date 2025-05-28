@@ -1,0 +1,3789 @@
+[
+  {
+    "id": "645df6bf-268e-45c6-9a88-fa8f11f1d28f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:22.106-07:00",
+    "created": "2025-05-27T18:39:22.106-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "topAnswer": "null",
+      "minConfidence": "0.7",
+      "tags": "[{\"key\":\"userId\",\"value\":\"a126cd56-96fd-4bcc-a625-b4e55c23f62c\"}]"
+    },
+    "message": "Start processing input term = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8a3e56c9-a22b-42d9-a0ee-f1d9bfc56740",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:22.447-07:00",
+    "created": "2025-05-27T18:39:22.447-07:00",
+    "modifiedBy": "system",
+    "message": "  version = {\"CPT\":\"2024\",\"CVX\":\"latest\",\"ICD10CM\":\"2025\",\"LNC\":\"278\",\"RXNORM\":\"20AA_240903F\",\"SNOMEDCT\":\"2024_09_01\",\"UCUM\":\"latest\",\"data.version\":\"AUTOMAP-202503\",\"server.version\":\"unset\"}",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7da540fb-581e-41ef-8f2a-5e2efbaae79a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:22.684-07:00",
+    "created": "2025-05-27T18:39:22.684-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "origToTerminology": "ICD10CM"
+    },
+    "message": "PREPARE mapping   heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "90e7b51a-b7b1-4a29-bea8-a395bad99065",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:22.866-07:00",
+    "created": "2025-05-27T18:39:22.866-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "origToTerminology": "SNOMEDCT"
+    },
+    "message": "PREPARE mapping   heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "aa0f0c3c-56f8-4d67-ae76-49bdfd39e550",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:23.076-07:00",
+    "created": "2025-05-27T18:39:23.076-07:00",
+    "modifiedBy": "system",
+    "message": "  GENERATE no-target (0.7)",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "91bcc82e-1250-4518-95fa-718a10b76596",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:28.051-07:00",
+    "created": "2025-05-27T18:39:28.051-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP exact term (lexical) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "26064166-fc59-4788-8f7b-871223fadd6c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:28.256-07:00",
+    "created": "2025-05-27T18:39:28.256-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP exact term (lexical) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e3381c1c-5f58-4abe-9902-2a9ecf137d5e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:28.920-07:00",
+    "created": "2025-05-27T18:39:28.920-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP term (lexical) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "26d6169c-c02e-44be-a3b3-b95818dfd36a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:29.127-07:00",
+    "created": "2025-05-27T18:39:29.127-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP term (lexical) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ae69dc1d-59ad-4310-8071-67a6f0ff8c96",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:29.912-07:00",
+    "created": "2025-05-27T18:39:29.912-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.5524158477783203",
+      "toName": "Transient cerebral ischemic attack, unspecified",
+      "toTerminology": "ICD10CM",
+      "toCode": "G45.9"
+    },
+    "message": "  GENERATE (lexical) = G45.9 Transient cerebral ischemic attack, unspecified, 0.5524158477783203",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "dc91419e-bb8a-4e3e-b6ea-55c3b4e84ee1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:30.079-07:00",
+    "created": "2025-05-27T18:39:30.079-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.5219916275569371",
+      "toName": "Gout",
+      "toTerminology": "ICD10CM",
+      "toCode": "M10"
+    },
+    "message": "  GENERATE (lexical) = M10 Gout, 0.5219916275569371",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "4e0aa98c-4a8f-4aa4-8dc8-339c2702d9e0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:30.232-07:00",
+    "created": "2025-05-27T18:39:30.232-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.5132847513471331",
+      "toName": "Syncope and collapse",
+      "toTerminology": "ICD10CM",
+      "toCode": "R55"
+    },
+    "message": "  GENERATE (lexical) = R55 Syncope and collapse, 0.5132847513471331",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "92147f2c-1503-4695-bce9-13e104373728",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:30.386-07:00",
+    "created": "2025-05-27T18:39:30.386-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.5061738831656319",
+      "toName": "Acute angle-closure glaucoma",
+      "toTerminology": "ICD10CM",
+      "toCode": "H40.21"
+    },
+    "message": "  GENERATE (lexical) = H40.21 Acute angle-closure glaucoma, 0.5061738831656319",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "664166d3-fd28-4098-a078-770e89acf605",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:30.559-07:00",
+    "created": "2025-05-27T18:39:30.559-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.4822760990687779",
+      "toName": "Panic disorder [episodic paroxysmal anxiety]",
+      "toTerminology": "ICD10CM",
+      "toCode": "F41.0"
+    },
+    "message": "  GENERATE (lexical) = F41.0 Panic disorder [episodic paroxysmal anxiety], 0.4822760990687779",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6bc18f4b-79e0-4036-98a4-acd31087a445",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:30.713-07:00",
+    "created": "2025-05-27T18:39:30.713-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP term (embedding) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9b66ff7b-d47e-44fe-a048-f79548304771",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:33.099-07:00",
+    "created": "2025-05-27T18:39:33.099-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "ICD10CM",
+      "scope": "*"
+    },
+    "message": "LOOKUP term (embedding) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "67ebce2c-c41e-4ff1-90c0-b81e67865d66",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:33.966-07:00",
+    "created": "2025-05-27T18:39:33.966-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9493514362247687",
+      "toName": "Panic disorder [episodic paroxysmal anxiety]",
+      "toTerminology": "ICD10CM",
+      "toCode": "F41.0"
+    },
+    "message": "  GENERATE (embedding) = F41.0 Panic disorder [episodic paroxysmal anxiety], 0.9493514362247687",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7727a2ed-e6ff-4960-b7b0-dd2c72258671",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:34.163-07:00",
+    "created": "2025-05-27T18:39:34.163-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.948504547919009",
+      "toName": "Acute myocardial infarction",
+      "toTerminology": "ICD10CM",
+      "toCode": "I21"
+    },
+    "message": "  GENERATE (embedding) = I21 Acute myocardial infarction, 0.948504547919009",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5e7c9774-f9eb-4604-86f9-0b76a3ccff4e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:34.356-07:00",
+    "created": "2025-05-27T18:39:34.356-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.948504547919009",
+      "toName": "Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction",
+      "toTerminology": "ICD10CM",
+      "toCode": "I22"
+    },
+    "message": "  GENERATE (embedding) = I22 Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction, 0.948504547919009",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "bb17424c-b8a8-4393-8250-bf76b8a72a36",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:34.556-07:00",
+    "created": "2025-05-27T18:39:34.556-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9424492540163774",
+      "toName": "Cardiac arrest",
+      "toTerminology": "ICD10CM",
+      "toCode": "I46"
+    },
+    "message": "  GENERATE (embedding) = I46 Cardiac arrest, 0.9424492540163774",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "dfa56257-2423-4c55-bd9d-52e3cf0325a6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:34.755-07:00",
+    "created": "2025-05-27T18:39:34.755-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9363923078078185",
+      "toName": "Gout",
+      "toTerminology": "ICD10CM",
+      "toCode": "M10"
+    },
+    "message": "  GENERATE (embedding) = M10 Gout, 0.9363923078078185",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ff3a05fe-c6c2-41f4-99a3-8269bc50b723",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:34.945-07:00",
+    "created": "2025-05-27T18:39:34.945-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9311831410896176",
+      "toName": "Other adrenocortical insufficiency",
+      "toTerminology": "ICD10CM",
+      "toCode": "E27.49"
+    },
+    "message": "  GENERATE (embedding) = E27.49 Other adrenocortical insufficiency, 0.9311831410896176",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3f4f1131-a221-44d0-90f1-1f11448117fd",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:35.117-07:00",
+    "created": "2025-05-27T18:39:35.117-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9293601677892971",
+      "toName": "Heart failure",
+      "toTerminology": "ICD10CM",
+      "toCode": "I50"
+    },
+    "message": "  GENERATE (embedding) = I50 Heart failure, 0.9293601677892971",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "32fdcd3d-dde7-4639-80ae-f12b21bb3022",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:35.293-07:00",
+    "created": "2025-05-27T18:39:35.293-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9287443603807279",
+      "toName": "Cerebral infarction",
+      "toTerminology": "ICD10CM",
+      "toCode": "I63"
+    },
+    "message": "  GENERATE (embedding) = I63 Cerebral infarction, 0.9287443603807279",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8ce5b07a-fff3-409d-bec7-6b61d9323166",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:35.471-07:00",
+    "created": "2025-05-27T18:39:35.471-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9279673065887316",
+      "toName": "Other specified heart block",
+      "toTerminology": "ICD10CM",
+      "toCode": "I45.5"
+    },
+    "message": "  GENERATE (embedding) = I45.5 Other specified heart block, 0.9279673065887316",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2a5782bc-66df-43d1-8f5f-3274857c7543",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.023-07:00",
+    "created": "2025-05-27T18:39:36.023-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9276443665881758",
+      "toName": "Cardiogenic shock",
+      "toTerminology": "ICD10CM",
+      "toCode": "R57.0"
+    },
+    "message": "  GENERATE (embedding) = R57.0 Cardiogenic shock, 0.9276443665881758",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ac425776-1700-487f-b374-82efc5ed2be2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.190-07:00",
+    "created": "2025-05-27T18:39:36.190-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9271589491708998",
+      "toName": "Heart failure, unspecified",
+      "toTerminology": "ICD10CM",
+      "toCode": "I50.9"
+    },
+    "message": "  GENERATE (embedding) = I50.9 Heart failure, unspecified, 0.9271589491708998",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c779888c-13a3-4eb7-94be-35cf7652cdfa",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.344-07:00",
+    "created": "2025-05-27T18:39:36.344-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9269763668561538",
+      "toName": "Cardiac tamponade",
+      "toTerminology": "ICD10CM",
+      "toCode": "I31.4"
+    },
+    "message": "  GENERATE (embedding) = I31.4 Cardiac tamponade, 0.9269763668561538",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "49281000-2fb2-4816-8790-5caafcc49673",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.519-07:00",
+    "created": "2025-05-27T18:39:36.519-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9243140250535372",
+      "toName": "Achalasia of cardia",
+      "toTerminology": "ICD10CM",
+      "toCode": "K22.0"
+    },
+    "message": "  GENERATE (embedding) = K22.0 Achalasia of cardia, 0.9243140250535372",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b6f52dd4-0d29-4ce0-8d28-ee468a53893b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.700-07:00",
+    "created": "2025-05-27T18:39:36.700-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9242739403402472",
+      "toName": "Injury of heart",
+      "toTerminology": "ICD10CM",
+      "toCode": "S26"
+    },
+    "message": "  GENERATE (embedding) = S26 Injury of heart, 0.9242739403402472",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7bf0e27d-7c49-4569-9063-0379a8038ab3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:36.874-07:00",
+    "created": "2025-05-27T18:39:36.874-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9203896313896179",
+      "toName": "Anaphylactic shock, unspecified",
+      "toTerminology": "ICD10CM",
+      "toCode": "T78.2"
+    },
+    "message": "  GENERATE (embedding) = T78.2 Anaphylactic shock, unspecified, 0.9203896313896179",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "06fd71a6-398a-40e2-b9af-e4a18388c489",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:37.048-07:00",
+    "created": "2025-05-27T18:39:37.048-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9197728683789607",
+      "toName": "Tachycardia, unspecified",
+      "toTerminology": "ICD10CM",
+      "toCode": "R00.0"
+    },
+    "message": "  GENERATE (embedding) = R00.0 Tachycardia, unspecified, 0.9197728683789607",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c87da7b9-f0d7-4a43-a785-0123d0428470",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:37.230-07:00",
+    "created": "2025-05-27T18:39:37.230-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9167001693625146",
+      "toName": "Shock, not elsewhere classified",
+      "toTerminology": "ICD10CM",
+      "toCode": "R57"
+    },
+    "message": "  GENERATE (embedding) = R57 Shock, not elsewhere classified, 0.9167001693625146",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "70d82a6f-2223-4d72-957e-9d1846195356",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:40.652-07:00",
+    "created": "2025-05-27T18:39:40.652-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP exact term (secondary) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "12db07a2-9e2d-4c43-89b5-0db863cf4c99",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.105-07:00",
+    "created": "2025-05-27T18:39:41.105-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP exact term (secondary) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5812d8f0-9c3f-417f-ac1d-32a58e53af27",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.231-07:00",
+    "created": "2025-05-27T18:39:41.231-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (secondary) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a38d3a6c-8d15-4102-87e6-ad049c355537",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.368-07:00",
+    "created": "2025-05-27T18:39:41.368-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (secondary) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6e79c559-2e85-49bb-b233-fec45924ffba",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.538-07:00",
+    "created": "2025-05-27T18:39:41.538-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "1.0",
+      "toName": "Myocardial infarction",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "22298006"
+    },
+    "message": "  GENERATE (secondary) = 22298006 Myocardial infarction, 1.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a4b39c75-8495-4d9b-a4f3-473044391fef",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.675-07:00",
+    "created": "2025-05-27T18:39:41.675-07:00",
+    "modifiedBy": "system",
+    "message": "  GENERATE no-target (0.7)",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "65809da6-7147-46eb-87b3-8cc36be53458",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.810-07:00",
+    "created": "2025-05-27T18:39:41.810-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP exact term (lexical) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "411b2397-9605-4e52-817c-cff87b8a000b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:41.953-07:00",
+    "created": "2025-05-27T18:39:41.953-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP exact term (lexical) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "139cdb69-c4cb-48bf-ac1c-0de55a9aa716",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:42.079-07:00",
+    "created": "2025-05-27T18:39:42.079-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (lexical) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2e5baa4f-a4ed-4cc9-8b2e-973e2f1cb761",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:42.203-07:00",
+    "created": "2025-05-27T18:39:42.203-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (lexical) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e2733e81-c02f-4142-bbf1-72b8d7cf2fa1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:42.565-07:00",
+    "created": "2025-05-27T18:39:42.565-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "1.0",
+      "toName": "Myocardial infarction",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "22298006"
+    },
+    "message": "  GENERATE (lexical) = 22298006 Myocardial infarction, 1.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "28375c28-4400-4bac-a679-ae31a652b44d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:42.728-07:00",
+    "created": "2025-05-27T18:39:42.728-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (embedding) = heartattack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "47151d87-5cc1-44c5-a8f3-9c3f70d356e7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:43.439-07:00",
+    "created": "2025-05-27T18:39:43.439-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "active": "true",
+      "terminology": "SNOMEDCT",
+      "scope": "<<404684003 | Clinical Finding |"
+    },
+    "message": "LOOKUP term (embedding) = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b003f6ad-8d9d-4568-b681-19b9bd003de1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:43.648-07:00",
+    "created": "2025-05-27T18:39:43.648-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "1.011263654158539",
+      "toName": "Myocardial infarction",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "22298006"
+    },
+    "message": "  GENERATE (embedding) = 22298006 Myocardial infarction, 1.011263654158539",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "71ca7c30-4faf-44ee-9f2a-bac9ac678f24",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:43.778-07:00",
+    "created": "2025-05-27T18:39:43.778-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9503107997439599",
+      "toName": "Infarct",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "55641003"
+    },
+    "message": "  GENERATE (embedding) = 55641003 Infarct, 0.9503107997439599",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9fee947f-87f6-4e49-b687-3f287f6abdc3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:43.899-07:00",
+    "created": "2025-05-27T18:39:43.899-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9493514362247687",
+      "toName": "Panic attack",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "225624000"
+    },
+    "message": "  GENERATE (embedding) = 225624000 Panic attack, 0.9493514362247687",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0dde400c-fdd5-4ddc-98bf-99603e54327d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:44.088-07:00",
+    "created": "2025-05-27T18:39:44.088-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9476371910306153",
+      "toName": "Anxiety attack",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "300895004"
+    },
+    "message": "  GENERATE (embedding) = 300895004 Anxiety attack, 0.9476371910306153",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9cdb627f-f73f-4d70-9e70-00e56a6e8d3f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:44.244-07:00",
+    "created": "2025-05-27T18:39:44.244-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9424492540163774",
+      "toName": "Cardiac arrest",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "410429000"
+    },
+    "message": "  GENERATE (embedding) = 410429000 Cardiac arrest, 0.9424492540163774",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6b8afbf4-d4c7-4cf3-9ffc-eab9ef3c6f5e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:44.380-07:00",
+    "created": "2025-05-27T18:39:44.380-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9412909735765262",
+      "toName": "Rupture of heart",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "29889000"
+    },
+    "message": "  GENERATE (embedding) = 29889000 Rupture of heart, 0.9412909735765262",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ca3c543a-b54a-44a1-bb3b-356be61f5872",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:44.793-07:00",
+    "created": "2025-05-27T18:39:44.793-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9399336510448284",
+      "toName": "Chest pain",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "29857009"
+    },
+    "message": "  GENERATE (embedding) = 29857009 Chest pain, 0.9399336510448284",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "80434fd2-5ce0-47fd-86ba-8f662f199802",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:44.974-07:00",
+    "created": "2025-05-27T18:39:44.974-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9325952789909554",
+      "toName": "Heart injury, open",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "210060006"
+    },
+    "message": "  GENERATE (embedding) = 210060006 Heart injury, open, 0.9325952789909554",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "00c5bbf5-8344-46e5-8414-b705459d8c8e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:45.141-07:00",
+    "created": "2025-05-27T18:39:45.141-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9318592114793142",
+      "toName": "Pounding heart",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "248657009"
+    },
+    "message": "  GENERATE (embedding) = 248657009 Pounding heart, 0.9318592114793142",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "49ef83e1-ad20-4cf4-8f36-4413b0c4dcd3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:45.314-07:00",
+    "created": "2025-05-27T18:39:45.314-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9314753992694368",
+      "toName": "Contusion to heart",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "17414004"
+    },
+    "message": "  GENERATE (embedding) = 17414004 Contusion to heart, 0.9314753992694368",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e4a72a03-1d6e-4a7a-a32b-1f403fab8dfa",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:45.539-07:00",
+    "created": "2025-05-27T18:39:45.539-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9291571132790543",
+      "toName": "Stunned myocardium",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "281092007"
+    },
+    "message": "  GENERATE (embedding) = 281092007 Stunned myocardium, 0.9291571132790543",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "23c0a839-bbca-40e2-9e89-b3b8cda3c0f5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:45.708-07:00",
+    "created": "2025-05-27T18:39:45.708-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9279673065887316",
+      "toName": "Heart block",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "233916004"
+    },
+    "message": "  GENERATE (embedding) = 233916004 Heart block, 0.9279673065887316",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "488097e8-0dd9-4968-bb35-dc1b3cc83725",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:45.888-07:00",
+    "created": "2025-05-27T18:39:45.888-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.927887056173099",
+      "toName": "Asystole",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "397829000"
+    },
+    "message": "  GENERATE (embedding) = 397829000 Asystole, 0.927887056173099",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1ac6bb46-d161-4080-8ca6-b7e6f86d55dd",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:46.062-07:00",
+    "created": "2025-05-27T18:39:46.062-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9277544591796861",
+      "toName": "Atrial standstill",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "450919004"
+    },
+    "message": "  GENERATE (embedding) = 450919004 Atrial standstill, 0.9277544591796861",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "202a4834-cd5b-4c60-a436-a10c79d1643a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:46.226-07:00",
+    "created": "2025-05-27T18:39:46.226-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "predictionScore": "0.9276443665881758",
+      "toName": "Cardiogenic shock",
+      "toTerminology": "SNOMEDCT",
+      "toCode": "89138009"
+    },
+    "message": "  GENERATE (embedding) = 89138009 Cardiogenic shock, 0.9276443665881758",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2b0888e2-1dfd-48ab-a34b-be50bde3cec7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:46.645-07:00",
+    "created": "2025-05-27T18:39:46.645-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate =  No target",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "71bfc089-545a-4b06-805a-d6afeab400db",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:46.795-07:00",
+    "created": "2025-05-27T18:39:46.795-07:00",
+    "modifiedBy": "system",
+    "message": "  nomap = 0.7",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0d8a703c-4fba-44d2-8c80-d3a171b0d860",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:46.938-07:00",
+    "created": "2025-05-27T18:39:46.938-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = G45.9 Transient cerebral ischemic attack, unspecified",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "54fb705b-0a8e-400e-a56d-0e3876eb8b06",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.103-07:00",
+    "created": "2025-05-27T18:39:47.103-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.281",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "521a0747-29fd-400d-857b-fc2a7f79e4f5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.239-07:00",
+    "created": "2025-05-27T18:39:47.239-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8327679288414982",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "00ec605a-4fa5-401b-81cc-38fde028f79d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.394-07:00",
+    "created": "2025-05-27T18:39:47.394-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.5524158477783203",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "d4174f52-1f67-4767-a03c-8a5dfc8badd8",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.533-07:00",
+    "created": "2025-05-27T18:39:47.533-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "345461af-75ad-408c-8987-c8be598b445e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.656-07:00",
+    "created": "2025-05-27T18:39:47.656-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.281 + 0.8327679288414982 + 0.5524158477783203) / 3) * 0.0 = 0.3068087745053068",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e7ffbdde-c72f-409a-96ad-0e3535dbfd86",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:47.772-07:00",
+    "created": "2025-05-27T18:39:47.772-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = R55 Syncope and collapse",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "aa510080-a1b6-4ccd-a563-39d12ba3ec97",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.109-07:00",
+    "created": "2025-05-27T18:39:48.109-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.468",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "002ffed8-c9e8-441b-92bd-1c1b66dcfc29",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.261-07:00",
+    "created": "2025-05-27T18:39:48.261-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.7872902223817071",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "cba338c8-f0fb-4abb-9a09-dc0adadec9b8",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.431-07:00",
+    "created": "2025-05-27T18:39:48.431-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.5132847513471331",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "122622ff-ae91-49a6-816c-c775fe6243e0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.572-07:00",
+    "created": "2025-05-27T18:39:48.572-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "672ae538-7e2c-4c22-ae28-cc3880cea880",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.719-07:00",
+    "created": "2025-05-27T18:39:48.719-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.468 + 0.7872902223817071 + 0.5132847513471331) / 3) * 0.0 = 0.30259418854305675",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "97296f2e-a30a-49b1-b6ec-90fb71d1f64e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.854-07:00",
+    "created": "2025-05-27T18:39:48.854-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = F41.0 Panic disorder [episodic paroxysmal anxiety]",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a71f631c-9db7-4f9f-844c-b0451f6094c2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:48.982-07:00",
+    "created": "2025-05-27T18:39:48.982-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.475",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "74466330-6cdc-46bc-a62b-3e3d61890f87",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:49.111-07:00",
+    "created": "2025-05-27T18:39:49.111-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.6834988865930663",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "4d1b1698-440e-4b4a-9343-cb720a394a8d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:49.228-07:00",
+    "created": "2025-05-27T18:39:49.228-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9493514362247687",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1758cbca-ce45-474f-96bf-c54b3390790e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:49.615-07:00",
+    "created": "2025-05-27T18:39:49.615-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e094fc29-b0ce-4bc7-aae7-6444dcca8b69",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:49.726-07:00",
+    "created": "2025-05-27T18:39:49.726-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.475 + 0.6834988865930663 + 0.9493514362247687) / 3) * 0.0 = 0.667030243771318",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "cbaa5f27-715d-4ace-9053-043234d35a1b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:49.841-07:00",
+    "created": "2025-05-27T18:39:49.841-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = H40.21 Acute angle-closure glaucoma",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "cd426304-000e-4ab3-be05-bf7552790a1d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.000-07:00",
+    "created": "2025-05-27T18:39:50.000-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.318",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e55d3b40-abed-4e68-9af9-bd4788d0d585",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.116-07:00",
+    "created": "2025-05-27T18:39:50.116-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.6008574268808724",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b89f4e3a-e400-41bd-913b-6aedd2a6aea8",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.228-07:00",
+    "created": "2025-05-27T18:39:50.228-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.5061738831656319",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7416f1c6-64f0-479e-bfe7-6641482ef7e2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.342-07:00",
+    "created": "2025-05-27T18:39:50.342-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1af96a75-8f85-493c-b2f2-38cafca982e4",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.466-07:00",
+    "created": "2025-05-27T18:39:50.466-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.318 + 0.6008574268808724 + 0.5061738831656319) / 3) * 0.0 = 0.24043787727961557",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "56aad5cc-9849-45dd-ac4e-9ee26698f2f3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.583-07:00",
+    "created": "2025-05-27T18:39:50.583-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = M10 Gout",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "abbb6213-ed7a-4446-8a4f-30f6e6480c9a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:50.936-07:00",
+    "created": "2025-05-27T18:39:50.936-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.588",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a52be313-c3ec-4d78-a0e0-9ce9a5fe5976",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.061-07:00",
+    "created": "2025-05-27T18:39:51.061-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8719102804616383",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6828c55a-9639-40de-b5c5-a96a4ef2b6c2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.170-07:00",
+    "created": "2025-05-27T18:39:51.170-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9363923078078185",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ab656e93-da9b-4586-9eb5-6aac26594ac7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.283-07:00",
+    "created": "2025-05-27T18:39:51.283-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ac3273b2-05ed-4509-96d5-5905889bf93b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.386-07:00",
+    "created": "2025-05-27T18:39:51.386-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.588 + 0.8719102804616383 + 0.9363923078078185) / 3) * 0.0 = 0.747959770278495",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "04c58e1a-47b0-4bec-be8d-21773f8f4ac1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.504-07:00",
+    "created": "2025-05-27T18:39:51.504-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = T78.2 Anaphylactic shock, unspecified",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "caf069d1-b5f6-4b63-8ce5-ed6f7d238aa0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.616-07:00",
+    "created": "2025-05-27T18:39:51.616-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "4b2e1b3f-53fd-4cb5-9889-11440db7b979",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.736-07:00",
+    "created": "2025-05-27T18:39:51.736-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8185811212138383",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "dc73fc27-188e-4fe3-98c9-2b4b3e59853f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:51.864-07:00",
+    "created": "2025-05-27T18:39:51.864-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9203896313896179",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6606e360-2a44-474b-a110-4f122deae735",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.209-07:00",
+    "created": "2025-05-27T18:39:52.209-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "fe7e44c5-eaec-4758-a996-3fba30bf81fb",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.323-07:00",
+    "created": "2025-05-27T18:39:52.323-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8185811212138383 + 0.9203896313896179) / 3) * 0.0 = 0.5335102166620072",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3685215d-ede0-4e7e-bf05-6a93e71353bf",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.473-07:00",
+    "created": "2025-05-27T18:39:52.473-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I50 Heart failure",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "32725507-7cce-4b94-b2c2-780da941a92f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.638-07:00",
+    "created": "2025-05-27T18:39:52.638-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.489",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0dd2a91a-41b5-4709-b7d6-66bdddf5b731",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.802-07:00",
+    "created": "2025-05-27T18:39:52.802-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8845371210739271",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "525438b8-3c12-4aa1-a3d6-a8cb55d31ad5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:52.969-07:00",
+    "created": "2025-05-27T18:39:52.969-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9293601677892971",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "72d467fc-36e2-454a-9fc2-c67660bf33dc",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:53.140-07:00",
+    "created": "2025-05-27T18:39:53.140-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7a0f6487-df4d-4b74-96c5-bc995630d3c0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:53.284-07:00",
+    "created": "2025-05-27T18:39:53.284-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.489 + 0.8845371210739271 + 0.9293601677892971) / 3) * 0.0 = 0.7134070035931478",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1a1f77cd-db86-46f2-b1af-ee08a520d1b1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:53.436-07:00",
+    "created": "2025-05-27T18:39:53.436-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I63 Cerebral infarction",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "01f9f57f-f540-4cba-b17e-90d0a49031ff",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:53.837-07:00",
+    "created": "2025-05-27T18:39:53.837-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.023",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "50cccd73-53af-4b8f-ab16-1a19250a56e6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:53.977-07:00",
+    "created": "2025-05-27T18:39:53.977-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8832018295900269",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2cc0ba70-7a68-4670-8611-b88fc6681792",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.101-07:00",
+    "created": "2025-05-27T18:39:54.101-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9287443603807279",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "78270481-aac2-421a-89ae-05b3cb6868fc",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.232-07:00",
+    "created": "2025-05-27T18:39:54.232-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e47f35f3-b0b2-45d8-aa93-96f33b00d512",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.367-07:00",
+    "created": "2025-05-27T18:39:54.367-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.023 + 0.8832018295900269 + 0.9287443603807279) / 3) * 0.0 = 0.5680653085124808",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "eb5d9a43-056c-4dfe-80eb-731559c54f1e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.500-07:00",
+    "created": "2025-05-27T18:39:54.500-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I22 Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f39960b3-698d-4fdf-aa58-c780d6f071cc",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.634-07:00",
+    "created": "2025-05-27T18:39:54.634-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.259",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "41b503e3-448d-4466-8f09-332a70694e64",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.758-07:00",
+    "created": "2025-05-27T18:39:54.758-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.7876118440365304",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "613cd88f-2a83-49bd-8041-76d3f7dd2d3c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:54.875-07:00",
+    "created": "2025-05-27T18:39:54.875-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.948504547919009",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e2b1f6ec-0e65-4d22-a609-7f46a4279557",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.218-07:00",
+    "created": "2025-05-27T18:39:55.218-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "98051a69-8a63-40ec-bee6-e88e6f5f34c7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.350-07:00",
+    "created": "2025-05-27T18:39:55.350-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.259 + 0.7876118440365304 + 0.948504547919009) / 3) * 0.0 = 0.6307923237991977",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f8c86e7f-6152-4034-b65d-24aa246ce3ad",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.478-07:00",
+    "created": "2025-05-27T18:39:55.478-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I21 Acute myocardial infarction",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "546750a5-a357-4c91-b98a-e25433275935",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.606-07:00",
+    "created": "2025-05-27T18:39:55.606-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.258",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e7018e5e-382d-4034-8076-273246d445d0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.724-07:00",
+    "created": "2025-05-27T18:39:55.724-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9041934717630995",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "deb6b1ac-da31-4ccb-b5e9-344237777d2b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.840-07:00",
+    "created": "2025-05-27T18:39:55.840-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.948504547919009",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1986b14c-9585-45cb-926a-e87d2cd640b6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:55.948-07:00",
+    "created": "2025-05-27T18:39:55.948-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7ecfd957-854f-4af2-9b96-1e8948484742",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:56.057-07:00",
+    "created": "2025-05-27T18:39:56.057-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.258 + 0.9041934717630995 + 0.948504547919009) / 3) * 0.0 = 0.667335556984042",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2eda5aeb-1dff-4a06-abaa-f6ebb4cb4e75",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:56.166-07:00",
+    "created": "2025-05-27T18:39:56.166-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I46 Cardiac arrest",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "57605260-f66a-4f25-bbcb-2da64978b765",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:56.655-07:00",
+    "created": "2025-05-27T18:39:56.655-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "4fa041dd-5bd1-41e9-a7e5-186a386f1900",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:56.844-07:00",
+    "created": "2025-05-27T18:39:56.844-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9105396791263368",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "63f234fa-6c97-4492-ae15-16e0477cdfec",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.032-07:00",
+    "created": "2025-05-27T18:39:57.032-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9424492540163774",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c641cdf1-705a-4dcd-a32d-b0c29850a26e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.178-07:00",
+    "created": "2025-05-27T18:39:57.178-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c52f75b8-511b-4d72-b94d-4e9c0ca08b3b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.316-07:00",
+    "created": "2025-05-27T18:39:57.316-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.9105396791263368 + 0.9424492540163774) / 3) * 0.0 = 0.582116012580318",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "55d8af09-f251-4167-aaaf-c7f1e28a71aa",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.458-07:00",
+    "created": "2025-05-27T18:39:57.458-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = R57.0 Cardiogenic shock",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "bceffcbe-4808-4479-b021-e95dde5aa703",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.593-07:00",
+    "created": "2025-05-27T18:39:57.593-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b87da0bd-7fd2-4d0d-92b4-5211a0e08478",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.718-07:00",
+    "created": "2025-05-27T18:39:57.718-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8689766584896551",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "67b55d4c-d7ca-4478-be0c-ea70041e55bb",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:57.837-07:00",
+    "created": "2025-05-27T18:39:57.837-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9276443665881758",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "adf70c87-e881-4213-901b-81362466ad6f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.196-07:00",
+    "created": "2025-05-27T18:39:58.196-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "57ea19c4-27ea-423b-a09f-e318400417ca",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.334-07:00",
+    "created": "2025-05-27T18:39:58.334-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8689766584896551 + 0.9276443665881758) / 3) * 0.0 = 0.5555417909357746",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "145464be-1fb1-4aab-94e0-8fa12fcad097",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.465-07:00",
+    "created": "2025-05-27T18:39:58.465-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I45.5 Other specified heart block",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "22b2e43e-d7c2-491b-b96b-45c1c0f6f533",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.576-07:00",
+    "created": "2025-05-27T18:39:58.576-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.478",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2fa85118-9162-4f71-a0b2-be934b373006",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.686-07:00",
+    "created": "2025-05-27T18:39:58.686-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8094492269542913",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "728325d1-0e16-47cf-bb82-e3e50aa0b6cd",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.809-07:00",
+    "created": "2025-05-27T18:39:58.809-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9279673065887316",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "bf15fed7-77dc-40cf-8e22-ee89db1ce713",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:58.933-07:00",
+    "created": "2025-05-27T18:39:58.933-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e69ef1f5-4e85-454e-bed1-b004f94c0bf1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.060-07:00",
+    "created": "2025-05-27T18:39:59.060-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.478 + 0.8094492269542913 + 0.9279673065887316) / 3) * 0.0 = 0.6852780378680211",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f3cb2db4-9236-4fe4-ba7b-06f4213e5ebb",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.182-07:00",
+    "created": "2025-05-27T18:39:59.182-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = R00.0 Tachycardia, unspecified",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ff89a0e1-e69f-4aca-a6d1-05cec0e3a739",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.589-07:00",
+    "created": "2025-05-27T18:39:59.589-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.374",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "88e531b3-1df6-4511-8dec-914987d95fdd",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.715-07:00",
+    "created": "2025-05-27T18:39:59.715-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8309207109088763",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c7c3b892-a115-4460-b727-07b05a3a4647",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.836-07:00",
+    "created": "2025-05-27T18:39:59.836-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9197728683789607",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f1153a81-0a1f-4cba-a926-9124e2af874c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:39:59.953-07:00",
+    "created": "2025-05-27T18:39:59.953-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9730a8bf-67c5-4aa4-aa27-ba388c7650f7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:00.096-07:00",
+    "created": "2025-05-27T18:40:00.096-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.374 + 0.8309207109088763 + 0.9197728683789607) / 3) * 0.0 = 0.6514118359493115",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "47cc80c9-0934-4ea0-9cd9-e0346dd482b4",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:00.227-07:00",
+    "created": "2025-05-27T18:40:00.227-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = E27.49 Other adrenocortical insufficiency",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1d2bcd75-dc92-4b30-82a1-ab1904395bc3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:00.381-07:00",
+    "created": "2025-05-27T18:40:00.381-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "d4629d56-10fd-4adb-bdab-192c7b98e48b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:00.543-07:00",
+    "created": "2025-05-27T18:40:00.543-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.6930907532303235",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f6231119-fa3e-4285-96ac-93db7dca013d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:00.732-07:00",
+    "created": "2025-05-27T18:40:00.732-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9311831410896176",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e49aa21b-da50-47c4-8418-2d785c86929d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.209-07:00",
+    "created": "2025-05-27T18:40:01.209-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b6cb23e8-5bd8-46b5-b0da-79c887582ccb",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.329-07:00",
+    "created": "2025-05-27T18:40:01.329-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.6930907532303235 + 0.9311831410896176) / 3) * 0.0 = 0.5041654889675695",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "54730e15-f00e-4878-a30d-4a28b18c8137",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.469-07:00",
+    "created": "2025-05-27T18:40:01.469-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I31.4 Cardiac tamponade",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a0da1f30-fec6-4936-8cc1-43c4dd59edd7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.602-07:00",
+    "created": "2025-05-27T18:40:01.602-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2f3fe4c1-78d9-4533-9f85-ec6623639873",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.744-07:00",
+    "created": "2025-05-27T18:40:01.744-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8736473108716626",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b03ff7a0-a007-45d6-aa2a-eacc7e8f6497",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.864-07:00",
+    "created": "2025-05-27T18:40:01.864-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9269763668561538",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "18fe4ce7-1a60-4237-82c1-d7cf352aa778",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:01.995-07:00",
+    "created": "2025-05-27T18:40:01.995-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1fede60d-545a-4cc1-be90-0433ce3fc562",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:02.130-07:00",
+    "created": "2025-05-27T18:40:02.130-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8736473108716626 + 0.9269763668561538) / 3) * 0.0 = 0.5563785316184323",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ccd78a21-b42f-46f5-81f0-2a7429031ec5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:02.258-07:00",
+    "created": "2025-05-27T18:40:02.258-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = I50.9 Heart failure, unspecified",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0766d614-3750-4569-b6e0-e149e6b36fa3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:02.661-07:00",
+    "created": "2025-05-27T18:40:02.661-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.387",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "eb3de752-f864-438a-92ed-bb1165e1460f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:02.794-07:00",
+    "created": "2025-05-27T18:40:02.794-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8566739621981504",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f26701a5-8033-4c24-84e6-0dd470a5d1eb",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:02.929-07:00",
+    "created": "2025-05-27T18:40:02.929-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9271589491708998",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e6f86237-0346-4304-a3d1-922935350e28",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.059-07:00",
+    "created": "2025-05-27T18:40:03.059-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2f76de39-bc8a-4604-a6c2-3b2f88e26ccf",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.176-07:00",
+    "created": "2025-05-27T18:40:03.176-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.387 + 0.8566739621981504 + 0.9271589491708998) / 3) * 0.0 = 0.6709023869768447",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9e071e67-eeb5-4b25-80d5-48e9f11ec168",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.291-07:00",
+    "created": "2025-05-27T18:40:03.291-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = K22.0 Achalasia of cardia",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c00f7102-8bfd-44af-a8d0-69dd074c641e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.403-07:00",
+    "created": "2025-05-27T18:40:03.403-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "eb5463d4-e9a7-4fff-864e-5f061a41df12",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.520-07:00",
+    "created": "2025-05-27T18:40:03.520-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.7255529982410195",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "277b35b5-7680-4b2e-88df-b35c98d3e676",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:03.628-07:00",
+    "created": "2025-05-27T18:40:03.628-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9243140250535372",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9fa9ec2b-ac6a-4ec1-bb22-810737274f9b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.003-07:00",
+    "created": "2025-05-27T18:40:04.003-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ee1ed069-d608-4ebc-892a-57c6f27b419e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.119-07:00",
+    "created": "2025-05-27T18:40:04.119-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.7255529982410195 + 0.9243140250535372) / 3) * 0.0 = 0.50833174303483",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a41b50ca-3014-464c-9a20-eaaa4c8d8ca4",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.237-07:00",
+    "created": "2025-05-27T18:40:04.237-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = R57 Shock, not elsewhere classified",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "cd2bd1c1-4c97-4d35-9807-d5daaa93c859",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.359-07:00",
+    "created": "2025-05-27T18:40:04.359-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b39727ef-c22a-49b7-98fc-8e4f82e2ac06",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.488-07:00",
+    "created": "2025-05-27T18:40:04.488-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.7806126324539243",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "14eb16ac-d6d2-4f53-8090-3e0d2c6dbe9e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.606-07:00",
+    "created": "2025-05-27T18:40:04.606-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9167001693625146",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "048edb0e-d724-46f6-afbd-5b2a7c9d764c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.724-07:00",
+    "created": "2025-05-27T18:40:04.724-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "cce09bec-3543-4c0e-bd5e-28f773f7e192",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.835-07:00",
+    "created": "2025-05-27T18:40:04.835-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.7806126324539243 + 0.9167001693625146) / 3) * 0.0 = 0.5186423109620979",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7193e855-9fcc-4eda-8d68-e2f356fa12e0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:04.941-07:00",
+    "created": "2025-05-27T18:40:04.941-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = S26 Injury of heart",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "775306d5-495b-4d92-aaef-e3c8e43b1a55",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.325-07:00",
+    "created": "2025-05-27T18:40:05.325-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.477",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5f24430b-50d7-427c-86e2-e05c62d906f2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.459-07:00",
+    "created": "2025-05-27T18:40:05.459-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8715729102442311",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1e8a9e7e-348d-403e-a3e1-1af179e66696",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.582-07:00",
+    "created": "2025-05-27T18:40:05.582-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9242739403402472",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0ac3101e-5e69-4e88-af2a-0897df7a5e12",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.703-07:00",
+    "created": "2025-05-27T18:40:05.703-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "82df13f6-427e-411a-9e1e-d373894425ea",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.838-07:00",
+    "created": "2025-05-27T18:40:05.838-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.477 + 0.8715729102442311 + 0.9242739403402472) / 3) * 0.0 = 0.7002443714598791",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "e50e640f-e023-4419-b5b2-c3507c43c845",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:05.968-07:00",
+    "created": "2025-05-27T18:40:05.968-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 22298006 Myocardial infarction",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "97dc3ac0-a2f7-409b-a8db-f7d04a332cd2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:06.120-07:00",
+    "created": "2025-05-27T18:40:06.120-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.98",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "67f89295-6df2-4e8c-9756-6d7b9640006b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:06.282-07:00",
+    "created": "2025-05-27T18:40:06.282-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9170400590256992",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "37279306-2785-478f-b89a-dd40c50d6368",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:06.445-07:00",
+    "created": "2025-05-27T18:40:06.445-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 1.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "6ea44790-1e86-4844-865b-5358d9027f80",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:06.909-07:00",
+    "created": "2025-05-27T18:40:06.909-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9d8b998f-2a39-4d90-b7f5-873b487ae64b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.064-07:00",
+    "created": "2025-05-27T18:40:07.064-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.98 + 0.9170400590256992 + 1.0) / 3) * 0.0 = 0.965680019675233",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "754a4bed-b954-4eb8-9a8c-3514b8c31931",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.218-07:00",
+    "created": "2025-05-27T18:40:07.218-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate =  No target",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b8186d3e-b003-43f7-93d4-68238fa93445",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.395-07:00",
+    "created": "2025-05-27T18:40:07.395-07:00",
+    "modifiedBy": "system",
+    "message": "  nomap = 0.7",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8b625a7e-1d2c-48ce-957b-130cd39dbf8f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.583-07:00",
+    "created": "2025-05-27T18:40:07.583-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 22298006 Myocardial infarction",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8b138c64-7e15-4a56-8fba-a66cfa97aef6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.796-07:00",
+    "created": "2025-05-27T18:40:07.796-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.98",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "09986e5d-96f0-40bc-b09a-5a06800123d2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:07.984-07:00",
+    "created": "2025-05-27T18:40:07.984-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9170400590256992",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "92b8ffb6-6f1f-4d57-b178-10c4e153fa68",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:08.142-07:00",
+    "created": "2025-05-27T18:40:08.142-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 1.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a7932c33-f8f1-420b-8087-bec2b0f1eaf7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:08.322-07:00",
+    "created": "2025-05-27T18:40:08.322-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "84d0a301-b406-43c6-8a6d-0417df22dfb1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:08.872-07:00",
+    "created": "2025-05-27T18:40:08.872-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.98 + 0.9170400590256992 + 1.0) / 3) * 0.0 = 0.965680019675233",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "047e3ee9-7ab8-48fd-9508-f7e2be0448d0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.040-07:00",
+    "created": "2025-05-27T18:40:09.040-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 55641003 Infarct",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3d88878a-88d9-42b3-976e-96b57ed27971",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.189-07:00",
+    "created": "2025-05-27T18:40:09.189-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8309c6e2-4327-4195-b0fa-e0409b1605d7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.351-07:00",
+    "created": "2025-05-27T18:40:09.351-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8932282356843447",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a8fcbc55-babd-46a8-bdff-8450bcc8f36d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.521-07:00",
+    "created": "2025-05-27T18:40:09.521-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9503107997439599",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f1c270ac-b4a6-466f-b245-ae0d55f56531",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.678-07:00",
+    "created": "2025-05-27T18:40:09.678-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "1dd9ebbf-88b4-4e9f-a2d2-e0484e5fe35c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.824-07:00",
+    "created": "2025-05-27T18:40:09.824-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8932282356843447 + 0.9503107997439599) / 3) * 0.0 = 0.5839783517056936",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "d4eaad46-4467-46a9-a548-addb03dc37d2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:09.980-07:00",
+    "created": "2025-05-27T18:40:09.980-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 300895004 Anxiety attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "01a49fca-93b6-479d-8481-e965cc44d789",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:10.123-07:00",
+    "created": "2025-05-27T18:40:10.123-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.497",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8af77420-e934-4078-8211-4b68847e5e72",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:10.579-07:00",
+    "created": "2025-05-27T18:40:10.579-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9197410541335382",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f82f9ffd-aebf-4a27-ba79-5078fc4bafe8",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:10.718-07:00",
+    "created": "2025-05-27T18:40:10.718-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9476371910306153",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "03605aae-7009-4663-92e3-b9eb73175894",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:10.845-07:00",
+    "created": "2025-05-27T18:40:10.845-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3b39b036-9e3d-4bb6-9138-ec10a23138e3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:10.961-07:00",
+    "created": "2025-05-27T18:40:10.961-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.497 + 0.9197410541335382 + 0.9476371910306153) / 3) * 0.0 = 0.7468575862604179",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "fc919500-d9b1-4cf3-8d4d-4fc845953336",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.073-07:00",
+    "created": "2025-05-27T18:40:11.073-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 29889000 Rupture of heart",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "79343827-ed18-4c40-8cbb-c58b96308283",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.188-07:00",
+    "created": "2025-05-27T18:40:11.188-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.476",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "98b8e403-2fa0-4b00-974c-1baf9535f71b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.318-07:00",
+    "created": "2025-05-27T18:40:11.318-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8943534360843806",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "46e9217d-586d-4c22-bce3-1e15a3445827",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.455-07:00",
+    "created": "2025-05-27T18:40:11.455-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9412909735765262",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "30894c2e-ee30-4e08-b9d1-3f8ec826f1c6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.578-07:00",
+    "created": "2025-05-27T18:40:11.578-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b14addb9-99b9-43f8-aee1-a88ab0b0ac2d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:11.960-07:00",
+    "created": "2025-05-27T18:40:11.960-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.476 + 0.8943534360843806 + 0.9412909735765262) / 3) * 0.0 = 0.7253100056441498",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "14a4e40b-0870-4ad7-a393-6625b3e0b823",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.073-07:00",
+    "created": "2025-05-27T18:40:12.073-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 450919004 Atrial standstill",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2810981f-03f3-4ca5-a1ed-391482c0ca1e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.199-07:00",
+    "created": "2025-05-27T18:40:12.199-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "fe43ab56-152a-4814-9df0-34f9acd545de",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.320-07:00",
+    "created": "2025-05-27T18:40:12.320-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.7962641800542845",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "98f536ed-db39-433e-8c0d-3fbb3bd647f7",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.447-07:00",
+    "created": "2025-05-27T18:40:12.447-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9277544591796861",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "30416589-2507-4a93-a3d9-e094b3413a76",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.564-07:00",
+    "created": "2025-05-27T18:40:12.564-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9a276369-463c-4fb6-8916-16517cf7ba9f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.674-07:00",
+    "created": "2025-05-27T18:40:12.674-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.7962641800542845 + 0.9277544591796861) / 3) * 0.0 = 0.5331553267527369",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "48036c20-04a2-4225-8fef-10a1737df1a5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.783-07:00",
+    "created": "2025-05-27T18:40:12.783-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 397829000 Asystole",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "18b956a7-5a32-4351-8002-4effeeef6c20",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:12.889-07:00",
+    "created": "2025-05-27T18:40:12.889-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f00040c8-5cf2-4720-9649-927feb3b678b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.301-07:00",
+    "created": "2025-05-27T18:40:13.301-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8626348794687827",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "679f3178-7c58-43b8-807b-eae2b7860994",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.464-07:00",
+    "created": "2025-05-27T18:40:13.464-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.927887056173099",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f256f6c3-820c-4c6a-a732-cadefc63422a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.600-07:00",
+    "created": "2025-05-27T18:40:13.600-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3f00e6ec-e91a-41a0-8bc7-6acbcbde3d92",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.736-07:00",
+    "created": "2025-05-27T18:40:13.736-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8626348794687827 + 0.927887056173099) / 3) * 0.0 = 0.553800709292035",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "29706cc8-c325-491e-957a-23619653e71a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.866-07:00",
+    "created": "2025-05-27T18:40:13.866-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 210060006 Heart injury, open",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0dff3494-f926-4710-8457-2b02f104167e",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:13.995-07:00",
+    "created": "2025-05-27T18:40:13.995-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.392",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "92c92ae4-e1e2-4d23-9d5b-c7a27451c985",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.119-07:00",
+    "created": "2025-05-27T18:40:14.119-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8818126887915849",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "bfeb9933-eb2d-4be0-8a39-e8eb9cfee61f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.257-07:00",
+    "created": "2025-05-27T18:40:14.257-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9325952789909554",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0b4c6a1f-10b1-4866-acc2-3a5e317447e3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.379-07:00",
+    "created": "2025-05-27T18:40:14.379-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "670c428b-e6a7-4109-8618-e16c939b264b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.754-07:00",
+    "created": "2025-05-27T18:40:14.754-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.392 + 0.8818126887915849 + 0.9325952789909554) / 3) * 0.0 = 0.6858952180940083",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "fdeb4468-5dd1-4dd9-8124-d15e150de77b",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.857-07:00",
+    "created": "2025-05-27T18:40:14.857-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 410429000 Cardiac arrest",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "627ef24a-504f-4874-b3d5-58d9dbcf1cdf",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:14.961-07:00",
+    "created": "2025-05-27T18:40:14.961-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8a4b35cc-6e52-4b9e-9636-950ac0518e49",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.065-07:00",
+    "created": "2025-05-27T18:40:15.065-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9105396791263368",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b42d59a1-c2d3-46a3-925b-323d09f81669",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.176-07:00",
+    "created": "2025-05-27T18:40:15.176-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9424492540163774",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "788c0dc9-6802-422a-aba5-4a08e1e6196f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.283-07:00",
+    "created": "2025-05-27T18:40:15.283-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5439515e-520a-4f9c-8c0a-70ae8a81e100",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.388-07:00",
+    "created": "2025-05-27T18:40:15.388-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.9105396791263368 + 0.9424492540163774) / 3) * 0.0 = 0.582116012580318",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "de3e41a2-d8fc-4623-b4ce-1458f9a9eca2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.512-07:00",
+    "created": "2025-05-27T18:40:15.512-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 225624000 Panic attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a35b4258-8eaf-4ff7-b9a7-7097f4e50811",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:15.638-07:00",
+    "created": "2025-05-27T18:40:15.638-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.501",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "abdbcaed-7569-4938-94c3-f7723c1f7b67",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.175-07:00",
+    "created": "2025-05-27T18:40:16.175-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9226607634788161",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "a289d780-5f69-40a8-b612-564242045f26",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.325-07:00",
+    "created": "2025-05-27T18:40:16.325-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9493514362247687",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2ff7d945-5209-4ecc-a2ab-d731b761531c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.472-07:00",
+    "created": "2025-05-27T18:40:16.472-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "4163efd1-3d56-488c-85e0-f824b2b29a3d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.598-07:00",
+    "created": "2025-05-27T18:40:16.598-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.501 + 0.9226607634788161 + 0.9493514362247687) / 3) * 0.0 = 0.7509408466558319",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2580c80a-2dc4-4157-ab63-cc00f9018d29",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.723-07:00",
+    "created": "2025-05-27T18:40:16.723-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 281092007 Stunned myocardium",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "65967c94-0779-43b4-9810-a9d9bd565a76",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.850-07:00",
+    "created": "2025-05-27T18:40:16.850-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "9831ac5c-c5e2-4e89-86eb-bdffd9001daa",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:16.968-07:00",
+    "created": "2025-05-27T18:40:16.968-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.839901519516158",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "42730c9a-e904-4853-93bd-cbc5c5acb8ff",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:17.101-07:00",
+    "created": "2025-05-27T18:40:17.101-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9291571132790543",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c0da9e86-61ef-40c3-91be-51b4f741e3af",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:17.240-07:00",
+    "created": "2025-05-27T18:40:17.240-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ad572930-b5e2-438f-972a-57157fc2b21d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:17.627-07:00",
+    "created": "2025-05-27T18:40:17.627-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.839901519516158 + 0.9291571132790543) / 3) * 0.0 = 0.5479111374897967",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "c6ca44ae-0444-4568-83e6-f915cf72c1cd",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:17.754-07:00",
+    "created": "2025-05-27T18:40:17.754-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 233916004 Heart block",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "bfb24333-4597-4897-bd70-c17c3dfee058",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:17.877-07:00",
+    "created": "2025-05-27T18:40:17.877-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.493",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "87028d59-574d-4b7b-8a9d-87232a27e0fa",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.002-07:00",
+    "created": "2025-05-27T18:40:18.002-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8712029116982254",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "44f707fa-a562-4907-b9aa-9602004aaa94",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.141-07:00",
+    "created": "2025-05-27T18:40:18.141-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9279673065887316",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2586e93d-4a27-47f7-8e79-84c399ce2ba5",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.295-07:00",
+    "created": "2025-05-27T18:40:18.295-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "571e15d4-5739-44e7-8a0e-45933e530cdf",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.491-07:00",
+    "created": "2025-05-27T18:40:18.491-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.493 + 0.8712029116982254 + 0.9279673065887316) / 3) * 0.0 = 0.7090196745688842",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5e1ec1fd-ea18-4b13-a5e7-dfdb25f21156",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.659-07:00",
+    "created": "2025-05-27T18:40:18.659-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 89138009 Cardiogenic shock",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "50803ff5-83be-4f63-985c-1d1028f27417",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:18.796-07:00",
+    "created": "2025-05-27T18:40:18.796-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "2f157bd1-68e0-4676-abd1-7ad745c7d035",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.249-07:00",
+    "created": "2025-05-27T18:40:19.249-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8689766584896551",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "20ca797f-ca62-48d7-9486-7005630606fe",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.382-07:00",
+    "created": "2025-05-27T18:40:19.382-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9276443665881758",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "086e7f27-0379-463c-a422-97967392bf36",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.518-07:00",
+    "created": "2025-05-27T18:40:19.518-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0de4021c-8a56-47d5-9a52-95aa3dd577f1",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.638-07:00",
+    "created": "2025-05-27T18:40:19.638-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.8689766584896551 + 0.9276443665881758) / 3) * 0.0 = 0.5555417909357746",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "d2269fb4-d147-4dcd-a650-ef930c772f4d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.761-07:00",
+    "created": "2025-05-27T18:40:19.761-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 17414004 Contusion to heart",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "3bd9ce5b-5da5-47c5-a34f-e0efb4849935",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.878-07:00",
+    "created": "2025-05-27T18:40:19.878-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.475",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "f9e2c36e-f0d0-489d-b645-ebabfb7a1921",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:19.993-07:00",
+    "created": "2025-05-27T18:40:19.993-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8610982517424383",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0151893f-1ef4-4029-9656-f09d3797dc4a",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.101-07:00",
+    "created": "2025-05-27T18:40:20.101-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9314753992694368",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "37dce26c-7db5-4842-a246-49c4436cd47c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.214-07:00",
+    "created": "2025-05-27T18:40:20.214-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "11ce5d81-b3a9-465d-aa46-e241394494e6",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.582-07:00",
+    "created": "2025-05-27T18:40:20.582-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.475 + 0.8610982517424383 + 0.9314753992694368) / 3) * 0.0 = 0.704063023983047",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "515724d3-5671-42d0-8712-9ccf348c787d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.691-07:00",
+    "created": "2025-05-27T18:40:20.691-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 248657009 Pounding heart",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "8789e1c6-242c-4201-a178-529f57794589",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.800-07:00",
+    "created": "2025-05-27T18:40:20.800-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.478",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "784b34c6-17f1-4aa7-8f85-860217cd8c0c",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:20.928-07:00",
+    "created": "2025-05-27T18:40:20.928-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.8650858852295983",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "70542004-5b0c-4562-be81-1f188d3e5e01",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.046-07:00",
+    "created": "2025-05-27T18:40:21.046-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9318592114793142",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "b27b6653-84b4-4592-9fb3-66625e223328",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.168-07:00",
+    "created": "2025-05-27T18:40:21.168-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "ae0b8178-b63d-410f-b3e1-bc37260c6c1d",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.298-07:00",
+    "created": "2025-05-27T18:40:21.298-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.478 + 0.8650858852295983 + 0.9318592114793142) / 3) * 0.0 = 0.7066428479926332",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7db9693f-87a6-4f01-a8d0-6745768d5a26",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.435-07:00",
+    "created": "2025-05-27T18:40:21.435-07:00",
+    "modifiedBy": "system",
+    "message": "SCORE candidate = 29857009 Chest pain",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "79369e5b-ff98-44e6-a691-34fc914c9aa3",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.569-07:00",
+    "created": "2025-05-27T18:40:21.569-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "similarityScore",
+      "scoreName": "similarityScore"
+    },
+    "message": "  similarityScore = 0.0",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5d38f4aa-f793-4eb2-a2cd-29de1468c883",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:21.969-07:00",
+    "created": "2025-05-27T18:40:21.969-07:00",
+    "modifiedBy": "system",
+    "details": {
+      "fromGroup": "false",
+      "scoreFormula": "contextScore",
+      "scoreName": "contextScore"
+    },
+    "message": "  contextScore = 0.9058680982808482",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "17dde85f-fbbb-4bc0-8dc8-78988a58b8f0",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:22.091-07:00",
+    "created": "2025-05-27T18:40:22.091-07:00",
+    "modifiedBy": "system",
+    "message": "  predictionScore = 0.9399336510448284",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "0b375cab-ab63-47bd-a69f-cd75a63431d2",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:22.212-07:00",
+    "created": "2025-05-27T18:40:22.212-07:00",
+    "modifiedBy": "system",
+    "message": "  formula = ((similarityScore + contextScore + predictionScore) / 3) * labResultBoost",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "7739eb24-2adb-48d1-a08c-cb8134d1d8c4",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:22.349-07:00",
+    "created": "2025-05-27T18:40:22.349-07:00",
+    "modifiedBy": "system",
+    "message": "  ((0.0 + 0.9058680982808482 + 0.9399336510448284) / 3) * 0.0 = 0.5783103924495381",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  },
+  {
+    "id": "5953c470-2a94-4fa6-8c1e-5cd69a89b42f",
+    "confidence": 0.0450095534324646,
+    "modified": "2025-05-27T18:40:22.688-07:00",
+    "created": "2025-05-27T18:40:22.688-07:00",
+    "modifiedBy": "system",
+    "message": "Finished processing input term = heart attack",
+    "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+    "termId": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
+    "error": false
+  }
+]

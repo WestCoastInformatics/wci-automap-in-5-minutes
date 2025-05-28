@@ -1,0 +1,135 @@
+{
+  "id": "683c7092-7be2-4120-a5a1-8783dd2807e2",
+  "modified": "2025-05-27T18:51:36.429-07:00",
+  "created": "2025-05-27T18:51:35.727-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "cd7d1d3b-e499-484f-b07c-1d8ea6ce8bf9",
+      "modified": "2025-05-27T18:51:36.319-07:00",
+      "created": "2025-05-27T18:51:35.527-07:00",
+      "modifiedBy": "system",
+      "taskId": "683c7092-7be2-4120-a5a1-8783dd2807e2",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "90192d5d-4b31-49ce-a46a-f9bbe0fdce40",
+          "confidence": 0.747959770278495,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "M10",
+          "name": "Gout",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "b71d5c4d-cbe0-40bc-af66-cd284a5e1748",
+          "confidence": 0.7134070035931478,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I50",
+          "name": "Heart failure",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "5ec3d545-cb0f-421b-beca-ba53805e4a55",
+          "confidence": 0.7002443714598791,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "S26",
+          "name": "Injury of heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "a8db94b9-2e33-4813-9a01-8a28102b87af",
+          "confidence": 0.965680019675233,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "1fcd4289-ff47-4216-affd-ef64fd4b62c7",
+          "confidence": 0.7509408466558319,
+          "terminology": "http://snomed.info/sct",
+          "code": "225624000",
+          "name": "Panic attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "8c64e3ce-1dcf-4ce0-9fe8-9dc556b64f6c",
+          "confidence": 0.7468575862604179,
+          "terminology": "http://snomed.info/sct",
+          "code": "300895004",
+          "name": "Anxiety attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "74b113da-7dd1-43a4-804a-aacb93174a61",
+          "confidence": 0.7253100056441498,
+          "terminology": "http://snomed.info/sct",
+          "code": "29889000",
+          "name": "Rupture of heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "2299e5d3-03f2-4ec4-83af-0ddca62bf455",
+          "confidence": 0.7090196745688842,
+          "terminology": "http://snomed.info/sct",
+          "code": "233916004",
+          "name": "Heart block",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "7b0504cc-0271-47fb-93ed-59fa81258cde",
+          "confidence": 0.7066428479926332,
+          "terminology": "http://snomed.info/sct",
+          "code": "248657009",
+          "name": "Pounding heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "af68005f-f12c-4a80-af29-324366079502",
+          "confidence": 0.704063023983047,
+          "terminology": "http://snomed.info/sct",
+          "code": "17414004",
+          "name": "Contusion to heart",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 10
+    }
+  ],
+  "status": "final"
+}

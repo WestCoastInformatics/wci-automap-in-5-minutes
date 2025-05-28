@@ -1,0 +1,415 @@
+{
+  "id": "1554cf3c-3e9a-4f9f-ad28-7a7abd6b480a",
+  "modified": "2025-05-27T18:49:36.975-07:00",
+  "created": "2025-05-27T18:49:27.576-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "6d68c313-745c-40e4-b6e9-9d41cd3cd09f",
+      "modified": "2025-05-27T18:49:36.746-07:00",
+      "created": "2025-05-27T18:49:27.327-07:00",
+      "modifiedBy": "system",
+      "taskId": "1554cf3c-3e9a-4f9f-ad28-7a7abd6b480a",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "fever, cough, and headache",
+      "mappings": [
+        {
+          "id": "8ed52b1e-8302-41db-af51-c0b7f5c80140",
+          "confidence": 0.9549561827836893,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R05",
+          "name": "Cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "089e3d24-f4a8-4ad8-a193-cb4e77de25f7",
+          "confidence": 0.9236296645715014,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R50.8",
+          "name": "Other specified fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "73430955-5493-46e8-9861-17c6510befa3",
+          "confidence": 0.9141622051542927,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R05.8",
+          "name": "Other specified cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "4eb16275-9467-4368-8327-1419f30d20a9",
+          "confidence": 0.8211279628650734,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R51",
+          "name": "Headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "a6259721-69e3-4c6a-ad79-3c2b3747e84e",
+          "confidence": 0.7901549886522556,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R05.9",
+          "name": "Cough, unspecified",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "0004fd7e-7e0e-4372-82e0-ace59a149b4a",
+          "confidence": 0.786726710815929,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R05.1",
+          "name": "Acute cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "ea59934b-815a-4959-95f0-147848f667a1",
+          "confidence": 0.7792025817265263,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R50.9",
+          "name": "Fever, unspecified",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "8f092a82-278e-4487-bf86-7338fc525162",
+          "confidence": 0.7668986523335664,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "A75",
+          "name": "Typhus fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "256d58d4-be1d-4d4c-bc34-1c4783b186ca",
+          "confidence": 0.961502667739917,
+          "terminology": "http://snomed.info/sct",
+          "code": "386661006",
+          "name": "Fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "9e5dbcde-73d2-4e8f-9bc1-db9f95f226dc",
+          "confidence": 0.9549561827836893,
+          "terminology": "http://snomed.info/sct",
+          "code": "49727002",
+          "name": "Cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "9964a104-e35b-4eab-85f5-566c2412007c",
+          "confidence": 0.8211279628650734,
+          "terminology": "http://snomed.info/sct",
+          "code": "25064002",
+          "name": "Headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "61d44ee8-f1ee-472a-8056-d9c3482b4571",
+          "confidence": 0.791918331267606,
+          "terminology": "http://snomed.info/sct",
+          "code": "247410004",
+          "name": "Painful cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "db8be721-e1c5-4ac7-9760-f35effd309d8",
+          "confidence": 0.7911450687396598,
+          "terminology": "http://snomed.info/sct",
+          "code": "11833005",
+          "name": "Dry cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "91af69b0-e0c2-4904-8ae7-8166c7a4b69d",
+          "confidence": 0.7826956994174966,
+          "terminology": "http://snomed.info/sct",
+          "code": "10151000132103",
+          "name": "Viral fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "85bc815e-9646-458a-b93f-71f0b6a2bc91",
+          "confidence": 0.7797518001294773,
+          "terminology": "http://snomed.info/sct",
+          "code": "95658004",
+          "name": "Cough headache syndrome",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "76d6dc9e-8aed-45c7-9dde-0187cba8908f",
+          "confidence": 0.7795109093857939,
+          "terminology": "http://snomed.info/sct",
+          "code": "193028008",
+          "name": "Sick headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "eacde20b-0a9c-430b-9acc-1f93e73749ab",
+          "confidence": 0.7794028333482574,
+          "terminology": "http://snomed.info/sct",
+          "code": "289114008",
+          "name": "Does cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "85183b02-ea91-4058-8867-69d09c1dfeea",
+          "confidence": 0.7737924776784801,
+          "terminology": "http://snomed.info/sct",
+          "code": "161932002",
+          "name": "Morning cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "523488a6-d7ff-463d-975b-9c64bbc7aaa3",
+          "confidence": 0.7734000929366545,
+          "terminology": "http://snomed.info/sct",
+          "code": "162298006",
+          "name": "No headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "ceaf26d2-b5db-4fa0-bdb0-3d3306c68141",
+          "confidence": 0.7683679085198346,
+          "terminology": "http://snomed.info/sct",
+          "code": "135883003",
+          "name": "Cough with fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "5a2626c5-9fab-4f48-a8f5-44907592a6df",
+          "confidence": 0.752794342639101,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "A01.0",
+          "name": "Typhoid fever",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "1da69f5d-2095-4611-9cf4-b1fbfb0c2556",
+          "confidence": 0.7464231523575786,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "A21",
+          "name": "Tularemia",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "a8faac63-fb8a-43ce-8e94-dd134ffa7f59",
+          "confidence": 0.7344042072731657,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R05.3",
+          "name": "Chronic cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "4237ea4f-d318-49a4-b560-57d56f23fcc5",
+          "confidence": 0.7171013523635182,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "G44.83",
+          "name": "Primary cough headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "04c339b5-2597-4860-9b9e-6b0aec574375",
+          "confidence": 0.7156706354124182,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "G44.81",
+          "name": "Hypnic headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "b0f8a104-6df9-453b-b0dc-ebc9378f0a01",
+          "confidence": 0.7069534300411735,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "R51.9",
+          "name": "Headache, unspecified",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "b3b2ea75-5aa8-472f-8ba5-45aae2f3501e",
+          "confidence": 0.7646629764048074,
+          "terminology": "http://snomed.info/sct",
+          "code": "161933007",
+          "name": "Evening cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "144abbfa-60ad-44de-8e2b-163d3d857a14",
+          "confidence": 0.7588601695413165,
+          "terminology": "http://snomed.info/sct",
+          "code": "46802002",
+          "name": "Smokers' cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "890f2e46-f0bc-41f2-99cb-094e09e37bf8",
+          "confidence": 0.7572870106065992,
+          "terminology": "http://snomed.info/sct",
+          "code": "162307009",
+          "name": "Aching headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "d330d05f-76c2-4b7b-9b74-b956c1e0b574",
+          "confidence": 0.7512536940408359,
+          "terminology": "http://snomed.info/sct",
+          "code": "466841000124105",
+          "name": "Headache after cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "de6e1a88-de8c-4a63-953a-d04c5135096e",
+          "confidence": 0.7449323620142676,
+          "terminology": "http://snomed.info/sct",
+          "code": "28743005",
+          "name": "Productive cough",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "2b78419c-22a2-420c-a27a-f7e8cb6c59ce",
+          "confidence": 0.7424880190092411,
+          "terminology": "http://snomed.info/sct",
+          "code": "571000119103",
+          "name": "Daily headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "e913638b-baf6-45ba-b7cc-0bb13dedfdc3",
+          "confidence": 0.7373045657849144,
+          "terminology": "http://snomed.info/sct",
+          "code": "274640006",
+          "name": "Fever with chills",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "a2f85fda-fea7-4eb1-9f49-d9fa02a9986f",
+          "confidence": 0.7273170922871617,
+          "terminology": "http://snomed.info/sct",
+          "code": "135882008",
+          "name": "Feverish cold",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "719b8532-beb2-4012-964b-7f5454bbcf5a",
+          "confidence": 0.7255470139648403,
+          "terminology": "http://snomed.info/sct",
+          "code": "162310002",
+          "name": "Morning headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "73012c54-6604-400f-af6f-fde0d024cfce",
+          "confidence": 0.7230844578254055,
+          "terminology": "http://snomed.info/sct",
+          "code": "162308004",
+          "name": "Throbbing headache",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "c1c0ceaf-c06b-495a-956b-78cf097ac675",
+          "confidence": 0.7214544202016252,
+          "terminology": "http://snomed.info/sct",
+          "code": "722892007",
+          "name": "Fever due to infection",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        },
+        {
+          "id": "1a76ceff-ba13-4b98-987e-c7351de96674",
+          "confidence": 0.7194267492897093,
+          "terminology": "http://snomed.info/sct",
+          "code": "7142008",
+          "name": "Cough at rest",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 26
+        }
+      ],
+      "status": "final",
+      "mappingCt": 38
+    }
+  ],
+  "status": "final"
+}

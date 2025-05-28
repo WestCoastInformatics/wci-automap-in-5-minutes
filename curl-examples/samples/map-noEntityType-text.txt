@@ -1,0 +1,494 @@
+{
+  "id": "ae4c397a-c0b7-48fd-9503-df1a870ac815",
+  "modified": "2025-05-27T18:46:02.732-07:00",
+  "created": "2025-05-27T18:44:36.027-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "000a2ed4-f3c5-44e4-87ae-19544a27736c",
+      "modified": "2025-05-27T18:46:02.434-07:00",
+      "created": "2025-05-27T18:44:35.818-07:00",
+      "modifiedBy": "system",
+      "taskId": "ae4c397a-c0b7-48fd-9503-df1a870ac815",
+      "inputType": "string",
+      "term": "chest mri",
+      "mappings": [
+        {
+          "id": "6156bc76-04a0-4816-b347-d82025b6545f",
+          "confidence": 0.7898486128187037,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71551",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); with contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "9eb58aa7-ec91-4eac-8879-0ec424ed52c0",
+          "confidence": 0.7733401609524504,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71550",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); without contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "c57ab36e-4b93-4c17-b0ce-d392b0eedf44",
+          "confidence": 0.7564368462422304,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71552",
+          "name": "Magnetic resonance (eg, proton) imaging, chest (eg, for evaluation of hilar and mediastinal lymphadenopathy); without contrast material(s), followed by contrast material(s) and further sequences",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "0aab9223-ffe2-4e5b-9409-e19170de77ab",
+          "confidence": 0.750959810139281,
+          "terminology": "http://loinc.org",
+          "code": "24629-8",
+          "name": "Multisection:Find:Pt:Chest:Doc:MR",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "534f3d28-dd58-4be6-8521-92b65ef4e17a",
+          "confidence": 0.9792900388556683,
+          "terminology": "http://snomed.info/sct",
+          "code": "6007000",
+          "name": "MRI of chest",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "8610b3f0-15e4-49c4-8955-5d45689b7c56",
+          "confidence": 0.8496474970465271,
+          "terminology": "http://snomed.info/sct",
+          "code": "416465001",
+          "name": "MRI of thorax abnormal",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "5abb2dbb-dc40-4404-9eaa-045dbd51155a",
+          "confidence": 0.8348887965280566,
+          "terminology": "http://snomed.info/sct",
+          "code": "62658002",
+          "name": "MRI of chest and myocardium",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "bb16835a-dfd7-4ad9-8edc-f0fbbf104464",
+          "confidence": 0.8310832589874838,
+          "terminology": "http://snomed.info/sct",
+          "code": "16334561000119101",
+          "name": "MRI of chest without contrast",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "45188733-0376-4c64-a682-441ff17405d5",
+          "confidence": 0.8222599671912435,
+          "terminology": "http://snomed.info/sct",
+          "code": "432815006",
+          "name": "MRI of chest with contrast",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "f704df3c-f68a-420d-9284-60283e5748cc",
+          "confidence": 0.8184778765954649,
+          "terminology": "http://snomed.info/sct",
+          "code": "609220009",
+          "name": "MRI of chest for mediastinal lymphadenopathy",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "7a13f447-bced-48ce-88fb-c6342c2234d5",
+          "confidence": 0.79094474844491,
+          "terminology": "http://snomed.info/sct",
+          "code": "425803006",
+          "name": "Region of thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "344c7c12-70c1-4c44-85e9-16ba8ea8dba2",
+          "confidence": 0.7833863281399345,
+          "terminology": "http://snomed.info/sct",
+          "code": "413815006",
+          "name": "Chest imaging",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "6a62ed46-0bc9-47d0-bf77-cf7698528811",
+          "confidence": 0.7830425678505718,
+          "terminology": "http://snomed.info/sct",
+          "code": "272710004",
+          "name": "Bone structure of thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "46c9337c-89b0-4390-a8a1-8073c2987d92",
+          "confidence": 0.7798997806603819,
+          "terminology": "http://snomed.info/sct",
+          "code": "241616006",
+          "name": "MRI of lungs",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "60789267-d520-4662-aa98-08110d3fa805",
+          "confidence": 0.7739026376294164,
+          "terminology": "http://snomed.info/sct",
+          "code": "51185008",
+          "name": "Thoracic structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "60c6e298-c65c-4182-9d1c-37918901dea0",
+          "confidence": 0.766414039992778,
+          "terminology": "http://snomed.info/sct",
+          "code": "74160004",
+          "name": "Skin structure of chest",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "222f3d95-f69d-4fc1-95c7-e3ea016a97e6",
+          "confidence": 0.76470530030442,
+          "terminology": "http://snomed.info/sct",
+          "code": "65867009",
+          "name": "MRI of mediastinum",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "0adddd3a-617a-4ed3-bb60-26264cb06455",
+          "confidence": 0.7618189557295506,
+          "terminology": "http://snomed.info/sct",
+          "code": "432314002",
+          "name": "MRI of sternum",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "5dbc0028-5781-443c-8212-ad1cb58b0d6a",
+          "confidence": 0.7565903418071688,
+          "terminology": "http://snomed.info/sct",
+          "code": "699593001",
+          "name": "Structure of thoracic cavity and/or content",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "7e91ad9e-d981-4f94-a033-ea3a3d4df0fb",
+          "confidence": 0.7549612202108356,
+          "terminology": "http://snomed.info/sct",
+          "code": "40768004",
+          "name": "Left thorax structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "73b6ba0f-a89a-4474-9ad5-3eb92d7e9eba",
+          "confidence": 0.7510414835430625,
+          "terminology": "http://snomed.info/sct",
+          "code": "272614001",
+          "name": "Structure of surface region of thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "d5975f14-5ef6-4fd2-963b-d143eaa73da7",
+          "confidence": 0.7506679779289231,
+          "terminology": "http://snomed.info/sct",
+          "code": "699642002",
+          "name": "Structure of lower chest wall",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "cf2f0486-642e-465a-a9e1-ad591a80fe29",
+          "confidence": 0.7282512530128711,
+          "terminology": "http://www.ama-assn.org/go/cpt",
+          "code": "71555",
+          "name": "Magnetic resonance angiography, chest (excluding myocardium), with or without contrast material(s)",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "cfc185bb-00d2-40df-8ebc-3e2e8a316a03",
+          "confidence": 0.7371035167421685,
+          "terminology": "http://loinc.org",
+          "code": "24627-2",
+          "name": "Multisection:Find:Pt:Chest:Doc:CT",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "05a4848c-f133-46de-8bd0-b21387054c4b",
+          "confidence": 0.7256187660000855,
+          "terminology": "http://loinc.org",
+          "code": "36089-1",
+          "name": "Multisection limited:Find:Pt:Chest:Doc:CT",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "c4bbc5d8-6d20-4e03-9dee-18a7d3965d45",
+          "confidence": 0.7199765069543349,
+          "terminology": "http://loinc.org",
+          "code": "30631-6",
+          "name": "Views:Find:Pt:Chest:Doc:RF",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "aefa8bcf-86bb-45e2-82d5-0ceebc721640",
+          "confidence": 0.7171478726353033,
+          "terminology": "http://loinc.org",
+          "code": "24657-9",
+          "name": "Multisection:Find:Pt:Chest:Doc:XR.tomography",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "30b1bdee-2488-4ff7-95af-09a30400ad1d",
+          "confidence": 0.7168657461917308,
+          "terminology": "http://loinc.org",
+          "code": "30745-4",
+          "name": "Views:Find:Pt:Chest:Doc:XR",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "a32e0c6d-46ed-4cd7-99c4-83c0e71fa637",
+          "confidence": 0.7501849686266464,
+          "terminology": "http://snomed.info/sct",
+          "code": "241647000",
+          "name": "MRI of thoracic spine",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "fd55e4d5-0f39-4a69-b020-77ebf45af9a7",
+          "confidence": 0.7441878921772457,
+          "terminology": "http://snomed.info/sct",
+          "code": "302551006",
+          "name": "Entire thorax",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "f02134a4-a72b-416d-bc3a-f69fe2ac3f3a",
+          "confidence": 0.7399558012678238,
+          "terminology": "http://snomed.info/sct",
+          "code": "440299000",
+          "name": "Mass of thoracic structure",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "c90b93bd-ff0a-41b5-a939-5b1167bd2033",
+          "confidence": 0.7388409989985532,
+          "terminology": "http://snomed.info/sct",
+          "code": "289960006",
+          "name": "Structure of musculoskeletal system of thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "77ac7d2c-2ff5-4131-9392-9d17c98d7d0f",
+          "confidence": 0.7384089196647445,
+          "terminology": "http://snomed.info/sct",
+          "code": "78904004",
+          "name": "Chest wall structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "7f5d1268-fe87-4313-bb98-eba1989df3e3",
+          "confidence": 0.7342518785783294,
+          "terminology": "http://snomed.info/sct",
+          "code": "264074005",
+          "name": "Surface region of lower chest",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "d7b263f6-bae7-4455-8424-727a1c5e50a0",
+          "confidence": 0.7322918380182712,
+          "terminology": "http://snomed.info/sct",
+          "code": "128246000",
+          "name": "Middle left thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "24fea734-8bba-46c9-8597-4b003899792a",
+          "confidence": 0.7310259580055252,
+          "terminology": "http://snomed.info/sct",
+          "code": "397384004",
+          "name": "Thoracic mesothelium",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "f64b3dee-3a12-474a-a726-b8e262840a19",
+          "confidence": 0.7262771270809589,
+          "terminology": "http://snomed.info/sct",
+          "code": "51872008",
+          "name": "Right thorax structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "b53f6b55-d6b3-4abc-8103-e1d06f34462f",
+          "confidence": 0.7218874057041954,
+          "terminology": "http://snomed.info/sct",
+          "code": "76052000",
+          "name": "Structure of posterior chest wall",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "fd243c60-f843-4fbc-a442-0a03bb3505ee",
+          "confidence": 0.7186515583194474,
+          "terminology": "http://snomed.info/sct",
+          "code": "34922002",
+          "name": "Lung field",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "67b1c941-147a-45c4-9ddf-1812de9cb514",
+          "confidence": 0.7114756609312924,
+          "terminology": "http://snomed.info/sct",
+          "code": "169037009",
+          "name": "Tomography - chest",
+          "entityType": "procedure",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "c9017770-ac03-4a1b-864e-2d9b55207b5d",
+          "confidence": 0.7099721627740635,
+          "terminology": "http://snomed.info/sct",
+          "code": "122495006",
+          "name": "Thoracic spine structure",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "5cf6cecc-0bfc-49cd-924c-4859039b2729",
+          "confidence": 0.7091509607880456,
+          "terminology": "http://snomed.info/sct",
+          "code": "372216005",
+          "name": "Part of chest wall",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "6442904b-76b6-4744-b3d9-22a21334e9ff",
+          "confidence": 0.7070577227948156,
+          "terminology": "http://snomed.info/sct",
+          "code": "301708006",
+          "name": "Chest clear",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "697fab19-6e6e-4153-addb-64b0921114e3",
+          "confidence": 0.7046501729710208,
+          "terminology": "http://snomed.info/sct",
+          "code": "416550000",
+          "name": "Chest and abdomen",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "3f8ffd7f-6b7c-4a9c-9e65-8b93704f6a53",
+          "confidence": 0.7015952406002116,
+          "terminology": "http://snomed.info/sct",
+          "code": "816094009",
+          "name": "Cross-sectional thorax",
+          "entityType": "bodyPart",
+          "startIndex": 0,
+          "endIndex": 9
+        },
+        {
+          "id": "655cfe1f-aff0-4f81-8e24-4e2871ff9baf",
+          "confidence": 0.7010540402093992,
+          "terminology": "http://snomed.info/sct",
+          "code": "830011000",
+          "name": "Normal chest",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 9
+        }
+      ],
+      "status": "final",
+      "mappingCt": 46
+    }
+  ],
+  "status": "final"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "0aea937a-2bad-4345-a0ba-b316f9c680c9",
+  "modified": "2025-05-27T18:52:23.512-07:00",
+  "created": "2025-05-27T18:52:23.241-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "terms": [
+    {
+      "id": "90f30d45-3903-4d7f-a956-faa04ddacf90",
+      "modified": "2025-05-27T18:52:23.398-07:00",
+      "created": "2025-05-27T18:52:23.048-07:00",
+      "modifiedBy": "system",
+      "taskId": "0aea937a-2bad-4345-a0ba-b316f9c680c9",
+      "entityType": "condition",
+      "inputType": "string",
+      "code": "22298006",
+      "terminology": "http://snomed.info/sct",
+      "mappings": [
+        {
+          "id": "6587b5c5-bc07-46dd-968a-6ad8a8d7baa3",
+          "confidence": 0.7,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "name": "No target",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "56b4c405-a6a4-432c-8187-c3bf0e779c03",
+          "confidence": 0.97144826646658,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "d3b6b24a-7a45-4a6b-82b1-b1c1c7e747c7",
+          "confidence": 0.7,
+          "terminology": "http://snomed.info/sct",
+          "name": "No target",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        }
+      ],
+      "status": "final",
+      "mappingCt": 1
+    }
+  ],
+  "status": "final"
+}

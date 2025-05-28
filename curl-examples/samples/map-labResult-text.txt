@@ -1,0 +1,85 @@
+{
+  "id": "c050069c-9f2f-49d1-a2cc-cca3e4cc582c",
+  "modified": "2025-05-27T18:51:23.593-07:00",
+  "created": "2025-05-27T18:51:21.854-07:00",
+  "modifiedBy": "system",
+  "tags": [
+    {
+      "key": "userId",
+      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+    },
+    {
+      "key": "server.version",
+      "value": "unset"
+    }
+  ],
+  "audit": false,
+  "minConfidence": 0.7,
+  "terms": [
+    {
+      "id": "3a695798-fbfd-4460-a08f-654e50511fb2",
+      "modified": "2025-05-27T18:51:23.329-07:00",
+      "created": "2025-05-27T18:51:21.399-07:00",
+      "modifiedBy": "system",
+      "taskId": "c050069c-9f2f-49d1-a2cc-cca3e4cc582c",
+      "entityType": "labResult",
+      "inputType": "string",
+      "term": "sodium",
+      "mappings": [
+        {
+          "id": "29d944a8-4167-40ef-b9b7-7427f20ba4c1",
+          "confidence": 0.7821856727130644,
+          "terminology": "http://loinc.org",
+          "code": "9485-4",
+          "name": "Sodium:MCnc:Pt:Water:Qn",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6
+        },
+        {
+          "id": "32202d2a-8f0d-4bb0-bc01-e6bff3bb9c74",
+          "confidence": 0.7763482612484568,
+          "terminology": "http://loinc.org",
+          "code": "51205-3",
+          "name": "Sodium:MCnt:Pt:Hair:Qn",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6
+        },
+        {
+          "id": "01e4edc8-69ef-47b5-aa4a-ab99edeb106a",
+          "confidence": 0.770741021461505,
+          "terminology": "http://loinc.org",
+          "code": "2951-2",
+          "name": "Sodium:SCnc:Pt:Ser/Plas:Qn",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6
+        },
+        {
+          "id": "f1bbd768-fa51-4805-9ce1-25a0b5e76766",
+          "confidence": 0.7668598560229714,
+          "terminology": "http://loinc.org",
+          "code": "42570-2",
+          "name": "Sodium:MSCnc:Pt:Ser/Plas:Qn",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6
+        },
+        {
+          "id": "37d5a536-e026-490a-85f7-7b2fd150c466",
+          "confidence": 0.7442639183158786,
+          "terminology": "http://loinc.org",
+          "code": "21527-7",
+          "name": "Sodium:MRat:24H:Urine:Qn",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6
+        }
+      ],
+      "status": "final",
+      "mappingCt": 5
+    }
+  ],
+  "status": "final"
+}
