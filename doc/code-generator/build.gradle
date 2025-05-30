@@ -6,13 +6,12 @@ plugins {
   id 'maven-publish'
 }
 
-group = "com.wci.termhub"
+group = "com.wci.automap"
 version = "1.0.0-SNAPSHOT"
 
 // Input Specification locations. When using the inputFile, make sure you've updated
 // the doc with the changes you want to generate
-def inputURL = 'https://api.terminologyhub.com/terminology/doc/v3/api-docs'
-//def inputURL = 'https://dev.terminologyhub.com/terminology/doc/v3/api-docs'
+def inputURL = 'https://automap.terminology.tools/v3/api-docs'
 
 repositories {
   mavenCentral()
@@ -25,24 +24,127 @@ test {
   useJUnitPlatform()
 }
 
+final artifactGroup = "${group}"
+final artifactVersion = "${version}"
+final artifactId = 'wci-automap-java-client'
+
 /**
  * Builds a Java client by default: https://openapi-generator.tech/docs/generators/java/
  * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
 */
 tasks.register('buildJavaSdk', GenerateTask) {
- generatorName.set("java")
- remoteInputSpec.set(inputURL)
- outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
- apiPackage.set("api")
- invokerPackage.set("api.invoker")
- modelPackage.set("api.model")
- configOptions.set([
-     "packageName": "termhub",
+  generatorName.set("java")
+  remoteInputSpec.set(inputURL)
+  outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
+  apiPackage.set("api")
+  invokerPackage.set("api.invoker")
+  modelPackage.set("api.model")
+  configOptions.set([
+     "packageName": "automap",
      "library": "jersey3",
      "serializationLibrary": "jackson",
      "hideGenerationTimestamp": "false",
-     "ignoreUnknown": "true"
- ])
+     "ignoreUnknown": "true",
+     "java8": "false", // disables Java 8 specific code
+     "dateLibrary": "java17" // or "java17" if supported by your generator version
+  ])
+}
+
+/**
+ * Cannot exclude from build, so remove the unwanted APIs and associated tests.
+ */
+tasks.register('removeUnwantedApis') {
+    doLast {
+        delete fileTree(
+            dir: "${buildDir}/java/src/main/java/api",
+            include: ['NlmApi.java', 'TerminologyApi.java']
+        )
+        delete fileTree(
+            dir: "${buildDir}/java/src/test/java/api",
+            include: ['NlmApiTest.java', 'TerminologyApiTest.java']
+        )
+    }
+}
+
+/**
+ * Patch the generated build.gradle file to use Java 17 and the correct artifactId.
+ */
+tasks.register('patchGeneratedJavaVersion') {
+    doLast {
+        def gradleFile = file("$buildDir/java/build.gradle")
+        if (gradleFile.exists()) {
+            println "Patching Java version in ${gradleFile}..."
+            def text = gradleFile.text
+            text = text.replaceAll(
+                /sourceCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
+                'sourceCompatibility = JavaVersion.VERSION_17'
+            ).replaceAll(
+                /targetCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
+                'targetCompatibility = JavaVersion.VERSION_17'
+            ).replaceAll(
+                /sourceCompatibility\s*=\s*['"]1\.8['"]/,
+                'sourceCompatibility = \'17\''
+            ).replaceAll(
+                /targetCompatibility\s*=\s*['"]1\.8['"]/,
+                'targetCompatibility = \'17\''
+            )
+            gradleFile.text = text
+        } else {
+            println "No generated build.gradle found at ${gradleFile}"
+        }
+    }
+}
+
+/**
+ * Patch the generated build.gradle file to use the correct group, version, artifactId, and JAR name.
+ */
+tasks.register('patchGeneratedArtifactId') {
+    doLast {
+        def gradleFile = file("$buildDir/java/build.gradle")
+        if (gradleFile.exists()) {
+            println "Patching group, version, artifactId, and JAR name in ${gradleFile}..."
+            def text = gradleFile.text
+            text = text.replaceFirst(
+                /group\s*=\s*['"].*['"]/,
+                "group = '${artifactGroup}'"
+            )
+            text = text.replaceFirst(
+                /version\s*=\s*['"].*['"]/,
+                "version = '${artifactVersion}'"
+            )
+            text = text.replaceAll(
+                /artifactId\s*=\s*['"][^'"]*['"]/,
+                "artifactId = '${artifactId}'"
+            )
+            // Patch JAR file name
+            if (text.contains('tasks.withType(Jar)')) {
+                text = text.replaceAll(
+                    /archiveBaseName\.set\(['"].*['"]\)/,
+                    "archiveBaseName.set('${artifactId}')"
+                ).replaceAll(
+                    /archiveVersion\.set\(['"].*['"]\)/,
+                    "archiveVersion.set('${artifactVersion}')"
+                )
+            } else {
+                text += """
+tasks.withType(Jar) {
+    archiveBaseName.set('${artifactId}')
+    archiveVersion.set('${artifactVersion}')
+}
+"""
+            }
+            gradleFile.text = text
+        } else {
+            println "No generated build.gradle found at ${gradleFile}"
+        }
+    }
+}
+
+/**
+ * Run the tasks in the correct order.
+ */
+tasks.named('buildJavaSdk') {
+    finalizedBy('removeUnwantedApis', 'patchGeneratedJavaVersion', 'patchGeneratedArtifactId')
 }
 
 /**
@@ -56,7 +158,7 @@ tasks.register('buildPythonSdk', GenerateTask) {
   apiPackage.set("api")
   modelPackage.set("models")
   configOptions.set([
-          "packageName": "termhub",
+          "packageName": "automap",
           "hideGenerationTimestamp": "false",
   ])
 }
@@ -69,9 +171,9 @@ tasks.register('buildPythonSdk', GenerateTask) {
 //  generatorName.set("go")
 //  remoteInputSpec.set(inputURL)
 //  outputDir.set("$buildDir/go")
-//  apiPackage.set("com.wci.termhub.api")
-//  invokerPackage.set("com.wci.termhub.api.invoker")
-//  modelPackage.set("com.wci.termhub.api.models")
+//  apiPackage.set("com.wci.automap.api")
+//  invokerPackage.set("com.wci.automap.api.invoker")
+//  modelPackage.set("com.wci.automap.api.models")
 //  configOptions.set([
 //      "packageName": "go-examples",
 //      "hideGenerationTimestamp": "false",
@@ -86,9 +188,9 @@ tasks.register('buildPythonSdk', GenerateTask) {
 //  generatorName.set("javascript")
 //  remoteInputSpec.set(inputURL)
 //  outputDir.set("$buildDir/javascript")
-//  apiPackage.set("com.wci.termhub.api")
-//  invokerPackage.set("com.wci.termhub.api.invoker")
-//  modelPackage.set("com.wci.termhub.api.models")
+//  apiPackage.set("com.wci.automap.api")
+//  invokerPackage.set("com.wci.automap.api.invoker")
+//  modelPackage.set("com.wci.automap.api.models")
 //  configOptions.set([
 //      "packageName": "javascript-examples",
 //      "hideGenerationTimestamp": "false",
@@ -103,9 +205,9 @@ tasks.register('buildPythonSdk', GenerateTask) {
 //  generatorName.set("bash")
 //  remoteInputSpec.set(inputURL)
 //  outputDir.set("$buildDir/bash")
-//  apiPackage.set("com.wci.termhub.api")
-//  invokerPackage.set("com.wci.termhub.api.invoker")
-//  modelPackage.set("com.wci.termhub.api.models")
+//  apiPackage.set("com.wci.automap.api")
+//  invokerPackage.set("com.wci.automap.api.invoker")
+//  modelPackage.set("com.wci.automap.api.models")
 //  configOptions.set([
 //      "packageName": "bash-examples",
 //      "hideGenerationTimestamp": false,
