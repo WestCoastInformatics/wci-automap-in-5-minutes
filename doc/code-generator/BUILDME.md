@@ -1,4 +1,4 @@
-<a name="top" />
+<a name="top"></a>
 
 AUTOMAP REGENERATE CLIENT SDKs
 ==================================
@@ -19,7 +19,7 @@ If you need to regenerate a single client for a given language:
    corresponding "examples" folder.
     1. See [next steps](#tasks-to-regenerate-code--next-steps) for details based on your language generated
 
-**[Back to top](#evsrestapi-generate-client-code)**
+**[Back to top](#top)**
 
 ## How to Build All Clients
 
@@ -33,7 +33,7 @@ swagger documentation url:
    corresponding examples folder.
     1. See [next steps](#tasks-to-regenerate-code--next-steps) for details
 
-**[Back to top](#evsrestapi-generate-client-code)**
+**[Back to top](#top)**
 
 ## Tasks to Regenerate Code & Next Steps...
 
@@ -54,7 +54,7 @@ corresponding `[language]-examples` directory
    **don't** override.
 5. Verify the project builds and the tests run successfully before pushing changes
 
-**[Back to top](#evsrestapi-generate-client-code)**
+**[Back to top](#top)**
 
 ## Resources
 
@@ -64,6 +64,6 @@ corresponding `[language]-examples` directory
 ## Current Contributors
 
 - [Brian Carlsen](https://github.com/bcarlsenca)
-- [Other Contributors](https://github.com/NCIEVS/evsrestapi-client-SDK/graphs/contributors)
+- [Nuno Marques](https://github.com/njmarques)
 
-**[Back to top](#evsrestapi-generate-client-code)**
+**[Back to top](#top)**
