@@ -12,7 +12,7 @@ This system supports use cases including
 * Updating retired codes through history mechanisms to verison codes
 * Linking of snippets of clinical text to standard terminology codes
 
-[Tutorial Training Video](https://youtu.be/TBD)
+[Tutorial Training Video](https://youtu.be/2WHiJzzVUi8)
 
 **Reference deployments**
 
