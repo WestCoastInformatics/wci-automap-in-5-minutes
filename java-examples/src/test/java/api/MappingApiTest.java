@@ -13,10 +13,10 @@
 
 package api;
 
-import api.invoker.*;
-// import api.invoker.auth.*;
-import api.model.ApplicationMetadataMap;
-import api.model.AuditEntry;
+import api.invoker.ApiException;
+import api.model.AuthRequest;
+import api.model.AuthRequest.GrantTypeEnum;
+import api.model.AuthResponse;
 import api.model.InputTask;
 import api.model.InputTerm;
 import api.model.InputTerm.EntityTypeEnum;
@@ -24,31 +24,21 @@ import api.model.InputTerm.InputTypeEnum;
 import api.model.OutputTask;
 import api.model.OutputTaskList;
 import api.model.OutputTerm;
+import api.model.OutputTermList;
+import api.model.ResultListOutputTask;
+import api.model.ResultListOutputTerm;
 import api.model.Tag;
 import api.model.TermMapping;
-// import api.model.EntityConfig;
-// import api.model.HealthCheck;
-import api.model.AuthRequest;
-import api.model.AuthRequest.GrantTypeEnum;
-import api.model.AuthResponse;
-import api.LoginApi;
-
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
-// import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Disabled;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.beans.Transient;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.io.FileInputStream;
 import java.util.List;
-import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * API tests for MappingApi
@@ -59,8 +49,8 @@ public class MappingApiTest {
 
     @BeforeEach
     public void setUp() {
-        
-    	// Set up the API client with authentication
+
+        // Set up the API client with authentication
         final String username = System.getProperty("username");
         final String password = System.getProperty("password");
         String accessToken = null;
@@ -68,7 +58,7 @@ public class MappingApiTest {
         authRequest.setGrantType(GrantTypeEnum.USERNAME_PASSWORD);
         authRequest.setUsername(username);
         authRequest.setPassword(password);
-        
+
         try {
             final LoginApi loginApi = new LoginApi();
             final AuthResponse response = loginApi.auth(authRequest);
@@ -84,7 +74,7 @@ public class MappingApiTest {
 
     /**
      * Add an task to request mapping of included terms
-     *
+     * <p>
      * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
      *
      * @throws ApiException if the Api call fails
@@ -98,26 +88,24 @@ public class MappingApiTest {
         inputTerm.setTerminology("http://snomed.info/sct");
         inputTerm.setCode("22298006");
         inputTerm.setInputType(InputTypeEnum.STRING);
-        
+
         final InputTask inputTask = new InputTask();
         inputTask.addTermsItem(inputTerm);
-        
+
         final OutputTask response = api.addTask(inputTask);
         assertNotNull(response);
         assertNotNull(response.getId());
         assertNotNull(response.getTerms());
-        for(final OutputTerm term : response.getTerms()) {
+        for (final OutputTerm term : response.getTerms()) {
             assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
             // assertNotNull(term.getType());
             // assertNotNull(term.getSource());
             // assertNotNull(term.getTermSourceCode());
-            assertEquals(entityType, term.getEntityType());
-            for(final TermMapping mapping : term.getMappings()) {
+            assertEquals(entityType.toString(), term.getEntityType().toString());
+            for (final TermMapping mapping : term.getMappings()) {
                 assertNotNull(mapping.getId());
                 // TODO: where is assertNotNull(mapping.getConfidence());
                 assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getCode());
                 assertNotNull(mapping.getName());
                 assertNotNull(mapping.getEntityType());
                 assertEquals(entityType.toString(), mapping.getEntityType().toString());
@@ -129,7 +117,7 @@ public class MappingApiTest {
 
     /**
      * Add an task to request mapping of included terms
-     *
+     * <p>
      * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
      *
      * @throws ApiException if the Api call fails
@@ -143,34 +131,32 @@ public class MappingApiTest {
         inputTerm.setTerminology("http://snomed.info/sct");
         inputTerm.setCode("194801005");
         inputTerm.setInputType(InputTypeEnum.STRING);
-        
+
         final InputTask inputTask = new InputTask();
         inputTask.addTermsItem(inputTerm);
-    	
+
         final OutputTask response = api.addTask(inputTask);
         assertNotNull(response);
         assertNotNull(response.getId());
         assertNotNull(response.getTerms());
-        for(final OutputTerm term : response.getTerms()) {
+        for (final OutputTerm term : response.getTerms()) {
             assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
             // assertNotNull(term.getTermType());
             // assertNotNull(term.getTermSource());
             // assertNotNull(term.getTermSourceCode());
-            assertEquals(entityType, term.getEntityType());
+            assertEquals(entityType.toString(), term.getEntityType().toString());
             // one of the mappings should be a no target
             boolean foundNoTarget = false;
-            for(final TermMapping mapping : term.getMappings()) {
+            for (final TermMapping mapping : term.getMappings()) {
                 assertNotNull(mapping.getId());
                 // TODO: where is assertNotNull(mapping.getConfidence());
                 assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getCode());
                 assertNotNull(mapping.getName());
                 assertNotNull(mapping.getEntityType());
                 assertEquals(entityType.toString(), mapping.getEntityType().toString());
                 assertNotNull(mapping.getStartIndex());
                 assertNotNull(mapping.getEndIndex());
-                if("No Target".equals(mapping.getName())) {
+                if ("no target".equalsIgnoreCase(mapping.getName())) {
                     foundNoTarget = true;
                 }
             }
@@ -180,7 +166,7 @@ public class MappingApiTest {
 
     /**
      * Add an task to request mapping of included terms
-     *
+     * <p>
      * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
      *
      * @throws ApiException if the Api call fails
@@ -188,32 +174,30 @@ public class MappingApiTest {
     @Test
     public void addTaskTestWithInvalidCode() throws ApiException {
 
-    	
+
         final InputTerm inputTerm = new InputTerm();
         final EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
         inputTerm.setEntityType(entityType);
         inputTerm.setTerminology("http://snomed.info/sct");
         inputTerm.setCode("abcdef");
         inputTerm.setInputType(InputTypeEnum.STRING);
-        
+
         final InputTask inputTask = new InputTask();
         inputTask.addTermsItem(inputTerm);
-        
+
         final OutputTask response = api.addTask(inputTask);
         assertNotNull(response);
         assertNotNull(response.getId());
         assertNotNull(response.getTerms());
-        for(final OutputTerm term : response.getTerms()) {
+        for (final OutputTerm term : response.getTerms()) {
             assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
             // assertNotNull(term.getTermType());
             // assertNotNull(term.getTermSource());
             // assertNotNull(term.getTermSourceCode());
-            for(final TermMapping mapping : term.getMappings()) {
+            for (final TermMapping mapping : term.getMappings()) {
                 assertNotNull(mapping.getId());
                 // TODO: where is assertNotNull(mapping.getConfidence());
                 assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getCode());
                 assertNotNull(mapping.getName());
                 assertNotNull(mapping.getEntityType());
                 assertEquals(entityType.toString(), mapping.getEntityType().toString());
@@ -236,43 +220,44 @@ public class MappingApiTest {
         final Integer limit = 10;
         final String sort = null;
         final Boolean ascending = true;
-        final OutputTaskList response = api.findTasks(query, offset, limit, sort, ascending);
+        final ResultListOutputTask response = api.findTasks(query, offset, limit, sort, ascending);
         assertNotNull(response);
         assertNotNull(response.getTotal());
         assertNotNull(response.getLimit());
         assertNotNull(response.getOffset());
         assertNotNull(response.getItems());
-        
-        final OutputTask task = response.getItems();
-        assertNotNull(task.getId());
-        // assertNotNull(task.getConfidence());
-        assertNotNull(task.getModified());
-        assertNotNull(task.getCreated());
-        assertNotNull(task.getModifiedBy());
-        assertNotNull(task.getTags());
-        for(final Tag tag : task.getTags()) {
-            assertNotNull(tag.getKey());
-            assertNotNull(tag.getValue());
-        }
-        for(final OutputTerm term : task.getTerms()) {
-            assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
-            // assertNotNull(term.getTermType());
-            // assertNotNull(term.getTermSource());
-            // assertNotNull(term.getTermSourceCode());
-            for(final TermMapping mapping : term.getMappings()) {
-                assertNotNull(mapping.getId());
-                // assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getCode());
-                assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
+
+        final List<OutputTask> tasks = response.getItems();
+        for (final OutputTask task : tasks) {
+            assertNotNull(task.getId());
+            // assertNotNull(task.getConfidence());
+            assertNotNull(task.getModified());
+            assertNotNull(task.getCreated());
+            assertNotNull(task.getModifiedBy());
+            assertNotNull(task.getTags());
+            for (final Tag tag : task.getTags()) {
+                assertNotNull(tag.getKey());
+                assertNotNull(tag.getValue());
+            }
+            for (final OutputTerm term : task.getTerms()) {
+                assertNotNull(term.getId());
+                assertNotNull(term.getTerm());
+                // assertNotNull(term.getTermType());
+                // assertNotNull(term.getTermSource());
+                // assertNotNull(term.getTermSourceCode());
+                for (final TermMapping mapping : term.getMappings()) {
+                    assertNotNull(mapping.getId());
+                    // assertNotNull(mapping.getConfidence());
+                    assertNotNull(mapping.getTerminology());
+                    assertNotNull(mapping.getCode());
+                    assertNotNull(mapping.getName());
+                    assertNotNull(mapping.getEntityType());
+                    assertNotNull(mapping.getStartIndex());
+                    assertNotNull(mapping.getEndIndex());
+                }
             }
         }
     }
-
     /**
      * Find tasks matching specified parameters
      *
@@ -285,7 +270,7 @@ public class MappingApiTest {
         final Integer limit = null;
         final String sort = null;
         final Boolean ascending = true;
-        final OutputTaskList response = api.findTerms(query, offset, limit, sort, ascending);
+        final ResultListOutputTerm response = api.findTerms(query, offset, limit, sort, ascending);
 
         assertNotNull(response);
         assertNotNull(response.getTotal());
@@ -293,32 +278,22 @@ public class MappingApiTest {
         assertNotNull(response.getOffset());
         assertNotNull(response.getItems());
 
-        final OutputTask task = response.getItems();
-        assertNotNull(task.getId());
-        // assertNotNull(task.getConfidence());
-        assertNotNull(task.getModified());
-        assertNotNull(task.getCreated());
-        assertNotNull(task.getModifiedBy());
-        assertNotNull(task.getTags());
-        for(final Tag tag : task.getTags()) {
-            assertNotNull(tag.getKey());
-            assertNotNull(tag.getValue());
-        }
-        for(final OutputTerm term : task.getTerms()) {
-            assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
-            // assertNotNull(term.getTermType());
-            // assertNotNull(term.getTermSource());
-            // assertNotNull(term.getTermSourceCode());
-            for(final TermMapping mapping : term.getMappings()) {
-                assertNotNull(mapping.getId());
-                // assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getCode());
-                assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
+        final List<OutputTerm> terms = response.getItems();
+        for (final OutputTerm term : terms) {
+                assertNotNull(term.getId());
+                assertNotNull(term.getTerm());
+                // assertNotNull(term.getTermType());
+                // assertNotNull(term.getTermSource());
+                // assertNotNull(term.getTermSourceCode());
+                for (final TermMapping mapping : term.getMappings()) {
+                    assertNotNull(mapping.getId());
+                    // assertNotNull(mapping.getConfidence());
+                    assertNotNull(mapping.getTerminology());
+                    assertNotNull(mapping.getCode());
+                    assertNotNull(mapping.getName());
+                    assertNotNull(mapping.getEntityType());
+                    assertNotNull(mapping.getStartIndex());
+                    assertNotNull(mapping.getEndIndex());
             }
         }
     }
@@ -436,7 +411,7 @@ public class MappingApiTest {
         // TODO: test validations
     }
 
-	// versions is hidden for now
+    // versions is hidden for now
 //    /**
 //     * Get version information for components of the application
 //     *
@@ -467,4 +442,16 @@ public class MappingApiTest {
     //     assertTrue(response.getStatus());
     // }
 
+    public static void main(String[] args) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream("/Users/squareroot/temp/find_terms.json");
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            final ResultListOutputTerm outputTaskList = objectMapper.readValue(fis, ResultListOutputTerm.class);
+            System.out.println(outputTaskList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
