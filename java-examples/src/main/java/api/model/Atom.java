@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,15 +34,15 @@ import api.invoker.JSON;
  * Represents a name with a term type that contributes meaning to a concept
  */
 @JsonPropertyOrder({
-  Atom.JSON_PROPERTY_CODE_ID,
   Atom.JSON_PROPERTY_CONCEPT_ID,
   Atom.JSON_PROPERTY_DESCRIPTOR_ID,
   Atom.JSON_PROPERTY_LOCALE_MAP,
   Atom.JSON_PROPERTY_TERM_TYPE,
+  Atom.JSON_PROPERTY_CODE_ID,
   Atom.JSON_PROPERTY_LOCAL,
+  Atom.JSON_PROPERTY_MODIFIED,
   Atom.JSON_PROPERTY_MODIFIED_BY,
   Atom.JSON_PROPERTY_CREATED,
-  Atom.JSON_PROPERTY_MODIFIED,
   Atom.JSON_PROPERTY_ID,
   Atom.JSON_PROPERTY_ACTIVE,
   Atom.JSON_PROPERTY_NAME,
@@ -50,11 +50,8 @@ import api.invoker.JSON;
   Atom.JSON_PROPERTY_TERMINOLOGY,
   Atom.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Atom {
-  public static final String JSON_PROPERTY_CODE_ID = "codeId";
-  private String codeId;
-
   public static final String JSON_PROPERTY_CONCEPT_ID = "conceptId";
   private String conceptId;
 
@@ -67,17 +64,20 @@ public class Atom {
   public static final String JSON_PROPERTY_TERM_TYPE = "termType";
   private String termType;
 
+  public static final String JSON_PROPERTY_CODE_ID = "codeId";
+  private String codeId;
+
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -99,31 +99,6 @@ public class Atom {
 
   public Atom() { 
   }
-
-  public Atom codeId(String codeId) {
-    this.codeId = codeId;
-    return this;
-  }
-
-   /**
-   * the code in the specified terminology
-   * @return codeId
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCodeId() {
-    return codeId;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCodeId(String codeId) {
-    this.codeId = codeId;
-  }
-
 
   public Atom conceptId(String conceptId) {
     this.conceptId = conceptId;
@@ -233,6 +208,31 @@ public class Atom {
   }
 
 
+  public Atom codeId(String codeId) {
+    this.codeId = codeId;
+    return this;
+  }
+
+   /**
+   * the code in the specified terminology
+   * @return codeId
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCodeId() {
+    return codeId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCodeId(String codeId) {
+    this.codeId = codeId;
+  }
+
+
   public Atom local(Boolean local) {
     this.local = local;
     return this;
@@ -255,6 +255,31 @@ public class Atom {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Atom modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -305,31 +330,6 @@ public class Atom {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Atom modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -503,15 +503,15 @@ public class Atom {
       return false;
     }
     Atom atom = (Atom) o;
-    return Objects.equals(this.codeId, atom.codeId) &&
-        Objects.equals(this.conceptId, atom.conceptId) &&
+    return Objects.equals(this.conceptId, atom.conceptId) &&
         Objects.equals(this.descriptorId, atom.descriptorId) &&
         Objects.equals(this.localeMap, atom.localeMap) &&
         Objects.equals(this.termType, atom.termType) &&
+        Objects.equals(this.codeId, atom.codeId) &&
         Objects.equals(this.local, atom.local) &&
+        Objects.equals(this.modified, atom.modified) &&
         Objects.equals(this.modifiedBy, atom.modifiedBy) &&
         Objects.equals(this.created, atom.created) &&
-        Objects.equals(this.modified, atom.modified) &&
         Objects.equals(this.id, atom.id) &&
         Objects.equals(this.active, atom.active) &&
         Objects.equals(this.name, atom.name) &&
@@ -522,22 +522,22 @@ public class Atom {
 
   @Override
   public int hashCode() {
-    return Objects.hash(codeId, conceptId, descriptorId, localeMap, termType, local, modifiedBy, created, modified, id, active, name, terminologyId, terminology, attributes);
+    return Objects.hash(conceptId, descriptorId, localeMap, termType, codeId, local, modified, modifiedBy, created, id, active, name, terminologyId, terminology, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Atom {\n");
-    sb.append("    codeId: ").append(toIndentedString(codeId)).append("\n");
     sb.append("    conceptId: ").append(toIndentedString(conceptId)).append("\n");
     sb.append("    descriptorId: ").append(toIndentedString(descriptorId)).append("\n");
     sb.append("    localeMap: ").append(toIndentedString(localeMap)).append("\n");
     sb.append("    termType: ").append(toIndentedString(termType)).append("\n");
+    sb.append("    codeId: ").append(toIndentedString(codeId)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

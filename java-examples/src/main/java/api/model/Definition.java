@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,39 +34,39 @@ import api.invoker.JSON;
  * Represents a textual definition for a concept
  */
 @JsonPropertyOrder({
-  Definition.JSON_PROPERTY_CODE,
-  Definition.JSON_PROPERTY_LOCALE_MAP,
   Definition.JSON_PROPERTY_VALUE,
+  Definition.JSON_PROPERTY_LOCALE_MAP,
+  Definition.JSON_PROPERTY_CODE,
   Definition.JSON_PROPERTY_LOCAL,
+  Definition.JSON_PROPERTY_MODIFIED,
   Definition.JSON_PROPERTY_MODIFIED_BY,
   Definition.JSON_PROPERTY_CREATED,
-  Definition.JSON_PROPERTY_MODIFIED,
   Definition.JSON_PROPERTY_ID,
   Definition.JSON_PROPERTY_ACTIVE,
   Definition.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Definition {
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
+  public static final String JSON_PROPERTY_VALUE = "value";
+  private String value;
 
   public static final String JSON_PROPERTY_LOCALE_MAP = "localeMap";
   private Map<String, Boolean> localeMap = new HashMap<>();
 
-  public static final String JSON_PROPERTY_VALUE = "value";
-  private String value;
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -80,28 +80,28 @@ public class Definition {
   public Definition() { 
   }
 
-  public Definition code(String code) {
-    this.code = code;
+  public Definition value(String value) {
+    this.value = value;
     return this;
   }
 
    /**
-   * the code in the specified terminology
-   * @return code
+   * the definition value itself
+   * @return value
   **/
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getCode() {
-    return code;
+  public String getValue() {
+    return value;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(JSON_PROPERTY_VALUE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
+  public void setValue(String value) {
+    this.value = value;
   }
 
 
@@ -138,28 +138,28 @@ public class Definition {
   }
 
 
-  public Definition value(String value) {
-    this.value = value;
+  public Definition code(String code) {
+    this.code = code;
     return this;
   }
 
    /**
-   * the definition value itself
-   * @return value
+   * the code in the specified terminology
+   * @return code
   **/
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getValue() {
-    return value;
+  public String getCode() {
+    return code;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonProperty(JSON_PROPERTY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValue(String value) {
-    this.value = value;
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -185,6 +185,31 @@ public class Definition {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Definition modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -235,31 +260,6 @@ public class Definition {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Definition modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -350,13 +350,13 @@ public class Definition {
       return false;
     }
     Definition definition = (Definition) o;
-    return Objects.equals(this.code, definition.code) &&
+    return Objects.equals(this.value, definition.value) &&
         Objects.equals(this.localeMap, definition.localeMap) &&
-        Objects.equals(this.value, definition.value) &&
+        Objects.equals(this.code, definition.code) &&
         Objects.equals(this.local, definition.local) &&
+        Objects.equals(this.modified, definition.modified) &&
         Objects.equals(this.modifiedBy, definition.modifiedBy) &&
         Objects.equals(this.created, definition.created) &&
-        Objects.equals(this.modified, definition.modified) &&
         Objects.equals(this.id, definition.id) &&
         Objects.equals(this.active, definition.active) &&
         Objects.equals(this.terminology, definition.terminology);
@@ -364,20 +364,20 @@ public class Definition {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, localeMap, value, local, modifiedBy, created, modified, id, active, terminology);
+    return Objects.hash(value, localeMap, code, local, modified, modifiedBy, created, id, active, terminology);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Definition {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    localeMap: ").append(toIndentedString(localeMap)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    localeMap: ").append(toIndentedString(localeMap)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");

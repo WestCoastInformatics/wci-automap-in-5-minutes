@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -35,56 +35,56 @@ import api.invoker.JSON;
  * Represents a concept position in a hierarchical tree with a path to the root
  */
 @JsonPropertyOrder({
+  ConceptTreePosition.JSON_PROPERTY_LEVEL,
   ConceptTreePosition.JSON_PROPERTY_CHILDREN,
   ConceptTreePosition.JSON_PROPERTY_ANCESTOR_PATH,
-  ConceptTreePosition.JSON_PROPERTY_CHILD_CT,
-  ConceptTreePosition.JSON_PROPERTY_CONCEPT,
-  ConceptTreePosition.JSON_PROPERTY_LEVEL,
-  ConceptTreePosition.JSON_PROPERTY_CODE,
   ConceptTreePosition.JSON_PROPERTY_ADDITIONAL_TYPE,
+  ConceptTreePosition.JSON_PROPERTY_CONCEPT,
+  ConceptTreePosition.JSON_PROPERTY_CODE,
+  ConceptTreePosition.JSON_PROPERTY_CHILD_CT,
   ConceptTreePosition.JSON_PROPERTY_LOCAL,
+  ConceptTreePosition.JSON_PROPERTY_MODIFIED,
   ConceptTreePosition.JSON_PROPERTY_MODIFIED_BY,
   ConceptTreePosition.JSON_PROPERTY_CREATED,
-  ConceptTreePosition.JSON_PROPERTY_MODIFIED,
   ConceptTreePosition.JSON_PROPERTY_ID,
   ConceptTreePosition.JSON_PROPERTY_ACTIVE,
   ConceptTreePosition.JSON_PROPERTY_NAME,
   ConceptTreePosition.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ConceptTreePosition {
+  public static final String JSON_PROPERTY_LEVEL = "level";
+  private Integer level;
+
   public static final String JSON_PROPERTY_CHILDREN = "children";
   private List<ConceptTreePosition> children = new ArrayList<>();
 
   public static final String JSON_PROPERTY_ANCESTOR_PATH = "ancestorPath";
   private String ancestorPath;
 
-  public static final String JSON_PROPERTY_CHILD_CT = "childCt";
-  private Integer childCt;
+  public static final String JSON_PROPERTY_ADDITIONAL_TYPE = "additionalType";
+  private String additionalType;
 
   public static final String JSON_PROPERTY_CONCEPT = "concept";
   private Concept concept;
 
-  public static final String JSON_PROPERTY_LEVEL = "level";
-  private Integer level;
-
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;
 
-  public static final String JSON_PROPERTY_ADDITIONAL_TYPE = "additionalType";
-  private String additionalType;
+  public static final String JSON_PROPERTY_CHILD_CT = "childCt";
+  private Integer childCt;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -100,6 +100,31 @@ public class ConceptTreePosition {
 
   public ConceptTreePosition() { 
   }
+
+  public ConceptTreePosition level(Integer level) {
+    this.level = level;
+    return this;
+  }
+
+   /**
+   * the level of depth in the hierarchy of this node
+   * @return level
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LEVEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getLevel() {
+    return level;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_LEVEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLevel(Integer level) {
+    this.level = level;
+  }
+
 
   public ConceptTreePosition children(List<ConceptTreePosition> children) {
     this.children = children;
@@ -159,28 +184,28 @@ public class ConceptTreePosition {
   }
 
 
-  public ConceptTreePosition childCt(Integer childCt) {
-    this.childCt = childCt;
+  public ConceptTreePosition additionalType(String additionalType) {
+    this.additionalType = additionalType;
     return this;
   }
 
    /**
-   * the child count of this node
-   * @return childCt
+   * the more specific type of relationship (more information about this label is provided in the terminology metadata)
+   * @return additionalType
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CHILD_CT)
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getChildCt() {
-    return childCt;
+  public String getAdditionalType() {
+    return additionalType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CHILD_CT)
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setChildCt(Integer childCt) {
-    this.childCt = childCt;
+  public void setAdditionalType(String additionalType) {
+    this.additionalType = additionalType;
   }
 
 
@@ -209,31 +234,6 @@ public class ConceptTreePosition {
   }
 
 
-  public ConceptTreePosition level(Integer level) {
-    this.level = level;
-    return this;
-  }
-
-   /**
-   * the level of depth in the hierarchy of this node
-   * @return level
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LEVEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getLevel() {
-    return level;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_LEVEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setLevel(Integer level) {
-    this.level = level;
-  }
-
-
   public ConceptTreePosition code(String code) {
     this.code = code;
     return this;
@@ -259,28 +259,28 @@ public class ConceptTreePosition {
   }
 
 
-  public ConceptTreePosition additionalType(String additionalType) {
-    this.additionalType = additionalType;
+  public ConceptTreePosition childCt(Integer childCt) {
+    this.childCt = childCt;
     return this;
   }
 
    /**
-   * the more specific type of relationship (more information about this label is provided in the terminology metadata)
-   * @return additionalType
+   * the child count of this node
+   * @return childCt
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
+  @JsonProperty(JSON_PROPERTY_CHILD_CT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getAdditionalType() {
-    return additionalType;
+  public Integer getChildCt() {
+    return childCt;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
+  @JsonProperty(JSON_PROPERTY_CHILD_CT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdditionalType(String additionalType) {
-    this.additionalType = additionalType;
+  public void setChildCt(Integer childCt) {
+    this.childCt = childCt;
   }
 
 
@@ -306,6 +306,31 @@ public class ConceptTreePosition {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public ConceptTreePosition modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -356,31 +381,6 @@ public class ConceptTreePosition {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public ConceptTreePosition modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -496,17 +496,17 @@ public class ConceptTreePosition {
       return false;
     }
     ConceptTreePosition conceptTreePosition = (ConceptTreePosition) o;
-    return Objects.equals(this.children, conceptTreePosition.children) &&
+    return Objects.equals(this.level, conceptTreePosition.level) &&
+        Objects.equals(this.children, conceptTreePosition.children) &&
         Objects.equals(this.ancestorPath, conceptTreePosition.ancestorPath) &&
-        Objects.equals(this.childCt, conceptTreePosition.childCt) &&
-        Objects.equals(this.concept, conceptTreePosition.concept) &&
-        Objects.equals(this.level, conceptTreePosition.level) &&
-        Objects.equals(this.code, conceptTreePosition.code) &&
         Objects.equals(this.additionalType, conceptTreePosition.additionalType) &&
+        Objects.equals(this.concept, conceptTreePosition.concept) &&
+        Objects.equals(this.code, conceptTreePosition.code) &&
+        Objects.equals(this.childCt, conceptTreePosition.childCt) &&
         Objects.equals(this.local, conceptTreePosition.local) &&
+        Objects.equals(this.modified, conceptTreePosition.modified) &&
         Objects.equals(this.modifiedBy, conceptTreePosition.modifiedBy) &&
         Objects.equals(this.created, conceptTreePosition.created) &&
-        Objects.equals(this.modified, conceptTreePosition.modified) &&
         Objects.equals(this.id, conceptTreePosition.id) &&
         Objects.equals(this.active, conceptTreePosition.active) &&
         Objects.equals(this.name, conceptTreePosition.name) &&
@@ -515,24 +515,24 @@ public class ConceptTreePosition {
 
   @Override
   public int hashCode() {
-    return Objects.hash(children, ancestorPath, childCt, concept, level, code, additionalType, local, modifiedBy, created, modified, id, active, name, terminology);
+    return Objects.hash(level, children, ancestorPath, additionalType, concept, code, childCt, local, modified, modifiedBy, created, id, active, name, terminology);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConceptTreePosition {\n");
+    sb.append("    level: ").append(toIndentedString(level)).append("\n");
     sb.append("    children: ").append(toIndentedString(children)).append("\n");
     sb.append("    ancestorPath: ").append(toIndentedString(ancestorPath)).append("\n");
-    sb.append("    childCt: ").append(toIndentedString(childCt)).append("\n");
-    sb.append("    concept: ").append(toIndentedString(concept)).append("\n");
-    sb.append("    level: ").append(toIndentedString(level)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    additionalType: ").append(toIndentedString(additionalType)).append("\n");
+    sb.append("    concept: ").append(toIndentedString(concept)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    childCt: ").append(toIndentedString(childCt)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

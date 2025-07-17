@@ -12,8 +12,9 @@ import api.model.ApplicationMetadataMap;
 import api.model.AuditEntry;
 import api.model.InputTask;
 import api.model.OutputTask;
-import api.model.OutputTaskList;
 import api.model.OutputTerm;
+import api.model.ResultListOutputTask;
+import api.model.ResultListOutputTerm;
 import api.model.Tag;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class MappingApi {
   private ApiClient apiClient;
 
@@ -114,7 +115,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
-   * @return OutputTaskList
+   * @return ResultListOutputTask
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -126,7 +127,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OutputTaskList findTasks(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ResultListOutputTask findTasks(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
     return findTasksWithHttpInfo(query, offset, limit, sort, ascending).getData();
   }
 
@@ -138,7 +139,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
-   * @return ApiResponse&lt;OutputTaskList&gt;
+   * @return ApiResponse&lt;ResultListOutputTask&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -150,7 +151,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OutputTaskList> findTasksWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ApiResponse<ResultListOutputTask> findTasksWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "query", query)
@@ -163,7 +164,7 @@ public class MappingApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<OutputTaskList> localVarReturnType = new GenericType<OutputTaskList>() {};
+    GenericType<ResultListOutputTask> localVarReturnType = new GenericType<ResultListOutputTask>() {};
     return apiClient.invokeAPI("MappingApi.findTasks", "/api/v1/mapping/task", "GET", localVarQueryParams, null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
@@ -176,7 +177,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
-   * @return OutputTaskList
+   * @return ResultListOutputTerm
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -188,7 +189,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OutputTaskList findTerms(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ResultListOutputTerm findTerms(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
     return findTermsWithHttpInfo(query, offset, limit, sort, ascending).getData();
   }
 
@@ -200,7 +201,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
-   * @return ApiResponse&lt;OutputTaskList&gt;
+   * @return ApiResponse&lt;ResultListOutputTerm&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -212,7 +213,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OutputTaskList> findTermsWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ApiResponse<ResultListOutputTerm> findTermsWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "query", query)
@@ -225,7 +226,7 @@ public class MappingApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<OutputTaskList> localVarReturnType = new GenericType<OutputTaskList>() {};
+    GenericType<ResultListOutputTerm> localVarReturnType = new GenericType<ResultListOutputTerm>() {};
     return apiClient.invokeAPI("MappingApi.findTerms", "/api/v1/mapping/term", "GET", localVarQueryParams, null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);
@@ -377,7 +378,7 @@ public class MappingApi {
    * 
    * @param taskId task.id returned by /task/add, e.g. 642c0e8a-8bdc-4ae6-8773-9f6cd8bc2fd3 (required)
    * @param termId term.id, e.g. 8271f5b9-ee2a-4614-87a1-2c071c9d6076 (required)
-   * @return OutputTask
+   * @return OutputTerm
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -390,7 +391,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public OutputTask getTaskTerm(String taskId, String termId) throws ApiException {
+  public OutputTerm getTaskTerm(String taskId, String termId) throws ApiException {
     return getTaskTermWithHttpInfo(taskId, termId).getData();
   }
 
@@ -399,7 +400,7 @@ public class MappingApi {
    * 
    * @param taskId task.id returned by /task/add, e.g. 642c0e8a-8bdc-4ae6-8773-9f6cd8bc2fd3 (required)
    * @param termId term.id, e.g. 8271f5b9-ee2a-4614-87a1-2c071c9d6076 (required)
-   * @return ApiResponse&lt;OutputTask&gt;
+   * @return ApiResponse&lt;OutputTerm&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -412,7 +413,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<OutputTask> getTaskTermWithHttpInfo(String taskId, String termId) throws ApiException {
+  public ApiResponse<OutputTerm> getTaskTermWithHttpInfo(String taskId, String termId) throws ApiException {
     // Check required parameters
     if (taskId == null) {
       throw new ApiException(400, "Missing the required parameter 'taskId' when calling getTaskTerm");
@@ -429,7 +430,7 @@ public class MappingApi {
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType();
     String[] localVarAuthNames = new String[] {"bearerAuth"};
-    GenericType<OutputTask> localVarReturnType = new GenericType<OutputTask>() {};
+    GenericType<OutputTerm> localVarReturnType = new GenericType<OutputTerm>() {};
     return apiClient.invokeAPI("MappingApi.getTaskTerm", localVarPath, "GET", new ArrayList<>(), null,
                                new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType, false);

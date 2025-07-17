@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -32,39 +32,48 @@ import api.invoker.JSON;
  * Represents a relationship between two concepts
  */
 @JsonPropertyOrder({
-  ConceptRelationship.JSON_PROPERTY_HIERARCHICAL,
   ConceptRelationship.JSON_PROPERTY_TYPE,
   ConceptRelationship.JSON_PROPERTY_TO_ACTIVE,
-  ConceptRelationship.JSON_PROPERTY_TO_VALUE,
+  ConceptRelationship.JSON_PROPERTY_TO_TERMINOLOGY,
+  ConceptRelationship.JSON_PROPERTY_ASSERTED_DIRECTION,
+  ConceptRelationship.JSON_PROPERTY_HIERARCHICAL,
+  ConceptRelationship.JSON_PROPERTY_ADDITIONAL_TYPE,
+  ConceptRelationship.JSON_PROPERTY_DEFINING,
   ConceptRelationship.JSON_PROPERTY_GROUP,
   ConceptRelationship.JSON_PROPERTY_TO_CODE,
   ConceptRelationship.JSON_PROPERTY_TO_NAME,
-  ConceptRelationship.JSON_PROPERTY_TO_TERMINOLOGY,
-  ConceptRelationship.JSON_PROPERTY_ASSERTED_DIRECTION,
-  ConceptRelationship.JSON_PROPERTY_ADDITIONAL_TYPE,
-  ConceptRelationship.JSON_PROPERTY_DEFINING,
+  ConceptRelationship.JSON_PROPERTY_TO_VALUE,
   ConceptRelationship.JSON_PROPERTY_LOCAL,
+  ConceptRelationship.JSON_PROPERTY_MODIFIED,
   ConceptRelationship.JSON_PROPERTY_MODIFIED_BY,
   ConceptRelationship.JSON_PROPERTY_CREATED,
-  ConceptRelationship.JSON_PROPERTY_MODIFIED,
   ConceptRelationship.JSON_PROPERTY_ID,
   ConceptRelationship.JSON_PROPERTY_ACTIVE,
   ConceptRelationship.JSON_PROPERTY_TERMINOLOGY_ID,
   ConceptRelationship.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ConceptRelationship {
-  public static final String JSON_PROPERTY_HIERARCHICAL = "hierarchical";
-  private Boolean hierarchical;
-
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
   public static final String JSON_PROPERTY_TO_ACTIVE = "toActive";
   private Boolean toActive;
 
-  public static final String JSON_PROPERTY_TO_VALUE = "toValue";
-  private String toValue;
+  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
+  private String toTerminology;
+
+  public static final String JSON_PROPERTY_ASSERTED_DIRECTION = "assertedDirection";
+  private Boolean assertedDirection;
+
+  public static final String JSON_PROPERTY_HIERARCHICAL = "hierarchical";
+  private Boolean hierarchical;
+
+  public static final String JSON_PROPERTY_ADDITIONAL_TYPE = "additionalType";
+  private String additionalType;
+
+  public static final String JSON_PROPERTY_DEFINING = "defining";
+  private Boolean defining;
 
   public static final String JSON_PROPERTY_GROUP = "group";
   private String group;
@@ -75,29 +84,20 @@ public class ConceptRelationship {
   public static final String JSON_PROPERTY_TO_NAME = "toName";
   private String toName;
 
-  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
-  private String toTerminology;
-
-  public static final String JSON_PROPERTY_ASSERTED_DIRECTION = "assertedDirection";
-  private Boolean assertedDirection;
-
-  public static final String JSON_PROPERTY_ADDITIONAL_TYPE = "additionalType";
-  private String additionalType;
-
-  public static final String JSON_PROPERTY_DEFINING = "defining";
-  private Boolean defining;
+  public static final String JSON_PROPERTY_TO_VALUE = "toValue";
+  private String toValue;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -113,31 +113,6 @@ public class ConceptRelationship {
 
   public ConceptRelationship() { 
   }
-
-  public ConceptRelationship hierarchical(Boolean hierarchical) {
-    this.hierarchical = hierarchical;
-    return this;
-  }
-
-   /**
-   * indicates whether this relationship is part of the hierarchy
-   * @return hierarchical
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_HIERARCHICAL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Boolean getHierarchical() {
-    return hierarchical;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_HIERARCHICAL)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setHierarchical(Boolean hierarchical) {
-    this.hierarchical = hierarchical;
-  }
-
 
   public ConceptRelationship type(String type) {
     this.type = type;
@@ -189,28 +164,128 @@ public class ConceptRelationship {
   }
 
 
-  public ConceptRelationship toValue(String toValue) {
-    this.toValue = toValue;
+  public ConceptRelationship toTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
     return this;
   }
 
    /**
-   * the literal value relationship is to (the right-hand side). If this is null, the relationship will have a &#39;to&#39;
-   * @return toValue
+   * the terminology of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
+   * @return toTerminology
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TO_VALUE)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getToValue() {
-    return toValue;
+  public String getToTerminology() {
+    return toTerminology;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TO_VALUE)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToValue(String toValue) {
-    this.toValue = toValue;
+  public void setToTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
+  }
+
+
+  public ConceptRelationship assertedDirection(Boolean assertedDirection) {
+    this.assertedDirection = assertedDirection;
+    return this;
+  }
+
+   /**
+   * indicates whether this relationship is in the direction asserted by the terminology. This is meaninful because in some instances relationships are loaded in both directions
+   * @return assertedDirection
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ASSERTED_DIRECTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getAssertedDirection() {
+    return assertedDirection;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ASSERTED_DIRECTION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAssertedDirection(Boolean assertedDirection) {
+    this.assertedDirection = assertedDirection;
+  }
+
+
+  public ConceptRelationship hierarchical(Boolean hierarchical) {
+    this.hierarchical = hierarchical;
+    return this;
+  }
+
+   /**
+   * indicates whether this relationship is part of the hierarchy
+   * @return hierarchical
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_HIERARCHICAL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getHierarchical() {
+    return hierarchical;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_HIERARCHICAL)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setHierarchical(Boolean hierarchical) {
+    this.hierarchical = hierarchical;
+  }
+
+
+  public ConceptRelationship additionalType(String additionalType) {
+    this.additionalType = additionalType;
+    return this;
+  }
+
+   /**
+   * the more specific type of relationship (more information about this label is provided in the terminology metadata)
+   * @return additionalType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getAdditionalType() {
+    return additionalType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAdditionalType(String additionalType) {
+    this.additionalType = additionalType;
+  }
+
+
+  public ConceptRelationship defining(Boolean defining) {
+    this.defining = defining;
+    return this;
+  }
+
+   /**
+   * indicates whether this is a relationship is part of the concept logical definition
+   * @return defining
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_DEFINING)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getDefining() {
+    return defining;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_DEFINING)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setDefining(Boolean defining) {
+    this.defining = defining;
   }
 
 
@@ -289,103 +364,28 @@ public class ConceptRelationship {
   }
 
 
-  public ConceptRelationship toTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
+  public ConceptRelationship toValue(String toValue) {
+    this.toValue = toValue;
     return this;
   }
 
    /**
-   * the terminology of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
-   * @return toTerminology
+   * the literal value relationship is to (the right-hand side). If this is null, the relationship will have a &#39;to&#39;
+   * @return toValue
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonProperty(JSON_PROPERTY_TO_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getToTerminology() {
-    return toTerminology;
+  public String getToValue() {
+    return toValue;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonProperty(JSON_PROPERTY_TO_VALUE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
-  }
-
-
-  public ConceptRelationship assertedDirection(Boolean assertedDirection) {
-    this.assertedDirection = assertedDirection;
-    return this;
-  }
-
-   /**
-   * indicates whether this relationship is in the direction asserted by the terminology. This is meaninful because in some instances relationships are loaded in both directions
-   * @return assertedDirection
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ASSERTED_DIRECTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Boolean getAssertedDirection() {
-    return assertedDirection;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ASSERTED_DIRECTION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAssertedDirection(Boolean assertedDirection) {
-    this.assertedDirection = assertedDirection;
-  }
-
-
-  public ConceptRelationship additionalType(String additionalType) {
-    this.additionalType = additionalType;
-    return this;
-  }
-
-   /**
-   * the more specific type of relationship (more information about this label is provided in the terminology metadata)
-   * @return additionalType
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getAdditionalType() {
-    return additionalType;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdditionalType(String additionalType) {
-    this.additionalType = additionalType;
-  }
-
-
-  public ConceptRelationship defining(Boolean defining) {
-    this.defining = defining;
-    return this;
-  }
-
-   /**
-   * indicates whether this is a relationship is part of the concept logical definition
-   * @return defining
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_DEFINING)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Boolean getDefining() {
-    return defining;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_DEFINING)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setDefining(Boolean defining) {
-    this.defining = defining;
+  public void setToValue(String toValue) {
+    this.toValue = toValue;
   }
 
 
@@ -411,6 +411,31 @@ public class ConceptRelationship {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public ConceptRelationship modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -461,31 +486,6 @@ public class ConceptRelationship {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public ConceptRelationship modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -601,21 +601,21 @@ public class ConceptRelationship {
       return false;
     }
     ConceptRelationship conceptRelationship = (ConceptRelationship) o;
-    return Objects.equals(this.hierarchical, conceptRelationship.hierarchical) &&
-        Objects.equals(this.type, conceptRelationship.type) &&
+    return Objects.equals(this.type, conceptRelationship.type) &&
         Objects.equals(this.toActive, conceptRelationship.toActive) &&
-        Objects.equals(this.toValue, conceptRelationship.toValue) &&
+        Objects.equals(this.toTerminology, conceptRelationship.toTerminology) &&
+        Objects.equals(this.assertedDirection, conceptRelationship.assertedDirection) &&
+        Objects.equals(this.hierarchical, conceptRelationship.hierarchical) &&
+        Objects.equals(this.additionalType, conceptRelationship.additionalType) &&
+        Objects.equals(this.defining, conceptRelationship.defining) &&
         Objects.equals(this.group, conceptRelationship.group) &&
         Objects.equals(this.toCode, conceptRelationship.toCode) &&
         Objects.equals(this.toName, conceptRelationship.toName) &&
-        Objects.equals(this.toTerminology, conceptRelationship.toTerminology) &&
-        Objects.equals(this.assertedDirection, conceptRelationship.assertedDirection) &&
-        Objects.equals(this.additionalType, conceptRelationship.additionalType) &&
-        Objects.equals(this.defining, conceptRelationship.defining) &&
+        Objects.equals(this.toValue, conceptRelationship.toValue) &&
         Objects.equals(this.local, conceptRelationship.local) &&
+        Objects.equals(this.modified, conceptRelationship.modified) &&
         Objects.equals(this.modifiedBy, conceptRelationship.modifiedBy) &&
         Objects.equals(this.created, conceptRelationship.created) &&
-        Objects.equals(this.modified, conceptRelationship.modified) &&
         Objects.equals(this.id, conceptRelationship.id) &&
         Objects.equals(this.active, conceptRelationship.active) &&
         Objects.equals(this.terminologyId, conceptRelationship.terminologyId) &&
@@ -624,28 +624,28 @@ public class ConceptRelationship {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hierarchical, type, toActive, toValue, group, toCode, toName, toTerminology, assertedDirection, additionalType, defining, local, modifiedBy, created, modified, id, active, terminologyId, terminology);
+    return Objects.hash(type, toActive, toTerminology, assertedDirection, hierarchical, additionalType, defining, group, toCode, toName, toValue, local, modified, modifiedBy, created, id, active, terminologyId, terminology);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConceptRelationship {\n");
-    sb.append("    hierarchical: ").append(toIndentedString(hierarchical)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    toActive: ").append(toIndentedString(toActive)).append("\n");
-    sb.append("    toValue: ").append(toIndentedString(toValue)).append("\n");
+    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
+    sb.append("    assertedDirection: ").append(toIndentedString(assertedDirection)).append("\n");
+    sb.append("    hierarchical: ").append(toIndentedString(hierarchical)).append("\n");
+    sb.append("    additionalType: ").append(toIndentedString(additionalType)).append("\n");
+    sb.append("    defining: ").append(toIndentedString(defining)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    toCode: ").append(toIndentedString(toCode)).append("\n");
     sb.append("    toName: ").append(toIndentedString(toName)).append("\n");
-    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
-    sb.append("    assertedDirection: ").append(toIndentedString(assertedDirection)).append("\n");
-    sb.append("    additionalType: ").append(toIndentedString(additionalType)).append("\n");
-    sb.append("    defining: ").append(toIndentedString(defining)).append("\n");
+    sb.append("    toValue: ").append(toIndentedString(toValue)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    terminologyId: ").append(toIndentedString(terminologyId)).append("\n");

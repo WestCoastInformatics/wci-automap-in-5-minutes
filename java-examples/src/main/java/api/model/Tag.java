@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -30,44 +30,19 @@ import api.invoker.JSON;
  * Represents a key/value pair
  */
 @JsonPropertyOrder({
-  Tag.JSON_PROPERTY_KEY,
-  Tag.JSON_PROPERTY_VALUE
+  Tag.JSON_PROPERTY_VALUE,
+  Tag.JSON_PROPERTY_KEY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Tag {
-  public static final String JSON_PROPERTY_KEY = "key";
-  private String key;
-
   public static final String JSON_PROPERTY_VALUE = "value";
   private String value;
 
+  public static final String JSON_PROPERTY_KEY = "key";
+  private String key;
+
   public Tag() { 
   }
-
-  public Tag key(String key) {
-    this.key = key;
-    return this;
-  }
-
-   /**
-   * the key
-   * @return key
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_KEY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getKey() {
-    return key;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_KEY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setKey(String key) {
-    this.key = key;
-  }
-
 
   public Tag value(String value) {
     this.value = value;
@@ -94,6 +69,31 @@ public class Tag {
   }
 
 
+  public Tag key(String key) {
+    this.key = key;
+    return this;
+  }
+
+   /**
+   * the key
+   * @return key
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getKey() {
+    return key;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_KEY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+
   /**
    * Return true if this Tag object is equal to o.
    */
@@ -106,21 +106,21 @@ public class Tag {
       return false;
     }
     Tag tag = (Tag) o;
-    return Objects.equals(this.key, tag.key) &&
-        Objects.equals(this.value, tag.value);
+    return Objects.equals(this.value, tag.value) &&
+        Objects.equals(this.key, tag.key);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, value);
+    return Objects.hash(value, key);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tag {\n");
-    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("}");
     return sb.toString();
   }

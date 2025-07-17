@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,26 +34,30 @@ import api.invoker.JSON;
  * Represents an entry in the audit trail for a task or term
  */
 @JsonPropertyOrder({
-  AuditEntry.JSON_PROPERTY_DETAILS,
-  AuditEntry.JSON_PROPERTY_ERROR,
   AuditEntry.JSON_PROPERTY_MESSAGE,
+  AuditEntry.JSON_PROPERTY_ERROR,
+  AuditEntry.JSON_PROPERTY_CONFIDENCE,
+  AuditEntry.JSON_PROPERTY_DETAILS,
   AuditEntry.JSON_PROPERTY_TASK_ID,
   AuditEntry.JSON_PROPERTY_TERM_ID,
+  AuditEntry.JSON_PROPERTY_MODIFIED,
   AuditEntry.JSON_PROPERTY_MODIFIED_BY,
   AuditEntry.JSON_PROPERTY_CREATED,
-  AuditEntry.JSON_PROPERTY_MODIFIED,
   AuditEntry.JSON_PROPERTY_ID
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class AuditEntry {
-  public static final String JSON_PROPERTY_DETAILS = "details";
-  private Map<String, String> details = new HashMap<>();
+  public static final String JSON_PROPERTY_MESSAGE = "message";
+  private String message;
 
   public static final String JSON_PROPERTY_ERROR = "error";
   private Boolean error;
 
-  public static final String JSON_PROPERTY_MESSAGE = "message";
-  private String message;
+  public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
+  private Double confidence;
+
+  public static final String JSON_PROPERTY_DETAILS = "details";
+  private Map<String, String> details = new HashMap<>();
 
   public static final String JSON_PROPERTY_TASK_ID = "taskId";
   private UUID taskId;
@@ -61,20 +65,95 @@ public class AuditEntry {
   public static final String JSON_PROPERTY_TERM_ID = "termId";
   private UUID termId;
 
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
+
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
-
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
 
   public AuditEntry() { 
   }
+
+  public AuditEntry message(String message) {
+    this.message = message;
+    return this;
+  }
+
+   /**
+   * Message describing this entry
+   * @return message
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getMessage() {
+    return message;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+
+  public AuditEntry error(Boolean error) {
+    this.error = error;
+    return this;
+  }
+
+   /**
+   * Indicator of whether this entry represents an error
+   * @return error
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getError() {
+    return error;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setError(Boolean error) {
+    this.error = error;
+  }
+
+
+  public AuditEntry confidence(Double confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+
+   /**
+   * Confidence level of the task processing
+   * @return confidence
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getConfidence() {
+    return confidence;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfidence(Double confidence) {
+    this.confidence = confidence;
+  }
+
 
   public AuditEntry details(Map<String, String> details) {
     this.details = details;
@@ -106,56 +185,6 @@ public class AuditEntry {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDetails(Map<String, String> details) {
     this.details = details;
-  }
-
-
-  public AuditEntry error(Boolean error) {
-    this.error = error;
-    return this;
-  }
-
-   /**
-   * Indicator of whether this entry represents an error
-   * @return error
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getError() {
-    return error;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ERROR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setError(Boolean error) {
-    this.error = error;
-  }
-
-
-  public AuditEntry message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Message describing this entry
-   * @return message
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getMessage() {
-    return message;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMessage(String message) {
-    this.message = message;
   }
 
 
@@ -209,6 +238,31 @@ public class AuditEntry {
   }
 
 
+  public AuditEntry modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
+  }
+
+
   public AuditEntry modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
@@ -259,31 +313,6 @@ public class AuditEntry {
   }
 
 
-  public AuditEntry modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
-  }
-
-
   public AuditEntry id(UUID id) {
     this.id = id;
     return this;
@@ -321,34 +350,36 @@ public class AuditEntry {
       return false;
     }
     AuditEntry auditEntry = (AuditEntry) o;
-    return Objects.equals(this.details, auditEntry.details) &&
+    return Objects.equals(this.message, auditEntry.message) &&
         Objects.equals(this.error, auditEntry.error) &&
-        Objects.equals(this.message, auditEntry.message) &&
+        Objects.equals(this.confidence, auditEntry.confidence) &&
+        Objects.equals(this.details, auditEntry.details) &&
         Objects.equals(this.taskId, auditEntry.taskId) &&
         Objects.equals(this.termId, auditEntry.termId) &&
+        Objects.equals(this.modified, auditEntry.modified) &&
         Objects.equals(this.modifiedBy, auditEntry.modifiedBy) &&
         Objects.equals(this.created, auditEntry.created) &&
-        Objects.equals(this.modified, auditEntry.modified) &&
         Objects.equals(this.id, auditEntry.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(details, error, message, taskId, termId, modifiedBy, created, modified, id);
+    return Objects.hash(message, error, confidence, details, taskId, termId, modified, modifiedBy, created, id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AuditEntry {\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
     sb.append("    termId: ").append(toIndentedString(termId)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();

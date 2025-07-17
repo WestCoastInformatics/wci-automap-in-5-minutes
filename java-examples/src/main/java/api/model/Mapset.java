@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,37 +34,37 @@ import api.invoker.JSON;
  * Represents a set of mappings from a concept in one terminology to a concept in another
  */
 @JsonPropertyOrder({
-  Mapset.JSON_PROPERTY_CODE,
   Mapset.JSON_PROPERTY_MAPPED_TO_TERMINOLOGY,
+  Mapset.JSON_PROPERTY_CODE,
   Mapset.JSON_PROPERTY_LOCAL,
+  Mapset.JSON_PROPERTY_MODIFIED,
   Mapset.JSON_PROPERTY_MODIFIED_BY,
   Mapset.JSON_PROPERTY_CREATED,
-  Mapset.JSON_PROPERTY_MODIFIED,
   Mapset.JSON_PROPERTY_ID,
   Mapset.JSON_PROPERTY_ACTIVE,
   Mapset.JSON_PROPERTY_NAME,
   Mapset.JSON_PROPERTY_TERMINOLOGY,
   Mapset.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Mapset {
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
   public static final String JSON_PROPERTY_MAPPED_TO_TERMINOLOGY = "mappedToTerminology";
   private String mappedToTerminology;
 
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -83,31 +83,6 @@ public class Mapset {
 
   public Mapset() { 
   }
-
-  public Mapset code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * the code in the specified terminology
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
 
   public Mapset mappedToTerminology(String mappedToTerminology) {
     this.mappedToTerminology = mappedToTerminology;
@@ -134,6 +109,31 @@ public class Mapset {
   }
 
 
+  public Mapset code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * the code in the specified terminology
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
   public Mapset local(Boolean local) {
     this.local = local;
     return this;
@@ -156,6 +156,31 @@ public class Mapset {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Mapset modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -206,31 +231,6 @@ public class Mapset {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Mapset modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -379,12 +379,12 @@ public class Mapset {
       return false;
     }
     Mapset mapset = (Mapset) o;
-    return Objects.equals(this.code, mapset.code) &&
-        Objects.equals(this.mappedToTerminology, mapset.mappedToTerminology) &&
+    return Objects.equals(this.mappedToTerminology, mapset.mappedToTerminology) &&
+        Objects.equals(this.code, mapset.code) &&
         Objects.equals(this.local, mapset.local) &&
+        Objects.equals(this.modified, mapset.modified) &&
         Objects.equals(this.modifiedBy, mapset.modifiedBy) &&
         Objects.equals(this.created, mapset.created) &&
-        Objects.equals(this.modified, mapset.modified) &&
         Objects.equals(this.id, mapset.id) &&
         Objects.equals(this.active, mapset.active) &&
         Objects.equals(this.name, mapset.name) &&
@@ -394,19 +394,19 @@ public class Mapset {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, mappedToTerminology, local, modifiedBy, created, modified, id, active, name, terminology, attributes);
+    return Objects.hash(mappedToTerminology, code, local, modified, modifiedBy, created, id, active, name, terminology, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Mapset {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    mappedToTerminology: ").append(toIndentedString(mappedToTerminology)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

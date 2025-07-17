@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -36,12 +36,12 @@ import api.invoker.JSON;
 @JsonPropertyOrder({
   InputTask.JSON_PROPERTY_TERMS,
   InputTask.JSON_PROPERTY_CONTEXT,
-  InputTask.JSON_PROPERTY_TOP_ANSWER,
   InputTask.JSON_PROPERTY_MIN_CONFIDENCE,
+  InputTask.JSON_PROPERTY_TOP_ANSWER,
   InputTask.JSON_PROPERTY_AUDIT,
   InputTask.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class InputTask {
   public static final String JSON_PROPERTY_TERMS = "terms";
   private List<InputTerm> terms = new ArrayList<>();
@@ -49,11 +49,11 @@ public class InputTask {
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
 
-  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
-  private Boolean topAnswer = false;
-
   public static final String JSON_PROPERTY_MIN_CONFIDENCE = "minConfidence";
   private Double minConfidence = 0.0d;
+
+  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
+  private Boolean topAnswer = false;
 
   public static final String JSON_PROPERTY_AUDIT = "audit";
   private Boolean audit = true;
@@ -122,31 +122,6 @@ public class InputTask {
   }
 
 
-  public InputTask topAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
-    return this;
-  }
-
-   /**
-   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
-   * @return topAnswer
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getTopAnswer() {
-    return topAnswer;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTopAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
-  }
-
-
   public InputTask minConfidence(Double minConfidence) {
     this.minConfidence = minConfidence;
     return this;
@@ -169,6 +144,31 @@ public class InputTask {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinConfidence(Double minConfidence) {
     this.minConfidence = minConfidence;
+  }
+
+
+  public InputTask topAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
+    return this;
+  }
+
+   /**
+   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
+   * @return topAnswer
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getTopAnswer() {
+    return topAnswer;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTopAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
   }
 
 
@@ -244,15 +244,15 @@ public class InputTask {
     InputTask inputTask = (InputTask) o;
     return Objects.equals(this.terms, inputTask.terms) &&
         Objects.equals(this.context, inputTask.context) &&
-        Objects.equals(this.topAnswer, inputTask.topAnswer) &&
         Objects.equals(this.minConfidence, inputTask.minConfidence) &&
+        Objects.equals(this.topAnswer, inputTask.topAnswer) &&
         Objects.equals(this.audit, inputTask.audit) &&
         Objects.equals(this.tags, inputTask.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terms, context, topAnswer, minConfidence, audit, tags);
+    return Objects.hash(terms, context, minConfidence, topAnswer, audit, tags);
   }
 
   @Override
@@ -261,8 +261,8 @@ public class InputTask {
     sb.append("class InputTask {\n");
     sb.append("    terms: ").append(toIndentedString(terms)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
     sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
+    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
     sb.append("    audit: ").append(toIndentedString(audit)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");

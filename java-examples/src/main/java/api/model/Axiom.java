@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -32,35 +32,35 @@ import api.invoker.JSON;
  * the axioms associated with this concept
  */
 @JsonPropertyOrder({
-  Axiom.JSON_PROPERTY_CODE,
   Axiom.JSON_PROPERTY_VALUE,
+  Axiom.JSON_PROPERTY_CODE,
   Axiom.JSON_PROPERTY_LOCAL,
+  Axiom.JSON_PROPERTY_MODIFIED,
   Axiom.JSON_PROPERTY_MODIFIED_BY,
   Axiom.JSON_PROPERTY_CREATED,
-  Axiom.JSON_PROPERTY_MODIFIED,
   Axiom.JSON_PROPERTY_ID,
   Axiom.JSON_PROPERTY_ACTIVE,
   Axiom.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Axiom {
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
   public static final String JSON_PROPERTY_VALUE = "value";
   private String value;
 
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -73,31 +73,6 @@ public class Axiom {
 
   public Axiom() { 
   }
-
-  public Axiom code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Get code
-   * @return code
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
 
   public Axiom value(String value) {
     this.value = value;
@@ -124,6 +99,31 @@ public class Axiom {
   }
 
 
+  public Axiom code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
   public Axiom local(Boolean local) {
     this.local = local;
     return this;
@@ -146,6 +146,31 @@ public class Axiom {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Axiom modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -196,31 +221,6 @@ public class Axiom {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Axiom modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -311,12 +311,12 @@ public class Axiom {
       return false;
     }
     Axiom axiom = (Axiom) o;
-    return Objects.equals(this.code, axiom.code) &&
-        Objects.equals(this.value, axiom.value) &&
+    return Objects.equals(this.value, axiom.value) &&
+        Objects.equals(this.code, axiom.code) &&
         Objects.equals(this.local, axiom.local) &&
+        Objects.equals(this.modified, axiom.modified) &&
         Objects.equals(this.modifiedBy, axiom.modifiedBy) &&
         Objects.equals(this.created, axiom.created) &&
-        Objects.equals(this.modified, axiom.modified) &&
         Objects.equals(this.id, axiom.id) &&
         Objects.equals(this.active, axiom.active) &&
         Objects.equals(this.terminology, axiom.terminology);
@@ -324,19 +324,19 @@ public class Axiom {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, value, local, modifiedBy, created, modified, id, active, terminology);
+    return Objects.hash(value, code, local, modified, modifiedBy, created, id, active, terminology);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Axiom {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");

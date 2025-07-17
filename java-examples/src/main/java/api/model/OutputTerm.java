@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -38,25 +38,39 @@ import api.invoker.JSON;
  * Represents an fully mapped term with attached mappings
  */
 @JsonPropertyOrder({
-  OutputTerm.JSON_PROPERTY_STATUS,
   OutputTerm.JSON_PROPERTY_MESSAGE,
-  OutputTerm.JSON_PROPERTY_MAPPINGS,
   OutputTerm.JSON_PROPERTY_MAPPING_CT,
-  OutputTerm.JSON_PROPERTY_CODE,
-  OutputTerm.JSON_PROPERTY_INPUT_TYPE,
+  OutputTerm.JSON_PROPERTY_MAPPINGS,
+  OutputTerm.JSON_PROPERTY_CONFIDENCE,
+  OutputTerm.JSON_PROPERTY_STATUS,
   OutputTerm.JSON_PROPERTY_CONTEXT,
-  OutputTerm.JSON_PROPERTY_TASK_ID,
-  OutputTerm.JSON_PROPERTY_TERM,
+  OutputTerm.JSON_PROPERTY_TO_TERMINOLOGY,
   OutputTerm.JSON_PROPERTY_ENTITY_TYPE,
   OutputTerm.JSON_PROPERTY_TERMINOLOGY,
+  OutputTerm.JSON_PROPERTY_INPUT_TYPE,
+  OutputTerm.JSON_PROPERTY_TASK_ID,
+  OutputTerm.JSON_PROPERTY_TERM,
+  OutputTerm.JSON_PROPERTY_CODE,
+  OutputTerm.JSON_PROPERTY_MODIFIED,
   OutputTerm.JSON_PROPERTY_MODIFIED_BY,
   OutputTerm.JSON_PROPERTY_CREATED,
-  OutputTerm.JSON_PROPERTY_MODIFIED,
   OutputTerm.JSON_PROPERTY_ID,
   OutputTerm.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class OutputTerm {
+  public static final String JSON_PROPERTY_MESSAGE = "message";
+  private String message;
+
+  public static final String JSON_PROPERTY_MAPPING_CT = "mappingCt";
+  private Integer mappingCt;
+
+  public static final String JSON_PROPERTY_MAPPINGS = "mappings";
+  private List<TermMapping> mappings = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
+  private Double confidence;
+
   /**
    * Status of the mapping of this term.  Allowable values are detailed by the application metadata endpoint
    */
@@ -101,70 +115,11 @@ public class OutputTerm {
   public static final String JSON_PROPERTY_STATUS = "status";
   private StatusEnum status;
 
-  public static final String JSON_PROPERTY_MESSAGE = "message";
-  private String message;
-
-  public static final String JSON_PROPERTY_MAPPINGS = "mappings";
-  private List<TermMapping> mappings = new ArrayList<>();
-
-  public static final String JSON_PROPERTY_MAPPING_CT = "mappingCt";
-  private Integer mappingCt;
-
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
-  /**
-   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
-   */
-  public enum InputTypeEnum {
-    PICKLIST("picklist"),
-    
-    BOOLEAN("boolean"),
-    
-    STRING("string"),
-    
-    PHRASE("phrase"),
-    
-    FHIRCODING("fhirCoding");
-
-    private String value;
-
-    InputTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static InputTypeEnum fromValue(String value) {
-      for (InputTypeEnum b : InputTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  public static final String JSON_PROPERTY_INPUT_TYPE = "inputType";
-  private InputTypeEnum inputType;
-
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private Map<String, String> context = new HashMap<>();
 
-  public static final String JSON_PROPERTY_TASK_ID = "taskId";
-  private String taskId;
-
-  public static final String JSON_PROPERTY_TERM = "term";
-  private String term;
+  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
+  private String toTerminology;
 
   /**
    * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
@@ -311,14 +266,67 @@ public class OutputTerm {
   public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
   private String terminology;
 
+  /**
+   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
+   */
+  public enum InputTypeEnum {
+    PICKLIST("picklist"),
+    
+    BOOLEAN("boolean"),
+    
+    STRING("string"),
+    
+    PHRASE("phrase"),
+    
+    FHIRCODING("fhirCoding");
+
+    private String value;
+
+    InputTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static InputTypeEnum fromValue(String value) {
+      for (InputTypeEnum b : InputTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_INPUT_TYPE = "inputType";
+  private InputTypeEnum inputType;
+
+  public static final String JSON_PROPERTY_TASK_ID = "taskId";
+  private String taskId;
+
+  public static final String JSON_PROPERTY_TERM = "term";
+  private String term;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
+
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -328,31 +336,6 @@ public class OutputTerm {
 
   public OutputTerm() { 
   }
-
-  public OutputTerm status(StatusEnum status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Status of the mapping of this term.  Allowable values are detailed by the application metadata endpoint
-   * @return status
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
 
   public OutputTerm message(String message) {
     this.message = message;
@@ -376,6 +359,31 @@ public class OutputTerm {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(String message) {
     this.message = message;
+  }
+
+
+  public OutputTerm mappingCt(Integer mappingCt) {
+    this.mappingCt = mappingCt;
+    return this;
+  }
+
+   /**
+   * Number of computed mappings for the term
+   * @return mappingCt
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MAPPING_CT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Integer getMappingCt() {
+    return mappingCt;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAPPING_CT)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMappingCt(Integer mappingCt) {
+    this.mappingCt = mappingCt;
   }
 
 
@@ -412,78 +420,53 @@ public class OutputTerm {
   }
 
 
-  public OutputTerm mappingCt(Integer mappingCt) {
-    this.mappingCt = mappingCt;
+  public OutputTerm confidence(Double confidence) {
+    this.confidence = confidence;
     return this;
   }
 
    /**
-   * Number of computed mappings for the term
-   * @return mappingCt
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MAPPING_CT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Integer getMappingCt() {
-    return mappingCt;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MAPPING_CT)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMappingCt(Integer mappingCt) {
-    this.mappingCt = mappingCt;
-  }
-
-
-  public OutputTerm code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Code for the term to be mapped, e.g. \&quot;56265001\&quot;
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
-  public OutputTerm inputType(InputTypeEnum inputType) {
-    this.inputType = inputType;
-    return this;
-  }
-
-   /**
-   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
-   * @return inputType
+   * Confidence of the term mapping, if applicable.  Allowable values are detailed by the application metadata endpoint
+   * @return confidence
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public InputTypeEnum getInputType() {
-    return inputType;
+  public Double getConfidence() {
+    return confidence;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInputType(InputTypeEnum inputType) {
-    this.inputType = inputType;
+  public void setConfidence(Double confidence) {
+    this.confidence = confidence;
+  }
+
+
+  public OutputTerm status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Status of the mapping of this term.  Allowable values are detailed by the application metadata endpoint
+   * @return status
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_STATUS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
 
@@ -520,53 +503,28 @@ public class OutputTerm {
   }
 
 
-  public OutputTerm taskId(String taskId) {
-    this.taskId = taskId;
+  public OutputTerm toTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
     return this;
   }
 
    /**
-   * Task id for this term
-   * @return taskId
+   * Terminology of the term to map to, e.g. \&quot;SNOMEDCT\&quot; or \&quot;https://loinc.org\&quot;. Leave blank for all available options specified by config.
+   * @return toTerminology
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getTaskId() {
-    return taskId;
+  public String getToTerminology() {
+    return toTerminology;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaskId(String taskId) {
-    this.taskId = taskId;
-  }
-
-
-  public OutputTerm term(String term) {
-    this.term = term;
-    return this;
-  }
-
-   /**
-   * Text value to be mapped, e.g. \&quot;heart disease\&quot;
-   * @return term
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getTerm() {
-    return term;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTerm(String term) {
-    this.term = term;
+  public void setToTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
   }
 
 
@@ -620,6 +578,131 @@ public class OutputTerm {
   }
 
 
+  public OutputTerm inputType(InputTypeEnum inputType) {
+    this.inputType = inputType;
+    return this;
+  }
+
+   /**
+   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
+   * @return inputType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public InputTypeEnum getInputType() {
+    return inputType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInputType(InputTypeEnum inputType) {
+    this.inputType = inputType;
+  }
+
+
+  public OutputTerm taskId(String taskId) {
+    this.taskId = taskId;
+    return this;
+  }
+
+   /**
+   * Task id for this term
+   * @return taskId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getTaskId() {
+    return taskId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTaskId(String taskId) {
+    this.taskId = taskId;
+  }
+
+
+  public OutputTerm term(String term) {
+    this.term = term;
+    return this;
+  }
+
+   /**
+   * Text value to be mapped, e.g. \&quot;heart disease\&quot;
+   * @return term
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TERM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getTerm() {
+    return term;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TERM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTerm(String term) {
+    this.term = term;
+  }
+
+
+  public OutputTerm code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Code for the term to be mapped, e.g. \&quot;56265001\&quot;
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public OutputTerm modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
+  }
+
+
   public OutputTerm modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
@@ -667,31 +750,6 @@ public class OutputTerm {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public OutputTerm modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -765,47 +823,51 @@ public class OutputTerm {
       return false;
     }
     OutputTerm outputTerm = (OutputTerm) o;
-    return Objects.equals(this.status, outputTerm.status) &&
-        Objects.equals(this.message, outputTerm.message) &&
-        Objects.equals(this.mappings, outputTerm.mappings) &&
+    return Objects.equals(this.message, outputTerm.message) &&
         Objects.equals(this.mappingCt, outputTerm.mappingCt) &&
-        Objects.equals(this.code, outputTerm.code) &&
-        Objects.equals(this.inputType, outputTerm.inputType) &&
+        Objects.equals(this.mappings, outputTerm.mappings) &&
+        Objects.equals(this.confidence, outputTerm.confidence) &&
+        Objects.equals(this.status, outputTerm.status) &&
         Objects.equals(this.context, outputTerm.context) &&
-        Objects.equals(this.taskId, outputTerm.taskId) &&
-        Objects.equals(this.term, outputTerm.term) &&
+        Objects.equals(this.toTerminology, outputTerm.toTerminology) &&
         Objects.equals(this.entityType, outputTerm.entityType) &&
         Objects.equals(this.terminology, outputTerm.terminology) &&
+        Objects.equals(this.inputType, outputTerm.inputType) &&
+        Objects.equals(this.taskId, outputTerm.taskId) &&
+        Objects.equals(this.term, outputTerm.term) &&
+        Objects.equals(this.code, outputTerm.code) &&
+        Objects.equals(this.modified, outputTerm.modified) &&
         Objects.equals(this.modifiedBy, outputTerm.modifiedBy) &&
         Objects.equals(this.created, outputTerm.created) &&
-        Objects.equals(this.modified, outputTerm.modified) &&
         Objects.equals(this.id, outputTerm.id) &&
         Objects.equals(this.tags, outputTerm.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message, mappings, mappingCt, code, inputType, context, taskId, term, entityType, terminology, modifiedBy, created, modified, id, tags);
+    return Objects.hash(message, mappingCt, mappings, confidence, status, context, toTerminology, entityType, terminology, inputType, taskId, term, code, modified, modifiedBy, created, id, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutputTerm {\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    mappings: ").append(toIndentedString(mappings)).append("\n");
     sb.append("    mappingCt: ").append(toIndentedString(mappingCt)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
+    sb.append("    mappings: ").append(toIndentedString(mappings)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
+    sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
+    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");

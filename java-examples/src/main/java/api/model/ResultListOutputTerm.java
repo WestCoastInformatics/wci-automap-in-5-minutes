@@ -16,7 +16,7 @@ package api.model;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import api.model.ConceptRelationship;
+import api.model.OutputTerm;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,18 +30,18 @@ import api.invoker.JSON;
 
 
 /**
- * Represents a list of concept relationships returned from a find call
+ * Represents a list of output terms returned from a find call
  */
 @JsonPropertyOrder({
-  ResultListConceptRelationship.JSON_PROPERTY_TOTAL,
-  ResultListConceptRelationship.JSON_PROPERTY_LIMIT,
-  ResultListConceptRelationship.JSON_PROPERTY_OFFSET,
-  ResultListConceptRelationship.JSON_PROPERTY_CONFIDENCE,
-  ResultListConceptRelationship.JSON_PROPERTY_FILTERED,
-  ResultListConceptRelationship.JSON_PROPERTY_ITEMS
+  ResultListOutputTerm.JSON_PROPERTY_TOTAL,
+  ResultListOutputTerm.JSON_PROPERTY_LIMIT,
+  ResultListOutputTerm.JSON_PROPERTY_OFFSET,
+  ResultListOutputTerm.JSON_PROPERTY_CONFIDENCE,
+  ResultListOutputTerm.JSON_PROPERTY_FILTERED,
+  ResultListOutputTerm.JSON_PROPERTY_ITEMS
 })
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
-public class ResultListConceptRelationship {
+public class ResultListOutputTerm {
   public static final String JSON_PROPERTY_TOTAL = "total";
   private Integer total;
 
@@ -58,12 +58,12 @@ public class ResultListConceptRelationship {
   private Integer filtered;
 
   public static final String JSON_PROPERTY_ITEMS = "items";
-  private List<ConceptRelationship> items = new ArrayList<>();
+  private List<OutputTerm> items = new ArrayList<>();
 
-  public ResultListConceptRelationship() { 
+  public ResultListOutputTerm() { 
   }
 
-  public ResultListConceptRelationship total(Integer total) {
+  public ResultListOutputTerm total(Integer total) {
     this.total = total;
     return this;
   }
@@ -88,7 +88,7 @@ public class ResultListConceptRelationship {
   }
 
 
-  public ResultListConceptRelationship limit(Integer limit) {
+  public ResultListOutputTerm limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -113,7 +113,7 @@ public class ResultListConceptRelationship {
   }
 
 
-  public ResultListConceptRelationship offset(Integer offset) {
+  public ResultListOutputTerm offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -138,7 +138,7 @@ public class ResultListConceptRelationship {
   }
 
 
-  public ResultListConceptRelationship confidence(Double confidence) {
+  public ResultListOutputTerm confidence(Double confidence) {
     this.confidence = confidence;
     return this;
   }
@@ -163,7 +163,7 @@ public class ResultListConceptRelationship {
   }
 
 
-  public ResultListConceptRelationship filtered(Integer filtered) {
+  public ResultListOutputTerm filtered(Integer filtered) {
     this.filtered = filtered;
     return this;
   }
@@ -188,12 +188,12 @@ public class ResultListConceptRelationship {
   }
 
 
-  public ResultListConceptRelationship items(List<ConceptRelationship> items) {
+  public ResultListOutputTerm items(List<OutputTerm> items) {
     this.items = items;
     return this;
   }
 
-  public ResultListConceptRelationship addItemsItem(ConceptRelationship itemsItem) {
+  public ResultListOutputTerm addItemsItem(OutputTerm itemsItem) {
     if (this.items == null) {
       this.items = new ArrayList<>();
     }
@@ -209,20 +209,20 @@ public class ResultListConceptRelationship {
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public List<ConceptRelationship> getItems() {
+  public List<OutputTerm> getItems() {
     return items;
   }
 
 
   @JsonProperty(JSON_PROPERTY_ITEMS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setItems(List<ConceptRelationship> items) {
+  public void setItems(List<OutputTerm> items) {
     this.items = items;
   }
 
 
   /**
-   * Return true if this ResultListConceptRelationship object is equal to o.
+   * Return true if this ResultListOutputTerm object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -232,13 +232,13 @@ public class ResultListConceptRelationship {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResultListConceptRelationship resultListConceptRelationship = (ResultListConceptRelationship) o;
-    return Objects.equals(this.total, resultListConceptRelationship.total) &&
-        Objects.equals(this.limit, resultListConceptRelationship.limit) &&
-        Objects.equals(this.offset, resultListConceptRelationship.offset) &&
-        Objects.equals(this.confidence, resultListConceptRelationship.confidence) &&
-        Objects.equals(this.filtered, resultListConceptRelationship.filtered) &&
-        Objects.equals(this.items, resultListConceptRelationship.items);
+    ResultListOutputTerm resultListOutputTerm = (ResultListOutputTerm) o;
+    return Objects.equals(this.total, resultListOutputTerm.total) &&
+        Objects.equals(this.limit, resultListOutputTerm.limit) &&
+        Objects.equals(this.offset, resultListOutputTerm.offset) &&
+        Objects.equals(this.confidence, resultListOutputTerm.confidence) &&
+        Objects.equals(this.filtered, resultListOutputTerm.filtered) &&
+        Objects.equals(this.items, resultListOutputTerm.items);
   }
 
   @Override
@@ -249,7 +249,7 @@ public class ResultListConceptRelationship {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResultListConceptRelationship {\n");
+    sb.append("class ResultListOutputTerm {\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

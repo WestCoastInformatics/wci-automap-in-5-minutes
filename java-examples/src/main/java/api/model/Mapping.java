@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,40 +34,37 @@ import api.invoker.JSON;
  * Represents a mapping from a concept in one terminology to a concept in another
  */
 @JsonPropertyOrder({
-  Mapping.JSON_PROPERTY_CATEGORY,
-  Mapping.JSON_PROPERTY_GROUP,
-  Mapping.JSON_PROPERTY_RULE,
-  Mapping.JSON_PROPERTY_ADVICE,
+  Mapping.JSON_PROPERTY_PRIORITY,
+  Mapping.JSON_PROPERTY_TO_TERMINOLOGY,
+  Mapping.JSON_PROPERTY_MAPSET_CODE,
   Mapping.JSON_PROPERTY_ENTITY_TYPE,
   Mapping.JSON_PROPERTY_FROM_TERMINOLOGY,
   Mapping.JSON_PROPERTY_FROM_CODE,
+  Mapping.JSON_PROPERTY_FROM_NAME,
+  Mapping.JSON_PROPERTY_CATEGORY,
+  Mapping.JSON_PROPERTY_ADVICE,
+  Mapping.JSON_PROPERTY_GROUP,
+  Mapping.JSON_PROPERTY_RULE,
   Mapping.JSON_PROPERTY_TO_CODE,
   Mapping.JSON_PROPERTY_TO_NAME,
-  Mapping.JSON_PROPERTY_TO_TERMINOLOGY,
-  Mapping.JSON_PROPERTY_FROM_NAME,
-  Mapping.JSON_PROPERTY_MAPSET_CODE,
-  Mapping.JSON_PROPERTY_PRIORITY,
   Mapping.JSON_PROPERTY_LOCAL,
+  Mapping.JSON_PROPERTY_MODIFIED,
   Mapping.JSON_PROPERTY_MODIFIED_BY,
   Mapping.JSON_PROPERTY_CREATED,
-  Mapping.JSON_PROPERTY_MODIFIED,
   Mapping.JSON_PROPERTY_ID,
   Mapping.JSON_PROPERTY_ACTIVE,
   Mapping.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Mapping {
-  public static final String JSON_PROPERTY_CATEGORY = "category";
-  private String category;
+  public static final String JSON_PROPERTY_PRIORITY = "priority";
+  private String priority;
 
-  public static final String JSON_PROPERTY_GROUP = "group";
-  private String group;
+  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
+  private String toTerminology;
 
-  public static final String JSON_PROPERTY_RULE = "rule";
-  private String rule;
-
-  public static final String JSON_PROPERTY_ADVICE = "advice";
-  private String advice;
+  public static final String JSON_PROPERTY_MAPSET_CODE = "mapsetCode";
+  private String mapsetCode;
 
   public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
   private String entityType;
@@ -78,35 +75,38 @@ public class Mapping {
   public static final String JSON_PROPERTY_FROM_CODE = "fromCode";
   private String fromCode;
 
+  public static final String JSON_PROPERTY_FROM_NAME = "fromName";
+  private String fromName;
+
+  public static final String JSON_PROPERTY_CATEGORY = "category";
+  private String category;
+
+  public static final String JSON_PROPERTY_ADVICE = "advice";
+  private String advice;
+
+  public static final String JSON_PROPERTY_GROUP = "group";
+  private String group;
+
+  public static final String JSON_PROPERTY_RULE = "rule";
+  private String rule;
+
   public static final String JSON_PROPERTY_TO_CODE = "toCode";
   private String toCode;
 
   public static final String JSON_PROPERTY_TO_NAME = "toName";
   private String toName;
 
-  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
-  private String toTerminology;
-
-  public static final String JSON_PROPERTY_FROM_NAME = "fromName";
-  private String fromName;
-
-  public static final String JSON_PROPERTY_MAPSET_CODE = "mapsetCode";
-  private String mapsetCode;
-
-  public static final String JSON_PROPERTY_PRIORITY = "priority";
-  private String priority;
-
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -120,103 +120,78 @@ public class Mapping {
   public Mapping() { 
   }
 
-  public Mapping category(String category) {
-    this.category = category;
+  public Mapping priority(String priority) {
+    this.priority = priority;
     return this;
   }
 
    /**
-   * the map category (for RF2-based maps)
-   * @return category
+   * the value for the priority of this map within its group (for complex maps that use groups)
+   * @return priority
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonProperty(JSON_PROPERTY_PRIORITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getCategory() {
-    return category;
+  public String getPriority() {
+    return priority;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonProperty(JSON_PROPERTY_PRIORITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCategory(String category) {
-    this.category = category;
+  public void setPriority(String priority) {
+    this.priority = priority;
   }
 
 
-  public Mapping group(String group) {
-    this.group = group;
+  public Mapping toTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
     return this;
   }
 
    /**
-   * the value for the group this map participates in (for complex maps that use groups)
-   * @return group
+   * the terminology of the &#39;to&#39; code
+   * @return toTerminology
   **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getGroup() {
-    return group;
+  public String getToTerminology() {
+    return toTerminology;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_GROUP)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGroup(String group) {
-    this.group = group;
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setToTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
   }
 
 
-  public Mapping rule(String rule) {
-    this.rule = rule;
+  public Mapping mapsetCode(String mapsetCode) {
+    this.mapsetCode = mapsetCode;
     return this;
   }
 
    /**
-   * the machine-readable map rule for this mapping (for complex maps that use rules)
-   * @return rule
+   * the code of the mapset containing this mapping
+   * @return mapsetCode
   **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RULE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getRule() {
-    return rule;
+  public String getMapsetCode() {
+    return mapsetCode;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RULE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRule(String rule) {
-    this.rule = rule;
-  }
-
-
-  public Mapping advice(String advice) {
-    this.advice = advice;
-    return this;
-  }
-
-   /**
-   * the map advice
-   * @return advice
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADVICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getAdvice() {
-    return advice;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ADVICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdvice(String advice) {
-    this.advice = advice;
+  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMapsetCode(String mapsetCode) {
+    this.mapsetCode = mapsetCode;
   }
 
 
@@ -295,6 +270,131 @@ public class Mapping {
   }
 
 
+  public Mapping fromName(String fromName) {
+    this.fromName = fromName;
+    return this;
+  }
+
+   /**
+   * the name of the &#39;from&#39; code
+   * @return fromName
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_FROM_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getFromName() {
+    return fromName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_FROM_NAME)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setFromName(String fromName) {
+    this.fromName = fromName;
+  }
+
+
+  public Mapping category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * the map category (for RF2-based maps)
+   * @return category
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCategory() {
+    return category;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+
+  public Mapping advice(String advice) {
+    this.advice = advice;
+    return this;
+  }
+
+   /**
+   * the map advice
+   * @return advice
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ADVICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getAdvice() {
+    return advice;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ADVICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAdvice(String advice) {
+    this.advice = advice;
+  }
+
+
+  public Mapping group(String group) {
+    this.group = group;
+    return this;
+  }
+
+   /**
+   * the value for the group this map participates in (for complex maps that use groups)
+   * @return group
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getGroup() {
+    return group;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_GROUP)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGroup(String group) {
+    this.group = group;
+  }
+
+
+  public Mapping rule(String rule) {
+    this.rule = rule;
+    return this;
+  }
+
+   /**
+   * the machine-readable map rule for this mapping (for complex maps that use rules)
+   * @return rule
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RULE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getRule() {
+    return rule;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RULE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRule(String rule) {
+    this.rule = rule;
+  }
+
+
   public Mapping toCode(String toCode) {
     this.toCode = toCode;
     return this;
@@ -345,106 +445,6 @@ public class Mapping {
   }
 
 
-  public Mapping toTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
-    return this;
-  }
-
-   /**
-   * the terminology of the &#39;to&#39; code
-   * @return toTerminology
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getToTerminology() {
-    return toTerminology;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setToTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
-  }
-
-
-  public Mapping fromName(String fromName) {
-    this.fromName = fromName;
-    return this;
-  }
-
-   /**
-   * the name of the &#39;from&#39; code
-   * @return fromName
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FROM_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getFromName() {
-    return fromName;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_FROM_NAME)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFromName(String fromName) {
-    this.fromName = fromName;
-  }
-
-
-  public Mapping mapsetCode(String mapsetCode) {
-    this.mapsetCode = mapsetCode;
-    return this;
-  }
-
-   /**
-   * the code of the mapset containing this mapping
-   * @return mapsetCode
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getMapsetCode() {
-    return mapsetCode;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMapsetCode(String mapsetCode) {
-    this.mapsetCode = mapsetCode;
-  }
-
-
-  public Mapping priority(String priority) {
-    this.priority = priority;
-    return this;
-  }
-
-   /**
-   * the value for the priority of this map within its group (for complex maps that use groups)
-   * @return priority
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getPriority() {
-    return priority;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPriority(String priority) {
-    this.priority = priority;
-  }
-
-
   public Mapping local(Boolean local) {
     this.local = local;
     return this;
@@ -467,6 +467,31 @@ public class Mapping {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Mapping modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -517,31 +542,6 @@ public class Mapping {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Mapping modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -640,23 +640,23 @@ public class Mapping {
       return false;
     }
     Mapping mapping = (Mapping) o;
-    return Objects.equals(this.category, mapping.category) &&
-        Objects.equals(this.group, mapping.group) &&
-        Objects.equals(this.rule, mapping.rule) &&
-        Objects.equals(this.advice, mapping.advice) &&
+    return Objects.equals(this.priority, mapping.priority) &&
+        Objects.equals(this.toTerminology, mapping.toTerminology) &&
+        Objects.equals(this.mapsetCode, mapping.mapsetCode) &&
         Objects.equals(this.entityType, mapping.entityType) &&
         Objects.equals(this.fromTerminology, mapping.fromTerminology) &&
         Objects.equals(this.fromCode, mapping.fromCode) &&
+        Objects.equals(this.fromName, mapping.fromName) &&
+        Objects.equals(this.category, mapping.category) &&
+        Objects.equals(this.advice, mapping.advice) &&
+        Objects.equals(this.group, mapping.group) &&
+        Objects.equals(this.rule, mapping.rule) &&
         Objects.equals(this.toCode, mapping.toCode) &&
         Objects.equals(this.toName, mapping.toName) &&
-        Objects.equals(this.toTerminology, mapping.toTerminology) &&
-        Objects.equals(this.fromName, mapping.fromName) &&
-        Objects.equals(this.mapsetCode, mapping.mapsetCode) &&
-        Objects.equals(this.priority, mapping.priority) &&
         Objects.equals(this.local, mapping.local) &&
+        Objects.equals(this.modified, mapping.modified) &&
         Objects.equals(this.modifiedBy, mapping.modifiedBy) &&
         Objects.equals(this.created, mapping.created) &&
-        Objects.equals(this.modified, mapping.modified) &&
         Objects.equals(this.id, mapping.id) &&
         Objects.equals(this.active, mapping.active) &&
         Objects.equals(this.attributes, mapping.attributes);
@@ -664,30 +664,30 @@ public class Mapping {
 
   @Override
   public int hashCode() {
-    return Objects.hash(category, group, rule, advice, entityType, fromTerminology, fromCode, toCode, toName, toTerminology, fromName, mapsetCode, priority, local, modifiedBy, created, modified, id, active, attributes);
+    return Objects.hash(priority, toTerminology, mapsetCode, entityType, fromTerminology, fromCode, fromName, category, advice, group, rule, toCode, toName, local, modified, modifiedBy, created, id, active, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Mapping {\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
-    sb.append("    advice: ").append(toIndentedString(advice)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
+    sb.append("    mapsetCode: ").append(toIndentedString(mapsetCode)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    fromTerminology: ").append(toIndentedString(fromTerminology)).append("\n");
     sb.append("    fromCode: ").append(toIndentedString(fromCode)).append("\n");
+    sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    advice: ").append(toIndentedString(advice)).append("\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
+    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    toCode: ").append(toIndentedString(toCode)).append("\n");
     sb.append("    toName: ").append(toIndentedString(toName)).append("\n");
-    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
-    sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
-    sb.append("    mapsetCode: ").append(toIndentedString(mapsetCode)).append("\n");
-    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

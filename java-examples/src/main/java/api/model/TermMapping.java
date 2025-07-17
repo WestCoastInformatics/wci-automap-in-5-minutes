@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -34,25 +34,29 @@ import api.invoker.JSON;
  * Represents a mapping for an input term to a coded terminology
  */
 @JsonPropertyOrder({
-  TermMapping.JSON_PROPERTY_VERSION,
+  TermMapping.JSON_PROPERTY_NAME,
+  TermMapping.JSON_PROPERTY_CONTEXT,
   TermMapping.JSON_PROPERTY_ATTRIBUTES,
   TermMapping.JSON_PROPERTY_END_INDEX,
-  TermMapping.JSON_PROPERTY_CODE,
-  TermMapping.JSON_PROPERTY_CONTEXT,
-  TermMapping.JSON_PROPERTY_TERM,
+  TermMapping.JSON_PROPERTY_VERSION,
+  TermMapping.JSON_PROPERTY_START_INDEX,
   TermMapping.JSON_PROPERTY_ENTITY_TYPE,
   TermMapping.JSON_PROPERTY_TERMINOLOGY,
-  TermMapping.JSON_PROPERTY_START_INDEX,
-  TermMapping.JSON_PROPERTY_NAME,
+  TermMapping.JSON_PROPERTY_CONFIDENCE,
+  TermMapping.JSON_PROPERTY_TERM,
+  TermMapping.JSON_PROPERTY_CODE,
+  TermMapping.JSON_PROPERTY_MODIFIED,
   TermMapping.JSON_PROPERTY_MODIFIED_BY,
   TermMapping.JSON_PROPERTY_CREATED,
-  TermMapping.JSON_PROPERTY_MODIFIED,
   TermMapping.JSON_PROPERTY_ID
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class TermMapping {
-  public static final String JSON_PROPERTY_VERSION = "version";
-  private String version;
+  public static final String JSON_PROPERTY_NAME = "name";
+  private String name;
+
+  public static final String JSON_PROPERTY_CONTEXT = "context";
+  private Map<String, String> context = new HashMap<>();
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   private Map<String, String> attributes = new HashMap<>();
@@ -60,14 +64,11 @@ public class TermMapping {
   public static final String JSON_PROPERTY_END_INDEX = "endIndex";
   private Integer endIndex;
 
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
+  public static final String JSON_PROPERTY_VERSION = "version";
+  private String version;
 
-  public static final String JSON_PROPERTY_CONTEXT = "context";
-  private Map<String, String> context = new HashMap<>();
-
-  public static final String JSON_PROPERTY_TERM = "term";
-  private String term;
+  public static final String JSON_PROPERTY_START_INDEX = "startIndex";
+  private Integer startIndex;
 
   /**
    * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
@@ -214,11 +215,17 @@ public class TermMapping {
   public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
   private String terminology;
 
-  public static final String JSON_PROPERTY_START_INDEX = "startIndex";
-  private Integer startIndex;
+  public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
+  private Double confidence;
 
-  public static final String JSON_PROPERTY_NAME = "name";
-  private String name;
+  public static final String JSON_PROPERTY_TERM = "term";
+  private String term;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
@@ -226,37 +233,67 @@ public class TermMapping {
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
 
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
-
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
 
   public TermMapping() { 
   }
 
-  public TermMapping version(String version) {
-    this.version = version;
+  public TermMapping name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get version
-   * @return version
+   * Get name
+   * @return name
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getVersion() {
-    return version;
+  public String getName() {
+    return name;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setVersion(String version) {
-    this.version = version;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public TermMapping context(Map<String, String> context) {
+    this.context = context;
+    return this;
+  }
+
+  public TermMapping putContextItem(String key, String contextItem) {
+    if (this.context == null) {
+      this.context = new HashMap<>();
+    }
+    this.context.put(key, contextItem);
+    return this;
+  }
+
+   /**
+   * Additional textual context for disambiguation, including other text around the text of the term
+   * @return context
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, String> getContext() {
+    return context;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setContext(Map<String, String> context) {
+    this.context = context;
   }
 
 
@@ -318,86 +355,53 @@ public class TermMapping {
   }
 
 
-  public TermMapping code(String code) {
-    this.code = code;
+  public TermMapping version(String version) {
+    this.version = version;
     return this;
   }
 
    /**
-   * Get code
-   * @return code
+   * Get version
+   * @return version
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(JSON_PROPERTY_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getCode() {
-    return code;
+  public String getVersion() {
+    return version;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonProperty(JSON_PROPERTY_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
-    this.code = code;
+  public void setVersion(String version) {
+    this.version = version;
   }
 
 
-  public TermMapping context(Map<String, String> context) {
-    this.context = context;
-    return this;
-  }
-
-  public TermMapping putContextItem(String key, String contextItem) {
-    if (this.context == null) {
-      this.context = new HashMap<>();
-    }
-    this.context.put(key, contextItem);
+  public TermMapping startIndex(Integer startIndex) {
+    this.startIndex = startIndex;
     return this;
   }
 
    /**
-   * Additional textual context for disambiguation, including other text around the text of the term
-   * @return context
+   * Start index of text this mapping is for
+   * @return startIndex
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonProperty(JSON_PROPERTY_START_INDEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Map<String, String> getContext() {
-    return context;
+  public Integer getStartIndex() {
+    return startIndex;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
+  @JsonProperty(JSON_PROPERTY_START_INDEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(Map<String, String> context) {
-    this.context = context;
-  }
-
-
-  public TermMapping term(String term) {
-    this.term = term;
-    return this;
-  }
-
-   /**
-   * The term represented from startIndex to endIndex
-   * @return term
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getTerm() {
-    return term;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTerm(String term) {
-    this.term = term;
+  public void setStartIndex(Integer startIndex) {
+    this.startIndex = startIndex;
   }
 
 
@@ -451,53 +455,103 @@ public class TermMapping {
   }
 
 
-  public TermMapping startIndex(Integer startIndex) {
-    this.startIndex = startIndex;
+  public TermMapping confidence(Double confidence) {
+    this.confidence = confidence;
     return this;
   }
 
    /**
-   * Start index of text this mapping is for
-   * @return startIndex
+   * Confidence of the mapping, if applicable
+   * @return confidence
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START_INDEX)
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Integer getStartIndex() {
-    return startIndex;
+  public Double getConfidence() {
+    return confidence;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START_INDEX)
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStartIndex(Integer startIndex) {
-    this.startIndex = startIndex;
+  public void setConfidence(Double confidence) {
+    this.confidence = confidence;
   }
 
 
-  public TermMapping name(String name) {
-    this.name = name;
+  public TermMapping term(String term) {
+    this.term = term;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * The term represented from startIndex to endIndex
+   * @return term
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_TERM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getName() {
-    return name;
+  public String getTerm() {
+    return term;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_TERM)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
-    this.name = name;
+  public void setTerm(String term) {
+    this.term = term;
+  }
+
+
+  public TermMapping code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public TermMapping modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -551,31 +605,6 @@ public class TermMapping {
   }
 
 
-  public TermMapping modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
-  }
-
-
   public TermMapping id(UUID id) {
     this.id = id;
     return this;
@@ -613,44 +642,46 @@ public class TermMapping {
       return false;
     }
     TermMapping termMapping = (TermMapping) o;
-    return Objects.equals(this.version, termMapping.version) &&
+    return Objects.equals(this.name, termMapping.name) &&
+        Objects.equals(this.context, termMapping.context) &&
         Objects.equals(this.attributes, termMapping.attributes) &&
         Objects.equals(this.endIndex, termMapping.endIndex) &&
-        Objects.equals(this.code, termMapping.code) &&
-        Objects.equals(this.context, termMapping.context) &&
-        Objects.equals(this.term, termMapping.term) &&
+        Objects.equals(this.version, termMapping.version) &&
+        Objects.equals(this.startIndex, termMapping.startIndex) &&
         Objects.equals(this.entityType, termMapping.entityType) &&
         Objects.equals(this.terminology, termMapping.terminology) &&
-        Objects.equals(this.startIndex, termMapping.startIndex) &&
-        Objects.equals(this.name, termMapping.name) &&
+        Objects.equals(this.confidence, termMapping.confidence) &&
+        Objects.equals(this.term, termMapping.term) &&
+        Objects.equals(this.code, termMapping.code) &&
+        Objects.equals(this.modified, termMapping.modified) &&
         Objects.equals(this.modifiedBy, termMapping.modifiedBy) &&
         Objects.equals(this.created, termMapping.created) &&
-        Objects.equals(this.modified, termMapping.modified) &&
         Objects.equals(this.id, termMapping.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, attributes, endIndex, code, context, term, entityType, terminology, startIndex, name, modifiedBy, created, modified, id);
+    return Objects.hash(name, context, attributes, endIndex, version, startIndex, entityType, terminology, confidence, term, code, modified, modifiedBy, created, id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TermMapping {\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
-    sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();

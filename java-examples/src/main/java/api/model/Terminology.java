@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -36,19 +36,19 @@ import api.invoker.JSON;
 @JsonPropertyOrder({
   Terminology.JSON_PROPERTY_VERSION,
   Terminology.JSON_PROPERTY_SYSTEM_URI,
-  Terminology.JSON_PROPERTY_ABBREVIATION,
   Terminology.JSON_PROPERTY_SYSTEM_OID,
   Terminology.JSON_PROPERTY_EXPRESSION_ENABLED,
+  Terminology.JSON_PROPERTY_ABBREVIATION,
   Terminology.JSON_PROPERTY_NAME,
   Terminology.JSON_PROPERTY_LOCAL,
+  Terminology.JSON_PROPERTY_MODIFIED,
   Terminology.JSON_PROPERTY_MODIFIED_BY,
   Terminology.JSON_PROPERTY_CREATED,
-  Terminology.JSON_PROPERTY_MODIFIED,
   Terminology.JSON_PROPERTY_ID,
   Terminology.JSON_PROPERTY_ACTIVE,
   Terminology.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Terminology {
   public static final String JSON_PROPERTY_VERSION = "version";
   private String version;
@@ -56,14 +56,14 @@ public class Terminology {
   public static final String JSON_PROPERTY_SYSTEM_URI = "systemUri";
   private String systemUri;
 
-  public static final String JSON_PROPERTY_ABBREVIATION = "abbreviation";
-  private String abbreviation;
-
   public static final String JSON_PROPERTY_SYSTEM_OID = "systemOid";
   private String systemOid;
 
   public static final String JSON_PROPERTY_EXPRESSION_ENABLED = "expressionEnabled";
   private Boolean expressionEnabled;
+
+  public static final String JSON_PROPERTY_ABBREVIATION = "abbreviation";
+  private String abbreviation;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -71,14 +71,14 @@ public class Terminology {
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
 
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
+
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -142,31 +142,6 @@ public class Terminology {
   }
 
 
-  public Terminology abbreviation(String abbreviation) {
-    this.abbreviation = abbreviation;
-    return this;
-  }
-
-   /**
-   * the terminology abbreviation
-   * @return abbreviation
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getAbbreviation() {
-    return abbreviation;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAbbreviation(String abbreviation) {
-    this.abbreviation = abbreviation;
-  }
-
-
   public Terminology systemOid(String systemOid) {
     this.systemOid = systemOid;
     return this;
@@ -214,6 +189,31 @@ public class Terminology {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExpressionEnabled(Boolean expressionEnabled) {
     this.expressionEnabled = expressionEnabled;
+  }
+
+
+  public Terminology abbreviation(String abbreviation) {
+    this.abbreviation = abbreviation;
+    return this;
+  }
+
+   /**
+   * the terminology abbreviation
+   * @return abbreviation
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getAbbreviation() {
+    return abbreviation;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAbbreviation(String abbreviation) {
+    this.abbreviation = abbreviation;
   }
 
 
@@ -267,6 +267,31 @@ public class Terminology {
   }
 
 
+  public Terminology modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
+  }
+
+
   public Terminology modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
@@ -314,31 +339,6 @@ public class Terminology {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Terminology modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -439,14 +439,14 @@ public class Terminology {
     Terminology terminology = (Terminology) o;
     return Objects.equals(this.version, terminology.version) &&
         Objects.equals(this.systemUri, terminology.systemUri) &&
-        Objects.equals(this.abbreviation, terminology.abbreviation) &&
         Objects.equals(this.systemOid, terminology.systemOid) &&
         Objects.equals(this.expressionEnabled, terminology.expressionEnabled) &&
+        Objects.equals(this.abbreviation, terminology.abbreviation) &&
         Objects.equals(this.name, terminology.name) &&
         Objects.equals(this.local, terminology.local) &&
+        Objects.equals(this.modified, terminology.modified) &&
         Objects.equals(this.modifiedBy, terminology.modifiedBy) &&
         Objects.equals(this.created, terminology.created) &&
-        Objects.equals(this.modified, terminology.modified) &&
         Objects.equals(this.id, terminology.id) &&
         Objects.equals(this.active, terminology.active) &&
         Objects.equals(this.attributes, terminology.attributes);
@@ -454,7 +454,7 @@ public class Terminology {
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, systemUri, abbreviation, systemOid, expressionEnabled, name, local, modifiedBy, created, modified, id, active, attributes);
+    return Objects.hash(version, systemUri, systemOid, expressionEnabled, abbreviation, name, local, modified, modifiedBy, created, id, active, attributes);
   }
 
   @Override
@@ -463,14 +463,14 @@ public class Terminology {
     sb.append("class Terminology {\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    systemUri: ").append(toIndentedString(systemUri)).append("\n");
-    sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
     sb.append("    systemOid: ").append(toIndentedString(systemOid)).append("\n");
     sb.append("    expressionEnabled: ").append(toIndentedString(expressionEnabled)).append("\n");
+    sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");

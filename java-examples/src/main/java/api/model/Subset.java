@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -37,15 +37,13 @@ import api.invoker.JSON;
  * Represents a subset of concepts in a terminology grouped for a particular reason or use case
  */
 @JsonPropertyOrder({
+  Subset.JSON_PROPERTY_QUERY,
   Subset.JSON_PROPERTY_VERSION,
-  Subset.JSON_PROPERTY_DESCRIPTION,
-  Subset.JSON_PROPERTY_CATEGORY,
-  Subset.JSON_PROPERTY_CODE,
-  Subset.JSON_PROPERTY_SCOPE,
-  Subset.JSON_PROPERTY_GENERATOR,
+  Subset.JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES,
   Subset.JSON_PROPERTY_MEMBER_IDS,
   Subset.JSON_PROPERTY_EDITORIAL_POLICY,
   Subset.JSON_PROPERTY_UNIVERSE_SUBSET,
+  Subset.JSON_PROPERTY_GENERATOR,
   Subset.JSON_PROPERTY_UPGRADE_GENERATOR,
   Subset.JSON_PROPERTY_DERIVED_FROM_SUBSET,
   Subset.JSON_PROPERTY_DISJOINT_SUBSETS,
@@ -53,39 +51,32 @@ import api.invoker.JSON;
   Subset.JSON_PROPERTY_PUBLISHABLE,
   Subset.JSON_PROPERTY_DESCENDANTS_GENERATOR,
   Subset.JSON_PROPERTY_REFERENCED_SUBSET_CODES,
-  Subset.JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES,
-  Subset.JSON_PROPERTY_STYLE,
+  Subset.JSON_PROPERTY_DESCRIPTION,
   Subset.JSON_PROPERTY_ENTITY_TYPE,
-  Subset.JSON_PROPERTY_QUERY,
+  Subset.JSON_PROPERTY_CATEGORY,
+  Subset.JSON_PROPERTY_CODE,
+  Subset.JSON_PROPERTY_STYLE,
+  Subset.JSON_PROPERTY_SCOPE,
   Subset.JSON_PROPERTY_LOCAL,
+  Subset.JSON_PROPERTY_MODIFIED,
   Subset.JSON_PROPERTY_MODIFIED_BY,
   Subset.JSON_PROPERTY_CREATED,
-  Subset.JSON_PROPERTY_MODIFIED,
   Subset.JSON_PROPERTY_ID,
   Subset.JSON_PROPERTY_ACTIVE,
   Subset.JSON_PROPERTY_NAME,
   Subset.JSON_PROPERTY_TERMINOLOGY,
   Subset.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Subset {
+  public static final String JSON_PROPERTY_QUERY = "query";
+  private String query;
+
   public static final String JSON_PROPERTY_VERSION = "version";
   private String version;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
-  private String description;
-
-  public static final String JSON_PROPERTY_CATEGORY = "category";
-  private String category;
-
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
-  public static final String JSON_PROPERTY_SCOPE = "scope";
-  private String scope;
-
-  public static final String JSON_PROPERTY_GENERATOR = "generator";
-  private String generator;
+  public static final String JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES = "referencedTerminologyCodes";
+  private Set<String> referencedTerminologyCodes = new LinkedHashSet<>();
 
   public static final String JSON_PROPERTY_MEMBER_IDS = "memberIds";
   private Set<String> memberIds = new LinkedHashSet<>();
@@ -132,6 +123,9 @@ public class Subset {
 
   public static final String JSON_PROPERTY_UNIVERSE_SUBSET = "universeSubset";
   private String universeSubset;
+
+  public static final String JSON_PROPERTY_GENERATOR = "generator";
+  private String generator;
 
   public static final String JSON_PROPERTY_UPGRADE_GENERATOR = "upgradeGenerator";
   private String upgradeGenerator;
@@ -209,8 +203,17 @@ public class Subset {
   public static final String JSON_PROPERTY_REFERENCED_SUBSET_CODES = "referencedSubsetCodes";
   private Set<String> referencedSubsetCodes = new LinkedHashSet<>();
 
-  public static final String JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES = "referencedTerminologyCodes";
-  private Set<String> referencedTerminologyCodes = new LinkedHashSet<>();
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  private String description;
+
+  public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
+  private String entityType;
+
+  public static final String JSON_PROPERTY_CATEGORY = "category";
+  private String category;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
 
   /**
    * Gets or Sets style
@@ -254,23 +257,20 @@ public class Subset {
   public static final String JSON_PROPERTY_STYLE = "style";
   private StyleEnum style;
 
-  public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
-  private String entityType;
-
-  public static final String JSON_PROPERTY_QUERY = "query";
-  private String query;
+  public static final String JSON_PROPERTY_SCOPE = "scope";
+  private String scope;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -289,6 +289,31 @@ public class Subset {
 
   public Subset() { 
   }
+
+  public Subset query(String query) {
+    this.query = query;
+    return this;
+  }
+
+   /**
+   * Get query
+   * @return query
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getQuery() {
+    return query;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuery(String query) {
+    this.query = query;
+  }
+
 
   public Subset version(String version) {
     this.version = version;
@@ -315,128 +340,37 @@ public class Subset {
   }
 
 
-  public Subset description(String description) {
-    this.description = description;
+  public Subset referencedTerminologyCodes(Set<String> referencedTerminologyCodes) {
+    this.referencedTerminologyCodes = referencedTerminologyCodes;
+    return this;
+  }
+
+  public Subset addReferencedTerminologyCodesItem(String referencedTerminologyCodesItem) {
+    if (this.referencedTerminologyCodes == null) {
+      this.referencedTerminologyCodes = new LinkedHashSet<>();
+    }
+    this.referencedTerminologyCodes.add(referencedTerminologyCodesItem);
     return this;
   }
 
    /**
-   * Get description
-   * @return description
+   * Get referencedTerminologyCodes
+   * @return referencedTerminologyCodes
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonProperty(JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getDescription() {
-    return description;
+  public Set<String> getReferencedTerminologyCodes() {
+    return referencedTerminologyCodes;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonDeserialize(as = LinkedHashSet.class)
+  @JsonProperty(JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-
-  public Subset category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getCategory() {
-    return category;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
-
-  public Subset code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * the subset code
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
-  public Subset scope(String scope) {
-    this.scope = scope;
-    return this;
-  }
-
-   /**
-   * Get scope
-   * @return scope
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SCOPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getScope() {
-    return scope;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SCOPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setScope(String scope) {
-    this.scope = scope;
-  }
-
-
-  public Subset generator(String generator) {
-    this.generator = generator;
-    return this;
-  }
-
-   /**
-   * Get generator
-   * @return generator
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENERATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getGenerator() {
-    return generator;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_GENERATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGenerator(String generator) {
-    this.generator = generator;
+  public void setReferencedTerminologyCodes(Set<String> referencedTerminologyCodes) {
+    this.referencedTerminologyCodes = referencedTerminologyCodes;
   }
 
 
@@ -521,6 +455,31 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUniverseSubset(String universeSubset) {
     this.universeSubset = universeSubset;
+  }
+
+
+  public Subset generator(String generator) {
+    this.generator = generator;
+    return this;
+  }
+
+   /**
+   * Get generator
+   * @return generator
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GENERATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getGenerator() {
+    return generator;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_GENERATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGenerator(String generator) {
+    this.generator = generator;
   }
 
 
@@ -717,62 +676,28 @@ public class Subset {
   }
 
 
-  public Subset referencedTerminologyCodes(Set<String> referencedTerminologyCodes) {
-    this.referencedTerminologyCodes = referencedTerminologyCodes;
-    return this;
-  }
-
-  public Subset addReferencedTerminologyCodesItem(String referencedTerminologyCodesItem) {
-    if (this.referencedTerminologyCodes == null) {
-      this.referencedTerminologyCodes = new LinkedHashSet<>();
-    }
-    this.referencedTerminologyCodes.add(referencedTerminologyCodesItem);
+  public Subset description(String description) {
+    this.description = description;
     return this;
   }
 
    /**
-   * Get referencedTerminologyCodes
-   * @return referencedTerminologyCodes
+   * Get description
+   * @return description
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES)
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Set<String> getReferencedTerminologyCodes() {
-    return referencedTerminologyCodes;
+  public String getDescription() {
+    return description;
   }
 
 
-  @JsonDeserialize(as = LinkedHashSet.class)
-  @JsonProperty(JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES)
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setReferencedTerminologyCodes(Set<String> referencedTerminologyCodes) {
-    this.referencedTerminologyCodes = referencedTerminologyCodes;
-  }
-
-
-  public Subset style(StyleEnum style) {
-    this.style = style;
-    return this;
-  }
-
-   /**
-   * Get style
-   * @return style
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STYLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public StyleEnum getStyle() {
-    return style;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_STYLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStyle(StyleEnum style) {
-    this.style = style;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -801,28 +726,103 @@ public class Subset {
   }
 
 
-  public Subset query(String query) {
-    this.query = query;
+  public Subset category(String category) {
+    this.category = category;
     return this;
   }
 
    /**
-   * Get query
-   * @return query
+   * Get category
+   * @return category
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getQuery() {
-    return query;
+  public String getCategory() {
+    return category;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonProperty(JSON_PROPERTY_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuery(String query) {
-    this.query = query;
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+
+  public Subset code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * the subset code
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public Subset style(StyleEnum style) {
+    this.style = style;
+    return this;
+  }
+
+   /**
+   * Get style
+   * @return style
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_STYLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public StyleEnum getStyle() {
+    return style;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_STYLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setStyle(StyleEnum style) {
+    this.style = style;
+  }
+
+
+  public Subset scope(String scope) {
+    this.scope = scope;
+    return this;
+  }
+
+   /**
+   * Get scope
+   * @return scope
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SCOPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getScope() {
+    return scope;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SCOPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setScope(String scope) {
+    this.scope = scope;
   }
 
 
@@ -848,6 +848,31 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Subset modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -898,31 +923,6 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Subset modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -1071,15 +1071,13 @@ public class Subset {
       return false;
     }
     Subset subset = (Subset) o;
-    return Objects.equals(this.version, subset.version) &&
-        Objects.equals(this.description, subset.description) &&
-        Objects.equals(this.category, subset.category) &&
-        Objects.equals(this.code, subset.code) &&
-        Objects.equals(this.scope, subset.scope) &&
-        Objects.equals(this.generator, subset.generator) &&
+    return Objects.equals(this.query, subset.query) &&
+        Objects.equals(this.version, subset.version) &&
+        Objects.equals(this.referencedTerminologyCodes, subset.referencedTerminologyCodes) &&
         Objects.equals(this.memberIds, subset.memberIds) &&
         Objects.equals(this.editorialPolicy, subset.editorialPolicy) &&
         Objects.equals(this.universeSubset, subset.universeSubset) &&
+        Objects.equals(this.generator, subset.generator) &&
         Objects.equals(this.upgradeGenerator, subset.upgradeGenerator) &&
         Objects.equals(this.derivedFromSubset, subset.derivedFromSubset) &&
         Objects.equals(this.disjointSubsets, subset.disjointSubsets) &&
@@ -1087,14 +1085,16 @@ public class Subset {
         Objects.equals(this.publishable, subset.publishable) &&
         Objects.equals(this.descendantsGenerator, subset.descendantsGenerator) &&
         Objects.equals(this.referencedSubsetCodes, subset.referencedSubsetCodes) &&
-        Objects.equals(this.referencedTerminologyCodes, subset.referencedTerminologyCodes) &&
-        Objects.equals(this.style, subset.style) &&
+        Objects.equals(this.description, subset.description) &&
         Objects.equals(this.entityType, subset.entityType) &&
-        Objects.equals(this.query, subset.query) &&
+        Objects.equals(this.category, subset.category) &&
+        Objects.equals(this.code, subset.code) &&
+        Objects.equals(this.style, subset.style) &&
+        Objects.equals(this.scope, subset.scope) &&
         Objects.equals(this.local, subset.local) &&
+        Objects.equals(this.modified, subset.modified) &&
         Objects.equals(this.modifiedBy, subset.modifiedBy) &&
         Objects.equals(this.created, subset.created) &&
-        Objects.equals(this.modified, subset.modified) &&
         Objects.equals(this.id, subset.id) &&
         Objects.equals(this.active, subset.active) &&
         Objects.equals(this.name, subset.name) &&
@@ -1104,22 +1104,20 @@ public class Subset {
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, description, category, code, scope, generator, memberIds, editorialPolicy, universeSubset, upgradeGenerator, derivedFromSubset, disjointSubsets, workflowStatus, publishable, descendantsGenerator, referencedSubsetCodes, referencedTerminologyCodes, style, entityType, query, local, modifiedBy, created, modified, id, active, name, terminology, attributes);
+    return Objects.hash(query, version, referencedTerminologyCodes, memberIds, editorialPolicy, universeSubset, generator, upgradeGenerator, derivedFromSubset, disjointSubsets, workflowStatus, publishable, descendantsGenerator, referencedSubsetCodes, description, entityType, category, code, style, scope, local, modified, modifiedBy, created, id, active, name, terminology, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Subset {\n");
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    generator: ").append(toIndentedString(generator)).append("\n");
+    sb.append("    referencedTerminologyCodes: ").append(toIndentedString(referencedTerminologyCodes)).append("\n");
     sb.append("    memberIds: ").append(toIndentedString(memberIds)).append("\n");
     sb.append("    editorialPolicy: ").append(toIndentedString(editorialPolicy)).append("\n");
     sb.append("    universeSubset: ").append(toIndentedString(universeSubset)).append("\n");
+    sb.append("    generator: ").append(toIndentedString(generator)).append("\n");
     sb.append("    upgradeGenerator: ").append(toIndentedString(upgradeGenerator)).append("\n");
     sb.append("    derivedFromSubset: ").append(toIndentedString(derivedFromSubset)).append("\n");
     sb.append("    disjointSubsets: ").append(toIndentedString(disjointSubsets)).append("\n");
@@ -1127,14 +1125,16 @@ public class Subset {
     sb.append("    publishable: ").append(toIndentedString(publishable)).append("\n");
     sb.append("    descendantsGenerator: ").append(toIndentedString(descendantsGenerator)).append("\n");
     sb.append("    referencedSubsetCodes: ").append(toIndentedString(referencedSubsetCodes)).append("\n");
-    sb.append("    referencedTerminologyCodes: ").append(toIndentedString(referencedTerminologyCodes)).append("\n");
-    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    style: ").append(toIndentedString(style)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

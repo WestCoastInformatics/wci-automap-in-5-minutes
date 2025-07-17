@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -35,28 +35,28 @@ import api.invoker.JSON;
  */
 @JsonPropertyOrder({
   Metadata.JSON_PROPERTY_TYPE,
-  Metadata.JSON_PROPERTY_RANK,
   Metadata.JSON_PROPERTY_ABBREVIATION,
+  Metadata.JSON_PROPERTY_RANK,
   Metadata.JSON_PROPERTY_NAME,
   Metadata.JSON_PROPERTY_TERMINOLOGY,
   Metadata.JSON_PROPERTY_ATTRIBUTES,
   Metadata.JSON_PROPERTY_LOCAL,
+  Metadata.JSON_PROPERTY_MODIFIED,
   Metadata.JSON_PROPERTY_MODIFIED_BY,
   Metadata.JSON_PROPERTY_CREATED,
-  Metadata.JSON_PROPERTY_MODIFIED,
   Metadata.JSON_PROPERTY_ID,
   Metadata.JSON_PROPERTY_ACTIVE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Metadata {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
 
-  public static final String JSON_PROPERTY_RANK = "rank";
-  private Integer rank;
-
   public static final String JSON_PROPERTY_ABBREVIATION = "abbreviation";
   private String abbreviation;
+
+  public static final String JSON_PROPERTY_RANK = "rank";
+  private Integer rank;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -70,14 +70,14 @@ public class Metadata {
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
 
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
+
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -113,31 +113,6 @@ public class Metadata {
   }
 
 
-  public Metadata rank(Integer rank) {
-    this.rank = rank;
-    return this;
-  }
-
-   /**
-   * used for when metadata lists need to be ranked (as in a ranked list of term types)
-   * @return rank
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RANK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getRank() {
-    return rank;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RANK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRank(Integer rank) {
-    this.rank = rank;
-  }
-
-
   public Metadata abbreviation(String abbreviation) {
     this.abbreviation = abbreviation;
     return this;
@@ -160,6 +135,31 @@ public class Metadata {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAbbreviation(String abbreviation) {
     this.abbreviation = abbreviation;
+  }
+
+
+  public Metadata rank(Integer rank) {
+    this.rank = rank;
+    return this;
+  }
+
+   /**
+   * used for when metadata lists need to be ranked (as in a ranked list of term types)
+   * @return rank
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RANK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Integer getRank() {
+    return rank;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RANK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRank(Integer rank) {
+    this.rank = rank;
   }
 
 
@@ -271,6 +271,31 @@ public class Metadata {
   }
 
 
+  public Metadata modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
+  }
+
+
   public Metadata modifiedBy(String modifiedBy) {
     this.modifiedBy = modifiedBy;
     return this;
@@ -318,31 +343,6 @@ public class Metadata {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Metadata modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -409,22 +409,22 @@ public class Metadata {
     }
     Metadata metadata = (Metadata) o;
     return Objects.equals(this.type, metadata.type) &&
-        Objects.equals(this.rank, metadata.rank) &&
         Objects.equals(this.abbreviation, metadata.abbreviation) &&
+        Objects.equals(this.rank, metadata.rank) &&
         Objects.equals(this.name, metadata.name) &&
         Objects.equals(this.terminology, metadata.terminology) &&
         Objects.equals(this.attributes, metadata.attributes) &&
         Objects.equals(this.local, metadata.local) &&
+        Objects.equals(this.modified, metadata.modified) &&
         Objects.equals(this.modifiedBy, metadata.modifiedBy) &&
         Objects.equals(this.created, metadata.created) &&
-        Objects.equals(this.modified, metadata.modified) &&
         Objects.equals(this.id, metadata.id) &&
         Objects.equals(this.active, metadata.active);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, rank, abbreviation, name, terminology, attributes, local, modifiedBy, created, modified, id, active);
+    return Objects.hash(type, abbreviation, rank, name, terminology, attributes, local, modified, modifiedBy, created, id, active);
   }
 
   @Override
@@ -432,15 +432,15 @@ public class Metadata {
     StringBuilder sb = new StringBuilder();
     sb.append("class Metadata {\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
     sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
+    sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");

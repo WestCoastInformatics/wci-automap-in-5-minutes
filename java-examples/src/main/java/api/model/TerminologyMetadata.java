@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -36,23 +36,29 @@ import api.invoker.JSON;
  * Represents all types of metadata associated with a terminology
  */
 @JsonPropertyOrder({
+  TerminologyMetadata.JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES,
+  TerminologyMetadata.JSON_PROPERTY_SEMANTIC_TYPES,
   TerminologyMetadata.JSON_PROPERTY_TERM_TYPES,
   TerminologyMetadata.JSON_PROPERTY_LANGUAGES,
   TerminologyMetadata.JSON_PROPERTY_RELATIONSHIP_TYPES,
-  TerminologyMetadata.JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES,
   TerminologyMetadata.JSON_PROPERTY_ATTRIBUTE_NAMES,
-  TerminologyMetadata.JSON_PROPERTY_OTHER,
-  TerminologyMetadata.JSON_PROPERTY_SEMANTIC_TYPES,
   TerminologyMetadata.JSON_PROPERTY_TERMINOLOGY,
+  TerminologyMetadata.JSON_PROPERTY_OTHER,
   TerminologyMetadata.JSON_PROPERTY_LOCAL,
+  TerminologyMetadata.JSON_PROPERTY_MODIFIED,
   TerminologyMetadata.JSON_PROPERTY_MODIFIED_BY,
   TerminologyMetadata.JSON_PROPERTY_CREATED,
-  TerminologyMetadata.JSON_PROPERTY_MODIFIED,
   TerminologyMetadata.JSON_PROPERTY_ID,
   TerminologyMetadata.JSON_PROPERTY_ACTIVE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class TerminologyMetadata {
+  public static final String JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES = "additionalRelationshipTypes";
+  private Map<String, Metadata> additionalRelationshipTypes = new HashMap<>();
+
+  public static final String JSON_PROPERTY_SEMANTIC_TYPES = "semanticTypes";
+  private Map<String, Metadata> semanticTypes = new HashMap<>();
+
   public static final String JSON_PROPERTY_TERM_TYPES = "termTypes";
   private Map<String, Metadata> termTypes = new HashMap<>();
 
@@ -62,32 +68,26 @@ public class TerminologyMetadata {
   public static final String JSON_PROPERTY_RELATIONSHIP_TYPES = "relationshipTypes";
   private Map<String, Metadata> relationshipTypes = new HashMap<>();
 
-  public static final String JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES = "additionalRelationshipTypes";
-  private Map<String, Metadata> additionalRelationshipTypes = new HashMap<>();
-
   public static final String JSON_PROPERTY_ATTRIBUTE_NAMES = "attributeNames";
   private Map<String, Metadata> attributeNames = new HashMap<>();
-
-  public static final String JSON_PROPERTY_OTHER = "other";
-  private Map<String, Metadata> other = new HashMap<>();
-
-  public static final String JSON_PROPERTY_SEMANTIC_TYPES = "semanticTypes";
-  private Map<String, Metadata> semanticTypes = new HashMap<>();
 
   public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
   private Terminology terminology;
 
+  public static final String JSON_PROPERTY_OTHER = "other";
+  private Map<String, Metadata> other = new HashMap<>();
+
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -97,6 +97,72 @@ public class TerminologyMetadata {
 
   public TerminologyMetadata() { 
   }
+
+  public TerminologyMetadata additionalRelationshipTypes(Map<String, Metadata> additionalRelationshipTypes) {
+    this.additionalRelationshipTypes = additionalRelationshipTypes;
+    return this;
+  }
+
+  public TerminologyMetadata putAdditionalRelationshipTypesItem(String key, Metadata additionalRelationshipTypesItem) {
+    if (this.additionalRelationshipTypes == null) {
+      this.additionalRelationshipTypes = new HashMap<>();
+    }
+    this.additionalRelationshipTypes.put(key, additionalRelationshipTypesItem);
+    return this;
+  }
+
+   /**
+   * the additional relationship types used by the terminology
+   * @return additionalRelationshipTypes
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Metadata> getAdditionalRelationshipTypes() {
+    return additionalRelationshipTypes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAdditionalRelationshipTypes(Map<String, Metadata> additionalRelationshipTypes) {
+    this.additionalRelationshipTypes = additionalRelationshipTypes;
+  }
+
+
+  public TerminologyMetadata semanticTypes(Map<String, Metadata> semanticTypes) {
+    this.semanticTypes = semanticTypes;
+    return this;
+  }
+
+  public TerminologyMetadata putSemanticTypesItem(String key, Metadata semanticTypesItem) {
+    if (this.semanticTypes == null) {
+      this.semanticTypes = new HashMap<>();
+    }
+    this.semanticTypes.put(key, semanticTypesItem);
+    return this;
+  }
+
+   /**
+   * the semantic types used by the terminology
+   * @return semanticTypes
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SEMANTIC_TYPES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Map<String, Metadata> getSemanticTypes() {
+    return semanticTypes;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SEMANTIC_TYPES)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSemanticTypes(Map<String, Metadata> semanticTypes) {
+    this.semanticTypes = semanticTypes;
+  }
+
 
   public TerminologyMetadata termTypes(Map<String, Metadata> termTypes) {
     this.termTypes = termTypes;
@@ -197,39 +263,6 @@ public class TerminologyMetadata {
   }
 
 
-  public TerminologyMetadata additionalRelationshipTypes(Map<String, Metadata> additionalRelationshipTypes) {
-    this.additionalRelationshipTypes = additionalRelationshipTypes;
-    return this;
-  }
-
-  public TerminologyMetadata putAdditionalRelationshipTypesItem(String key, Metadata additionalRelationshipTypesItem) {
-    if (this.additionalRelationshipTypes == null) {
-      this.additionalRelationshipTypes = new HashMap<>();
-    }
-    this.additionalRelationshipTypes.put(key, additionalRelationshipTypesItem);
-    return this;
-  }
-
-   /**
-   * the additional relationship types used by the terminology
-   * @return additionalRelationshipTypes
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Map<String, Metadata> getAdditionalRelationshipTypes() {
-    return additionalRelationshipTypes;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ADDITIONAL_RELATIONSHIP_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAdditionalRelationshipTypes(Map<String, Metadata> additionalRelationshipTypes) {
-    this.additionalRelationshipTypes = additionalRelationshipTypes;
-  }
-
-
   public TerminologyMetadata attributeNames(Map<String, Metadata> attributeNames) {
     this.attributeNames = attributeNames;
     return this;
@@ -260,6 +293,31 @@ public class TerminologyMetadata {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAttributeNames(Map<String, Metadata> attributeNames) {
     this.attributeNames = attributeNames;
+  }
+
+
+  public TerminologyMetadata terminology(Terminology terminology) {
+    this.terminology = terminology;
+    return this;
+  }
+
+   /**
+   * Get terminology
+   * @return terminology
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Terminology getTerminology() {
+    return terminology;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTerminology(Terminology terminology) {
+    this.terminology = terminology;
   }
 
 
@@ -296,64 +354,6 @@ public class TerminologyMetadata {
   }
 
 
-  public TerminologyMetadata semanticTypes(Map<String, Metadata> semanticTypes) {
-    this.semanticTypes = semanticTypes;
-    return this;
-  }
-
-  public TerminologyMetadata putSemanticTypesItem(String key, Metadata semanticTypesItem) {
-    if (this.semanticTypes == null) {
-      this.semanticTypes = new HashMap<>();
-    }
-    this.semanticTypes.put(key, semanticTypesItem);
-    return this;
-  }
-
-   /**
-   * the semantic types used by the terminology
-   * @return semanticTypes
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SEMANTIC_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Map<String, Metadata> getSemanticTypes() {
-    return semanticTypes;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SEMANTIC_TYPES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSemanticTypes(Map<String, Metadata> semanticTypes) {
-    this.semanticTypes = semanticTypes;
-  }
-
-
-  public TerminologyMetadata terminology(Terminology terminology) {
-    this.terminology = terminology;
-    return this;
-  }
-
-   /**
-   * Get terminology
-   * @return terminology
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Terminology getTerminology() {
-    return terminology;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTerminology(Terminology terminology) {
-    this.terminology = terminology;
-  }
-
-
   public TerminologyMetadata local(Boolean local) {
     this.local = local;
     return this;
@@ -376,6 +376,31 @@ public class TerminologyMetadata {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public TerminologyMetadata modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -426,31 +451,6 @@ public class TerminologyMetadata {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public TerminologyMetadata modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -516,43 +516,43 @@ public class TerminologyMetadata {
       return false;
     }
     TerminologyMetadata terminologyMetadata = (TerminologyMetadata) o;
-    return Objects.equals(this.termTypes, terminologyMetadata.termTypes) &&
+    return Objects.equals(this.additionalRelationshipTypes, terminologyMetadata.additionalRelationshipTypes) &&
+        Objects.equals(this.semanticTypes, terminologyMetadata.semanticTypes) &&
+        Objects.equals(this.termTypes, terminologyMetadata.termTypes) &&
         Objects.equals(this.languages, terminologyMetadata.languages) &&
         Objects.equals(this.relationshipTypes, terminologyMetadata.relationshipTypes) &&
-        Objects.equals(this.additionalRelationshipTypes, terminologyMetadata.additionalRelationshipTypes) &&
         Objects.equals(this.attributeNames, terminologyMetadata.attributeNames) &&
-        Objects.equals(this.other, terminologyMetadata.other) &&
-        Objects.equals(this.semanticTypes, terminologyMetadata.semanticTypes) &&
         Objects.equals(this.terminology, terminologyMetadata.terminology) &&
+        Objects.equals(this.other, terminologyMetadata.other) &&
         Objects.equals(this.local, terminologyMetadata.local) &&
+        Objects.equals(this.modified, terminologyMetadata.modified) &&
         Objects.equals(this.modifiedBy, terminologyMetadata.modifiedBy) &&
         Objects.equals(this.created, terminologyMetadata.created) &&
-        Objects.equals(this.modified, terminologyMetadata.modified) &&
         Objects.equals(this.id, terminologyMetadata.id) &&
         Objects.equals(this.active, terminologyMetadata.active);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(termTypes, languages, relationshipTypes, additionalRelationshipTypes, attributeNames, other, semanticTypes, terminology, local, modifiedBy, created, modified, id, active);
+    return Objects.hash(additionalRelationshipTypes, semanticTypes, termTypes, languages, relationshipTypes, attributeNames, terminology, other, local, modified, modifiedBy, created, id, active);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TerminologyMetadata {\n");
+    sb.append("    additionalRelationshipTypes: ").append(toIndentedString(additionalRelationshipTypes)).append("\n");
+    sb.append("    semanticTypes: ").append(toIndentedString(semanticTypes)).append("\n");
     sb.append("    termTypes: ").append(toIndentedString(termTypes)).append("\n");
     sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
     sb.append("    relationshipTypes: ").append(toIndentedString(relationshipTypes)).append("\n");
-    sb.append("    additionalRelationshipTypes: ").append(toIndentedString(additionalRelationshipTypes)).append("\n");
     sb.append("    attributeNames: ").append(toIndentedString(attributeNames)).append("\n");
-    sb.append("    other: ").append(toIndentedString(other)).append("\n");
-    sb.append("    semanticTypes: ").append(toIndentedString(semanticTypes)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
+    sb.append("    other: ").append(toIndentedString(other)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("}");

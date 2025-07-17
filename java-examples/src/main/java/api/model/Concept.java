@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -42,53 +42,53 @@ import api.invoker.JSON;
  * Represents a concept with a code in a terminology
  */
 @JsonPropertyOrder({
-  Concept.JSON_PROPERTY_CODE,
   Concept.JSON_PROPERTY_SUFFICIENTLY_DEFINED,
-  Concept.JSON_PROPERTY_ATOMS,
   Concept.JSON_PROPERTY_DEFINITIONS,
-  Concept.JSON_PROPERTY_AXIOMS,
   Concept.JSON_PROPERTY_SEMANTIC_TYPES,
+  Concept.JSON_PROPERTY_ATOMS,
+  Concept.JSON_PROPERTY_CODE,
+  Concept.JSON_PROPERTY_AXIOMS,
   Concept.JSON_PROPERTY_LOCAL,
+  Concept.JSON_PROPERTY_MODIFIED,
   Concept.JSON_PROPERTY_MODIFIED_BY,
   Concept.JSON_PROPERTY_CREATED,
-  Concept.JSON_PROPERTY_MODIFIED,
   Concept.JSON_PROPERTY_ID,
   Concept.JSON_PROPERTY_ACTIVE,
   Concept.JSON_PROPERTY_TERMINOLOGY,
   Concept.JSON_PROPERTY_NAME,
   Concept.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Concept {
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
   public static final String JSON_PROPERTY_SUFFICIENTLY_DEFINED = "sufficientlyDefined";
   private Boolean sufficientlyDefined;
-
-  public static final String JSON_PROPERTY_ATOMS = "atoms";
-  private List<Atom> atoms = new ArrayList<>();
 
   public static final String JSON_PROPERTY_DEFINITIONS = "definitions";
   private List<Definition> definitions = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_AXIOMS = "axioms";
-  private List<Axiom> axioms = new ArrayList<>();
-
   public static final String JSON_PROPERTY_SEMANTIC_TYPES = "semanticTypes";
   private Set<String> semanticTypes = new LinkedHashSet<>();
 
+  public static final String JSON_PROPERTY_ATOMS = "atoms";
+  private List<Atom> atoms = new ArrayList<>();
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
+  public static final String JSON_PROPERTY_AXIOMS = "axioms";
+  private List<Axiom> axioms = new ArrayList<>();
+
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -107,31 +107,6 @@ public class Concept {
 
   public Concept() { 
   }
-
-  public Concept code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * the code in the specified terminology
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
 
   public Concept sufficientlyDefined(Boolean sufficientlyDefined) {
     this.sufficientlyDefined = sufficientlyDefined;
@@ -155,39 +130,6 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSufficientlyDefined(Boolean sufficientlyDefined) {
     this.sufficientlyDefined = sufficientlyDefined;
-  }
-
-
-  public Concept atoms(List<Atom> atoms) {
-    this.atoms = atoms;
-    return this;
-  }
-
-  public Concept addAtomsItem(Atom atomsItem) {
-    if (this.atoms == null) {
-      this.atoms = new ArrayList<>();
-    }
-    this.atoms.add(atomsItem);
-    return this;
-  }
-
-   /**
-   * the names associated with this concept
-   * @return atoms
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ATOMS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public List<Atom> getAtoms() {
-    return atoms;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ATOMS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAtoms(List<Atom> atoms) {
-    this.atoms = atoms;
   }
 
 
@@ -221,39 +163,6 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDefinitions(List<Definition> definitions) {
     this.definitions = definitions;
-  }
-
-
-  public Concept axioms(List<Axiom> axioms) {
-    this.axioms = axioms;
-    return this;
-  }
-
-  public Concept addAxiomsItem(Axiom axiomsItem) {
-    if (this.axioms == null) {
-      this.axioms = new ArrayList<>();
-    }
-    this.axioms.add(axiomsItem);
-    return this;
-  }
-
-   /**
-   * the axioms associated with this concept
-   * @return axioms
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AXIOMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public List<Axiom> getAxioms() {
-    return axioms;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_AXIOMS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAxioms(List<Axiom> axioms) {
-    this.axioms = axioms;
   }
 
 
@@ -291,6 +200,97 @@ public class Concept {
   }
 
 
+  public Concept atoms(List<Atom> atoms) {
+    this.atoms = atoms;
+    return this;
+  }
+
+  public Concept addAtomsItem(Atom atomsItem) {
+    if (this.atoms == null) {
+      this.atoms = new ArrayList<>();
+    }
+    this.atoms.add(atomsItem);
+    return this;
+  }
+
+   /**
+   * the names associated with this concept
+   * @return atoms
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ATOMS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<Atom> getAtoms() {
+    return atoms;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ATOMS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAtoms(List<Atom> atoms) {
+    this.atoms = atoms;
+  }
+
+
+  public Concept code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * the code in the specified terminology
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public Concept axioms(List<Axiom> axioms) {
+    this.axioms = axioms;
+    return this;
+  }
+
+  public Concept addAxiomsItem(Axiom axiomsItem) {
+    if (this.axioms == null) {
+      this.axioms = new ArrayList<>();
+    }
+    this.axioms.add(axiomsItem);
+    return this;
+  }
+
+   /**
+   * the axioms associated with this concept
+   * @return axioms
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AXIOMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public List<Axiom> getAxioms() {
+    return axioms;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AXIOMS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAxioms(List<Axiom> axioms) {
+    this.axioms = axioms;
+  }
+
+
   public Concept local(Boolean local) {
     this.local = local;
     return this;
@@ -313,6 +313,31 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocal(Boolean local) {
     this.local = local;
+  }
+
+
+  public Concept modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -363,31 +388,6 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public Concept modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -536,16 +536,16 @@ public class Concept {
       return false;
     }
     Concept concept = (Concept) o;
-    return Objects.equals(this.code, concept.code) &&
-        Objects.equals(this.sufficientlyDefined, concept.sufficientlyDefined) &&
-        Objects.equals(this.atoms, concept.atoms) &&
+    return Objects.equals(this.sufficientlyDefined, concept.sufficientlyDefined) &&
         Objects.equals(this.definitions, concept.definitions) &&
-        Objects.equals(this.axioms, concept.axioms) &&
         Objects.equals(this.semanticTypes, concept.semanticTypes) &&
+        Objects.equals(this.atoms, concept.atoms) &&
+        Objects.equals(this.code, concept.code) &&
+        Objects.equals(this.axioms, concept.axioms) &&
         Objects.equals(this.local, concept.local) &&
+        Objects.equals(this.modified, concept.modified) &&
         Objects.equals(this.modifiedBy, concept.modifiedBy) &&
         Objects.equals(this.created, concept.created) &&
-        Objects.equals(this.modified, concept.modified) &&
         Objects.equals(this.id, concept.id) &&
         Objects.equals(this.active, concept.active) &&
         Objects.equals(this.terminology, concept.terminology) &&
@@ -555,23 +555,23 @@ public class Concept {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, sufficientlyDefined, atoms, definitions, axioms, semanticTypes, local, modifiedBy, created, modified, id, active, terminology, name, attributes);
+    return Objects.hash(sufficientlyDefined, definitions, semanticTypes, atoms, code, axioms, local, modified, modifiedBy, created, id, active, terminology, name, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Concept {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    sufficientlyDefined: ").append(toIndentedString(sufficientlyDefined)).append("\n");
-    sb.append("    atoms: ").append(toIndentedString(atoms)).append("\n");
     sb.append("    definitions: ").append(toIndentedString(definitions)).append("\n");
-    sb.append("    axioms: ").append(toIndentedString(axioms)).append("\n");
     sb.append("    semanticTypes: ").append(toIndentedString(semanticTypes)).append("\n");
+    sb.append("    atoms: ").append(toIndentedString(atoms)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    axioms: ").append(toIndentedString(axioms)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");

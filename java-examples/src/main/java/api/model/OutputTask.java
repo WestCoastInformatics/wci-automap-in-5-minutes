@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -36,21 +36,28 @@ import api.invoker.JSON;
  * Represents a response from task processing request, including mapped terms
  */
 @JsonPropertyOrder({
+  OutputTask.JSON_PROPERTY_ASYNC_COMPLETE,
+  OutputTask.JSON_PROPERTY_CONFIDENCE,
   OutputTask.JSON_PROPERTY_STATUS,
   OutputTask.JSON_PROPERTY_TERMS,
-  OutputTask.JSON_PROPERTY_ASYNC_COMPLETE,
   OutputTask.JSON_PROPERTY_CONTEXT,
-  OutputTask.JSON_PROPERTY_TOP_ANSWER,
   OutputTask.JSON_PROPERTY_MIN_CONFIDENCE,
+  OutputTask.JSON_PROPERTY_TOP_ANSWER,
   OutputTask.JSON_PROPERTY_AUDIT,
+  OutputTask.JSON_PROPERTY_MODIFIED,
   OutputTask.JSON_PROPERTY_MODIFIED_BY,
   OutputTask.JSON_PROPERTY_CREATED,
-  OutputTask.JSON_PROPERTY_MODIFIED,
   OutputTask.JSON_PROPERTY_ID,
   OutputTask.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class OutputTask {
+  public static final String JSON_PROPERTY_ASYNC_COMPLETE = "asyncComplete";
+  private Boolean asyncComplete;
+
+  public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
+  private Double confidence;
+
   /**
    * Overall status of the mapping of terms in this task.  Allowable values are detailed by the application metadata endpoint
    */
@@ -98,29 +105,26 @@ public class OutputTask {
   public static final String JSON_PROPERTY_TERMS = "terms";
   private List<OutputTerm> terms = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_ASYNC_COMPLETE = "asyncComplete";
-  private Boolean asyncComplete;
-
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
-
-  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
-  private Boolean topAnswer = false;
 
   public static final String JSON_PROPERTY_MIN_CONFIDENCE = "minConfidence";
   private Double minConfidence = 0.0d;
 
+  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
+  private Boolean topAnswer = false;
+
   public static final String JSON_PROPERTY_AUDIT = "audit";
   private Boolean audit = true;
+
+  public static final String JSON_PROPERTY_MODIFIED = "modified";
+  private Date modified;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
 
   public static final String JSON_PROPERTY_CREATED = "created";
   private Date created;
-
-  public static final String JSON_PROPERTY_MODIFIED = "modified";
-  private Date modified;
 
   public static final String JSON_PROPERTY_ID = "id";
   private UUID id;
@@ -130,6 +134,56 @@ public class OutputTask {
 
   public OutputTask() { 
   }
+
+  public OutputTask asyncComplete(Boolean asyncComplete) {
+    this.asyncComplete = asyncComplete;
+    return this;
+  }
+
+   /**
+   * Flag indicating that async operations on &#39;final&#39; status are complete
+   * @return asyncComplete
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ASYNC_COMPLETE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getAsyncComplete() {
+    return asyncComplete;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ASYNC_COMPLETE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAsyncComplete(Boolean asyncComplete) {
+    this.asyncComplete = asyncComplete;
+  }
+
+
+  public OutputTask confidence(Double confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+
+   /**
+   * Confidence level of the task processing
+   * @return confidence
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Double getConfidence() {
+    return confidence;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CONFIDENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setConfidence(Double confidence) {
+    this.confidence = confidence;
+  }
+
 
   public OutputTask status(StatusEnum status) {
     this.status = status;
@@ -189,31 +243,6 @@ public class OutputTask {
   }
 
 
-  public OutputTask asyncComplete(Boolean asyncComplete) {
-    this.asyncComplete = asyncComplete;
-    return this;
-  }
-
-   /**
-   * Flag indicating that async operations on &#39;final&#39; status are complete
-   * @return asyncComplete
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ASYNC_COMPLETE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getAsyncComplete() {
-    return asyncComplete;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ASYNC_COMPLETE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAsyncComplete(Boolean asyncComplete) {
-    this.asyncComplete = asyncComplete;
-  }
-
-
   public OutputTask context(String context) {
     this.context = context;
     return this;
@@ -236,31 +265,6 @@ public class OutputTask {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(String context) {
     this.context = context;
-  }
-
-
-  public OutputTask topAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
-    return this;
-  }
-
-   /**
-   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
-   * @return topAnswer
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getTopAnswer() {
-    return topAnswer;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTopAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
   }
 
 
@@ -289,6 +293,31 @@ public class OutputTask {
   }
 
 
+  public OutputTask topAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
+    return this;
+  }
+
+   /**
+   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
+   * @return topAnswer
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getTopAnswer() {
+    return topAnswer;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTopAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
+  }
+
+
   public OutputTask audit(Boolean audit) {
     this.audit = audit;
     return this;
@@ -311,6 +340,31 @@ public class OutputTask {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAudit(Boolean audit) {
     this.audit = audit;
+  }
+
+
+  public OutputTask modified(Date modified) {
+    this.modified = modified;
+    return this;
+  }
+
+   /**
+   * the last modified date
+   * @return modified
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Date getModified() {
+    return modified;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MODIFIED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setModified(Date modified) {
+    this.modified = modified;
   }
 
 
@@ -361,31 +415,6 @@ public class OutputTask {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCreated(Date created) {
     this.created = created;
-  }
-
-
-  public OutputTask modified(Date modified) {
-    this.modified = modified;
-    return this;
-  }
-
-   /**
-   * the last modified date
-   * @return modified
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Date getModified() {
-    return modified;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MODIFIED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setModified(Date modified) {
-    this.modified = modified;
   }
 
 
@@ -459,39 +488,41 @@ public class OutputTask {
       return false;
     }
     OutputTask outputTask = (OutputTask) o;
-    return Objects.equals(this.status, outputTask.status) &&
+    return Objects.equals(this.asyncComplete, outputTask.asyncComplete) &&
+        Objects.equals(this.confidence, outputTask.confidence) &&
+        Objects.equals(this.status, outputTask.status) &&
         Objects.equals(this.terms, outputTask.terms) &&
-        Objects.equals(this.asyncComplete, outputTask.asyncComplete) &&
         Objects.equals(this.context, outputTask.context) &&
-        Objects.equals(this.topAnswer, outputTask.topAnswer) &&
         Objects.equals(this.minConfidence, outputTask.minConfidence) &&
+        Objects.equals(this.topAnswer, outputTask.topAnswer) &&
         Objects.equals(this.audit, outputTask.audit) &&
+        Objects.equals(this.modified, outputTask.modified) &&
         Objects.equals(this.modifiedBy, outputTask.modifiedBy) &&
         Objects.equals(this.created, outputTask.created) &&
-        Objects.equals(this.modified, outputTask.modified) &&
         Objects.equals(this.id, outputTask.id) &&
         Objects.equals(this.tags, outputTask.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, terms, asyncComplete, context, topAnswer, minConfidence, audit, modifiedBy, created, modified, id, tags);
+    return Objects.hash(asyncComplete, confidence, status, terms, context, minConfidence, topAnswer, audit, modified, modifiedBy, created, id, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutputTask {\n");
+    sb.append("    asyncComplete: ").append(toIndentedString(asyncComplete)).append("\n");
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    terms: ").append(toIndentedString(terms)).append("\n");
-    sb.append("    asyncComplete: ").append(toIndentedString(asyncComplete)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
     sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
+    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
     sb.append("    audit: ").append(toIndentedString(audit)).append("\n");
+    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
-    sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");

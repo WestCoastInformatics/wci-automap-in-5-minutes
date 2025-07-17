@@ -1,6 +1,6 @@
 /*
  * WCI Automap API
- * API documentation for the West Coast Informatics Automated Term Mapping Service.
+ * <p>API documentation for the West Coast Informatics Automated Term Mapping Service.</p><p>For developer documentation and examples, see on GitHub <a href=\"https://github.com/westCoastInformatics/wci-automap-in-5-minutes\">WCI Automap in 5 Minutes</a></p>
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: info@westcoastinformatics.com
@@ -35,72 +35,23 @@ import api.invoker.JSON;
  * Represents an term to be mapped
  */
 @JsonPropertyOrder({
-  InputTerm.JSON_PROPERTY_CODE,
-  InputTerm.JSON_PROPERTY_INPUT_TYPE,
   InputTerm.JSON_PROPERTY_CONTEXT,
-  InputTerm.JSON_PROPERTY_TASK_ID,
-  InputTerm.JSON_PROPERTY_TERM,
+  InputTerm.JSON_PROPERTY_TO_TERMINOLOGY,
   InputTerm.JSON_PROPERTY_ENTITY_TYPE,
   InputTerm.JSON_PROPERTY_TERMINOLOGY,
+  InputTerm.JSON_PROPERTY_INPUT_TYPE,
+  InputTerm.JSON_PROPERTY_TASK_ID,
+  InputTerm.JSON_PROPERTY_TERM,
+  InputTerm.JSON_PROPERTY_CODE,
   InputTerm.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-29T16:47:36.399771100-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class InputTerm {
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
-
-  /**
-   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
-   */
-  public enum InputTypeEnum {
-    PICKLIST("picklist"),
-    
-    BOOLEAN("boolean"),
-    
-    STRING("string"),
-    
-    PHRASE("phrase"),
-    
-    FHIRCODING("fhirCoding");
-
-    private String value;
-
-    InputTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static InputTypeEnum fromValue(String value) {
-      for (InputTypeEnum b : InputTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-  }
-
-  public static final String JSON_PROPERTY_INPUT_TYPE = "inputType";
-  private InputTypeEnum inputType;
-
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private Map<String, String> context = new HashMap<>();
 
-  public static final String JSON_PROPERTY_TASK_ID = "taskId";
-  private String taskId;
-
-  public static final String JSON_PROPERTY_TERM = "term";
-  private String term;
+  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
+  private String toTerminology;
 
   /**
    * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
@@ -247,61 +198,64 @@ public class InputTerm {
   public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
   private String terminology;
 
+  /**
+   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
+   */
+  public enum InputTypeEnum {
+    PICKLIST("picklist"),
+    
+    BOOLEAN("boolean"),
+    
+    STRING("string"),
+    
+    PHRASE("phrase"),
+    
+    FHIRCODING("fhirCoding");
+
+    private String value;
+
+    InputTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static InputTypeEnum fromValue(String value) {
+      for (InputTypeEnum b : InputTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+  }
+
+  public static final String JSON_PROPERTY_INPUT_TYPE = "inputType";
+  private InputTypeEnum inputType;
+
+  public static final String JSON_PROPERTY_TASK_ID = "taskId";
+  private String taskId;
+
+  public static final String JSON_PROPERTY_TERM = "term";
+  private String term;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
   public static final String JSON_PROPERTY_TAGS = "tags";
   private List<Tag> tags = new ArrayList<>();
 
   public InputTerm() { 
   }
-
-  public InputTerm code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Code for the term to be mapped, e.g. \&quot;56265001\&quot;
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
-  public InputTerm inputType(InputTypeEnum inputType) {
-    this.inputType = inputType;
-    return this;
-  }
-
-   /**
-   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
-   * @return inputType
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public InputTypeEnum getInputType() {
-    return inputType;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setInputType(InputTypeEnum inputType) {
-    this.inputType = inputType;
-  }
-
 
   public InputTerm context(Map<String, String> context) {
     this.context = context;
@@ -336,53 +290,28 @@ public class InputTerm {
   }
 
 
-  public InputTerm taskId(String taskId) {
-    this.taskId = taskId;
+  public InputTerm toTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
     return this;
   }
 
    /**
-   * Task id for this term
-   * @return taskId
+   * Terminology of the term to map to, e.g. \&quot;SNOMEDCT\&quot; or \&quot;https://loinc.org\&quot;. Leave blank for all available options specified by config.
+   * @return toTerminology
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getTaskId() {
-    return taskId;
+  public String getToTerminology() {
+    return toTerminology;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaskId(String taskId) {
-    this.taskId = taskId;
-  }
-
-
-  public InputTerm term(String term) {
-    this.term = term;
-    return this;
-  }
-
-   /**
-   * Text value to be mapped, e.g. \&quot;heart disease\&quot;
-   * @return term
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getTerm() {
-    return term;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TERM)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTerm(String term) {
-    this.term = term;
+  public void setToTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
   }
 
 
@@ -436,6 +365,106 @@ public class InputTerm {
   }
 
 
+  public InputTerm inputType(InputTypeEnum inputType) {
+    this.inputType = inputType;
+    return this;
+  }
+
+   /**
+   * Expected input type of the thing being mapped.  Allowable values are detailed by the application metadata endpoint
+   * @return inputType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public InputTypeEnum getInputType() {
+    return inputType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_INPUT_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInputType(InputTypeEnum inputType) {
+    this.inputType = inputType;
+  }
+
+
+  public InputTerm taskId(String taskId) {
+    this.taskId = taskId;
+    return this;
+  }
+
+   /**
+   * Task id for this term
+   * @return taskId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getTaskId() {
+    return taskId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTaskId(String taskId) {
+    this.taskId = taskId;
+  }
+
+
+  public InputTerm term(String term) {
+    this.term = term;
+    return this;
+  }
+
+   /**
+   * Text value to be mapped, e.g. \&quot;heart disease\&quot;
+   * @return term
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TERM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getTerm() {
+    return term;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TERM)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTerm(String term) {
+    this.term = term;
+  }
+
+
+  public InputTerm code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Code for the term to be mapped, e.g. \&quot;56265001\&quot;
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
   public InputTerm tags(List<Tag> tags) {
     this.tags = tags;
     return this;
@@ -481,32 +510,34 @@ public class InputTerm {
       return false;
     }
     InputTerm inputTerm = (InputTerm) o;
-    return Objects.equals(this.code, inputTerm.code) &&
-        Objects.equals(this.inputType, inputTerm.inputType) &&
-        Objects.equals(this.context, inputTerm.context) &&
-        Objects.equals(this.taskId, inputTerm.taskId) &&
-        Objects.equals(this.term, inputTerm.term) &&
+    return Objects.equals(this.context, inputTerm.context) &&
+        Objects.equals(this.toTerminology, inputTerm.toTerminology) &&
         Objects.equals(this.entityType, inputTerm.entityType) &&
         Objects.equals(this.terminology, inputTerm.terminology) &&
+        Objects.equals(this.inputType, inputTerm.inputType) &&
+        Objects.equals(this.taskId, inputTerm.taskId) &&
+        Objects.equals(this.term, inputTerm.term) &&
+        Objects.equals(this.code, inputTerm.code) &&
         Objects.equals(this.tags, inputTerm.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, inputType, context, taskId, term, entityType, terminology, tags);
+    return Objects.hash(context, toTerminology, entityType, terminology, inputType, taskId, term, code, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class InputTerm {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
+    sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
+    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+    sb.append("    term: ").append(toIndentedString(term)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
