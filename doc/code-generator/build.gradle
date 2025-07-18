@@ -33,21 +33,21 @@ final artifactId = 'wci-automap-java-client'
  * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
 */
 tasks.register('buildJavaSdk', GenerateTask) {
-  generatorName.set("java")
-  remoteInputSpec.set(inputURL)
-  outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
-  apiPackage.set("api")
-  invokerPackage.set("api.invoker")
-  modelPackage.set("api.model")
-  configOptions.set([
-     "packageName": "automap",
-     "library": "jersey3",
-     "serializationLibrary": "jackson",
-     "hideGenerationTimestamp": "false",
-     "ignoreUnknown": "true",
-     "java8": "false", // disables Java 8 specific code
-     "dateLibrary": "java17" // or "java17" if supported by your generator version
-  ])
+    generatorName.set("java")
+    remoteInputSpec.set(inputURL)
+    outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
+    apiPackage.set("api")
+    invokerPackage.set("api.invoker")
+    modelPackage.set("api.model")
+    configOptions.set([
+            "packageName": "automap",
+            "library": "jersey3",
+            "serializationLibrary": "jackson",
+            "hideGenerationTimestamp": "false",
+             "failOnUnknownProperties": "true",
+             "java8": "false", // disables Java 8 specific code
+             "dateLibrary": "java17" // or "java17" if supported by your generator version
+    ])
 }
 
 /**
@@ -140,11 +140,20 @@ tasks.withType(Jar) {
     }
 }
 
+tasks.register("makeGeneratedJavaSdkJar", Jar) {
+    doLast {
+        def generatedProjectDir = file("$buildDir/java")
+        exec {
+            workingDir generatedProjectDir
+            commandLine "gradle", "clean", "build", "publishToMavenLocal"
+        }
+    }
+}
 /**
  * Run the tasks in the correct order.
  */
 tasks.named('buildJavaSdk') {
-    finalizedBy('removeUnwantedApis', 'patchGeneratedJavaVersion', 'patchGeneratedArtifactId')
+    finalizedBy('removeUnwantedApis', 'patchGeneratedJavaVersion', 'patchGeneratedArtifactId', 'makeGeneratedJavaSdkJar')
 }
 
 /**
