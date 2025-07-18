@@ -33,6 +33,16 @@ swagger documentation url:
    corresponding examples folder.
     1. See [next steps](#tasks-to-regenerate-code--next-steps) for details
 
+## How to Build Client jar
+
+If you don't need the generated source but only a jar file to use in your project, then follow these steps:
+
+1. Open your terminal and cd to the project directory. e.g. `automap-in-5-minutes/doc/code-generator`
+2. Execute `./gradlew makeGeneratedJavaSdkJar`
+3. The generated jar will be in the `build/libs` folder
+4. The jar file can be used in your project as a dependency either by copying it to your project or by adding it to
+   your build tool's dependencies.
+
 **[Back to top](#top)**
 
 ## Tasks to Regenerate Code & Next Steps...
