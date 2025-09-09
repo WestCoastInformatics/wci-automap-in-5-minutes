@@ -13,7 +13,7 @@ The API URL for the WCI Automap is:
 
 Run this command before the sample curl calls below as they expect $API_URL to be set.
 
-When using an API_URL that points to an instance (such as https://automap.terminology.tools) that
+When using an API_URL that points to an instance (such as `https://automap.terminology.tools`) that
 requires authentication, the login call must first be used to obtain an access token.   
 
 
