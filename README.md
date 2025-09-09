@@ -65,7 +65,7 @@ performed as individual or batch calls and how to search and retrieve results af
 
 All of the tutorials use an environment variable for the API URL of the deployment:
 
-- API_URL=https://automap.terminology.tools
+- API_URL=`https://automap.terminology.tools`
 
 **[Back to top](#table-of-contents)**
 
