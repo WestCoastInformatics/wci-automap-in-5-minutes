@@ -37,8 +37,8 @@ tasks.register('buildJavaSdk', GenerateTask) {
     remoteInputSpec.set(inputURL)
     outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
     apiPackage.set("api")
-    invokerPackage.set("api.invoker")
-    modelPackage.set("api.model")
+    invokerPackage.set("com.wci.automap.client.invoker")
+    modelPackage.set("com.wci.automap.client.model")
     configOptions.set([
             "packageName": "automap",
             "library": "jersey3",
@@ -149,6 +149,7 @@ tasks.register("makeGeneratedJavaSdkJar", Jar) {
         }
     }
 }
+
 /**
  * Run the tasks in the correct order.
  */
