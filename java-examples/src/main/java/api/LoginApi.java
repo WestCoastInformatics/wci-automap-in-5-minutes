@@ -1,15 +1,15 @@
 package api;
 
-import api.invoker.ApiException;
-import api.invoker.ApiClient;
-import api.invoker.ApiResponse;
-import api.invoker.Configuration;
-import api.invoker.Pair;
+import com.wci.automap.client.invoker.ApiException;
+import com.wci.automap.client.invoker.ApiClient;
+import com.wci.automap.client.invoker.ApiResponse;
+import com.wci.automap.client.invoker.Configuration;
+import com.wci.automap.client.invoker.Pair;
 
 import jakarta.ws.rs.core.GenericType;
 
-import api.model.AuthRequest;
-import api.model.AuthResponse;
+import com.wci.automap.client.model.AuthRequest;
+import com.wci.automap.client.model.AuthResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T09:36:24.215750700-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class LoginApi {
   private ApiClient apiClient;
 

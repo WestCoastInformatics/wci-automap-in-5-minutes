@@ -140,7 +140,7 @@ tasks.withType(Jar) {
     }
 }
 
-tasks.register("makeGeneratedJavaSdkJar", Jar) {
+tasks.register("makeGeneratedJavaSdkJar") {
     doLast {
         def generatedProjectDir = file("$buildDir/java")
         exec {

@@ -11,9 +11,9 @@
  */
 
 
-package api.model;
+package com.wci.automap.client.model;
 
-import api.model.FormItem;
+import com.wci.automap.client.model.FormItem;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;

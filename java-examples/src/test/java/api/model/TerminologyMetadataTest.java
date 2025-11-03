@@ -11,10 +11,10 @@
  */
 
 
-package api.model;
+package com.wci.automap.client.model;
 
-import api.model.Metadata;
-import api.model.Terminology;
+import com.wci.automap.client.model.Metadata;
+import com.wci.automap.client.model.Terminology;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;

@@ -11,11 +11,11 @@
  */
 
 
-package api.model;
+package com.wci.automap.client.model;
 
-import api.model.Atom;
-import api.model.Axiom;
-import api.model.Definition;
+import com.wci.automap.client.model.Atom;
+import com.wci.automap.client.model.Axiom;
+import com.wci.automap.client.model.Definition;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;

@@ -13,21 +13,21 @@
 
 package api;
 
-import api.invoker.ApiException;
-import api.model.AuditEntry;
-import api.model.AuthRequest;
-import api.model.AuthRequest.GrantTypeEnum;
-import api.model.AuthResponse;
-import api.model.InputTask;
-import api.model.InputTerm;
-import api.model.InputTerm.EntityTypeEnum;
-import api.model.InputTerm.InputTypeEnum;
-import api.model.OutputTask;
-import api.model.OutputTerm;
-import api.model.ResultListOutputTask;
-import api.model.ResultListOutputTerm;
-import api.model.Tag;
-import api.model.TermMapping;
+import com.wci.automap.client.invoker.ApiException;
+import com.wci.automap.client.model.AuditEntry;
+import com.wci.automap.client.model.AuthRequest;
+import com.wci.automap.client.model.AuthRequest.GrantTypeEnum;
+import com.wci.automap.client.model.AuthResponse;
+import com.wci.automap.client.model.InputTask;
+import com.wci.automap.client.model.InputTerm;
+import com.wci.automap.client.model.InputTerm.EntityTypeEnum;
+import com.wci.automap.client.model.InputTerm.InputTypeEnum;
+import com.wci.automap.client.model.OutputTask;
+import com.wci.automap.client.model.OutputTerm;
+import com.wci.automap.client.model.ResultListOutputTask;
+import com.wci.automap.client.model.ResultListOutputTerm;
+import com.wci.automap.client.model.Tag;
+import com.wci.automap.client.model.TermMapping;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
@@ -366,7 +366,7 @@ public class MappingApiTest {
         final Integer limit = 10;
         final String sort = null;
         final Boolean ascending = true;
-        final ResultListOutputTask response = api.findTasks(query, offset, limit, sort, ascending);
+        final ResultListOutputTask response = api.findTasks(query, offset, limit, sort, ascending, null);
         assertNotNull(response);
         assertNotNull(response.getTotal());
         assertNotNull(response.getLimit());
@@ -421,7 +421,7 @@ public class MappingApiTest {
         final Integer limit = null;
         final String sort = null;
         final Boolean ascending = true;
-        final ResultListOutputTerm response = api.findTerms(query, offset, limit, sort, ascending);
+        final ResultListOutputTerm response = api.findTerms(query, offset, limit, sort, ascending, null);
 
         assertNotNull(response);
         assertNotNull(response.getTotal());

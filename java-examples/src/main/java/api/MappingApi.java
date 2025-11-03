@@ -1,21 +1,22 @@
 package api;
 
-import api.invoker.ApiException;
-import api.invoker.ApiClient;
-import api.invoker.ApiResponse;
-import api.invoker.Configuration;
-import api.invoker.Pair;
+import com.wci.automap.client.invoker.ApiException;
+import com.wci.automap.client.invoker.ApiClient;
+import com.wci.automap.client.invoker.ApiResponse;
+import com.wci.automap.client.invoker.Configuration;
+import com.wci.automap.client.invoker.Pair;
 
 import jakarta.ws.rs.core.GenericType;
 
-import api.model.ApplicationMetadataMap;
-import api.model.AuditEntry;
-import api.model.InputTask;
-import api.model.OutputTask;
-import api.model.OutputTerm;
-import api.model.ResultListOutputTask;
-import api.model.ResultListOutputTerm;
-import api.model.Tag;
+import com.wci.automap.client.model.ApplicationMetadataMap;
+import com.wci.automap.client.model.AuditEntry;
+import com.wci.automap.client.model.InputTask;
+import com.wci.automap.client.model.OutputTask;
+import com.wci.automap.client.model.OutputTerm;
+import com.wci.automap.client.model.ResultListOutputTask;
+import com.wci.automap.client.model.ResultListOutputTerm;
+import com.wci.automap.client.model.ResultListString;
+import com.wci.automap.client.model.Tag;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +24,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-16T18:58:01.210254-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T09:36:24.215750700-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class MappingApi {
   private ApiClient apiClient;
 
@@ -108,6 +109,62 @@ public class MappingApi {
                                localVarAuthNames, localVarReturnType, false);
   }
   /**
+   * Find batch set names matching specified parameters
+   * 
+   * @param query search query, e.g. heart attack (optional)
+   * @param offset start index for search results (optional)
+   * @param limit limit of results to return (optional)
+   * @return ResultListString
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Return list of batch set names </td><td>  -  </td></tr>
+       <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+       <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ResultListString findBatchSets(String query, Integer offset, Integer limit) throws ApiException {
+    return findBatchSetsWithHttpInfo(query, offset, limit).getData();
+  }
+
+  /**
+   * Find batch set names matching specified parameters
+   * 
+   * @param query search query, e.g. heart attack (optional)
+   * @param offset start index for search results (optional)
+   * @param limit limit of results to return (optional)
+   * @return ApiResponse&lt;ResultListString&gt;
+   * @throws ApiException if fails to make API call
+   * @http.response.details
+     <table summary="Response Details" border="1">
+       <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+       <tr><td> 200 </td><td> Return list of batch set names </td><td>  -  </td></tr>
+       <tr><td> 400 </td><td> Bad request </td><td>  -  </td></tr>
+       <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+       <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+       <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
+     </table>
+   */
+  public ApiResponse<ResultListString> findBatchSetsWithHttpInfo(String query, Integer offset, Integer limit) throws ApiException {
+    // Query parameters
+    List<Pair> localVarQueryParams = new ArrayList<>(
+            apiClient.parameterToPairs("", "query", query)
+    );
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+    String localVarAccept = apiClient.selectHeaderAccept("application/json");
+    String localVarContentType = apiClient.selectHeaderContentType();
+    String[] localVarAuthNames = new String[] {"bearerAuth"};
+    GenericType<ResultListString> localVarReturnType = new GenericType<ResultListString>() {};
+    return apiClient.invokeAPI("MappingApi.findBatchSets", "/api/v1/mapping/batch", "GET", localVarQueryParams, null,
+                               new LinkedHashMap<>(), new LinkedHashMap<>(), new LinkedHashMap<>(), localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, false);
+  }
+  /**
    * Find tasks matching specified parameters
    * 
    * @param query search query, e.g. heart attack (optional)
@@ -115,6 +172,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
+   * @param batch batch set name, e.g. testBatch12345 (optional)
    * @return ResultListOutputTask
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -127,8 +185,8 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ResultListOutputTask findTasks(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
-    return findTasksWithHttpInfo(query, offset, limit, sort, ascending).getData();
+  public ResultListOutputTask findTasks(String query, Integer offset, Integer limit, String sort, Boolean ascending, String batch) throws ApiException {
+    return findTasksWithHttpInfo(query, offset, limit, sort, ascending, batch).getData();
   }
 
   /**
@@ -139,6 +197,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
+   * @param batch batch set name, e.g. testBatch12345 (optional)
    * @return ApiResponse&lt;ResultListOutputTask&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -151,7 +210,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ResultListOutputTask> findTasksWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ApiResponse<ResultListOutputTask> findTasksWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending, String batch) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "query", query)
@@ -160,6 +219,7 @@ public class MappingApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "ascending", ascending));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "batch", batch));
 
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType();
@@ -177,6 +237,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
+   * @param batch batch set name, e.g. testBatch12345 (optional)
    * @return ResultListOutputTerm
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -189,8 +250,8 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ResultListOutputTerm findTerms(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
-    return findTermsWithHttpInfo(query, offset, limit, sort, ascending).getData();
+  public ResultListOutputTerm findTerms(String query, Integer offset, Integer limit, String sort, Boolean ascending, String batch) throws ApiException {
+    return findTermsWithHttpInfo(query, offset, limit, sort, ascending, batch).getData();
   }
 
   /**
@@ -201,6 +262,7 @@ public class MappingApi {
    * @param limit limit of results to return (optional)
    * @param sort comma-separated list of fields to sort on (optional)
    * @param ascending &lt;code&gt;true&lt;/code&gt; for ascending, &lt;code&gt;false&lt;/code&gt; for descending, &lt;code&gt;null&lt;/code&gt; for unspecified (optional)
+   * @param batch batch set name, e.g. testBatch12345 (optional)
    * @return ApiResponse&lt;ResultListOutputTerm&gt;
    * @throws ApiException if fails to make API call
    * @http.response.details
@@ -213,7 +275,7 @@ public class MappingApi {
        <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
    */
-  public ApiResponse<ResultListOutputTerm> findTermsWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending) throws ApiException {
+  public ApiResponse<ResultListOutputTerm> findTermsWithHttpInfo(String query, Integer offset, Integer limit, String sort, Boolean ascending, String batch) throws ApiException {
     // Query parameters
     List<Pair> localVarQueryParams = new ArrayList<>(
             apiClient.parameterToPairs("", "query", query)
@@ -222,6 +284,7 @@ public class MappingApi {
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort", sort));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "ascending", ascending));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "batch", batch));
 
     String localVarAccept = apiClient.selectHeaderAccept("application/json");
     String localVarContentType = apiClient.selectHeaderContentType();

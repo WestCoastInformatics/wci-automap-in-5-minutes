@@ -2,8 +2,8 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'com.diffplug.spotless'
 
-group = 'org.openapitools'
-version = '1.0.0'
+group = 'com.wci.automap'
+version = '1.0.0-SNAPSHOT'
 
 buildscript {
     repositories {
@@ -78,13 +78,13 @@ if(hasProperty('target') && target == 'android') {
 
     apply plugin: 'java'
     apply plugin: 'maven-publish'
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     publishing {
         publications {
             maven(MavenPublication) {
-               artifactId = 'openapi-java-client'
+               artifactId = 'wci-automap-java-client'
 
                from components.java
             }
@@ -162,4 +162,9 @@ spotless {
         removeUnusedImports()
         importOrder()
     }
+}
+
+tasks.withType(Jar) {
+    archiveBaseName.set('wci-automap-java-client')
+    archiveVersion.set('1.0.0-SNAPSHOT')
 }
