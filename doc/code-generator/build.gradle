@@ -43,7 +43,7 @@ tasks.register('buildJavaSdk', GenerateTask) {
         "useJakartaEe": "true",
         "library": "jersey3",
         "serializationLibrary": "jackson",
-        "hideGenerationTimestamp": "false",
+        "hideGenerationTimestamp": "true",
         "java8": "false",
         "dateLibrary": "legacy"
     ])
