@@ -51,7 +51,7 @@ import com.wci.automap.client.invoker.JSON;
   ConceptTreePosition.JSON_PROPERTY_NAME,
   ConceptTreePosition.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T09:36:24.215750700-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ConceptTreePosition {
   public static final String JSON_PROPERTY_CHILDREN = "children";
   private List<ConceptTreePosition> children = new ArrayList<>();

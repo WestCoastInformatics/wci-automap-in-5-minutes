@@ -376,7 +376,7 @@ public class MappingApiTest {
         final List<OutputTask> tasks = response.getItems();
         for (final OutputTask task : tasks) {
             assertNotNull(task.getId());
-            // assertNotNull(task.getConfidence());
+            assertNotNull(task.getConfidence());
             assertNotNull(task.getModified());
             assertNotNull(task.getCreated());
             assertNotNull(task.getModifiedBy());
@@ -393,7 +393,7 @@ public class MappingApiTest {
                 // assertNotNull(term.getTermSourceCode());
                 for (final TermMapping mapping : term.getMappings()) {
                     assertNotNull(mapping.getId());
-                    // assertNotNull(mapping.getConfidence());
+                    assertNotNull(mapping.getConfidence());
                     assertNotNull(mapping.getTerminology());
                     if("no target".equalsIgnoreCase(mapping.getName())) {
                         assertNull(mapping.getCode());
