@@ -157,6 +157,7 @@ tasks.register("makeGeneratedJavaSdkJar") {
     }
 =======
 tasks.register("makeGeneratedJavaSdkJar", Jar) {
+    dependsOn('buildJavaSdk')
     // If a nested Gradle project exists, we could invoke it, but to avoid
     // environment/tooling dependencies, always produce a sources jar here.
     from("$buildDir/java/src/main/java")
