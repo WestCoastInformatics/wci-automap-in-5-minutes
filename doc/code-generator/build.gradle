@@ -145,7 +145,7 @@ tasks.register("makeGeneratedJavaSdkJar", Jar) {
         def generatedProjectDir = file("$buildDir/java")
         exec {
             workingDir generatedProjectDir
-            commandLine "gradle", "clean", "build", "publishToMavenLocal"
+            commandLine "sh", "gradlew", "clean", "build", "publishToMavenLocal"
         }
     }
 }
