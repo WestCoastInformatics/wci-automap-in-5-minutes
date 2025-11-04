@@ -146,16 +146,6 @@ tasks.withType(Jar) {
     }
 }
 
-<<<<<<< HEAD
-tasks.register("makeGeneratedJavaSdkJar") {
-    doLast {
-        def generatedProjectDir = file("$buildDir/java")
-        exec {
-            workingDir generatedProjectDir
-            commandLine "sh", "gradlew", "clean", "build", "publishToMavenLocal"
-        }
-    }
-=======
 tasks.register("makeGeneratedJavaSdkJar", Jar) {
     dependsOn('buildJavaSdk')
     // If a nested Gradle project exists, we could invoke it, but to avoid
@@ -164,7 +154,6 @@ tasks.register("makeGeneratedJavaSdkJar", Jar) {
     archiveBaseName.set(artifactId)
     archiveVersion.set(version)
     destinationDirectory = layout.buildDirectory.dir("libs").get().asFile
->>>>>>> 44a2d1a (Clean up gradlew)
 }
 
 /**
