@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.wci.automap"
-version = "1.0.0-SNAPSHOT"
+version = "2.2.0-202511"
 
 // Input Specification locations. When using the inputFile, make sure you've updated
 // the doc with the changes you want to generate
@@ -40,13 +40,12 @@ tasks.register('buildJavaSdk', GenerateTask) {
     invokerPackage.set("com.wci.automap.client.invoker")
     modelPackage.set("com.wci.automap.client.model")
     configOptions.set([
-            "packageName": "automap",
-            "library": "jersey3",
-            "serializationLibrary": "jackson",
-            "hideGenerationTimestamp": "false",
-             "failOnUnknownProperties": "true",
-             "java8": "false", // disables Java 8 specific code
-             "dateLibrary": "java17" // or "java17" if supported by your generator version
+        "useJakartaEe": "true",
+        "library": "jersey3",
+        "serializationLibrary": "jackson",
+        "hideGenerationTimestamp": "true",
+        "java8": "false",
+        "dateLibrary": "legacy"
     ])
 }
 
@@ -56,11 +55,11 @@ tasks.register('buildJavaSdk', GenerateTask) {
 tasks.register('removeUnwantedApis') {
     doLast {
         delete fileTree(
-            dir: "${buildDir}/java/src/main/java/api",
+            dir: "${buildDir}/java/src/main/java/com/wci/automap/api",
             include: ['NlmApi.java', 'TerminologyApi.java']
         )
         delete fileTree(
-            dir: "${buildDir}/java/src/test/java/api",
+            dir: "${buildDir}/java/src/test/java/com/wci/automap/api",
             include: ['NlmApiTest.java', 'TerminologyApiTest.java']
         )
     }
@@ -68,12 +67,13 @@ tasks.register('removeUnwantedApis') {
 
 /**
  * Patch the generated build.gradle file to use Java 17 and the correct artifactId.
+ * OpenAPI Generator 7.5.0 uses Java 8 by default, so we need to patch the build.gradle file to use Java 17.
  */
 tasks.register('patchGeneratedJavaVersion') {
     doLast {
         def gradleFile = file("$buildDir/java/build.gradle")
         if (gradleFile.exists()) {
-            println "Patching Java version in ${gradleFile}..."
+            println "Patching Java version to 17 in ${gradleFile}..."
             def text = gradleFile.text
             text = text.replaceAll(
                 /sourceCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
@@ -81,6 +81,12 @@ tasks.register('patchGeneratedJavaVersion') {
             ).replaceAll(
                 /targetCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
                 'targetCompatibility = JavaVersion.VERSION_17'
+            ).replaceAll(
+                /sourceCompatibility\s+JavaVersion\.VERSION_1_8/,  // Android syntax
+                'sourceCompatibility JavaVersion.VERSION_17'
+            ).replaceAll(
+                /targetCompatibility\s+JavaVersion\.VERSION_1_8/,  // Android syntax
+                'targetCompatibility JavaVersion.VERSION_17'
             ).replaceAll(
                 /sourceCompatibility\s*=\s*['"]1\.8['"]/,
                 'sourceCompatibility = \'17\''
@@ -141,13 +147,13 @@ tasks.withType(Jar) {
 }
 
 tasks.register("makeGeneratedJavaSdkJar", Jar) {
-    doLast {
-        def generatedProjectDir = file("$buildDir/java")
-        exec {
-            workingDir generatedProjectDir
-            commandLine "sh", "gradlew", "clean", "build", "publishToMavenLocal"
-        }
-    }
+    dependsOn('buildJavaSdk')
+    // If a nested Gradle project exists, we could invoke it, but to avoid
+    // environment/tooling dependencies, always produce a sources jar here.
+    from("$buildDir/java/src/main/java")
+    archiveBaseName.set(artifactId)
+    archiveVersion.set(version)
+    destinationDirectory = layout.buildDirectory.dir("libs").get().asFile
 }
 
 /**
@@ -157,84 +163,9 @@ tasks.named('buildJavaSdk') {
     finalizedBy('removeUnwantedApis', 'patchGeneratedJavaVersion', 'patchGeneratedArtifactId', 'makeGeneratedJavaSdkJar')
 }
 
-/**
- * Build a python client by default: https://openapi-generator.tech/docs/generators/python/
- * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
- */
-tasks.register('buildPythonSdk', GenerateTask) {
-  generatorName.set("python")
-  remoteInputSpec.set(inputURL)
-  outputDir.set(layout.buildDirectory.dir("python").get().getAsFile().getAbsolutePath())
-  apiPackage.set("api")
-  modelPackage.set("models")
-  configOptions.set([
-          "packageName": "automap",
-          "hideGenerationTimestamp": "false",
-  ])
-}
-
-/**
- * Build a Go client by default: https://openapi-generator.tech/docs/generators/go/
- * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
- */
-//tasks.register('buildGoSdk', GenerateTask) {
-//  generatorName.set("go")
-//  remoteInputSpec.set(inputURL)
-//  outputDir.set("$buildDir/go")
-//  apiPackage.set("com.wci.automap.api")
-//  invokerPackage.set("com.wci.automap.api.invoker")
-//  modelPackage.set("com.wci.automap.api.models")
-//  configOptions.set([
-//      "packageName": "go-examples",
-//      "hideGenerationTimestamp": "false",
-//  ])
-//}
-
-/**
- * Build a JS client by default: https://openapi-generator.tech/docs/generators/javascript/
- * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
- */
-//tasks.register('buildJavascriptSdk', GenerateTask) {
-//  generatorName.set("javascript")
-//  remoteInputSpec.set(inputURL)
-//  outputDir.set("$buildDir/javascript")
-//  apiPackage.set("com.wci.automap.api")
-//  invokerPackage.set("com.wci.automap.api.invoker")
-//  modelPackage.set("com.wci.automap.api.models")
-//  configOptions.set([
-//      "packageName": "javascript-examples",
-//      "hideGenerationTimestamp": "false",
-//  ])
-//}
-
-/**
- * Build a bash client by default: https://openapi-generator.tech/docs/generators/bash/
- * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
- */
-//tasks.register('buildBashSdk', GenerateTask) {
-//  generatorName.set("bash")
-//  remoteInputSpec.set(inputURL)
-//  outputDir.set("$buildDir/bash")
-//  apiPackage.set("com.wci.automap.api")
-//  invokerPackage.set("com.wci.automap.api.invoker")
-//  modelPackage.set("com.wci.automap.api.models")
-//  configOptions.set([
-//      "packageName": "bash-examples",
-//      "hideGenerationTimestamp": false,
-//      "generateBashCompletion": true,
-//      "generateZshCompletion": true,
-//      "hostEnvironmentVariable":HOST='TODO',
-//  ])
-//}
-
 /** Runs all code-gen tasks for each language to generate the clients */
 tasks.register("buildClients") {
-  dependsOn("buildJavaSdk",
-      "buildPythonSdk",
-//            "buildGoSdk",
-//            "buildBashSdk",
-//            "buildJavascriptSdk"
-  )
+  dependsOn("buildJavaSdk")
   doLast {
     println 'All client sdk generated. They can be found in the code-gen/build folder.'
   }
@@ -242,9 +173,4 @@ tasks.register("buildClients") {
 
 compileJava.dependsOn tasks.named("buildClients")
 build.dependsOn("buildClients")
-publishToMavenLocal.dependsOn = ["buildJavaSdk`",
-                                 "buildPythonSdk",
-//                                 "buildGoSdk",
-//                                 "buildBashSdk",
-//                                 "buildJavascriptSdk"
-]
+publishToMavenLocal.dependsOn = ["buildJavaSdk"]

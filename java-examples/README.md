@@ -4,7 +4,7 @@ This tutorial shows how to use a locally defined Java client to interact with th
 
 ## Prerequisites
 
-- JDK 11+ must be installed
+- JDK 17+ must be installed
 - Gradle (7.2+)
 
 The API URL for AutoMap is:

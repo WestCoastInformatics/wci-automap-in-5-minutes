@@ -17,10 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-import api.invoker.ApiException;
-import api.model.AuthRequest;
-import api.model.AuthRequest.GrantTypeEnum;
-import api.model.AuthResponse;
+import com.wci.automap.client.invoker.ApiException;
+import com.wci.automap.client.model.AuthRequest;
+import com.wci.automap.client.model.AuthRequest.GrantTypeEnum;
+import com.wci.automap.client.model.AuthResponse;
 
 /**
  * API tests for LoginApi
