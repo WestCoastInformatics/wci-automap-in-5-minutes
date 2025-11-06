@@ -52,15 +52,16 @@ If you don't need the generated source but only a jar file to use in your projec
 
    ### Remote
    `mvn deploy:deploy-file \
-  -Dfile=build/libs/wci-automap-java-client-1.0.0-SNAPSHOT.jar \
-  -DgroupId=com.wci.automap \
-  -DartifactId=wci-automap-java-client \
-  -Dversion=1.0.0-SNAPSHOT \
-  -Dpackaging=jar \
-  -DrepositoryId=your-repo-id \
-  -Durl=https://your-repository-url/repository/path`
+   -Dfile=build/libs/wci-automap-java-client-1.0.0-SNAPSHOT.jar \
+   -DgroupId=com.wci.automap \
+   -DartifactId=wci-automap-java-client \
+   -Dversion=1.0.0-SNAPSHOT \
+   -Dpackaging=jar \
+   -DrepositoryId=your-repo-id \
+   -Durl=https://your-repository-url/repository/path`
 
-   Note: Edit the version number and SNAPSHOT as necessary.
+   Note: Edit the version number of and SNAPSHOT as necessary.
+         Replace 'your-repo-id' and 'https://your-repository-url/repository/path' with your own.
 
 **[Back to top](#top)**
 
