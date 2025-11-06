@@ -46,29 +46,25 @@ If you don't need the generated source but only a jar file to use in your projec
 ## To add file to Maven Repository
 
 ```bash
-cd build/libs
+cd doc/code-generator
 ```
 
 ### Local
 
 ```bash
-mvn install:install-file -Dfile=build/libs/wci-automap-java-client-2.2.0.202511-SNAPSHOT.jar
+mvn install:install-file -Dfile=build/libs/wci-automap-java-client-2.2.0.202511.jar
 ```
 
 ### Remote
 
 ```bash
 mvn deploy:deploy-file \
-  -Dfile=build/libs/wci-automap-java-client-2.2.0.202511-SNAPSHOT.jar \
-  -DgroupId=com.wci.automap \
-  -DartifactId=wci-automap-java-client \
-  -Dversion=2.2.0.202511-SNAPSHOT \
-  -Dpackaging=jar \
+  -Dfile=build/libs/wci-automap-java-client-2.2.0.202511.jar \
   -DrepositoryId=your-repo-id \
   -Durl=https://your-repository-url/repository/path
 ```
 
-**Note:** Edit the version number and SNAPSHOT as necessary. Replace `your-repo-id` and `https://your-repository-url/repository/path` with your own.
+**Note:** Replace `your-repo-id` and `https://your-repository-url/repository/path` with your own.
 
 **[Back to top](#top)**
 
