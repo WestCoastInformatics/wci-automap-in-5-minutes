@@ -43,6 +43,25 @@ If you don't need the generated source but only a jar file to use in your projec
 4. The jar file can be used in your project as a dependency either by copying it to your project or by adding it to
    your build tool's dependencies.
 
+
+## To add file to Maven Repository ## \
+   `cd build/libs`
+
+   ### Local
+   `mvn install:install-file -Dfile=build/libs/wci-automap-java-client-1.0.0-SNAPSHOT.jar`
+
+   ### Remote
+   `mvn deploy:deploy-file \
+  -Dfile=build/libs/wci-automap-java-client-1.0.0-SNAPSHOT.jar \
+  -DgroupId=com.wci.automap \
+  -DartifactId=wci-automap-java-client \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackaging=jar \
+  -DrepositoryId=your-repo-id \
+  -Durl=https://your-repository-url/repository/path`
+
+   Note: Edit the version number and SNAPSHOT as necessary.
+
 **[Back to top](#top)**
 
 ## Tasks to Regenerate Code & Next Steps...
