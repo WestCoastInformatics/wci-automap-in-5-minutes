@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.wci.automap"
-version = "2.2.0.202511"
+version = "2.2.1.202511"
 
 // Input Specification locations. When using the inputFile, make sure you've updated
 // the doc with the changes you want to generate
