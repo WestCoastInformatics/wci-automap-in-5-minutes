@@ -51,7 +51,7 @@ tasks.register("buildJavaSdk", GenerateTask) {
     generatorName.set("java")
     remoteInputSpec.set(inputURL)
     outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
-    apiPackage.set("api")
+    apiPackage.set("com.wci.automap.client")
     invokerPackage.set("com.wci.automap.client.invoker")
     modelPackage.set("com.wci.automap.client.model")
     configOptions.set([
@@ -68,15 +68,15 @@ tasks.register("buildJavaSdk", GenerateTask) {
 }
 
 // Remove the unwanted APIs and associated tests (not able to do by excluding files)
-// TODO: is this really needed?
+// This step is useful when refreshing the tests, but should be included in the .jar
 tasks.register("removeUnwantedApis") {
     doLast {
         delete fileTree(
-            dir: "${buildDir}/java/src/main/java/com/wci/automap/api",
+            dir: "${buildDir}/java/src/main/java/com/wci/automap/client",
             include: ["NlmApi.java", "TerminologyApi.java"]
         )
         delete fileTree(
-            dir: "${buildDir}/java/src/test/java/com/wci/automap/api",
+            dir: "${buildDir}/java/src/test/java/com/wci/automap/client",
             include: ["NlmApiTest.java", "TerminologyApiTest.java"]
         )
     }
@@ -220,10 +220,10 @@ tasks.register("makeGeneratedJavaSdkJar", Jar) {
 }
 
 // Build java SDK by running steps in the correct order
-tasks.named("buildJavaSdk") {
-    // finalizedBy("removeUnwantedApis", "patchGeneratedJavaVersion", "patchGeneratedArtifactId")
-    finalizedBy("removeUnwantedApis")
-}
+//tasks.named("buildJavaSdk") {
+//    // finalizedBy("removeUnwantedApis", "patchGeneratedJavaVersion", "patchGeneratedArtifactId")
+//    finalizedBy("removeUnwantedApis")
+//}
 
 // Runs all code-gen tasks for each language to generate the clients
 tasks.register("buildClients") {
