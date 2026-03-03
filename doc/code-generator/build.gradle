@@ -117,6 +117,11 @@ tasks.register("patchGeneratedJavaVersion") {
 }
 
 // Patch the generated build.gradle file to use the correct group, version, artifactId, and JAR name.
+// This sets group (to the value of artifactGroup), version (to artifactVersion the version of the artifact),
+// and artifactId (e.g. terminology-java-client). It also ensures any Jar task uses those names for
+// archiveBaseName/archiveVersion.
+// The generator's default names are generic (e.g., openapi-java-client).
+// This enforces your repo's coordinates and produces correctly named artifacts.
 tasks.register("patchGeneratedArtifactId") {
     doLast {
         def gradleFile = file("$buildDir/java/build.gradle")
