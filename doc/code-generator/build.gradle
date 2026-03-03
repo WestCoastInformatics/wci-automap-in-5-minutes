@@ -1,17 +1,21 @@
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-  id 'java'
-  id 'org.openapi.generator'
-  id 'maven-publish'
+  id "java"
+  id "org.openapi.generator"
+  id "maven-publish"
 }
 
 group = "com.wci.automap"
-version = "2.2.2.202511"
+version = "2.3.2.202602"
+
+final artifactGroup = "${group}"
+final artifactVersion = "${version}"
+final artifactId = "wci-automap-java-client"
 
 // Input Specification locations. When using the inputFile, make sure you've updated
 // the doc with the changes you want to generate
-def inputURL = 'https://automap.terminology.tools/v3/api-docs'
+def inputURL = "https://automap.terminology.tools/v3/api-docs"
 
 repositories {
   mavenCentral()
@@ -19,20 +23,31 @@ repositories {
 
 sourceCompatibility = 17
 targetCompatibility = 17
+// Add generated code to source sets for compile
+sourceSets.main.java.srcDirs += "$buildDir/java/src/main/java"
+
+dependencies {
+    // Dependencies for the generated Java client
+    implementation "com.google.code.findbugs:jsr305:3.0.2"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.15.4"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4"
+    implementation "org.openapitools:jackson-databind-nullable:0.2.6"
+    implementation "org.slf4j:slf4j-api:2.0.9"
+    implementation "org.slf4j:slf4j-simple:2.0.9"
+    implementation "jakarta.annotation:jakarta.annotation-api:3.0.0"
+
+    testImplementation platform(Testing.junit.bom)
+    testImplementation Testing.junit.jupiter
+}
 
 test {
   useJUnitPlatform()
 }
 
-final artifactGroup = "${group}"
-final artifactVersion = "${version}"
-final artifactId = 'wci-automap-java-client'
 
-/**
- * Builds a Java client by default: https://openapi-generator.tech/docs/generators/java/
- * To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
-*/
-tasks.register('buildJavaSdk', GenerateTask) {
+// Builds a Java client by default: https://openapi-generator.tech/docs/generators/java/
+// To use a local file, replace {remoteInputSpec.set(inputURL)} with input {inputSpec.set(inputFile)}
+tasks.register("buildJavaSdk", GenerateTask) {
     generatorName.set("java")
     remoteInputSpec.set(inputURL)
     outputDir.set(layout.buildDirectory.dir("java").get().getAsFile().getAbsolutePath())
@@ -40,36 +55,36 @@ tasks.register('buildJavaSdk', GenerateTask) {
     invokerPackage.set("com.wci.automap.client.invoker")
     modelPackage.set("com.wci.automap.client.model")
     configOptions.set([
+        // Use jakarta so this works with Java 17
         "useJakartaEe": "true",
-        "library": "jersey3",
+        "library": "native",
         "serializationLibrary": "jackson",
-        "hideGenerationTimestamp": "true",
-        "java8": "false",
-        "dateLibrary": "legacy"
+        "dateLibrary": "legacy",
+        // Do not add a date to generated files
+        "hideGenerationTimestamp": "false",
+        // if there are unknown properties present, ignore them
+        "ignoreUnknown": "true"
     ])
 }
 
-/**
- * Cannot exclude from build, so remove the unwanted APIs and associated tests.
- */
-tasks.register('removeUnwantedApis') {
+// Remove the unwanted APIs and associated tests (not able to do by excluding files)
+// TODO: is this really needed?
+tasks.register("removeUnwantedApis") {
     doLast {
         delete fileTree(
             dir: "${buildDir}/java/src/main/java/com/wci/automap/api",
-            include: ['NlmApi.java', 'TerminologyApi.java']
+            include: ["NlmApi.java", "TerminologyApi.java"]
         )
         delete fileTree(
             dir: "${buildDir}/java/src/test/java/com/wci/automap/api",
-            include: ['NlmApiTest.java', 'TerminologyApiTest.java']
+            include: ["NlmApiTest.java", "TerminologyApiTest.java"]
         )
     }
 }
 
-/**
- * Patch the generated build.gradle file to use Java 17 and the correct artifactId.
- * OpenAPI Generator 7.5.0 uses Java 8 by default, so we need to patch the build.gradle file to use Java 17.
- */
-tasks.register('patchGeneratedJavaVersion') {
+// Patch the generated build.gradle file to use Java 17 and the correct artifactId.
+// OpenAPI Generator 7.5.0 uses Java 8 by default, so we need to patch the build.gradle file to use Java 17.
+tasks.register("patchGeneratedJavaVersion") {
     doLast {
         def gradleFile = file("$buildDir/java/build.gradle")
         if (gradleFile.exists()) {
@@ -77,22 +92,22 @@ tasks.register('patchGeneratedJavaVersion') {
             def text = gradleFile.text
             text = text.replaceAll(
                 /sourceCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
-                'sourceCompatibility = JavaVersion.VERSION_17'
+                "sourceCompatibility = JavaVersion.VERSION_17"
             ).replaceAll(
                 /targetCompatibility\s*=\s*JavaVersion\.VERSION_1_8/,
-                'targetCompatibility = JavaVersion.VERSION_17'
+                "targetCompatibility = JavaVersion.VERSION_17"
             ).replaceAll(
                 /sourceCompatibility\s+JavaVersion\.VERSION_1_8/,  // Android syntax
-                'sourceCompatibility JavaVersion.VERSION_17'
+                "sourceCompatibility JavaVersion.VERSION_17"
             ).replaceAll(
                 /targetCompatibility\s+JavaVersion\.VERSION_1_8/,  // Android syntax
-                'targetCompatibility JavaVersion.VERSION_17'
+                "targetCompatibility JavaVersion.VERSION_17"
             ).replaceAll(
                 /sourceCompatibility\s*=\s*['"]1\.8['"]/,
-                'sourceCompatibility = \'17\''
+                "sourceCompatibility = '17'"
             ).replaceAll(
                 /targetCompatibility\s*=\s*['"]1\.8['"]/,
-                'targetCompatibility = \'17\''
+                "targetCompatibility = '17'"                
             )
             gradleFile.text = text
         } else {
@@ -101,10 +116,8 @@ tasks.register('patchGeneratedJavaVersion') {
     }
 }
 
-/**
- * Patch the generated build.gradle file to use the correct group, version, artifactId, and JAR name.
- */
-tasks.register('patchGeneratedArtifactId') {
+// Patch the generated build.gradle file to use the correct group, version, artifactId, and JAR name.
+tasks.register("patchGeneratedArtifactId") {
     doLast {
         def gradleFile = file("$buildDir/java/build.gradle")
         if (gradleFile.exists()) {
@@ -134,8 +147,8 @@ tasks.register('patchGeneratedArtifactId') {
             } else {
                 text += """
 tasks.withType(Jar) {
-    archiveBaseName.set('${artifactId}')
-    archiveVersion.set('${artifactVersion}')
+    archiveBaseName.set("${artifactId}")
+    archiveVersion.set("${artifactVersion}")
 }
 """
             }
@@ -149,13 +162,13 @@ tasks.withType(Jar) {
 // Task to generate Maven metadata
 tasks.register("generateMavenMetadata") {
     doLast {
-        def groupPath = project.group.toString().replace('.', '/')
+        def groupPath = project.group.toString().replace(".", "/")
         def metaInfDir = file("$buildDir/maven-metadata/META-INF/maven/${groupPath}/${artifactId}")
         metaInfDir.mkdirs()
 
         // pom.properties
         file("$metaInfDir/pom.properties").text = """\
-# Generated by Gradle
+# Generated by SDK generator
 groupId=${project.group}
 artifactId=${artifactId}
 version=${project.version}
@@ -177,10 +190,12 @@ version=${project.version}
     }
 }
 
+// Make the jar file library
 tasks.register("makeGeneratedJavaSdkJar", Jar) {
-    dependsOn('buildJavaSdk', 'generateMavenMetadata')
+    dependsOn("generateMavenMetadata", "compileJava")
 
     from("$buildDir/java/src/main/java")
+    from("$buildDir/classes/java/main")
     from("$buildDir/maven-metadata") {
         into ""  // Include META-INF at root
     }
@@ -191,30 +206,28 @@ tasks.register("makeGeneratedJavaSdkJar", Jar) {
 
     manifest {
         attributes(
-            'Implementation-Title': artifactId ?: 'unknown',
-            'Implementation-Version': version ?: 'unspecified',
-            'Implementation-Vendor-Id': project.group.toString(),
-            'Built-By': System.getProperty('user.name')
+            "Implementation-Title": artifactId ?: "unknown",
+            "Implementation-Version": version ?: "unspecified",
+            "Implementation-Vendor-Id": project.group.toString(),
+            "Built-By": System.getProperty("user.name")
         )
     }
 }
 
-
-/**
- * Run the tasks in the correct order.
- */
-tasks.named('buildJavaSdk') {
-    finalizedBy('removeUnwantedApis', 'patchGeneratedJavaVersion', 'patchGeneratedArtifactId', 'makeGeneratedJavaSdkJar')
+// Build java SDK by running steps in the correct order
+tasks.named("buildJavaSdk") {
+    // finalizedBy("removeUnwantedApis", "patchGeneratedJavaVersion", "patchGeneratedArtifactId")
+    finalizedBy("removeUnwantedApis")
 }
 
-/** Runs all code-gen tasks for each language to generate the clients */
+// Runs all code-gen tasks for each language to generate the clients
 tasks.register("buildClients") {
   dependsOn("buildJavaSdk")
   doLast {
-    println 'All client sdk generated. They can be found in the code-gen/build folder.'
+    println "All client sdk generated. They can be found in the code-gen/build folder."
   }
 }
 
-compileJava.dependsOn tasks.named("buildClients")
+compileJava.dependsOn tasks.named("buildJavaSdk")
 build.dependsOn("buildClients")
 publishToMavenLocal.dependsOn = ["buildJavaSdk"]
