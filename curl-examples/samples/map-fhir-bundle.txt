@@ -1,0 +1,22 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "liver cancer"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "heart surgery"
+        }
+      }
+    }
+  ]
+}

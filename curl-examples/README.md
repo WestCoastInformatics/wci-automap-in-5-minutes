@@ -41,6 +41,8 @@ The following examples can be typed into the command line of any terminal that h
 - [Map from a simple text string with auditing and retrieve audit trail](#map-from-a-simple-text-string-with-auditing-and-retrieve-audit-trail)
 - [Find tasks](#find-tasks)
 - [Find terms](#find-terms)
+- [Map from a FHIR resource](#map-from-a-fhir-resource)
+- [Map from a FHIR bundle](#map-from-a-fhir-bundle)
 
 ### Login
 
@@ -467,5 +469,33 @@ curl -s -H "Authorization: Bearer $token" "$API_URL/api/v1/mapping/term?limit=10
 ```
 
 See sample payload data from this call in [`samples/find-terms.txt`](samples/find-terms.txt)
+
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a FHIR resource
+
+Perform mapping on a FHIR resource (e.g. Condition) and return the updated resource with suggested codes.
+
+```bash
+curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/fhir" -d @samples/map-fhir-resource.txt | jq
+```
+
+See sample payload data from this call in [`samples/map-fhir-resource.txt`](samples/map-fhir-resource.txt)
+
+[Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
+
+
+# Map from a FHIR bundle
+
+Perform mapping on a FHIR bundle containing multiple resources and return the updated bundle with suggested codes.
+
+```bash
+curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
+ "$API_URL/api/v1/mapping/fhir" -d @samples/map-fhir-bundle.txt | jq
+```
+
+See sample payload data from this call in [`samples/map-fhir-bundle.txt`](samples/map-fhir-bundle.txt)
 
 [Back to Top](#wci-automap-in-5-minutes-curl-tutorial)
