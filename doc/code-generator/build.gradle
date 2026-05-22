@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.wci.automap"
-version = "2.3.2.202602"
+version = "2.4.0.202605"
 
 final artifactGroup = "${group}"
 final artifactVersion = "${version}"
