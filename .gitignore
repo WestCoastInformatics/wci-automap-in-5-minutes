@@ -139,4 +139,4 @@ typings/
 *.iml
 
 out/
-*.zip
+*.zip.claude

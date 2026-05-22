@@ -1,0 +1,344 @@
+{
+  "resourceType": "Condition",
+  "id": "condition-example-1",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    ]
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        }
+      ]
+    }
+  ],
+  "severity": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "24484000",
+        "display": "Severe"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "44054006",
+        "display": "Type 2 diabetes mellitus"
+      },
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.9",
+        "display": "Type 2 diabetes mellitus without complications"
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 1.0
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "44054006",
+        "display": "Type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.9446666666666667
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11",
+        "display": "Type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8365160404841104
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.9",
+        "display": "Type 2 diabetes mellitus without complications",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8339883480866751
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.6",
+        "display": "Type 2 diabetes mellitus with other specified complications",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8298229195276896
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.69",
+        "display": "Type 2 diabetes mellitus with other specified complication",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8125726710160573
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.42",
+        "display": "Type 2 diabetes mellitus with diabetic polyneuropathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8119267347653706
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.44",
+        "display": "Type 2 diabetes mellitus with diabetic amyotrophy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8075052694479625
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.8",
+        "display": "Type 2 diabetes mellitus with unspecified complications",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7885325995286306
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.41",
+        "display": "Type 2 diabetes mellitus with diabetic mononeuropathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7864057077438862
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E13",
+        "display": "Other specified diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7761023046204328
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.61",
+        "display": "Type 2 diabetes mellitus with diabetic arthropathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7728034908608278
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.618",
+        "display": "Type 2 diabetes mellitus with other diabetic arthropathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7300126065554461
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.36",
+        "display": "Type 2 diabetes mellitus with diabetic cataract",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.9603333333333334
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "313436004",
+        "display": "Type 2 diabetes mellitus without complication",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.8496396845976512
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "422014003",
+        "display": "Disorder due to type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.846879380666542
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "111552007",
+        "display": "Diabetes mellitus without complication",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7897441360155741
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "444110003",
+        "display": "Well controlled type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7800695765402476
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "74627003",
+        "display": "Complication due to diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.771347540875276
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "443694000",
+        "display": "Uncontrolled type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7559299810727437
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "201000119106",
+        "display": "Disorder due to well controlled type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7275092278939654
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "1481000119100",
+        "display": "Diabetes mellitus type 2 without retinopathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7026232581808725
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "73211009",
+        "display": "Diabetes mellitus",
+        "userSelected": true
+      }
+    ],
+    "text": "Type 2 diabetes mellitus"
+  },
+  "subject": {
+    "reference": "Patient/patient-example-1",
+    "display": "John Smith"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-example-1"
+  },
+  "onsetDateTime": "2020-03-15",
+  "recordedDate": "2020-03-15T10:30:00-05:00",
+  "recorder": {
+    "reference": "Practitioner/practitioner-example-1",
+    "display": "Dr. Jane Doe"
+  },
+  "note": [
+    {
+      "text": "Patient diagnosed with Type 2 diabetes mellitus during routine check-up. HbA1c was 7.8%."
+    }
+  ]
+}
