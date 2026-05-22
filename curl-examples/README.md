@@ -479,7 +479,7 @@ Perform mapping on a FHIR resource (e.g. Condition) and return the updated resou
 
 ```bash
 curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
- "$API_URL/api/v1/mapping/fhir" -d @samples/map-fhir-resource.txt | jq
+ "$API_URL/api/v1/mapping/fhir" -d @samples/condition.txt | jq
 ```
 
 See sample payload data from this call in [`samples/map-fhir-resource.txt`](samples/map-fhir-resource.txt)
@@ -493,7 +493,7 @@ Perform mapping on a FHIR bundle containing multiple resources and return the up
 
 ```bash
 curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
- "$API_URL/api/v1/mapping/fhir" -d @samples/map-fhir-bundle.txt | jq
+ "$API_URL/api/v1/mapping/fhir" -d @samples/bundle.txt | jq
 ```
 
 See sample payload data from this call in [`samples/map-fhir-bundle.txt`](samples/map-fhir-bundle.txt)
