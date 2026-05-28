@@ -1,12 +1,18 @@
 [
   {
-    "entityType": "vitalSign",
-    "terminology": "LNC",
-    "scope": "^VitalSignsLnc OR ^VitalSignsFhir OR ^VitalSignsPanel",
+    "entityType": "substance",
+    "terminology": "RXNORM",
+    "scope": "^SubstancesRxnorm",
+    "activeOnly": false
+  },
+  {
+    "entityType": "substance",
+    "terminology": "SNOMEDCT",
+    "scope": "<105590001 | Substance |",
     "activeOnly": true
   },
   {
-    "entityType": "medication",
+    "entityType": "allergy",
     "terminology": "RXNORM",
     "scope": "^MedicationsRxnorm",
     "labeledScope": {
@@ -16,6 +22,21 @@
       "NDC": "RXCUI"
     },
     "activeOnly": false
+  },
+  {
+    "entityType": "allergy",
+    "terminology": "SNOMEDCT",
+    "scope": "<105590001 OR <<420134006 OR <<785696007 OR <<29736007 OR <<340519003 OR <<78373000 OR <<785704008 OR <<716186003",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "vitalSign",
+    "terminology": "LNC",
+    "scope": "^VitalSignsLnc OR ^VitalSignsFhir OR ^VitalSignsPanel",
+    "activeOnly": true
   },
   {
     "entityType": "unit",
@@ -32,16 +53,44 @@
   {
     "entityType": "bodyPart",
     "terminology": "SNOMEDCT",
-    "scope": "<442083009  | Anatomical or acquired body structure | MINUS (<<116007004 | Combined site | OR ^EntireBodyPartsSnomedct)",
+    "scope": "<442083009  | Anatomical or acquired body structure | MINUS (<<116007004 | Combined site | OR 422525002 | Structure of bilateral paired structures | OR ^EntireBodyPartsSnomedct)",
     "labeledScope": {
       "blank": "true"
     },
     "activeOnly": true
   },
   {
+    "entityType": "labResult",
+    "terminology": "LNC",
+    "scope": "^LabResultsLnc OR ^LabComponentsLnc",
+    "labeledScope": {
+      "blank": "true",
+      "parts": "^LabComponentsLnc"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "medication",
+    "terminology": "RXNORM",
+    "scope": "^MedicationsRxnorm",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "mapFromMap": {
+      "NDC": "RXCUI"
+    },
+    "activeOnly": false
+  },
+  {
+    "entityType": "device",
+    "terminology": "SNOMEDCT",
+    "scope": "<49062001 | Device |",
+    "activeOnly": true
+  },
+  {
     "entityType": "condition",
     "terminology": "SNOMEDCT",
-    "scope": "<<404684003 | Clinical Finding |",
+    "scope": "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |",
     "labeledScope": {
       "blank": "true"
     },
@@ -60,15 +109,8 @@
     "labeledScope": {
       "blank": "true"
     },
-    "activeOnly": true
-  },
-  {
-    "entityType": "labResult",
-    "terminology": "LNC",
-    "scope": "^LabResultsLnc OR ^LabComponentsLnc",
-    "labeledScope": {
-      "blank": "true",
-      "parts": "^LabComponentsLnc"
+    "secondaryMapToMap": {
+      "SNOMEDCT": "Icd10cmToSnomedct"
     },
     "activeOnly": true
   },
@@ -84,11 +126,29 @@
     "mapFromMap": {
       "CPT": "CptToSnomedct"
     },
+    "secondaryMapToMap": {
+      "CPT": "SnomedctToCpt"
+    },
     "activeOnly": true
   },
   {
     "entityType": "procedure",
     "terminology": "CPT",
+    "scope": "* MINUS (<<1014508 OR <<1021435)",
+    "labeledScope": {
+      "blank": "true"
+    },
+    "mapFromMap": {
+      "SNOMEDCT": "SnomedctToCpt"
+    },
+    "secondaryMapToMap": {
+      "SNOMEDCT": "CptToSnomedct"
+    },
+    "activeOnly": true
+  },
+  {
+    "entityType": "procedure",
+    "terminology": "ICD10PCS",
     "scope": "*",
     "labeledScope": {
       "blank": "true"

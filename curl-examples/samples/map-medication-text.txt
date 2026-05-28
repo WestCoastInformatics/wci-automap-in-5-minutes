@@ -1,34 +1,34 @@
 {
-  "id": "f2aef319-662e-43f7-ae76-024a189be9ca",
-  "modified": "2025-05-27T18:51:13.555-07:00",
-  "created": "2025-05-27T18:51:08.208-07:00",
-  "modifiedBy": "system",
+  "id": "1a204c08-fab0-4a49-94f4-44fb46d93c7a",
+  "modified": "2026-05-28T21:16:03.300+00:00",
+  "created": "2026-05-28T21:16:03.084+00:00",
+  "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
       "key": "userId",
-      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+      "value": "328f4481-2a22-4a95-afc7-a8e7c20a5928"
     },
     {
       "key": "server.version",
-      "value": "unset"
+      "value": "2.4.0.202605"
     }
   ],
   "audit": false,
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "91a9ba0a-343e-4e21-b89d-aa9a15bacd81",
-      "modified": "2025-05-27T18:51:13.430-07:00",
-      "created": "2025-05-27T18:51:08.008-07:00",
-      "modifiedBy": "system",
-      "taskId": "f2aef319-662e-43f7-ae76-024a189be9ca",
+      "id": "59dc0ae6-92bf-4202-803b-89f45fa7b23a",
+      "modified": "2026-05-28T21:16:03.278+00:00",
+      "created": "2026-05-28T21:16:03.041+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "1a204c08-fab0-4a49-94f4-44fb46d93c7a",
       "entityType": "medication",
       "inputType": "string",
       "term": "aspirin 81mg po",
       "mappings": [
         {
-          "id": "14edf7a2-c940-4490-bd21-4259d30c29f0",
-          "confidence": 0.9360384844368844,
+          "id": "3d832569-bc9d-485e-8da8-6f082cfded5b",
+          "confidence": 0.9129150722821553,
           "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "315431",
           "name": "aspirin 81 MG",
@@ -37,8 +37,8 @@
           "endIndex": 15
         },
         {
-          "id": "d8df1060-74c6-41d6-ac83-5c3243823ffd",
-          "confidence": 0.9223455236934557,
+          "id": "77bb79b8-82a5-417c-adf8-5d0a9e581658",
+          "confidence": 0.8760329339504241,
           "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "243670",
           "name": "aspirin 81 MG Oral Tablet",
@@ -47,28 +47,8 @@
           "endIndex": 15
         },
         {
-          "id": "4bdc9a41-9dce-405d-a70c-b515083b77e2",
-          "confidence": 0.9196416829495142,
-          "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "code": "252857",
-          "name": "aspirin 81 MG Oral Capsule",
-          "entityType": "medication",
-          "startIndex": 0,
-          "endIndex": 15
-        },
-        {
-          "id": "0da3cc7d-6b4a-430e-8cd5-937e5a48ae54",
-          "confidence": 0.872526702844752,
-          "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
-          "code": "1293661",
-          "name": "aspirin 81 MG [Aspir-Low]",
-          "entityType": "medication",
-          "startIndex": 0,
-          "endIndex": 15
-        },
-        {
-          "id": "63145641-0265-43ed-a0f9-44457cd16c2c",
-          "confidence": 0.8683178637723807,
+          "id": "4cf9757a-05de-4876-9862-353a1e35a2ae",
+          "confidence": 0.8461638065179189,
           "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "1600987",
           "name": "aspirin 81 MG [Aspi-Cor]",
@@ -77,8 +57,38 @@
           "endIndex": 15
         },
         {
-          "id": "91b28a97-b580-457c-a1d1-e6bbfead112b",
-          "confidence": 0.8639308004666059,
+          "id": "d1f7e177-e1f9-4bd8-8c40-a668b45b88f7",
+          "confidence": 0.8458811955451965,
+          "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "252857",
+          "name": "aspirin 81 MG Oral Capsule",
+          "entityType": "medication",
+          "startIndex": 0,
+          "endIndex": 15
+        },
+        {
+          "id": "876a3870-c072-4eab-9139-02e01fd29928",
+          "confidence": 0.8287702798843384,
+          "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "1293661",
+          "name": "aspirin 81 MG [Aspir-Low]",
+          "entityType": "medication",
+          "startIndex": 0,
+          "endIndex": 15
+        },
+        {
+          "id": "91e7d7b8-8c4d-4803-82f1-804d67041b23",
+          "confidence": 0.8116064847310384,
+          "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
+          "code": "308416",
+          "name": "aspirin 81 MG Delayed Release Oral Tablet",
+          "entityType": "medication",
+          "startIndex": 0,
+          "endIndex": 15
+        },
+        {
+          "id": "0647dd0d-fbde-4147-9053-b097e65f0ed4",
+          "confidence": 0.8094049593607585,
           "terminology": "http://www.nlm.nih.gov/research/umls/rxnorm",
           "code": "318272",
           "name": "aspirin 81 MG Chewable Tablet",
@@ -88,7 +98,7 @@
         }
       ],
       "status": "final",
-      "mappingCt": 6
+      "mappingCt": 7
     }
   ],
   "status": "final"

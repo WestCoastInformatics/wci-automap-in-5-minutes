@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -30,7 +33,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -40,23 +42,23 @@ import com.wci.automap.client.invoker.JSON;
   Subset.JSON_PROPERTY_VERSION,
   Subset.JSON_PROPERTY_DESCRIPTION,
   Subset.JSON_PROPERTY_SCOPE,
-  Subset.JSON_PROPERTY_QUERY,
   Subset.JSON_PROPERTY_CATEGORY,
+  Subset.JSON_PROPERTY_CODE,
+  Subset.JSON_PROPERTY_GENERATOR,
+  Subset.JSON_PROPERTY_MEMBER_IDS,
   Subset.JSON_PROPERTY_EDITORIAL_POLICY,
   Subset.JSON_PROPERTY_UNIVERSE_SUBSET,
-  Subset.JSON_PROPERTY_GENERATOR,
   Subset.JSON_PROPERTY_UPGRADE_GENERATOR,
   Subset.JSON_PROPERTY_DERIVED_FROM_SUBSET,
   Subset.JSON_PROPERTY_DISJOINT_SUBSETS,
   Subset.JSON_PROPERTY_WORKFLOW_STATUS,
-  Subset.JSON_PROPERTY_MEMBER_IDS,
   Subset.JSON_PROPERTY_PUBLISHABLE,
   Subset.JSON_PROPERTY_DESCENDANTS_GENERATOR,
   Subset.JSON_PROPERTY_REFERENCED_SUBSET_CODES,
   Subset.JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES,
-  Subset.JSON_PROPERTY_CODE,
   Subset.JSON_PROPERTY_STYLE,
   Subset.JSON_PROPERTY_ENTITY_TYPE,
+  Subset.JSON_PROPERTY_QUERY,
   Subset.JSON_PROPERTY_LOCAL,
   Subset.JSON_PROPERTY_MODIFIED_BY,
   Subset.JSON_PROPERTY_CREATED,
@@ -67,7 +69,7 @@ import com.wci.automap.client.invoker.JSON;
   Subset.JSON_PROPERTY_TERMINOLOGY,
   Subset.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Subset {
   public static final String JSON_PROPERTY_VERSION = "version";
   private String version;
@@ -78,11 +80,17 @@ public class Subset {
   public static final String JSON_PROPERTY_SCOPE = "scope";
   private String scope;
 
-  public static final String JSON_PROPERTY_QUERY = "query";
-  private String query;
-
   public static final String JSON_PROPERTY_CATEGORY = "category";
   private String category;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
+  public static final String JSON_PROPERTY_GENERATOR = "generator";
+  private String generator;
+
+  public static final String JSON_PROPERTY_MEMBER_IDS = "memberIds";
+  private Set<String> memberIds = new LinkedHashSet<>();
 
   /**
    * Gets or Sets editorialPolicy
@@ -126,9 +134,6 @@ public class Subset {
 
   public static final String JSON_PROPERTY_UNIVERSE_SUBSET = "universeSubset";
   private String universeSubset;
-
-  public static final String JSON_PROPERTY_GENERATOR = "generator";
-  private String generator;
 
   public static final String JSON_PROPERTY_UPGRADE_GENERATOR = "upgradeGenerator";
   private String upgradeGenerator;
@@ -197,9 +202,6 @@ public class Subset {
   public static final String JSON_PROPERTY_WORKFLOW_STATUS = "workflowStatus";
   private WorkflowStatusEnum workflowStatus;
 
-  public static final String JSON_PROPERTY_MEMBER_IDS = "memberIds";
-  private Set<String> memberIds = new LinkedHashSet<>();
-
   public static final String JSON_PROPERTY_PUBLISHABLE = "publishable";
   private Boolean publishable;
 
@@ -211,9 +213,6 @@ public class Subset {
 
   public static final String JSON_PROPERTY_REFERENCED_TERMINOLOGY_CODES = "referencedTerminologyCodes";
   private Set<String> referencedTerminologyCodes = new LinkedHashSet<>();
-
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
 
   /**
    * Gets or Sets style
@@ -259,6 +258,9 @@ public class Subset {
 
   public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
   private String entityType;
+
+  public static final String JSON_PROPERTY_QUERY = "query";
+  private String query;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
@@ -365,31 +367,6 @@ public class Subset {
   }
 
 
-  public Subset query(String query) {
-    this.query = query;
-    return this;
-  }
-
-   /**
-   * Get query
-   * @return query
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUERY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getQuery() {
-    return query;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_QUERY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setQuery(String query) {
-    this.query = query;
-  }
-
-
   public Subset category(String category) {
     this.category = category;
     return this;
@@ -412,6 +389,90 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCategory(String category) {
     this.category = category;
+  }
+
+
+  public Subset code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * the subset code
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
+  public Subset generator(String generator) {
+    this.generator = generator;
+    return this;
+  }
+
+   /**
+   * Get generator
+   * @return generator
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_GENERATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getGenerator() {
+    return generator;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_GENERATOR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setGenerator(String generator) {
+    this.generator = generator;
+  }
+
+
+  public Subset memberIds(Set<String> memberIds) {
+    this.memberIds = memberIds;
+    return this;
+  }
+
+  public Subset addMemberIdsItem(String memberIdsItem) {
+    if (this.memberIds == null) {
+      this.memberIds = new LinkedHashSet<>();
+    }
+    this.memberIds.add(memberIdsItem);
+    return this;
+  }
+
+   /**
+   * the codes for members of the subset
+   * @return memberIds
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MEMBER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Set<String> getMemberIds() {
+    return memberIds;
+  }
+
+
+  @JsonDeserialize(as = LinkedHashSet.class)
+  @JsonProperty(JSON_PROPERTY_MEMBER_IDS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMemberIds(Set<String> memberIds) {
+    this.memberIds = memberIds;
   }
 
 
@@ -462,31 +523,6 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUniverseSubset(String universeSubset) {
     this.universeSubset = universeSubset;
-  }
-
-
-  public Subset generator(String generator) {
-    this.generator = generator;
-    return this;
-  }
-
-   /**
-   * Get generator
-   * @return generator
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GENERATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getGenerator() {
-    return generator;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_GENERATOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGenerator(String generator) {
-    this.generator = generator;
   }
 
 
@@ -596,40 +632,6 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setWorkflowStatus(WorkflowStatusEnum workflowStatus) {
     this.workflowStatus = workflowStatus;
-  }
-
-
-  public Subset memberIds(Set<String> memberIds) {
-    this.memberIds = memberIds;
-    return this;
-  }
-
-  public Subset addMemberIdsItem(String memberIdsItem) {
-    if (this.memberIds == null) {
-      this.memberIds = new LinkedHashSet<>();
-    }
-    this.memberIds.add(memberIdsItem);
-    return this;
-  }
-
-   /**
-   * the codes for members of the subset
-   * @return memberIds
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MEMBER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Set<String> getMemberIds() {
-    return memberIds;
-  }
-
-
-  @JsonDeserialize(as = LinkedHashSet.class)
-  @JsonProperty(JSON_PROPERTY_MEMBER_IDS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setMemberIds(Set<String> memberIds) {
-    this.memberIds = memberIds;
   }
 
 
@@ -751,31 +753,6 @@ public class Subset {
   }
 
 
-  public Subset code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * the subset code
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
   public Subset style(StyleEnum style) {
     this.style = style;
     return this;
@@ -823,6 +800,31 @@ public class Subset {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEntityType(String entityType) {
     this.entityType = entityType;
+  }
+
+
+  public Subset query(String query) {
+    this.query = query;
+    return this;
+  }
+
+   /**
+   * Get query
+   * @return query
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getQuery() {
+    return query;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuery(String query) {
+    this.query = query;
   }
 
 
@@ -1074,23 +1076,23 @@ public class Subset {
     return Objects.equals(this.version, subset.version) &&
         Objects.equals(this.description, subset.description) &&
         Objects.equals(this.scope, subset.scope) &&
-        Objects.equals(this.query, subset.query) &&
         Objects.equals(this.category, subset.category) &&
+        Objects.equals(this.code, subset.code) &&
+        Objects.equals(this.generator, subset.generator) &&
+        Objects.equals(this.memberIds, subset.memberIds) &&
         Objects.equals(this.editorialPolicy, subset.editorialPolicy) &&
         Objects.equals(this.universeSubset, subset.universeSubset) &&
-        Objects.equals(this.generator, subset.generator) &&
         Objects.equals(this.upgradeGenerator, subset.upgradeGenerator) &&
         Objects.equals(this.derivedFromSubset, subset.derivedFromSubset) &&
         Objects.equals(this.disjointSubsets, subset.disjointSubsets) &&
         Objects.equals(this.workflowStatus, subset.workflowStatus) &&
-        Objects.equals(this.memberIds, subset.memberIds) &&
         Objects.equals(this.publishable, subset.publishable) &&
         Objects.equals(this.descendantsGenerator, subset.descendantsGenerator) &&
         Objects.equals(this.referencedSubsetCodes, subset.referencedSubsetCodes) &&
         Objects.equals(this.referencedTerminologyCodes, subset.referencedTerminologyCodes) &&
-        Objects.equals(this.code, subset.code) &&
         Objects.equals(this.style, subset.style) &&
         Objects.equals(this.entityType, subset.entityType) &&
+        Objects.equals(this.query, subset.query) &&
         Objects.equals(this.local, subset.local) &&
         Objects.equals(this.modifiedBy, subset.modifiedBy) &&
         Objects.equals(this.created, subset.created) &&
@@ -1104,7 +1106,7 @@ public class Subset {
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, description, scope, query, category, editorialPolicy, universeSubset, generator, upgradeGenerator, derivedFromSubset, disjointSubsets, workflowStatus, memberIds, publishable, descendantsGenerator, referencedSubsetCodes, referencedTerminologyCodes, code, style, entityType, local, modifiedBy, created, modified, id, active, name, terminology, attributes);
+    return Objects.hash(version, description, scope, category, code, generator, memberIds, editorialPolicy, universeSubset, upgradeGenerator, derivedFromSubset, disjointSubsets, workflowStatus, publishable, descendantsGenerator, referencedSubsetCodes, referencedTerminologyCodes, style, entityType, query, local, modifiedBy, created, modified, id, active, name, terminology, attributes);
   }
 
   @Override
@@ -1114,23 +1116,23 @@ public class Subset {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    generator: ").append(toIndentedString(generator)).append("\n");
+    sb.append("    memberIds: ").append(toIndentedString(memberIds)).append("\n");
     sb.append("    editorialPolicy: ").append(toIndentedString(editorialPolicy)).append("\n");
     sb.append("    universeSubset: ").append(toIndentedString(universeSubset)).append("\n");
-    sb.append("    generator: ").append(toIndentedString(generator)).append("\n");
     sb.append("    upgradeGenerator: ").append(toIndentedString(upgradeGenerator)).append("\n");
     sb.append("    derivedFromSubset: ").append(toIndentedString(derivedFromSubset)).append("\n");
     sb.append("    disjointSubsets: ").append(toIndentedString(disjointSubsets)).append("\n");
     sb.append("    workflowStatus: ").append(toIndentedString(workflowStatus)).append("\n");
-    sb.append("    memberIds: ").append(toIndentedString(memberIds)).append("\n");
     sb.append("    publishable: ").append(toIndentedString(publishable)).append("\n");
     sb.append("    descendantsGenerator: ").append(toIndentedString(descendantsGenerator)).append("\n");
     sb.append("    referencedSubsetCodes: ").append(toIndentedString(referencedSubsetCodes)).append("\n");
     sb.append("    referencedTerminologyCodes: ").append(toIndentedString(referencedTerminologyCodes)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    style: ").append(toIndentedString(style)).append("\n");
     sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -1155,5 +1157,212 @@ public class Subset {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `version` to the URL query string
+    if (getVersion() != null) {
+      joiner.add(String.format("%sversion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVersion()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `scope` to the URL query string
+    if (getScope() != null) {
+      joiner.add(String.format("%sscope%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getScope()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `category` to the URL query string
+    if (getCategory() != null) {
+      joiner.add(String.format("%scategory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCategory()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `generator` to the URL query string
+    if (getGenerator() != null) {
+      joiner.add(String.format("%sgenerator%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGenerator()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `memberIds` to the URL query string
+    if (getMemberIds() != null) {
+      int i = 0;
+      for (String _item : getMemberIds()) {
+        joiner.add(String.format("%smemberIds%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(_item), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+      i++;
+    }
+
+    // add `editorialPolicy` to the URL query string
+    if (getEditorialPolicy() != null) {
+      joiner.add(String.format("%seditorialPolicy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEditorialPolicy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `universeSubset` to the URL query string
+    if (getUniverseSubset() != null) {
+      joiner.add(String.format("%suniverseSubset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUniverseSubset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `upgradeGenerator` to the URL query string
+    if (getUpgradeGenerator() != null) {
+      joiner.add(String.format("%supgradeGenerator%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUpgradeGenerator()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `derivedFromSubset` to the URL query string
+    if (getDerivedFromSubset() != null) {
+      joiner.add(String.format("%sderivedFromSubset%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDerivedFromSubset()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `disjointSubsets` to the URL query string
+    if (getDisjointSubsets() != null) {
+      int i = 0;
+      for (String _item : getDisjointSubsets()) {
+        joiner.add(String.format("%sdisjointSubsets%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(_item), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+      i++;
+    }
+
+    // add `workflowStatus` to the URL query string
+    if (getWorkflowStatus() != null) {
+      joiner.add(String.format("%sworkflowStatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWorkflowStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `publishable` to the URL query string
+    if (getPublishable() != null) {
+      joiner.add(String.format("%spublishable%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPublishable()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `descendantsGenerator` to the URL query string
+    if (getDescendantsGenerator() != null) {
+      joiner.add(String.format("%sdescendantsGenerator%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescendantsGenerator()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `referencedSubsetCodes` to the URL query string
+    if (getReferencedSubsetCodes() != null) {
+      int i = 0;
+      for (String _item : getReferencedSubsetCodes()) {
+        joiner.add(String.format("%sreferencedSubsetCodes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(_item), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+      i++;
+    }
+
+    // add `referencedTerminologyCodes` to the URL query string
+    if (getReferencedTerminologyCodes() != null) {
+      int i = 0;
+      for (String _item : getReferencedTerminologyCodes()) {
+        joiner.add(String.format("%sreferencedTerminologyCodes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(_item), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+      i++;
+    }
+
+    // add `style` to the URL query string
+    if (getStyle() != null) {
+      joiner.add(String.format("%sstyle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStyle()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `entityType` to the URL query string
+    if (getEntityType() != null) {
+      joiner.add(String.format("%sentityType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEntityType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `query` to the URL query string
+    if (getQuery() != null) {
+      joiner.add(String.format("%squery%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuery()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

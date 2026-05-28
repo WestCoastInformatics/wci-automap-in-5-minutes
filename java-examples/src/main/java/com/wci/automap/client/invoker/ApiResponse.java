@@ -21,10 +21,11 @@ import java.util.Map;
  *
  * @param <T> The type of data that is deserialized from response body
  */
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ApiResponse<T> {
-    private final int statusCode;
-    private final Map<String, List<String>> headers;
-    private final T data;
+    final private int statusCode;
+    final private Map<String, List<String>> headers;
+    final private T data;
 
     /**
      * @param statusCode The status code of HTTP response
@@ -45,29 +46,14 @@ public class ApiResponse<T> {
         this.data = data;
     }
 
-    /**
-     * Get the status code
-     *
-     * @return status code
-     */
     public int getStatusCode() {
         return statusCode;
     }
 
-    /**
-     * Get the headers
-     *
-     * @return map of headers
-     */
     public Map<String, List<String>> getHeaders() {
         return headers;
     }
 
-    /**
-     * Get the data
-     *
-     * @return data
-     */
     public T getData() {
         return data;
     }

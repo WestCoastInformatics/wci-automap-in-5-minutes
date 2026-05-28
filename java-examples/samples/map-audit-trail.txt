@@ -1,0 +1,3656 @@
+[ {
+      "details" : {
+        "topAnswer" : "false",
+        "minConfidence" : "0.7",
+        "tags" : "[{\"key\":\"userId\",\"value\":\"328f4481-2a22-4a95-afc7-a8e7c20a5928\"}]"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "Start processing input term = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:24.937+00:00",
+      "modified" : "2026-05-28T21:00:24.937+00:00",
+      "id" : "f8487d11-c380-4d52-b506-d24809bf33e7"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  version = {\"CPT\":\"2024\",\"CVX\":\"latest\",\"ICD10CM\":\"2025\",\"ICD10PCS\":\"2025\",\"LNC\":\"278\",\"NDC\":\"latest\",\"RXNORM\":\"20AA_240903F\",\"SNOMEDCT\":\"2024_09_01\",\"UCUM\":\"latest\",\"data.version\":\"AUTOMAP-202509\",\"notarget.version\":\"20250501\",\"server.version\":\"2.4.0.202605\"}",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:24.960+00:00",
+      "modified" : "2026-05-28T21:00:24.960+00:00",
+      "id" : "d3c01076-dd97-4c52-94bb-7b6b103d3a8d"
+    }, {
+      "details" : {
+        "endIndex" : "-1",
+        "startIndex" : "-1"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "PREPARE mapping   \"heart attack\" condition",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:24.983+00:00",
+      "modified" : "2026-05-28T21:00:24.983+00:00",
+      "id" : "72cd03a5-eb01-4ce0-ba45-aa8901078beb"
+    }, {
+      "details" : {
+        "endIndex" : "-1",
+        "startIndex" : "-1"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "PREPARE mapping   \"heart attack\" condition",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.004+00:00",
+      "modified" : "2026-05-28T21:00:25.004+00:00",
+      "id" : "a1f08222-646c-4ef0-b4e9-7c111aa8f7a7"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE no-target (0.7)",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.029+00:00",
+      "modified" : "2026-05-28T21:00:25.029+00:00",
+      "id" : "dec16b15-0214-4bcf-86c3-c1aba8350889"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (lexical) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.049+00:00",
+      "modified" : "2026-05-28T21:00:25.049+00:00",
+      "id" : "1fea9cb1-86ff-4622-a51f-307b533488f5"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (lexical) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.071+00:00",
+      "modified" : "2026-05-28T21:00:25.071+00:00",
+      "id" : "ae05a96a-f443-4c02-9393-1c4ec0672d15"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP synonym term (lexical) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.278+00:00",
+      "modified" : "2026-05-28T21:00:25.278+00:00",
+      "id" : "ccd28275-6b4a-4075-9399-edb4db5d0ad2"
+    }, {
+      "details" : {
+        "predictionScore" : "0.40308375358581544",
+        "toName" : "Transient cerebral ischemic attack, unspecified",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "G45.9"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (lexical) = G45.9 Transient cerebral ischemic attack, unspecified, 0.40308375358581544",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.312+00:00",
+      "modified" : "2026-05-28T21:00:25.312+00:00",
+      "id" : "d265846b-11ec-4343-b9a6-50f582c18d22"
+    }, {
+      "details" : {
+        "confidence" : "0.38103089332580564"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (lexical) = M10 Gout 0.38103089332580564",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.333+00:00",
+      "modified" : "2026-05-28T21:00:25.333+00:00",
+      "id" : "0490b72a-ccb2-456e-beb9-e3cadfc81dfa"
+    }, {
+      "details" : {
+        "confidence" : "0.3744892358779907"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (lexical) = R55 Syncope and collapse 0.3744892358779907",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.353+00:00",
+      "modified" : "2026-05-28T21:00:25.353+00:00",
+      "id" : "375fe3ec-04c3-4cb4-84d3-61490071e1e0"
+    }, {
+      "details" : {
+        "confidence" : "0.3684830904006958"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (lexical) = H40.21 Acute angle-closure glaucoma 0.3684830904006958",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.375+00:00",
+      "modified" : "2026-05-28T21:00:25.375+00:00",
+      "id" : "f3e3fd06-d54d-476a-b868-b5e2d525e3ee"
+    }, {
+      "details" : {
+        "confidence" : "0.3512528896331787"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (lexical) = F41.0 Panic disorder [episodic paroxysmal anxiety] 0.3512528896331787",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.396+00:00",
+      "modified" : "2026-05-28T21:00:25.396+00:00",
+      "id" : "8c6f1d37-d859-4011-a76c-fca7945981ef"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP term (embedding) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.418+00:00",
+      "modified" : "2026-05-28T21:00:25.418+00:00",
+      "id" : "12c2a33b-9ade-4dac-8f80-cadea13f38bc"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP term (embedding) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.440+00:00",
+      "modified" : "2026-05-28T21:00:25.440+00:00",
+      "id" : "ea790f80-c85a-4794-bfa7-cd7918ee13bb"
+    }, {
+      "details" : {
+        "predictionScore" : "0.9083481431007385",
+        "toName" : "Acute myocardial infarction",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "I21"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = I21 Acute myocardial infarction, 0.9083481431007385",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.467+00:00",
+      "modified" : "2026-05-28T21:00:25.467+00:00",
+      "id" : "c2d089c1-f2fb-4c24-98c2-267d6ea3e3d6"
+    }, {
+      "details" : {
+        "predictionScore" : "0.9083481431007385",
+        "toName" : "Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "I22"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = I22 Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction, 0.9083481431007385",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.494+00:00",
+      "modified" : "2026-05-28T21:00:25.494+00:00",
+      "id" : "4227b2fd-a67f-462f-a7e6-9681a0b9e832"
+    }, {
+      "details" : {
+        "predictionScore" : "0.8203564286231995",
+        "toName" : "Acute myocardial infarction, unspecified",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "I21.9"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = I21.9 Acute myocardial infarction, unspecified, 0.8203564286231995",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.532+00:00",
+      "modified" : "2026-05-28T21:00:25.532+00:00",
+      "id" : "79588018-1af7-4ab2-a531-74a79ffa731e"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (secondary) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.553+00:00",
+      "modified" : "2026-05-28T21:00:25.553+00:00",
+      "id" : "4c914835-4d5f-4053-8d9d-4757d531d088"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (secondary) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.577+00:00",
+      "modified" : "2026-05-28T21:00:25.577+00:00",
+      "id" : "a8a14a1f-b7da-4cb9-ae7d-8581a905896a"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP synonym term (secondary) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.603+00:00",
+      "modified" : "2026-05-28T21:00:25.603+00:00",
+      "id" : "eec3a56f-3e2b-493f-8ebf-4f7c3309fd67"
+    }, {
+      "details" : {
+        "predictionScore" : "1.0",
+        "toName" : "Myocardial infarction",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "22298006"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 22298006 Myocardial infarction, 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.632+00:00",
+      "modified" : "2026-05-28T21:00:25.632+00:00",
+      "id" : "693e1a32-d82c-436f-aa76-51949a3cbb19"
+    }, {
+      "details" : {
+        "confidence" : "0.39533715312501644"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = 102931001 Fear of heart attack 0.39533715312501644",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.653+00:00",
+      "modified" : "2026-05-28T21:00:25.653+00:00",
+      "id" : "c286ace0-c9ea-4b6f-8b96-8ab7e5ba098d"
+    }, {
+      "details" : {
+        "confidence" : "0.37532124885572676"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = 247818001 Fear of having a heart attack 0.37532124885572676",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.674+00:00",
+      "modified" : "2026-05-28T21:00:25.674+00:00",
+      "id" : "c3d9387c-93a1-485e-a86a-5c6243ab1538"
+    }, {
+      "details" : {
+        "confidence" : "0.3730458750979867"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = 277834005 Anxiety about having a heart attack 0.3730458750979867",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.696+00:00",
+      "modified" : "2026-05-28T21:00:25.696+00:00",
+      "id" : "c74b57f0-c3dd-46c5-8f1d-d7c26a7740e6"
+    }, {
+      "details" : {
+        "confidence" : "0.30370797082573237"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = 1222625002 Hypercyanotic spell due to congenital heart disease 0.30370797082573237",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.718+00:00",
+      "modified" : "2026-05-28T21:00:25.718+00:00",
+      "id" : "9b86b5de-cc32-4d03-abe7-a1a5f0ecc211"
+    }, {
+      "details" : {
+        "predictionScore" : "0.38551082611083987",
+        "toName" : "Acute myocardial infarction, unspecified",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "I21.9"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = I21.9 Acute myocardial infarction, unspecified, 0.38551082611083987",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.752+00:00",
+      "modified" : "2026-05-28T21:00:25.752+00:00",
+      "id" : "21cbb9d9-a640-48ec-9117-7b4ca8850a39"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE no-target (0.7)",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.774+00:00",
+      "modified" : "2026-05-28T21:00:25.774+00:00",
+      "id" : "d50c30aa-52d0-490e-8658-97fc972a196a"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (lexical) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.795+00:00",
+      "modified" : "2026-05-28T21:00:25.795+00:00",
+      "id" : "d4c4d90f-a8bb-4cc8-ab5a-17aaa6a9564e"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (lexical) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.819+00:00",
+      "modified" : "2026-05-28T21:00:25.819+00:00",
+      "id" : "67291891-53a9-4643-9da3-de2d09d2ff34"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP synonym term (lexical) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.845+00:00",
+      "modified" : "2026-05-28T21:00:25.845+00:00",
+      "id" : "62e6e806-c27c-4598-bb82-38620c03b08f"
+    }, {
+      "details" : {
+        "predictionScore" : "1.0",
+        "toName" : "Myocardial infarction",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "22298006"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (lexical) = 22298006 Myocardial infarction, 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.868+00:00",
+      "modified" : "2026-05-28T21:00:25.868+00:00",
+      "id" : "fe75b22e-9462-4ec7-b1bd-f5ef23d7508e"
+    }, {
+      "details" : {
+        "predictionScore" : "0.4980004512220053",
+        "toName" : "Fear of heart attack",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "102931001"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (lexical) = 102931001 Fear of heart attack, 0.4980004512220053",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.894+00:00",
+      "modified" : "2026-05-28T21:00:25.894+00:00",
+      "id" : "55f6275d-de43-4d91-88cf-f55df2103947"
+    }, {
+      "details" : {
+        "predictionScore" : "0.4713968532442897",
+        "toName" : "Fear of having a heart attack",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "247818001"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (lexical) = 247818001 Fear of having a heart attack, 0.4713968532442897",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.917+00:00",
+      "modified" : "2026-05-28T21:00:25.917+00:00",
+      "id" : "4e349e25-fa4d-4a03-b65e-736fa9db6b67"
+    }, {
+      "details" : {
+        "predictionScore" : "0.4694322398471849",
+        "toName" : "Anxiety about having a heart attack",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "277834005"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (lexical) = 277834005 Anxiety about having a heart attack, 0.4694322398471849",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.941+00:00",
+      "modified" : "2026-05-28T21:00:25.941+00:00",
+      "id" : "25176311-6e2c-4c6d-a766-afd022a7cf05"
+    }, {
+      "details" : {
+        "confidence" : "0.3817471681397704"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (lexical) = 1222625002 Hypercyanotic spell due to congenital heart disease 0.3817471681397704",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.973+00:00",
+      "modified" : "2026-05-28T21:00:25.973+00:00",
+      "id" : "cf48db14-13e1-4990-acae-4dfe8cc04300"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP term (embedding) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:25.996+00:00",
+      "modified" : "2026-05-28T21:00:25.996+00:00",
+      "id" : "41ecbbe3-110e-4963-907b-f11e2ba00730"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "SNOMEDCT",
+        "scope" : "<<404684003 | Clinical Finding | OR << 57177007 | Family history with explicit context | OR << 413350009 | Finding with explicit context |"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP term (embedding) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.021+00:00",
+      "modified" : "2026-05-28T21:00:26.021+00:00",
+      "id" : "1af05839-67c6-45d7-86b4-eabd872c985f"
+    }, {
+      "details" : {
+        "predictionScore" : "1.0",
+        "toName" : "Myocardial infarction",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "22298006"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = 22298006 Myocardial infarction, 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.050+00:00",
+      "modified" : "2026-05-28T21:00:26.050+00:00",
+      "id" : "3b8e3d90-c719-4f36-a257-20fa614ee404"
+    }, {
+      "details" : {
+        "predictionScore" : "0.8586034178733826",
+        "toName" : "Recent myocardial infarction",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "428752002"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = 428752002 Recent myocardial infarction, 0.8586034178733826",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.078+00:00",
+      "modified" : "2026-05-28T21:00:26.078+00:00",
+      "id" : "5b7b7d7b-ff2b-4679-a43a-e2ffe76445bb"
+    }, {
+      "details" : {
+        "predictionScore" : "0.8503689169883728",
+        "toName" : "Acute myocardial infarction",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "57054005"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = 57054005 Acute myocardial infarction, 0.8503689169883728",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.104+00:00",
+      "modified" : "2026-05-28T21:00:26.104+00:00",
+      "id" : "bf1a3c33-e7bc-405f-99ac-2e8c1d599809"
+    }, {
+      "details" : {
+        "predictionScore" : "0.8396947979927063",
+        "toName" : "Myocardial ischemia",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "414795007"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (embedding) = 414795007 Myocardial ischemia, 0.8396947979927063",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.130+00:00",
+      "modified" : "2026-05-28T21:00:26.130+00:00",
+      "id" : "a68a081a-75fa-4d44-b5bd-e52d9d39fb35"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (secondary) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.156+00:00",
+      "modified" : "2026-05-28T21:00:26.156+00:00",
+      "id" : "d7e4f18c-b7e6-4f8e-bcbf-dbd4a0c5d5c8"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP exact term (secondary) = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.179+00:00",
+      "modified" : "2026-05-28T21:00:26.179+00:00",
+      "id" : "284cba0f-328f-4682-b183-7021d514b0db"
+    }, {
+      "details" : {
+        "active" : "true",
+        "terminology" : "ICD10CM",
+        "scope" : "*"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "LOOKUP synonym term (secondary) = heartattack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.574+00:00",
+      "modified" : "2026-05-28T21:00:26.574+00:00",
+      "id" : "8385ec51-36a4-4550-839b-cace2bdf26ca"
+    }, {
+      "details" : {
+        "predictionScore" : "0.40308375358581544",
+        "toName" : "Transient cerebral ischemic attack, unspecified",
+        "toTerminology" : "ICD10CM",
+        "toCode" : "G45.9"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = G45.9 Transient cerebral ischemic attack, unspecified, 0.40308375358581544",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.597+00:00",
+      "modified" : "2026-05-28T21:00:26.597+00:00",
+      "id" : "1b24803c-30e5-48bd-8abb-ec4d5ba92b54"
+    }, {
+      "details" : {
+        "confidence" : "0.38103089332580564"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = M10 Gout 0.38103089332580564",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.619+00:00",
+      "modified" : "2026-05-28T21:00:26.619+00:00",
+      "id" : "2b95b882-5ca3-4cad-966e-c8b22035ce11"
+    }, {
+      "details" : {
+        "confidence" : "0.3744892358779907"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = R55 Syncope and collapse 0.3744892358779907",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.641+00:00",
+      "modified" : "2026-05-28T21:00:26.641+00:00",
+      "id" : "e96ea91d-4331-4219-8679-2b5b9101b5f6"
+    }, {
+      "details" : {
+        "confidence" : "0.3684830904006958"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = H40.21 Acute angle-closure glaucoma 0.3684830904006958",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.662+00:00",
+      "modified" : "2026-05-28T21:00:26.662+00:00",
+      "id" : "311c267d-e4c8-4561-ab4c-6edc912eef20"
+    }, {
+      "details" : {
+        "confidence" : "0.3512528896331787"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = F41.0 Panic disorder [episodic paroxysmal anxiety] 0.3512528896331787",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.684+00:00",
+      "modified" : "2026-05-28T21:00:26.684+00:00",
+      "id" : "4883a9bd-9a8f-4845-afeb-87a5227c0b48"
+    }, {
+      "details" : {
+        "confidence" : "0.3185176610946655"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = I11.0 Hypertensive heart disease with heart failure 0.3185176610946655",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.706+00:00",
+      "modified" : "2026-05-28T21:00:26.706+00:00",
+      "id" : "ee02c041-50aa-4d24-987e-ecf26b276c0a"
+    }, {
+      "details" : {
+        "confidence" : "0.3170746326446533"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = I11.9 Hypertensive heart disease without heart failure 0.3170746326446533",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.728+00:00",
+      "modified" : "2026-05-28T21:00:26.728+00:00",
+      "id" : "a41b5c93-cf2e-43fb-816c-1d16d6427c3b"
+    }, {
+      "details" : {
+        "confidence" : "0.3128658771514893"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = I50.9 Heart failure, unspecified 0.3128658771514893",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.750+00:00",
+      "modified" : "2026-05-28T21:00:26.750+00:00",
+      "id" : "1d05c6de-a5f0-4c17-9a40-3c167e40fcbd"
+    }, {
+      "details" : {
+        "confidence" : "0.31067984104156493"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = I50 Heart failure 0.31067984104156493",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.783+00:00",
+      "modified" : "2026-05-28T21:00:26.783+00:00",
+      "id" : "922bad3e-5c6a-4787-95f5-50aedea5e3d8"
+    }, {
+      "details" : {
+        "confidence" : "0.30745663642883303"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  SKIP low confidence (secondary) = E34.01 Carcinoid heart syndrome 0.30745663642883303",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.805+00:00",
+      "modified" : "2026-05-28T21:00:26.805+00:00",
+      "id" : "c8818a65-1855-4cbf-84da-32add2326947"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Transient cerebral ischemia due to atrial fibrillation",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "426814001"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 426814001 Transient cerebral ischemia due to atrial fibrillation, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.831+00:00",
+      "modified" : "2026-05-28T21:00:26.831+00:00",
+      "id" : "5f530cad-7d3d-412d-89b8-4f58fe48c051"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Stroke/transient ischemic attack monitoring third letter",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "415631003"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 415631003 Stroke/transient ischemic attack monitoring third letter, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.856+00:00",
+      "modified" : "2026-05-28T21:00:26.856+00:00",
+      "id" : "c50c3ec2-c4c3-408f-bcdd-65fc58de6918"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Intermittent cerebral ischemia",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "195206000"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 195206000 Intermittent cerebral ischemia, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.881+00:00",
+      "modified" : "2026-05-28T21:00:26.881+00:00",
+      "id" : "b62f7183-b839-406e-8016-10abba318775"
+    }, {
+      "details" : {
+        "predictionScore" : "0.35925300121307374",
+        "toName" : "Recurrent transient cerebral ischemic attack",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "444172003"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 444172003 Recurrent transient cerebral ischemic attack, 0.35925300121307374",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.906+00:00",
+      "modified" : "2026-05-28T21:00:26.906+00:00",
+      "id" : "bcae6876-946c-4495-8ca9-7242304f6058"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Stroke/transient ischemic attack monitoring second letter",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "415629007"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 415629007 Stroke/transient ischemic attack monitoring second letter, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.954+00:00",
+      "modified" : "2026-05-28T21:00:26.954+00:00",
+      "id" : "9918bb44-5704-46c3-93dd-ca481041fa6b"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Stroke/transient ischemic attack monitoring invitation",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "417540008"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 417540008 Stroke/transient ischemic attack monitoring invitation, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:26.984+00:00",
+      "modified" : "2026-05-28T21:00:26.984+00:00",
+      "id" : "c76946e9-3f03-46b3-b680-f20cf3d9c9b0"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Transient cerebral ischemia",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "266257000"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 266257000 Transient cerebral ischemia, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.006+00:00",
+      "modified" : "2026-05-28T21:00:27.006+00:00",
+      "id" : "3971349f-152e-4883-99fc-8b46a5b04fc4"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Stroke/transient ischemic attack monitoring first letter",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "415628004"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 415628004 Stroke/transient ischemic attack monitoring first letter, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.041+00:00",
+      "modified" : "2026-05-28T21:00:27.041+00:00",
+      "id" : "7aafa4b9-9927-4404-b4b6-da792ca5a039"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Stroke/transient ischemic attack monitoring verbal invitation",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "417059002"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 417059002 Stroke/transient ischemic attack monitoring verbal invitation, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.065+00:00",
+      "modified" : "2026-05-28T21:00:27.065+00:00",
+      "id" : "89b32798-18b7-4f4c-a32d-b8b129dbbdab"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Transient ischemic attack due to embolism",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "710575003"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 710575003 Transient ischemic attack due to embolism, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.090+00:00",
+      "modified" : "2026-05-28T21:00:27.090+00:00",
+      "id" : "1faa7e48-705c-4462-b721-9efdc09eb25d"
+    }, {
+      "details" : {
+        "predictionScore" : "0.35925300121307374",
+        "toName" : "Spasm of cerebral arteries",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "73173006"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 73173006 Spasm of cerebral arteries, 0.35925300121307374",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.118+00:00",
+      "modified" : "2026-05-28T21:00:27.118+00:00",
+      "id" : "f213035b-7048-412e-a43a-efcc7905ea9a"
+    }, {
+      "details" : {
+        "predictionScore" : "0.37086269855499265",
+        "toName" : "Transient ischemic attack co-occurrent with subarachnoid hemorrhage",
+        "toTerminology" : "SNOMEDCT",
+        "toCode" : "1208871009"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  GENERATE (secondary) = 1208871009 Transient ischemic attack co-occurrent with subarachnoid hemorrhage, 0.37086269855499265",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.145+00:00",
+      "modified" : "2026-05-28T21:00:27.145+00:00",
+      "id" : "e736acef-1b68-4624-a1e3-674fc99d595f"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate =  No target",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.175+00:00",
+      "modified" : "2026-05-28T21:00:27.175+00:00",
+      "id" : "3afa2d53-1f01-4cb7-821a-3b16924c16a3"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nomap = 0.7",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.197+00:00",
+      "modified" : "2026-05-28T21:00:27.197+00:00",
+      "id" : "38408a2e-b8bc-4a5e-9ff2-2d6d3f68fc91"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = G45.9 Transient cerebral ischemic attack, unspecified",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.219+00:00",
+      "modified" : "2026-05-28T21:00:27.219+00:00",
+      "id" : "fb3c51d9-10e8-48f3-b07c-3071621b3bf9"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.229",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.241+00:00",
+      "modified" : "2026-05-28T21:00:27.241+00:00",
+      "id" : "b8ceaf74-f7cb-49e7-ad21-8bfec62607f9"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.71",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.274+00:00",
+      "modified" : "2026-05-28T21:00:27.274+00:00",
+      "id" : "aedaaf4a-3cc8-4a93-8e32-75aee9f372e2"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.699373185634613",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.297+00:00",
+      "modified" : "2026-05-28T21:00:27.297+00:00",
+      "id" : "867f95b0-f339-4567-8823-13ca755e04cf"
+    }, {
+      "details" : {
+        "bodyPart" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.324+00:00",
+      "modified" : "2026-05-28T21:00:27.324+00:00",
+      "id" : "710b0774-56d6-4927-98af-682cca2a4408"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.345+00:00",
+      "modified" : "2026-05-28T21:00:27.345+00:00",
+      "id" : "67bea047-3c55-4c3c-bba7-2d8e9ce5a2fc"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.366+00:00",
+      "modified" : "2026-05-28T21:00:27.366+00:00",
+      "id" : "76d90214-a488-4694-aea4-920e6340e86e"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.229 + 0.71 + 0.699373185634613) / 3) * 0.95 * 0.0 * 1.0 = 0.4928772666784127",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.388+00:00",
+      "modified" : "2026-05-28T21:00:27.388+00:00",
+      "id" : "e0275eb3-b4c6-49b5-ab18-bd0028cec761"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = I22 Subsequent ST elevation (STEMI) and non-ST elevation (NSTEMI) myocardial infarction",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.410+00:00",
+      "modified" : "2026-05-28T21:00:27.410+00:00",
+      "id" : "0d10529b-cd85-484b-978c-86658e485bad"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.162",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.432+00:00",
+      "modified" : "2026-05-28T21:00:27.432+00:00",
+      "id" : "638a1899-1067-42a4-9024-9d3c220faf0a"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.731",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.453+00:00",
+      "modified" : "2026-05-28T21:00:27.453+00:00",
+      "id" : "03d73f2a-98ed-4caf-8fc2-ac9e94da2db6"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.9305593824386597",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.487+00:00",
+      "modified" : "2026-05-28T21:00:27.487+00:00",
+      "id" : "4103fc09-eef9-4ce3-910d-5a788a0d12e5"
+    }, {
+      "details" : {
+        "morphology" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.97",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.510+00:00",
+      "modified" : "2026-05-28T21:00:27.510+00:00",
+      "id" : "e2c5da27-3e10-40e1-a24c-a9735591157d"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.532+00:00",
+      "modified" : "2026-05-28T21:00:27.532+00:00",
+      "id" : "7b3a15db-c1f2-485d-91d1-db75a6980c85"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.553+00:00",
+      "modified" : "2026-05-28T21:00:27.553+00:00",
+      "id" : "6f5329e9-4103-4f7d-9ab6-ef23a7fdcee5"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.162 + 0.731 + 0.9305593824386597) / 3) * 0.97 * 0.0 * 1.0 = 0.5719290076455116",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.575+00:00",
+      "modified" : "2026-05-28T21:00:27.575+00:00",
+      "id" : "fe30f501-d7a9-4748-b0ae-02c34ddc8eda"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = I21 Acute myocardial infarction",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.596+00:00",
+      "modified" : "2026-05-28T21:00:27.596+00:00",
+      "id" : "80da0db2-ee7c-4063-9938-f6db56eb77e9"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.161",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.618+00:00",
+      "modified" : "2026-05-28T21:00:27.618+00:00",
+      "id" : "32a91fb5-c586-4880-bf78-9fa456f4710d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.918",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.640+00:00",
+      "modified" : "2026-05-28T21:00:27.640+00:00",
+      "id" : "91bf8c9b-1645-43bf-95e4-7325bb070672"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.9305593824386597",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.662+00:00",
+      "modified" : "2026-05-28T21:00:27.662+00:00",
+      "id" : "c159ff15-c9c5-4643-b53f-5027961e5b68"
+    }, {
+      "details" : {
+        "morphology" : "0.97",
+        "adjective" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.941",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.696+00:00",
+      "modified" : "2026-05-28T21:00:27.696+00:00",
+      "id" : "aa9f96e0-9808-40b5-a8cb-2aa558d9d6a3"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.718+00:00",
+      "modified" : "2026-05-28T21:00:27.718+00:00",
+      "id" : "0a405d2c-119b-4b44-9edb-d99e7cb99aa8"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.739+00:00",
+      "modified" : "2026-05-28T21:00:27.739+00:00",
+      "id" : "c262844f-40b6-4fce-9a65-3b6d98cb73f3"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.161 + 0.918 + 0.9305593824386597) / 3) * 0.941 * 0.0 * 1.0 = 0.5931422171737222",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.761+00:00",
+      "modified" : "2026-05-28T21:00:27.761+00:00",
+      "id" : "02c24543-6eae-4972-aa32-06758ab72de8"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = I21.9 Acute myocardial infarction, unspecified",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.783+00:00",
+      "modified" : "2026-05-28T21:00:27.783+00:00",
+      "id" : "a7898e9b-5c3e-4120-adae-6171a1844e12"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.805+00:00",
+      "modified" : "2026-05-28T21:00:27.805+00:00",
+      "id" : "163deb05-7606-4ae3-b6d6-af7560b3ee3d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.905",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.827+00:00",
+      "modified" : "2026-05-28T21:00:27.827+00:00",
+      "id" : "611d9ac9-4da2-42fc-ba68-51cb29d37242"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.890509307384491",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.848+00:00",
+      "modified" : "2026-05-28T21:00:27.848+00:00",
+      "id" : "f7e80a42-e508-4330-8c94-ff088b27599e"
+    }, {
+      "details" : {
+        "morphology" : "0.97",
+        "adjective" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.941",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.870+00:00",
+      "modified" : "2026-05-28T21:00:27.870+00:00",
+      "id" : "ed3da176-e3c9-4bd2-8e23-8e4a3b57d66e"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.905+00:00",
+      "modified" : "2026-05-28T21:00:27.905+00:00",
+      "id" : "2a6f33da-414a-4935-95ce-aea028a2358c"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.927+00:00",
+      "modified" : "2026-05-28T21:00:27.927+00:00",
+      "id" : "272b58e4-ad89-4391-ba71-18eeece1766a"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.0 + 0.905 + 0.890509307384491) / 3) * 0.941 * 0.0 * 1.0 = 0.5299631256707087",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.949+00:00",
+      "modified" : "2026-05-28T21:00:27.949+00:00",
+      "id" : "bedff3d3-71f4-45da-8861-d43f1005f76c"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate =  No target",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.971+00:00",
+      "modified" : "2026-05-28T21:00:27.971+00:00",
+      "id" : "f110a8c0-13a3-4644-86fc-59ac8747fb82"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nomap = 0.7",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:27.992+00:00",
+      "modified" : "2026-05-28T21:00:27.992+00:00",
+      "id" : "956791fc-0edb-4038-93f9-996d0c90de5b"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 277834005 Anxiety about having a heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.013+00:00",
+      "modified" : "2026-05-28T21:00:28.013+00:00",
+      "id" : "9c26d9c8-88ec-47d0-9e00-b4c888dc4d7a"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.53",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.034+00:00",
+      "modified" : "2026-05-28T21:00:28.034+00:00",
+      "id" : "2516b585-1e07-416e-b4b7-9a47b102a7d7"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.863",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.055+00:00",
+      "modified" : "2026-05-28T21:00:28.055+00:00",
+      "id" : "f13b971d-a96a-4003-8140-bc744a396b6a"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.8387032747268677",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.077+00:00",
+      "modified" : "2026-05-28T21:00:28.077+00:00",
+      "id" : "2e17651c-45ca-4c1a-aa42-0cde9bba6156"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.110+00:00",
+      "modified" : "2026-05-28T21:00:28.110+00:00",
+      "id" : "aa7f58b5-4762-4ed5-a6e8-634a39d21fcb"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.132+00:00",
+      "modified" : "2026-05-28T21:00:28.132+00:00",
+      "id" : "9b36d8be-3849-49e5-a5da-72047da16273"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.153+00:00",
+      "modified" : "2026-05-28T21:00:28.153+00:00",
+      "id" : "0b8e038b-82a4-4074-a590-f7a39b514bb6"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.53 + 0.863 + 0.8387032747268677) / 3) * 1.0 * 0.0 * 1.0 = 0.7439010915756225",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.174+00:00",
+      "modified" : "2026-05-28T21:00:28.174+00:00",
+      "id" : "1c73cc4c-691f-40e8-834c-734801bdc4c9"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 22298006 Myocardial infarction",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.196+00:00",
+      "modified" : "2026-05-28T21:00:28.196+00:00",
+      "id" : "168cca67-7bd4-4d69-b7cc-09e052631e14"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.98",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.219+00:00",
+      "modified" : "2026-05-28T21:00:28.219+00:00",
+      "id" : "598e9dab-f75b-45a6-8e4d-7f7a8121cd01"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.949",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.240+00:00",
+      "modified" : "2026-05-28T21:00:28.240+00:00",
+      "id" : "e1c5fbf7-cbb4-4c6a-b9e0-a5df8797c47d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.98",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.262+00:00",
+      "modified" : "2026-05-28T21:00:28.262+00:00",
+      "id" : "7b10ad52-37d8-4120-9083-d5f6c383e125"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost OVERRIDE NLP BY HIGH similarityScore = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.283+00:00",
+      "modified" : "2026-05-28T21:00:28.283+00:00",
+      "id" : "343a50f2-77b6-481a-8cad-ec6f76a9e1ae"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.316+00:00",
+      "modified" : "2026-05-28T21:00:28.316+00:00",
+      "id" : "a0e1db92-2082-4d96-b3ff-8bb90ee7cb42"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.337+00:00",
+      "modified" : "2026-05-28T21:00:28.337+00:00",
+      "id" : "7305c7a1-747c-4068-96f4-41fd66763999"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.359+00:00",
+      "modified" : "2026-05-28T21:00:28.359+00:00",
+      "id" : "fa38c171-643a-4fc7-b54d-143d11f479dc"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.98 + 0.949 + 0.98) / 3) * 1.0 * 0.0 * 1.0 = 0.9696666666666666",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.381+00:00",
+      "modified" : "2026-05-28T21:00:28.381+00:00",
+      "id" : "22c1ac60-6797-48b3-8ca4-aaad1eb13a1b"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 247818001 Fear of having a heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.402+00:00",
+      "modified" : "2026-05-28T21:00:28.402+00:00",
+      "id" : "f1ce99f3-31a2-4c07-ade5-54501695c7a5"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.623",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.423+00:00",
+      "modified" : "2026-05-28T21:00:28.423+00:00",
+      "id" : "5ed7c9b3-5e40-4cb4-8cdc-d1a79c608a1d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.836",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.444+00:00",
+      "modified" : "2026-05-28T21:00:28.444+00:00",
+      "id" : "ef530a2d-2f62-4d93-aaf9-8ce4cbdd3578"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.8131365776062012",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.466+00:00",
+      "modified" : "2026-05-28T21:00:28.466+00:00",
+      "id" : "59d694c9-6eb6-44a6-a2f5-3accfd29a0dc"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.487+00:00",
+      "modified" : "2026-05-28T21:00:28.487+00:00",
+      "id" : "072e20ba-2b85-41a3-afcf-5437759cee92"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.521+00:00",
+      "modified" : "2026-05-28T21:00:28.521+00:00",
+      "id" : "b621c88f-53c0-4368-84d5-b63c332c5566"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.542+00:00",
+      "modified" : "2026-05-28T21:00:28.542+00:00",
+      "id" : "b909411c-7c0f-4d6c-b36c-b859dc919aee"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.623 + 0.836 + 0.8131365776062012) / 3) * 1.0 * 0.0 * 1.0 = 0.757378859202067",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.563+00:00",
+      "modified" : "2026-05-28T21:00:28.563+00:00",
+      "id" : "f586bdaf-54ba-495b-bf0f-7844510b0e49"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 102931001 Fear of heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.584+00:00",
+      "modified" : "2026-05-28T21:00:28.584+00:00",
+      "id" : "9af28a9a-2e04-4a07-92c3-c5b2e83dfecf"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.768",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.606+00:00",
+      "modified" : "2026-05-28T21:00:28.606+00:00",
+      "id" : "d85a1002-118f-4f05-b033-9704f55b7f8d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.837",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.627+00:00",
+      "modified" : "2026-05-28T21:00:28.627+00:00",
+      "id" : "1fc9a2c7-cb31-4242-9a54-e4e9160207b0"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.8181940913200378",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.649+00:00",
+      "modified" : "2026-05-28T21:00:28.649+00:00",
+      "id" : "1ddca183-e197-4ad5-9532-aa12ecb329cf"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.672+00:00",
+      "modified" : "2026-05-28T21:00:28.672+00:00",
+      "id" : "2b63a6e7-2cb7-47df-b76d-07adfa0074e8"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.694+00:00",
+      "modified" : "2026-05-28T21:00:28.694+00:00",
+      "id" : "f38ca258-da1b-416c-9573-4b1c9199d984"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.726+00:00",
+      "modified" : "2026-05-28T21:00:28.726+00:00",
+      "id" : "789bd7ad-5610-4dbb-9e34-b3707a0fcf2f"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.768 + 0.837 + 0.8181940913200378) / 3) * 1.0 * 0.0 * 1.0 = 0.807731363773346",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.748+00:00",
+      "modified" : "2026-05-28T21:00:28.748+00:00",
+      "id" : "e7a66f76-e79b-43ea-9789-4ee7018acbfe"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 414795007 Myocardial ischemia",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.769+00:00",
+      "modified" : "2026-05-28T21:00:28.769+00:00",
+      "id" : "e652524c-2a65-4b84-a62b-e3a520a52538"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.790+00:00",
+      "modified" : "2026-05-28T21:00:28.790+00:00",
+      "id" : "d5f135c0-1bc3-4950-99f4-31b4141900a0"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.922",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.811+00:00",
+      "modified" : "2026-05-28T21:00:28.811+00:00",
+      "id" : "0ebe624c-b9c6-4b7d-981d-04d92f449841"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.901340126991272",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.832+00:00",
+      "modified" : "2026-05-28T21:00:28.832+00:00",
+      "id" : "03494470-3640-48f1-b4b6-c0cc8e7bfd3f"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.854+00:00",
+      "modified" : "2026-05-28T21:00:28.854+00:00",
+      "id" : "2d1243d8-531a-41e7-aec2-9339bcd1ca2c"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.876+00:00",
+      "modified" : "2026-05-28T21:00:28.876+00:00",
+      "id" : "b5cc0218-698a-41ab-b975-0618e9ff7238"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.896+00:00",
+      "modified" : "2026-05-28T21:00:28.896+00:00",
+      "id" : "ada5d7d0-e031-47b8-9353-8ac78baa88e1"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.0 + 0.922 + 0.901340126991272) / 3) * 0.95 * 0.0 * 1.0 = 0.5485214882032077",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.929+00:00",
+      "modified" : "2026-05-28T21:00:28.929+00:00",
+      "id" : "cb1726d5-eabb-46f9-895e-0a5399f9bbc4"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 428752002 Recent myocardial infarction",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.950+00:00",
+      "modified" : "2026-05-28T21:00:28.950+00:00",
+      "id" : "c05fafa2-0e90-4bc0-a213-e7c65d9951bf"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.972+00:00",
+      "modified" : "2026-05-28T21:00:28.972+00:00",
+      "id" : "1e6a0aee-7cce-455d-95f8-dab63ff14f1a"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.927",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:28.993+00:00",
+      "modified" : "2026-05-28T21:00:28.993+00:00",
+      "id" : "792211e3-7892-4c7d-88c1-7a9773d71839"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.9176592230796814",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.015+00:00",
+      "modified" : "2026-05-28T21:00:29.015+00:00",
+      "id" : "ce725500-6896-4536-90b4-124ac3300813"
+    }, {
+      "details" : {
+        "morphology" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.97",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.037+00:00",
+      "modified" : "2026-05-28T21:00:29.037+00:00",
+      "id" : "ef9e6694-cfd2-478a-9203-d911ea4d1288"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.058+00:00",
+      "modified" : "2026-05-28T21:00:29.058+00:00",
+      "id" : "1c41734a-c565-413d-9e7a-ed3ae5cbd483"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.079+00:00",
+      "modified" : "2026-05-28T21:00:29.079+00:00",
+      "id" : "57480c24-3953-446e-a6ee-d190c5a8066d"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.0 + 0.927 + 0.9176592230796814) / 3) * 0.97 * 0.0 * 1.0 = 0.5785466209985574",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.100+00:00",
+      "modified" : "2026-05-28T21:00:29.100+00:00",
+      "id" : "99069432-0c5d-429e-957b-18b930fe173c"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 57054005 Acute myocardial infarction",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.133+00:00",
+      "modified" : "2026-05-28T21:00:29.133+00:00",
+      "id" : "7b9ef4c6-c901-43ae-99c6-8e4f48e05adc"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.157+00:00",
+      "modified" : "2026-05-28T21:00:29.157+00:00",
+      "id" : "1623859b-740b-4fce-8c7d-fae679c6632e"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.918",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.178+00:00",
+      "modified" : "2026-05-28T21:00:29.178+00:00",
+      "id" : "960aceff-c99a-4618-a9dd-ac0438f9f0d6"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.9120203256607056",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.199+00:00",
+      "modified" : "2026-05-28T21:00:29.199+00:00",
+      "id" : "3f8f3eab-202b-4e6e-b2b7-aa6c30ed4544"
+    }, {
+      "details" : {
+        "morphology" : "0.97",
+        "adjective" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.941",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.221+00:00",
+      "modified" : "2026-05-28T21:00:29.221+00:00",
+      "id" : "3236b377-3bdc-46e5-adc3-8c1c31abea4a"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.242+00:00",
+      "modified" : "2026-05-28T21:00:29.242+00:00",
+      "id" : "bb4c5f94-56f1-406b-b5b5-88fa4d25e06e"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.264+00:00",
+      "modified" : "2026-05-28T21:00:29.264+00:00",
+      "id" : "36f6695a-50de-424c-9a1e-b39dca5b9fd8"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.0 + 0.918 + 0.9120203256607056) / 3) * 0.941 * 0.0 * 1.0 = 0.5401494093287891",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.284+00:00",
+      "modified" : "2026-05-28T21:00:29.284+00:00",
+      "id" : "1bac0881-94a9-4ed2-8824-b5c40e407658"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 426814001 Transient cerebral ischemia due to atrial fibrillation",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.310+00:00",
+      "modified" : "2026-05-28T21:00:29.310+00:00",
+      "id" : "27810ce8-24e2-4f72-8cbe-a7f40cf39f8e"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.04",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.345+00:00",
+      "modified" : "2026-05-28T21:00:29.345+00:00",
+      "id" : "fc205bc5-4383-4a24-9743-976a29514733"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.691",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.367+00:00",
+      "modified" : "2026-05-28T21:00:29.367+00:00",
+      "id" : "c707c125-2f1b-403f-90e3-5c9fb5d4b700"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6641934514045715",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.388+00:00",
+      "modified" : "2026-05-28T21:00:29.388+00:00",
+      "id" : "97378c34-7e5a-4d48-9ff8-dc41b31360c1"
+    }, {
+      "details" : {
+        "condition" : "0.95",
+        "bodyPart" : "0.97"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.922",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.410+00:00",
+      "modified" : "2026-05-28T21:00:29.410+00:00",
+      "id" : "a2806b39-1aac-4857-8b0e-14d7632a0fb2"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.432+00:00",
+      "modified" : "2026-05-28T21:00:29.432+00:00",
+      "id" : "35e91c68-4ada-4701-bc0e-857855e698a4"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.453+00:00",
+      "modified" : "2026-05-28T21:00:29.453+00:00",
+      "id" : "bb4c8354-dbbf-4431-8cb4-364aa66c45a3"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.04 + 0.691 + 0.6641934514045715) / 3) * 0.922 * 0.0 * 1.0 = 0.3953438766479346",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.473+00:00",
+      "modified" : "2026-05-28T21:00:29.473+00:00",
+      "id" : "ed12b08d-b336-4943-a0bf-011564a50a8d"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 415631003 Stroke/transient ischemic attack monitoring third letter",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.495+00:00",
+      "modified" : "2026-05-28T21:00:29.495+00:00",
+      "id" : "6cdac366-eeb1-4e78-8fe2-36f738b11028"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.207",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.517+00:00",
+      "modified" : "2026-05-28T21:00:29.517+00:00",
+      "id" : "1c5d5a3d-bb17-4c52-b435-04756914fe39"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.649",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.549+00:00",
+      "modified" : "2026-05-28T21:00:29.549+00:00",
+      "id" : "4b78257e-281e-4382-a2d6-95d884fe8fee"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6360583305358887",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.571+00:00",
+      "modified" : "2026-05-28T21:00:29.571+00:00",
+      "id" : "a82e51f5-af15-4f91-8921-cef94cee9fab"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.594+00:00",
+      "modified" : "2026-05-28T21:00:29.594+00:00",
+      "id" : "6152fdac-8fb8-416e-8132-646c30996abc"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.615+00:00",
+      "modified" : "2026-05-28T21:00:29.615+00:00",
+      "id" : "580e8436-8d6f-49fd-a962-8d59cf195f51"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.636+00:00",
+      "modified" : "2026-05-28T21:00:29.636+00:00",
+      "id" : "83e1f17d-0671-46b5-94f8-5c449ece3e10"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.207 + 0.649 + 0.6360583305358887) / 3) * 0.95 * 0.0 * 1.0 = 0.44886088110287975",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.657+00:00",
+      "modified" : "2026-05-28T21:00:29.657+00:00",
+      "id" : "ff3163d1-9778-4a8f-83b7-94a41547371d"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 195206000 Intermittent cerebral ischemia",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.678+00:00",
+      "modified" : "2026-05-28T21:00:29.678+00:00",
+      "id" : "89c6d4fe-3223-40d1-aae0-8640e720eafa"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.701+00:00",
+      "modified" : "2026-05-28T21:00:29.701+00:00",
+      "id" : "5c2823f3-2e07-4b50-99ba-37da52d0cb8d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.598",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.722+00:00",
+      "modified" : "2026-05-28T21:00:29.722+00:00",
+      "id" : "e809cce3-f43d-4013-8d65-7d23ad20875d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.5753663229942322",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.756+00:00",
+      "modified" : "2026-05-28T21:00:29.756+00:00",
+      "id" : "d368b0ab-4731-42d4-89e8-5a07fa3e741b"
+    }, {
+      "details" : {
+        "condition" : "0.95",
+        "bodyPart" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.903",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.778+00:00",
+      "modified" : "2026-05-28T21:00:29.778+00:00",
+      "id" : "1132f1cc-41e5-4612-9701-a5ab8263e3e2"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.799+00:00",
+      "modified" : "2026-05-28T21:00:29.799+00:00",
+      "id" : "c71e92e2-9729-4e98-9f94-d329f77cd2a3"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.822+00:00",
+      "modified" : "2026-05-28T21:00:29.822+00:00",
+      "id" : "d25ce71a-a9f1-4322-a56c-f4c6d567b4e5"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.0 + 0.598 + 0.5753663229942322) / 3) * 0.903 * 0.0 * 1.0 = 0.3189244866888013",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.845+00:00",
+      "modified" : "2026-05-28T21:00:29.845+00:00",
+      "id" : "56768d98-8f20-481d-bb1b-e5a69219bd7a"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 444172003 Recurrent transient cerebral ischemic attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.866+00:00",
+      "modified" : "2026-05-28T21:00:29.866+00:00",
+      "id" : "4ad6da6b-63c1-4c92-a40e-c5d8b6516cd5"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.227",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.888+00:00",
+      "modified" : "2026-05-28T21:00:29.888+00:00",
+      "id" : "ab7ab675-ab3e-42e2-8391-4c49acfeb853"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.633",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.909+00:00",
+      "modified" : "2026-05-28T21:00:29.909+00:00",
+      "id" : "35fda065-9196-416b-a0eb-10ada195f685"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6157862544059753",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.932+00:00",
+      "modified" : "2026-05-28T21:00:29.932+00:00",
+      "id" : "10eae07f-8763-4caf-a5cb-4be01cb13e1d"
+    }, {
+      "details" : {
+        "adjective" : "0.97",
+        "bodyPart" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.922",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.967+00:00",
+      "modified" : "2026-05-28T21:00:29.967+00:00",
+      "id" : "7f750af8-a100-4c85-984f-f429b220382d"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:29.989+00:00",
+      "modified" : "2026-05-28T21:00:29.989+00:00",
+      "id" : "282084b4-f43f-4737-912f-060b31be590b"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.010+00:00",
+      "modified" : "2026-05-28T21:00:30.010+00:00",
+      "id" : "b3c73af9-7d89-4b0d-94ff-7cb6a2b25a50"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.227 + 0.633 + 0.6157862544059753) / 3) * 0.922 * 0.0 * 1.0 = 0.41818076076348304",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.032+00:00",
+      "modified" : "2026-05-28T21:00:30.032+00:00",
+      "id" : "887b66cf-6105-4a7b-aea8-1484154bba6f"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 415629007 Stroke/transient ischemic attack monitoring second letter",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.060+00:00",
+      "modified" : "2026-05-28T21:00:30.060+00:00",
+      "id" : "1064e671-e4e1-4851-9ce2-af29aa3a0b3d"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.205",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.087+00:00",
+      "modified" : "2026-05-28T21:00:30.087+00:00",
+      "id" : "1acb12a8-a40c-49f8-a74f-d27a835af948"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.656",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.121+00:00",
+      "modified" : "2026-05-28T21:00:30.121+00:00",
+      "id" : "bb1f3715-ffa7-44e5-aa38-3c38c2d874bb"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6410078406333923",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.158+00:00",
+      "modified" : "2026-05-28T21:00:30.158+00:00",
+      "id" : "e9c2d9db-2c10-4e1c-8267-5f53c478e3d2"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.183+00:00",
+      "modified" : "2026-05-28T21:00:30.183+00:00",
+      "id" : "1e327e85-3fa2-42c5-8d80-742227742fd4"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.217+00:00",
+      "modified" : "2026-05-28T21:00:30.217+00:00",
+      "id" : "6265a840-ba80-4703-97ae-7cb9ca9a96ff"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.239+00:00",
+      "modified" : "2026-05-28T21:00:30.239+00:00",
+      "id" : "801784dc-1a3a-47d9-8efe-6509eb2e4345"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.205 + 0.656 + 0.6410078406333923) / 3) * 0.95 * 0.0 * 1.0 = 0.45185402539054553",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.260+00:00",
+      "modified" : "2026-05-28T21:00:30.260+00:00",
+      "id" : "60e06252-afd9-40ed-91bc-27334588acbb"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 417540008 Stroke/transient ischemic attack monitoring invitation",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.282+00:00",
+      "modified" : "2026-05-28T21:00:30.282+00:00",
+      "id" : "f9fe29fe-4a25-4850-9eed-f34aa120928e"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.212",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.306+00:00",
+      "modified" : "2026-05-28T21:00:30.306+00:00",
+      "id" : "03021c77-506f-41cf-af8e-1904e66e8423"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.68",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.326+00:00",
+      "modified" : "2026-05-28T21:00:30.326+00:00",
+      "id" : "a3e6be1a-e6e5-44a3-b05a-95ba8a7a46d4"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6579723358154297",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.347+00:00",
+      "modified" : "2026-05-28T21:00:30.347+00:00",
+      "id" : "8ab35e2b-fc93-4d58-8410-fd1af157871b"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.369+00:00",
+      "modified" : "2026-05-28T21:00:30.369+00:00",
+      "id" : "b8619cbe-d9df-4ad1-ae73-1025cb166bdd"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.390+00:00",
+      "modified" : "2026-05-28T21:00:30.390+00:00",
+      "id" : "f8af53d6-b5d6-4231-9ba5-3ca3a7089b6a"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.423+00:00",
+      "modified" : "2026-05-28T21:00:30.423+00:00",
+      "id" : "83d7d711-5f49-44d7-8e13-83f77bbe5385"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.212 + 0.68 + 0.6579723358154297) / 3) * 0.95 * 0.0 * 1.0 = 0.46628334435780844",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.445+00:00",
+      "modified" : "2026-05-28T21:00:30.445+00:00",
+      "id" : "576670ec-f1fa-4d0a-8da1-b7d2746d8222"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 266257000 Transient cerebral ischemia",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.466+00:00",
+      "modified" : "2026-05-28T21:00:30.466+00:00",
+      "id" : "5edd31ce-5c21-4189-90ea-87ccd967c110"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.315",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.489+00:00",
+      "modified" : "2026-05-28T21:00:30.489+00:00",
+      "id" : "d2573890-e327-4a53-9cbf-76d44f445356"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.654",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.510+00:00",
+      "modified" : "2026-05-28T21:00:30.510+00:00",
+      "id" : "1c048efd-5702-41aa-b9ee-65662c6dfdad"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.7431583058834076",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.532+00:00",
+      "modified" : "2026-05-28T21:00:30.532+00:00",
+      "id" : "9838038c-a5f4-490d-8758-d7a4315a4029"
+    }, {
+      "details" : {
+        "condition" : "0.95",
+        "bodyPart" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.903",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.554+00:00",
+      "modified" : "2026-05-28T21:00:30.554+00:00",
+      "id" : "d57dfd64-70cb-4fe1-9c7d-680260810764"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.576+00:00",
+      "modified" : "2026-05-28T21:00:30.576+00:00",
+      "id" : "3dda4534-773d-4aa6-a86a-a3f22a0a36e7"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.598+00:00",
+      "modified" : "2026-05-28T21:00:30.598+00:00",
+      "id" : "f86ceda3-89aa-44ba-9666-00991ab98ca6"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.315 + 0.654 + 0.7431583058834076) / 3) * 0.903 * 0.0 * 1.0 = 0.4653697640140279",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.632+00:00",
+      "modified" : "2026-05-28T21:00:30.632+00:00",
+      "id" : "17461ae9-6bfc-486b-9c05-99e5fadd48c6"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 415628004 Stroke/transient ischemic attack monitoring first letter",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.654+00:00",
+      "modified" : "2026-05-28T21:00:30.654+00:00",
+      "id" : "7447d983-7c23-416f-86ab-094e4c965c33"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.207",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.677+00:00",
+      "modified" : "2026-05-28T21:00:30.677+00:00",
+      "id" : "ebad6e7b-0115-44df-ac11-93d62cbf7d98"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.668",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.700+00:00",
+      "modified" : "2026-05-28T21:00:30.700+00:00",
+      "id" : "8d15a0f0-f409-4148-84dc-b2676fdca63f"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6498012542724609",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.721+00:00",
+      "modified" : "2026-05-28T21:00:30.721+00:00",
+      "id" : "6e6daa17-ca38-4d2f-a6d8-358cb903e24d"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.743+00:00",
+      "modified" : "2026-05-28T21:00:30.743+00:00",
+      "id" : "f365f610-d1ff-4650-9e18-ddeec26c4698"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.765+00:00",
+      "modified" : "2026-05-28T21:00:30.765+00:00",
+      "id" : "e2fc577c-b198-49e8-991f-74cb8352bffd"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.786+00:00",
+      "modified" : "2026-05-28T21:00:30.786+00:00",
+      "id" : "6a9d5ed0-06dc-4a07-8de2-50d71aa337db"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.207 + 0.668 + 0.6498012542724609) / 3) * 0.95 * 0.0 * 1.0 = 0.45871104399363194",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.808+00:00",
+      "modified" : "2026-05-28T21:00:30.808+00:00",
+      "id" : "35bb80eb-06e7-4c30-8313-f956fbbe1c9e"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 417059002 Stroke/transient ischemic attack monitoring verbal invitation",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.843+00:00",
+      "modified" : "2026-05-28T21:00:30.843+00:00",
+      "id" : "58bdea53-b0b4-41ad-a76c-7d7ecee59f65"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.198",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.866+00:00",
+      "modified" : "2026-05-28T21:00:30.866+00:00",
+      "id" : "7eb83f01-b61e-4ff1-80a1-df0b877c91b1"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.594",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.888+00:00",
+      "modified" : "2026-05-28T21:00:30.888+00:00",
+      "id" : "f788e390-bd0b-4dc4-9fa2-39dc451b0a2a"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.573022186756134",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.910+00:00",
+      "modified" : "2026-05-28T21:00:30.910+00:00",
+      "id" : "270115f1-075c-4db8-b769-0de51dc7b93a"
+    }, {
+      "details" : {
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.95",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.932+00:00",
+      "modified" : "2026-05-28T21:00:30.932+00:00",
+      "id" : "5fe3ad01-07ef-4bc5-a961-be05f4331764"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.953+00:00",
+      "modified" : "2026-05-28T21:00:30.953+00:00",
+      "id" : "32495981-4982-453c-aa2c-e4624318ea84"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.979+00:00",
+      "modified" : "2026-05-28T21:00:30.979+00:00",
+      "id" : "6b8145a5-9be7-4661-b164-b6eb95865f12"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.198 + 0.594 + 0.573022186756134) / 3) * 0.95 * 0.0 * 1.0 = 0.41064417451580365",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:30.998+00:00",
+      "modified" : "2026-05-28T21:00:30.998+00:00",
+      "id" : "99a859fa-88bd-4583-914d-879e108155bd"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 710575003 Transient ischemic attack due to embolism",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.018+00:00",
+      "modified" : "2026-05-28T21:00:31.018+00:00",
+      "id" : "491cdaf9-f6f7-4080-80f7-5bf5d61148e6"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.245",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.053+00:00",
+      "modified" : "2026-05-28T21:00:31.053+00:00",
+      "id" : "bec3b1da-9386-477c-a692-e4e504aaac9e"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.705",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.074+00:00",
+      "modified" : "2026-05-28T21:00:31.074+00:00",
+      "id" : "5e287c62-6b46-41a8-8e7e-88c4d4af023b"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.6920413970947266",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.096+00:00",
+      "modified" : "2026-05-28T21:00:31.096+00:00",
+      "id" : "7a096d15-f73b-4240-99d7-f2e38e4b68a6"
+    }, {
+      "details" : {
+        "morphology" : "0.97",
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.922",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.117+00:00",
+      "modified" : "2026-05-28T21:00:31.117+00:00",
+      "id" : "a22a5888-f0f8-4d48-838a-b2149af2263b"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.141+00:00",
+      "modified" : "2026-05-28T21:00:31.141+00:00",
+      "id" : "4106368d-8e95-4cd4-be86-1077fce3c711"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.163+00:00",
+      "modified" : "2026-05-28T21:00:31.163+00:00",
+      "id" : "e24c3970-3314-460a-b650-360446942603"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.245 + 0.705 + 0.6920413970947266) / 3) * 0.922 * 0.0 * 1.0 = 0.4652910396692912",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.184+00:00",
+      "modified" : "2026-05-28T21:00:31.184+00:00",
+      "id" : "a2b7aa4e-d1d7-48cf-a33a-9a01ee298dfe"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 73173006 Spasm of cerebral arteries",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.206+00:00",
+      "modified" : "2026-05-28T21:00:31.206+00:00",
+      "id" : "b0006e4b-0b6c-422a-a758-fb55a2a7a5c1"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.067",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.228+00:00",
+      "modified" : "2026-05-28T21:00:31.228+00:00",
+      "id" : "d04d1ea0-12b1-4ea1-98e4-554366ae77df"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.57",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.262+00:00",
+      "modified" : "2026-05-28T21:00:31.262+00:00",
+      "id" : "26eaabf2-4523-445e-a691-9b952d06a913"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.5477709484100342",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.284+00:00",
+      "modified" : "2026-05-28T21:00:31.284+00:00",
+      "id" : "b77d1ddc-b1de-4a8b-ba83-934ba54bbbb2"
+    }, {
+      "details" : {
+        "condition" : "0.95",
+        "bodyPart" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.903",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.306+00:00",
+      "modified" : "2026-05-28T21:00:31.306+00:00",
+      "id" : "b33e8635-af66-4f03-abb9-086b08b0e4bd"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.327+00:00",
+      "modified" : "2026-05-28T21:00:31.327+00:00",
+      "id" : "2abc66d1-5527-4299-9121-e2270d286dbe"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.348+00:00",
+      "modified" : "2026-05-28T21:00:31.348+00:00",
+      "id" : "fa244dd4-51b7-4dda-9438-aff6f58c72b5"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.067 + 0.57 + 0.5477709484100342) / 3) * 0.903 * 0.0 * 1.0 = 0.32202429809069255",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.370+00:00",
+      "modified" : "2026-05-28T21:00:31.370+00:00",
+      "id" : "4275af87-8b7a-413e-b8fa-07df0a69fc66"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "SCORE candidate = 1208871009 Transient ischemic attack co-occurrent with subarachnoid hemorrhage",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.392+00:00",
+      "modified" : "2026-05-28T21:00:31.392+00:00",
+      "id" : "9b739f30-e533-4394-a94b-8cc5987bf450"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "similarityScore",
+        "scoreName" : "similarityScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  similarityScore = 0.18",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.415+00:00",
+      "modified" : "2026-05-28T21:00:31.415+00:00",
+      "id" : "81359c5e-c3ce-440a-83ce-ccbe29616376"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "contextScore",
+        "scoreName" : "contextScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  contextScore = 0.599",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.436+00:00",
+      "modified" : "2026-05-28T21:00:31.436+00:00",
+      "id" : "f71c5d7c-1972-4394-8c63-71f37811b0a7"
+    }, {
+      "details" : {
+        "fromGroup" : "false",
+        "scoreFormula" : "vectorScore",
+        "scoreName" : "vectorScore"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  vectorScore = 0.5862573415040969",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.471+00:00",
+      "modified" : "2026-05-28T21:00:31.471+00:00",
+      "id" : "f8f4d5f6-5722-4775-ba7d-20b0827ca20a"
+    }, {
+      "details" : {
+        "morphology" : "0.97",
+        "condition" : "0.95"
+      },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  nlpBoost = 0.922",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.494+00:00",
+      "modified" : "2026-05-28T21:00:31.494+00:00",
+      "id" : "cb394579-a36f-4ade-89c4-3988bd5702e0"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  codeMismatchBoost = 1.0",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.516+00:00",
+      "modified" : "2026-05-28T21:00:31.516+00:00",
+      "id" : "c97aab45-5ae0-4bc6-8add-5a7835f07e9b"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  formula = ((similarityScore + contextScore + vectorScore) / 3) * nlpBoost * labResultBoost * codeMismatchBoost",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.538+00:00",
+      "modified" : "2026-05-28T21:00:31.538+00:00",
+      "id" : "e324751d-b6e6-47a0-8ae7-c09075a931c0"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "  ((0.18 + 0.599 + 0.5862573415040969) / 3) * 0.922 * 0.0 * 1.0 = 0.3868611406317229",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.559+00:00",
+      "modified" : "2026-05-28T21:00:31.559+00:00",
+      "id" : "88071c27-36f5-4f66-8451-96be28289942"
+    }, {
+      "details" : { },
+      "error" : false,
+      "batchId" : null,
+      "termId" : "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "message" : "Finished processing input term = heart attack",
+      "taskId" : "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "confidence" : 0.2621041536331177,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:00:31.581+00:00",
+      "modified" : "2026-05-28T21:00:31.581+00:00",
+      "id" : "6d277a0f-a418-44e0-b286-d0ca5602b41d"
+    } ]
+
+MappingApiTest > getAuditTrailTest()

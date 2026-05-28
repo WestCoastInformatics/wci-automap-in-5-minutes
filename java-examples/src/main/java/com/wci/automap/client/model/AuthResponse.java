@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -23,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -36,7 +38,7 @@ import com.wci.automap.client.invoker.JSON;
   AuthResponse.JSON_PROPERTY_EXPIRES_ON,
   AuthResponse.JSON_PROPERTY_TOKEN_TYPE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class AuthResponse {
   public static final String JSON_PROPERTY_ACCESS_TOKEN = "access_token";
   private String accessToken;
@@ -229,5 +231,64 @@ public class AuthResponse {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `access_token` to the URL query string
+    if (getAccessToken() != null) {
+      joiner.add(String.format("%saccess_token%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAccessToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `refresh_token` to the URL query string
+    if (getRefreshToken() != null) {
+      joiner.add(String.format("%srefresh_token%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRefreshToken()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `expires_in` to the URL query string
+    if (getExpiresIn() != null) {
+      joiner.add(String.format("%sexpires_in%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExpiresIn()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `expires_on` to the URL query string
+    if (getExpiresOn() != null) {
+      joiner.add(String.format("%sexpires_on%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExpiresOn()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `token_type` to the URL query string
+    if (getTokenType() != null) {
+      joiner.add(String.format("%stoken_type%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTokenType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

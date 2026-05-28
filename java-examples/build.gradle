@@ -99,8 +99,8 @@ if(hasProperty('target') && target == 'android') {
 
 ext {
     swagger_annotations_version = "1.6.5"
-    jackson_version = "2.13.4"
-    jackson_databind_version = "2.13.4.2"
+    jackson_version = "2.18.6"
+    jackson_databind_version = "2.18.6"
     jackson_databind_nullable_version = "0.2.6"
     jakarta_annotation_version = "2.1.0"
     jersey_version = "3.0.4"
@@ -126,18 +126,67 @@ dependencies {
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
 }
 
+dependencyLocking {
+    lockAllConfigurations()
+}
+
+def firstNonBlank = { values ->
+    values.find { value -> value != null && value.toString().trim() }
+}
+
+def automapTestUsername = firstNonBlank([
+    project.findProperty('username'),
+    System.getenv('AUTOMAP_USER'),
+    System.getenv('AUTOMAP_USERNAME'),
+    System.getenv('TERMHUB_USER'),
+    System.getenv('TERMHUB_USERNAME')
+])
+
+def automapTestPassword = firstNonBlank([
+    project.findProperty('password'),
+    System.getenv('AUTOMAP_PASSWORD'),
+    System.getenv('TERMHUB_PASSWORD')
+])
+
 test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
         showStandardStreams = true
     }
-    systemProperty 'username', project.findProperty('username') ?: 'defaultUsername'
-    systemProperty 'password', project.findProperty('password') ?: 'defaultPassword'
+    if (automapTestUsername) {
+        systemProperty 'username', automapTestUsername
+    }
+    if (automapTestPassword) {
+        systemProperty 'password', automapTestPassword
+    }
+    doFirst {
+        if (!automapTestUsername || !automapTestPassword) {
+            throw new GradleException('Automap Java tests require AUTOMAP_USER and AUTOMAP_PASSWORD environment variables. Gradle -Pusername/-Ppassword is still accepted for ad hoc local runs, but avoid it when possible because command-line secrets can be visible to local process-list tools.')
+        }
+    }
 }
 
 javadoc {
     options.tags = [ "http.response.details:a:Http Response Details" ]
+}
+
+tasks.register('resolveAndLockAll') {
+    description = 'Resolves all resolvable configurations so Gradle can write gradle.lockfile for Trivy.'
+    doFirst {
+        if (!gradle.startParameter.writeDependencyLocks) {
+            throw new GradleException('Run with --write-locks to update gradle.lockfile.')
+        }
+    }
+    doLast {
+        configurations.findAll { it.canBeResolved }.each { configuration ->
+            try {
+                configuration.resolve()
+            } catch (Exception e) {
+                logger.lifecycle("Skipping ${configuration.name}: ${e.message}")
+            }
+        }
+    }
 }
 
 // Use spotless plugin to automatically format code, remove unused import, etc

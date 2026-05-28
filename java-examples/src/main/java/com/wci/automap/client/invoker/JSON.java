@@ -12,39 +12,34 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import jakarta.ws.rs.core.GenericType;
-import jakarta.ws.rs.ext.ContextResolver;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
-public class JSON implements ContextResolver<ObjectMapper> {
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+public class JSON {
   private ObjectMapper mapper;
 
   public JSON() {
     mapper = JsonMapper.builder()
-            .serializationInclusion(JsonInclude.Include.NON_NULL)
-            .configure(MapperFeature.ALLOW_COERCION_OF_SCALARS, false)
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true)
-            .configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, true)
-            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-            .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
-            .enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING)
-            .defaultDateFormat(new RFC3339DateFormat())
-            .addModule(new JavaTimeModule())
-            .addModule(new JsonNullableModule())
-            .build();
+        .serializationInclusion(JsonInclude.Include.NON_NULL)
+        .disable(MapperFeature.ALLOW_COERCION_OF_SCALARS)
+        .enable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .enable(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE)
+        .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+        .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
+        .enable(DeserializationFeature.READ_ENUMS_USING_TO_STRING)
+        .defaultDateFormat(new RFC3339DateFormat())
+        .addModule(new JavaTimeModule())
+        .build();
+    JsonNullableModule jnm = new JsonNullableModule();
+    mapper.registerModule(jnm);
   }
 
   /**
    * Set the date format for JSON (de)serialization with Date properties.
+   *
    * @param dateFormat Date format
    */
   public void setDateFormat(DateFormat dateFormat) {
     mapper.setDateFormat(dateFormat);
-  }
-
-  @Override
-  public ObjectMapper getContext(Class<?> type) {
-    return mapper;
   }
 
   /**
@@ -60,11 +55,13 @@ public class JSON implements ContextResolver<ObjectMapper> {
    *
    * @param node The input data.
    * @param modelClass The class that contains the discriminator mappings.
+   *
+   * @return the target model class.
    */
   public static Class<?> getClassForElement(JsonNode node, Class<?> modelClass) {
     ClassDiscriminatorMapping cdm = modelDiscriminators.get(modelClass);
     if (cdm != null) {
-      return cdm.getClassForElement(node, new HashSet<>());
+      return cdm.getClassForElement(node, new HashSet<Class<?>>());
     }
     return null;
   }
@@ -72,6 +69,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
   /**
    * Helper class to register the discriminator mappings.
    */
+  @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
   private static class ClassDiscriminatorMapping {
     // The model class name.
     Class<?> modelClass;
@@ -84,7 +82,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
     ClassDiscriminatorMapping(Class<?> cls, String propertyName, Map<String, Class<?>> mappings) {
       modelClass = cls;
       discriminatorName = propertyName;
-      discriminatorMappings = new HashMap<>();
+      discriminatorMappings = new HashMap<String, Class<?>>();
       if (mappings != null) {
         discriminatorMappings.putAll(mappings);
       }
@@ -119,6 +117,8 @@ public class JSON implements ContextResolver<ObjectMapper> {
      *
      * @param node The input data.
      * @param visitedClasses The set of classes that have already been visited.
+     *
+     * @return the target model class.
      */
     Class<?> getClassForElement(JsonNode node, Set<Class<?>> visitedClasses) {
       if (visitedClasses.contains(modelClass)) {
@@ -165,6 +165,9 @@ public class JSON implements ContextResolver<ObjectMapper> {
    *
    * @param modelClass A OpenAPI model class.
    * @param inst The instance object.
+   * @param visitedClasses The set of classes that have already been visited.
+   *
+   * @return true if inst is an instance of modelClass in the OpenAPI model hierarchy.
    */
   public static boolean isInstanceOf(Class<?> modelClass, Object inst, Set<Class<?>> visitedClasses) {
     if (modelClass.isInstance(inst)) {
@@ -179,10 +182,10 @@ public class JSON implements ContextResolver<ObjectMapper> {
     visitedClasses.add(modelClass);
 
     // Traverse the oneOf/anyOf composed schemas.
-    Map<String, GenericType> descendants = modelDescendants.get(modelClass);
+    Map<String, Class<?>> descendants = modelDescendants.get(modelClass);
     if (descendants != null) {
-      for (GenericType childType : descendants.values()) {
-        if (isInstanceOf(childType.getRawType(), inst, visitedClasses)) {
+      for (Class<?> childType : descendants.values()) {
+        if (isInstanceOf(childType, inst, visitedClasses)) {
           return true;
         }
       }
@@ -198,7 +201,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
   /**
    * A map of oneOf/anyOf descendants for each model class.
    */
-  private static Map<Class<?>, Map<String, GenericType>> modelDescendants = new HashMap<>();
+  private static Map<Class<?>, Map<String, Class<?>>> modelDescendants = new HashMap<>();
 
   /**
     * Register a model class discriminator.
@@ -218,14 +221,13 @@ public class JSON implements ContextResolver<ObjectMapper> {
     * @param modelClass the model class
     * @param descendants a map of oneOf/anyOf descendants.
     */
-  public static void registerDescendants(Class<?> modelClass, Map<String, GenericType> descendants) {
+  public static void registerDescendants(Class<?> modelClass, Map<String, Class<?>> descendants) {
     modelDescendants.put(modelClass, descendants);
   }
 
   private static JSON json;
 
-  static
-  {
+  static {
     json = new JSON();
   }
 

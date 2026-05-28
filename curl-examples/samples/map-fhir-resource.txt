@@ -120,30 +120,6 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.8125726710160573
-          }
-        ],
-        "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.42",
-        "display": "Type 2 diabetes mellitus with diabetic polyneuropathy",
-        "userSelected": true
-      },
-      {
-        "extension": [
-          {
-            "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.8119267347653706
-          }
-        ],
-        "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.44",
-        "display": "Type 2 diabetes mellitus with diabetic amyotrophy",
-        "userSelected": true
-      },
-      {
-        "extension": [
-          {
-            "url": "https://terminologyhub.com/automapai/confidence",
             "valueDecimal": 0.8075052694479625
           }
         ],
@@ -156,12 +132,24 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7885325995286306
+            "valueDecimal": 0.7995726710160573
           }
         ],
         "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.41",
-        "display": "Type 2 diabetes mellitus with diabetic mononeuropathy",
+        "code": "E11.42",
+        "display": "Type 2 diabetes mellitus with diabetic polyneuropathy",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.796690677245458
+          }
+        ],
+        "system": "http://hl7.org/fhir/sid/icd-10-cm",
+        "code": "E11.21",
+        "display": "Type 2 diabetes mellitus with diabetic nephropathy",
         "userSelected": true
       },
       {
@@ -180,36 +168,36 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7761023046204328
+            "valueDecimal": 0.7786218904654184
           }
         ],
         "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.61",
-        "display": "Type 2 diabetes mellitus with diabetic arthropathy",
+        "code": "E11.620",
+        "display": "Type 2 diabetes mellitus with diabetic dermatitis",
         "userSelected": true
       },
       {
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7728034908608278
+            "valueDecimal": 0.7758659328619638
           }
         ],
         "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.618",
-        "display": "Type 2 diabetes mellitus with other diabetic arthropathy",
+        "code": "E11.41",
+        "display": "Type 2 diabetes mellitus with diabetic mononeuropathy",
         "userSelected": true
       },
       {
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7300126065554461
+            "valueDecimal": 0.7628148487408956
           }
         ],
         "system": "http://hl7.org/fhir/sid/icd-10-cm",
-        "code": "E11.36",
-        "display": "Type 2 diabetes mellitus with diabetic cataract",
+        "code": "E11.43",
+        "display": "Type 2 diabetes mellitus with diabetic autonomic (poly)neuropathy",
         "userSelected": true
       },
       {
@@ -252,7 +240,7 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7897441360155741
+            "valueDecimal": 0.7972248620986938
           }
         ],
         "system": "http://snomed.info/sct",
@@ -288,6 +276,18 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7706602124373118
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "199230006",
+        "display": "Pre-existing type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
             "valueDecimal": 0.7559299810727437
           }
         ],
@@ -300,7 +300,67 @@
         "extension": [
           {
             "url": "https://terminologyhub.com/automapai/confidence",
-            "valueDecimal": 0.7275092278939654
+            "valueDecimal": 0.7534192899068196
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "237599002",
+        "display": "Insulin treated type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7445577727158864
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "359642000",
+        "display": "Type 2 diabetes mellitus in nonobese",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7434575217564902
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "703138006",
+        "display": "Type II diabetes mellitus in remission",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7402771468195517
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "445353002",
+        "display": "Brittle type 2 diabetes mellitus",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7316719584465027
+          }
+        ],
+        "system": "http://snomed.info/sct",
+        "code": "164971000119101",
+        "display": "Type 2 diabetes mellitus controlled by diet",
+        "userSelected": true
+      },
+      {
+        "extension": [
+          {
+            "url": "https://terminologyhub.com/automapai/confidence",
+            "valueDecimal": 0.7287625985895659
           }
         ],
         "system": "http://snomed.info/sct",

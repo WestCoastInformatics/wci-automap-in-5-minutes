@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -23,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -35,7 +37,7 @@ import com.wci.automap.client.invoker.JSON;
   Unit.JSON_PROPERTY_SYSTEM,
   Unit.JSON_PROPERTY_DEFAULT
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Unit {
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -198,5 +200,59 @@ public class Unit {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `system` to the URL query string
+    if (getSystem() != null) {
+      joiner.add(String.format("%ssystem%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSystem()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `default` to the URL query string
+    if (getDefault() != null) {
+      joiner.add(String.format("%sdefault%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefault()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

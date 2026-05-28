@@ -10,48 +10,84 @@
  * Do not edit the class manually.
  */
 
-
 package api;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.jupiter.api.Test;
-
+import com.wci.automap.client.LoginApi;
+import com.wci.automap.client.invoker.ApiClient;
 import com.wci.automap.client.invoker.ApiException;
 import com.wci.automap.client.model.AuthRequest;
 import com.wci.automap.client.model.AuthRequest.GrantTypeEnum;
 import com.wci.automap.client.model.AuthResponse;
+import org.junit.jupiter.api.Test;
 
 /**
- * API tests for LoginApi
+ * API tests for LoginApi.
  */
 public class LoginApiTest {
 
-    private final LoginApi api = new LoginApi();
-
-    /**
-     * Login
-     *
-     * @throws ApiException if the Api call fails
-     */
     @Test
     public void authTest() throws ApiException {
-        // Set up the API client with authentication
-        final String username = System.getProperty("username");
-        final String password = System.getProperty("password");
-        final AuthRequest authRequest = new AuthRequest();
+        String username = System.getProperty("username");
+        String password = System.getProperty("password");
+        if (isBlank(username) || isBlank(password)) {
+            fail("Automap Java tests require AUTOMAP_USER and AUTOMAP_PASSWORD, or ad hoc -Pusername/-Ppassword.");
+        }
+
+        AuthRequest authRequest = new AuthRequest();
         authRequest.setGrantType(GrantTypeEnum.USERNAME_PASSWORD);
         authRequest.setUsername(username);
         authRequest.setPassword(password);
 
+        LoginApi api = new LoginApi(baseApiClient());
+        AuthResponse response;
         try {
-            final AuthResponse response = api.auth(authRequest);
-            assertNotNull(response);
-            assertNotNull(response.getAccessToken());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
+            response = api.auth(authRequest);
+        } catch (ApiException error) {
+            fail(authFailureMessage(error), error);
+            return;
         }
+        assertNotNull(response);
+        assertNotNull(response.getAccessToken());
+        System.out.println("{\"access_token\":\"<redacted>\"}");
     }
 
+    private boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
+
+    private String authFailureMessage(ApiException error) {
+        StringBuilder message = new StringBuilder("Automap login failed.");
+        message.append(System.lineSeparator()).append("API_URL: ").append(baseApiClient().getBaseUri());
+        if (error.getCode() != 0) {
+            message.append(System.lineSeparator()).append("HTTP status: ").append(error.getCode());
+        }
+        if (!isBlank(error.getResponseBody())) {
+            message.append(System.lineSeparator()).append("HTTP response body: ").append(redactSecrets(error.getResponseBody()));
+        }
+        if (!isBlank(error.getMessage())) {
+            message.append(System.lineSeparator()).append("Error message: ").append(redactSecrets(error.getMessage()));
+        }
+        if (error.getCause() != null && !isBlank(error.getCause().getMessage())) {
+            message.append(System.lineSeparator()).append("Cause: ").append(redactSecrets(error.getCause().getMessage()));
+        }
+        return message.toString();
+    }
+
+    private String redactSecrets(String text) {
+        return text
+                .replaceAll("(?i)(\"(?:access_token|refresh_token|token|password)\"\\s*:\\s*\")[^\"]+", "$1<redacted>")
+                .replaceAll("(?i)(Bearer\\s+)[^\"'\\s]+", "$1<redacted>");
+    }
+
+    private ApiClient baseApiClient() {
+        ApiClient apiClient = new ApiClient();
+        String apiUrl = System.getenv("API_URL");
+        if (!isBlank(apiUrl)) {
+            apiClient.updateBaseUri(apiUrl);
+        }
+        return apiClient;
+    }
 }

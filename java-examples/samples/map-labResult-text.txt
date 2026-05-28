@@ -1,0 +1,1013 @@
+{
+      "status" : "final",
+      "terms" : [ {
+        "mappings" : [ {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2947-0",
+          "context" : {
+            "rank" : "261"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9583333333333334,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "ef803c3e-882e-48a3-9b17-8609f752727e"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "32717-1",
+          "context" : {
+            "rank" : "299"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.945,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Arterial blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "3d2ea015-197a-466b-ba85-cdf02951c5ba"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "32340-2",
+          "context" : {
+            "rank" : "5164"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.943,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Specimen",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "eda58426-8734-4c3d-87b2-3f6da6805f33"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2950-4",
+          "context" : {
+            "rank" : "4328"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.941,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Body fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "a63c769a-609a-4eb6-96e2-d68b630002d9"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "39791-9",
+          "context" : {
+            "rank" : "257"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.934,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Venous blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0148cbc2-3785-4b6f-8272-93f346303b16"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2955-3",
+          "context" : {
+            "rank" : "486"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9303333333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "e1f48b40-1c1e-483e-8ac3-af00835ca024"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "87451-1",
+          "context" : {
+            "rank" : "18601"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.93,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/volume] in Specimen",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "e892fcd1-3281-4c34-b1fd-5f73155f2cd9"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2951-2",
+          "context" : { },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9249999999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Serum or Plasma",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "e134a64f-456e-4b6c-af47-3e056c6cb226"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2956-1",
+          "context" : {
+            "rank" : "2069"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.923,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 24 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "f903e03f-9b17-42c8-8cf5-78cb9802a2dc"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "15207-4",
+          "context" : {
+            "rank" : "5201"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9216666666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "63e060ba-fa1a-4c52-aaa3-77a29ae6a82c"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "21525-1",
+          "context" : {
+            "rank" : "2655"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9209999999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in 24 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "49338620-8550-4ce7-b58c-ab7539a94164"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "35678-2",
+          "context" : {
+            "rank" : "4289"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9199999999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Urine collected for unspecified duration",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "5d7ab69c-fba3-4fc3-a81a-206602ec1dcd"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "39792-7",
+          "context" : {
+            "rank" : "17253"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9199999999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Capillary blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "18c6ea15-8a36-47af-98b0-1ce078cdbd1c"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "18377-2",
+          "context" : {
+            "rank" : "18980"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9183333333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 12 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0077d055-d7b0-447b-90b6-c4d081797254"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "41657-8",
+          "context" : {
+            "rank" : "3263"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9163333333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Mixed venous blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0cb721c9-8e42-46dd-91dd-95f8cd09cac2"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2948-8",
+          "context" : {
+            "rank" : "17065"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.915,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Cerebral spinal fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "a87e00f9-5408-4038-8182-963145a41dd5"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "21527-7",
+          "context" : {
+            "rank" : "9280"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.911,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/time] in 24 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "e78b80d9-90ca-478c-a6e7-545955f9e1b0"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "21526-9",
+          "context" : {
+            "rank" : "8739"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9096666666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/volume] in 24 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0b579ed1-d2d9-49a8-93fe-1f5bb8f071d7"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "27419-1",
+          "context" : {
+            "rank" : "18159"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9083333333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 24 hour Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "a1e4fdfe-823c-43b9-9107-b2528fab4322"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "27257-5",
+          "context" : {
+            "rank" : "19896"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9066666666666666,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/mass] in 24 hour Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "80b48560-b876-4095-8648-c1850e7ffab9"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2952-0",
+          "context" : {
+            "rank" : "15819"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.9033333333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Molar amount] in 24 hour Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "28053d1a-7d0a-4e85-88c2-0f9773091c8d"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "9485-4",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8723533333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/volume] in Water",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "940755da-35f0-4e1a-8b0b-b8f048cce110"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "87452-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8665333333333332,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/mass] in Specimen",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "ab090309-32be-41c9-bc86-128a120e21b4"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "12907-2",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8639466666666665,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Red Blood Cells",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "62e46078-b10d-4714-81dc-b40be0e7bdb0"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "17796-4",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8623299999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Hyperal solution",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "69dfe9a0-814a-48e4-9df4-9c93ea84461a"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "53122-8",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8616833333333332,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 1 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "40109127-48e9-4519-aa6d-a9db6af9ef03"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2949-6",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8600666666666666,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Dialysis fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "ce32bdcb-c455-46a6-9589-2afcc835899e"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "42570-2",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8597433333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass or Moles/volume] in Serum or Plasma",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0125865e-d9b4-4533-966e-be5f370b5b43"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "13895-8",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.85942,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Milk",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "246d2c64-2b0d-4617-9d9f-f579dae3edb3"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "58994-5",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8581266666666666,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 18 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "e197f042-318a-4f64-b98a-a1c3738b11e7"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "44783-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8578033333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] (Maximum value during study) in Serum or Plasma",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "5e867c06-9271-4faf-a733-3e088a3f4fc7"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "57382-4",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.85748,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in 2 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "9e868034-cc24-4fa8-b8a3-c6cfd33608c8"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "74685-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.85748,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in 4 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "4b69c202-cbc1-47ab-b17a-8b3bc8fc6267"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "14055-8",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8571566666666666,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/mass] in Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "bb31aac7-4056-49f6-85b6-c419151df967"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "57370-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8571566666666666,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in 12 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "713204de-0c80-4580-9db0-52098ac39b78"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2954-6",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8561866666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Sweat",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0deee98a-f7d1-4c76-bc2f-bf48ae4e157d"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "77139-4",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8558633333333334,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Serum, Plasma or Blood",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "976a42bd-4d32-47c4-b46b-92effd45b5e2"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "82812-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.85554,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/volume] in Red Blood Cells",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "37d75e23-91c0-4324-be18-661be2a1951b"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "30558-1",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8552166666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Total parental nutrition",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "7990748c-8648-49ef-ba5d-8f0fae64e412"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "18376-4",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8552166666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/time] in 6 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "bb7d963d-efe3-407a-8fda-744b6ada5c50"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "50912-5",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8536,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/mass] in Hair",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "1d44c283-cc0e-4124-9c56-91f350c1d2e5"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "32553-0",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8523066666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Molar amount] in Urine collected for unspecified duration",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "b7ef643b-ce2e-47d1-8971-e76fc2fa2caa"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "59163-6",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8490733333333332,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in 24 hour Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "c77bcbf7-bf81-4ca4-9061-9bcb6ce5f89f"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "50911-7",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.84875,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Gastric fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "d6f14e69-25f6-4890-ac96-e8e737b5513a"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "26763-3",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8481033333333334,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/time] in 2 hour Urine",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "5dfa5afa-ac54-4b8d-8237-ee86b6bee577"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "51205-3",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8471333333333334,
+          "startIndex" : 0,
+          "name" : "Sodium [Mass/mass] in Hair",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "c2513b0b-34c6-4152-ae22-cfd2abffe9b0"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "92572-7",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8445466666666667,
+          "startIndex" : 0,
+          "name" : "Sodium [Molar amount] in 24 hour Dialysis fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "bca400a3-07bf-47b7-860f-57a94c3aec8f"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "60220-1",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8439,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Mother's milk",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "779784a5-32e1-45ac-af72-f692d19019d0"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "12908-0",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8432533333333334,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Vitreous fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0002d25a-8c89-4264-9cd4-beb0c2601a1d"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "2953-8",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8419599999999999,
+          "startIndex" : 0,
+          "name" : "Sodium [Molar amount] in 72 hour Stool",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "18b82adf-6ef7-4323-9226-58882bad6503"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "49791-7",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8413133333333332,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Amniotic fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "15ceb957-3e7a-49e8-a875-6c94965ac213"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "56979-8",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8403433333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Saliva (oral fluid)",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "df50a40b-f601-4458-8561-729debceb6b4"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "49790-9",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.8384033333333333,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Peritoneal fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "22240945-08ff-4e5a-9f36-c798f31500a4"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 6,
+          "code" : "39787-7",
+          "context" : {
+            "rank" : "0"
+          },
+          "term" : null,
+          "terminology" : "http://loinc.org",
+          "entityType" : "labResult",
+          "confidence" : 0.83226,
+          "startIndex" : 0,
+          "name" : "Sodium [Moles/volume] in Peritoneal dialysis fluid",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "4e074528-30f4-43ab-b7dd-34593492f01d"
+        } ],
+        "status" : "final",
+        "message" : null,
+        "confidence" : null,
+        "mappingCt" : 54,
+        "code" : null,
+        "inputType" : "string",
+        "context" : { },
+        "term" : "sodium",
+        "terminology" : null,
+        "taskId" : "9793dbe0-8b88-425e-a0e1-2f03e0d6c789",
+        "entityType" : "labResult",
+        "toTerminology" : null,
+        "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+        "created" : "2026-05-28T21:17:45.673+00:00",
+        "modified" : "2026-05-28T21:17:59.189+00:00",
+        "id" : "cecb80f3-e574-4afd-a8cb-7ba843c2eb7f",
+        "tags" : [ ]
+      } ],
+      "asyncComplete" : null,
+      "confidence" : null,
+      "context" : null,
+      "maxResults" : null,
+      "audit" : true,
+      "minConfidence" : 0.7,
+      "topAnswer" : false,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:17:45.726+00:00",
+      "modified" : "2026-05-28T21:17:59.236+00:00",
+      "id" : "9793dbe0-8b88-425e-a0e1-2f03e0d6c789",
+      "tags" : [ {
+        "key" : "userId",
+        "value" : "328f4481-2a22-4a95-afc7-a8e7c20a5928"
+      }, {
+        "key" : "server.version",
+        "value" : "2.4.0.202605"
+      } ]
+    }
+
+MappingApiTest > mapLabResultTextTest()

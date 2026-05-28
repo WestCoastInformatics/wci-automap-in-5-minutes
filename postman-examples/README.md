@@ -1,19 +1,56 @@
 # Automap in 5 Minutes: Postman Tutorial
 
-This tutorial shows how to use Postman interact with the WCI Automap API.
+This tutorial shows how to use Postman to interact with the WCI Automap API.
 
 Prerequisites
 -------------
-* Postman must be installed (with a version capable of importing a v2.1 collection)
-* The [Automap-Postman-Client.json](Automap-Postman-Client.json) file must be loaded into Postman using File->Import
-* The base API_URL variable is set in the collection.  To change this, edit the collection, select the "Variables" tab, change the value, click "Update".
- - It is currently set to `https://automap.terminology.tools`
+* Install Postman with support for importing a v2.1 collection.
+* Import [Automap-Postman-Client.json](Automap-Postman-Client.json) using File -> Import.
+* The collection defaults `API_URL` to `https://automap.terminology.tools`. To change it in Postman, edit the collection, select the Variables tab, change the value, and click Update.
 
-Login
------
-After importing the collection, if you choose a request and click "Send" you should see this: 
+Automated Check
+---------------
+The repo can run the collection from the command line with Newman. Install Node.js so `npx` exists, or install Newman directly with:
 
+```bash
+npm install -g newman
 ```
+
+Set credentials in the same terminal window before running the check. Replace `<username>` and `<password>` with your Automap username and password, without the angle brackets.
+
+For bash or zsh:
+
+```bash
+export AUTOMAP_USER=<username>
+export AUTOMAP_PASSWORD=<password>
+```
+
+For Windows PowerShell:
+
+```powershell
+$env:AUTOMAP_USER="<username>"
+$env:AUTOMAP_PASSWORD="<password>"
+```
+
+Then run:
+
+```bash
+python postman_check.py
+```
+
+From the project root, this is also available as:
+
+```bash
+make check-postman
+```
+
+If you already have a bearer token, set `AUTOMAP_TOKEN` or `TOKEN` instead of username/password. The runner injects the bearer token into a temporary collection file, runs Newman, injects `API_URL`, captures the audited `taskId` and `termId` for the audit request, and deletes the temporary files after the run. It does not print access tokens.
+
+Manual Login
+------------
+After importing the collection, if you choose a request and click Send before logging in, you should see this:
+
+```json
 {
     "local": false,
     "code": 401,
@@ -22,25 +59,19 @@ After importing the collection, if you choose a request and click "Send" you sho
 }
 ```
 
-This message means you have to first log in and acquire an access token.  To do so, follow these steps:
+This message means you need to log in and acquire an access token. To do so:
 
-1. Click on the collection itself "Automap Postman Client"
-2. Then click on the "Authorization" tab
-3. Scroll down to the "Configure New Token" section and enter the following values
-  - Grant Type = "Password Credentials"
-  - Access Token URL = https://automap.terminology.tools/auth/token
-  - Username = <your email username>
-  - Password = <your password>
-4. Then scroll to the bottom and Click the the "Get New Access Token" button
-5. If all goes well, you will get a dialog with a success message and when you click
-   through you will get to a dialog called "MANAGE ACCESS TOKENS"
-6. Here click the "Use Token" button and you will be ready to proceed.
-
+1. Click the collection itself, "Automap Postman Client".
+2. Click the Authorization tab.
+3. Scroll to Configure New Token and enter:
+   - Grant Type = Password Credentials
+   - Access Token URL = `https://automap.terminology.tools/auth/token`
+   - Username = your email username
+   - Password = your password
+4. Click Get New Access Token.
+5. After Postman reports success, click through to Manage Access Tokens.
+6. Click Use Token.
 
 Sample Postman Calls
------------------
-When the collection is loaded into Postman, you will see a number
-of requests matching the scenarios defined in the top level README 
-file of this project.  Simply choose any one and click the "Send" 
-button to see the result.
-
+--------------------
+When the collection is loaded into Postman, you will see requests matching the scenarios from the top-level README. Choose any request and click Send to see the result.

@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -47,7 +49,7 @@ import com.wci.automap.client.invoker.JSON;
   Metadata.JSON_PROPERTY_ID,
   Metadata.JSON_PROPERTY_ACTIVE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Metadata {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -458,5 +460,103 @@ public class Metadata {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `type` to the URL query string
+    if (getType() != null) {
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `rank` to the URL query string
+    if (getRank() != null) {
+      joiner.add(String.format("%srank%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRank()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `abbreviation` to the URL query string
+    if (getAbbreviation() != null) {
+      joiner.add(String.format("%sabbreviation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAbbreviation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

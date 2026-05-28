@@ -1,0 +1,1 @@
+Run `make check-java` to refresh this sample.

@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +30,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -52,7 +54,7 @@ import com.wci.automap.client.invoker.JSON;
   FormItem.JSON_PROPERTY_LINK_ID,
   FormItem.JSON_PROPERTY_QUESTION_CODE_SYSTEM
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class FormItem {
   public static final String JSON_PROPERTY_QUESTION_CODE = "questionCode";
   private String questionCode;
@@ -668,5 +670,139 @@ public class FormItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `questionCode` to the URL query string
+    if (getQuestionCode() != null) {
+      joiner.add(String.format("%squestionCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `localQuestionCode` to the URL query string
+    if (getLocalQuestionCode() != null) {
+      joiner.add(String.format("%slocalQuestionCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocalQuestionCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `dataType` to the URL query string
+    if (getDataType() != null) {
+      joiner.add(String.format("%sdataType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDataType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `header` to the URL query string
+    if (getHeader() != null) {
+      joiner.add(String.format("%sheader%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHeader()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `units` to the URL query string
+    if (getUnits() != null) {
+      for (int i = 0; i < getUnits().size(); i++) {
+        if (getUnits().get(i) != null) {
+          joiner.add(getUnits().get(i).toUrlQueryString(String.format("%sunits%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `codingInstructions` to the URL query string
+    if (getCodingInstructions() != null) {
+      joiner.add(String.format("%scodingInstructions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCodingInstructions()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `copyrightNotice` to the URL query string
+    if (getCopyrightNotice() != null) {
+      joiner.add(String.format("%scopyrightNotice%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCopyrightNotice()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `question` to the URL query string
+    if (getQuestion() != null) {
+      joiner.add(String.format("%squestion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestion()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `answers` to the URL query string
+    if (getAnswers() != null) {
+      for (int i = 0; i < getAnswers().size(); i++) {
+        if (getAnswers().get(i) != null) {
+          joiner.add(getAnswers().get(i).toUrlQueryString(String.format("%sanswers%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `skipLogic` to the URL query string
+    if (getSkipLogic() != null) {
+      joiner.add(String.format("%sskipLogic%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSkipLogic()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `restrictions` to the URL query string
+    if (getRestrictions() != null) {
+      joiner.add(String.format("%srestrictions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRestrictions()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `defaultAnswer` to the URL query string
+    if (getDefaultAnswer() != null) {
+      joiner.add(String.format("%sdefaultAnswer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefaultAnswer()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `formatting` to the URL query string
+    if (getFormatting() != null) {
+      joiner.add(String.format("%sformatting%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFormatting()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `calculationMethod` to the URL query string
+    if (getCalculationMethod() != null) {
+      joiner.add(String.format("%scalculationMethod%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCalculationMethod()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `items` to the URL query string
+    if (getItems() != null) {
+      for (int i = 0; i < getItems().size(); i++) {
+        if (getItems().get(i) != null) {
+          joiner.add(getItems().get(i).toUrlQueryString(String.format("%sitems%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `linkId` to the URL query string
+    if (getLinkId() != null) {
+      joiner.add(String.format("%slinkId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLinkId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `questionCodeSystem` to the URL query string
+    if (getQuestionCodeSystem() != null) {
+      joiner.add(String.format("%squestionCodeSystem%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getQuestionCodeSystem()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

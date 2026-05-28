@@ -1,0 +1,75 @@
+{
+      "status" : "final",
+      "terms" : [ {
+        "mappings" : [ {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 0,
+          "code" : null,
+          "context" : { },
+          "term" : null,
+          "terminology" : "http://hl7.org/fhir/sid/icd-10-cm",
+          "entityType" : "condition",
+          "confidence" : 0.7,
+          "startIndex" : 0,
+          "name" : "No target",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "24426b07-09b6-42da-aa99-34219d1d6677"
+        }, {
+          "version" : null,
+          "attributes" : { },
+          "endIndex" : 0,
+          "code" : null,
+          "context" : { },
+          "term" : null,
+          "terminology" : "http://snomed.info/sct",
+          "entityType" : "condition",
+          "confidence" : 0.7,
+          "startIndex" : 0,
+          "name" : "No target",
+          "modifiedBy" : null,
+          "created" : null,
+          "modified" : null,
+          "id" : "0227ad87-55ee-46f3-9195-f583db4e25c4"
+        } ],
+        "status" : "final",
+        "message" : null,
+        "confidence" : null,
+        "mappingCt" : 0,
+        "code" : "abcdef",
+        "inputType" : "string",
+        "context" : { },
+        "term" : null,
+        "terminology" : "http://snomed.info/sct",
+        "taskId" : "09ae20be-58ee-4b3a-80f6-aa78e3cfd89a",
+        "entityType" : "condition",
+        "toTerminology" : null,
+        "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+        "created" : "2026-05-28T21:17:25.538+00:00",
+        "modified" : "2026-05-28T21:17:25.982+00:00",
+        "id" : "cc5fd4a2-5935-4379-9430-e88dade99147",
+        "tags" : [ ]
+      } ],
+      "asyncComplete" : null,
+      "confidence" : null,
+      "context" : null,
+      "maxResults" : null,
+      "audit" : true,
+      "minConfidence" : 0.0,
+      "topAnswer" : false,
+      "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "created" : "2026-05-28T21:17:25.591+00:00",
+      "modified" : "2026-05-28T21:17:26.004+00:00",
+      "id" : "09ae20be-58ee-4b3a-80f6-aa78e3cfd89a",
+      "tags" : [ {
+        "key" : "userId",
+        "value" : "328f4481-2a22-4a95-afc7-a8e7c20a5928"
+      }, {
+        "key" : "server.version",
+        "value" : "2.4.0.202605"
+      } ]
+    }
+
+MappingApiTest > mapSimpleTerminologyInvalidCodeTest()

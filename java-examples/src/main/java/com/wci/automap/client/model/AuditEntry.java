@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -35,36 +37,36 @@ import com.wci.automap.client.invoker.JSON;
  */
 @JsonPropertyOrder({
   AuditEntry.JSON_PROPERTY_DETAILS,
-  AuditEntry.JSON_PROPERTY_MESSAGE,
   AuditEntry.JSON_PROPERTY_ERROR,
-  AuditEntry.JSON_PROPERTY_TASK_ID,
-  AuditEntry.JSON_PROPERTY_TERM_ID,
   AuditEntry.JSON_PROPERTY_BATCH_ID,
+  AuditEntry.JSON_PROPERTY_TERM_ID,
+  AuditEntry.JSON_PROPERTY_MESSAGE,
+  AuditEntry.JSON_PROPERTY_TASK_ID,
   AuditEntry.JSON_PROPERTY_CONFIDENCE,
   AuditEntry.JSON_PROPERTY_MODIFIED_BY,
   AuditEntry.JSON_PROPERTY_CREATED,
   AuditEntry.JSON_PROPERTY_MODIFIED,
   AuditEntry.JSON_PROPERTY_ID
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class AuditEntry {
   public static final String JSON_PROPERTY_DETAILS = "details";
   private Map<String, String> details = new HashMap<>();
 
-  public static final String JSON_PROPERTY_MESSAGE = "message";
-  private String message;
-
   public static final String JSON_PROPERTY_ERROR = "error";
   private Boolean error;
 
-  public static final String JSON_PROPERTY_TASK_ID = "taskId";
-  private UUID taskId;
+  public static final String JSON_PROPERTY_BATCH_ID = "batchId";
+  private String batchId;
 
   public static final String JSON_PROPERTY_TERM_ID = "termId";
   private UUID termId;
 
-  public static final String JSON_PROPERTY_BATCH_ID = "batchId";
-  private String batchId;
+  public static final String JSON_PROPERTY_MESSAGE = "message";
+  private String message;
+
+  public static final String JSON_PROPERTY_TASK_ID = "taskId";
+  private UUID taskId;
 
   public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
   private Double confidence;
@@ -117,31 +119,6 @@ public class AuditEntry {
   }
 
 
-  public AuditEntry message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Message describing this entry
-   * @return message
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getMessage() {
-    return message;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MESSAGE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMessage(String message) {
-    this.message = message;
-  }
-
-
   public AuditEntry error(Boolean error) {
     this.error = error;
     return this;
@@ -167,28 +144,28 @@ public class AuditEntry {
   }
 
 
-  public AuditEntry taskId(UUID taskId) {
-    this.taskId = taskId;
+  public AuditEntry batchId(String batchId) {
+    this.batchId = batchId;
     return this;
   }
 
    /**
-   * Task id
-   * @return taskId
+   * Batch id
+   * @return batchId
   **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BATCH_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public UUID getTaskId() {
-    return taskId;
+  public String getBatchId() {
+    return batchId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTaskId(UUID taskId) {
-    this.taskId = taskId;
+  @JsonProperty(JSON_PROPERTY_BATCH_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBatchId(String batchId) {
+    this.batchId = batchId;
   }
 
 
@@ -217,28 +194,53 @@ public class AuditEntry {
   }
 
 
-  public AuditEntry batchId(String batchId) {
-    this.batchId = batchId;
+  public AuditEntry message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * Batch id
-   * @return batchId
+   * Message describing this entry
+   * @return message
   **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BATCH_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
-  public String getBatchId() {
-    return batchId;
+  public String getMessage() {
+    return message;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BATCH_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
+  @JsonProperty(JSON_PROPERTY_MESSAGE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
+
+  public AuditEntry taskId(UUID taskId) {
+    this.taskId = taskId;
+    return this;
+  }
+
+   /**
+   * Task id
+   * @return taskId
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public UUID getTaskId() {
+    return taskId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setTaskId(UUID taskId) {
+    this.taskId = taskId;
   }
 
 
@@ -380,11 +382,11 @@ public class AuditEntry {
     }
     AuditEntry auditEntry = (AuditEntry) o;
     return Objects.equals(this.details, auditEntry.details) &&
-        Objects.equals(this.message, auditEntry.message) &&
         Objects.equals(this.error, auditEntry.error) &&
-        Objects.equals(this.taskId, auditEntry.taskId) &&
-        Objects.equals(this.termId, auditEntry.termId) &&
         Objects.equals(this.batchId, auditEntry.batchId) &&
+        Objects.equals(this.termId, auditEntry.termId) &&
+        Objects.equals(this.message, auditEntry.message) &&
+        Objects.equals(this.taskId, auditEntry.taskId) &&
         Objects.equals(this.confidence, auditEntry.confidence) &&
         Objects.equals(this.modifiedBy, auditEntry.modifiedBy) &&
         Objects.equals(this.created, auditEntry.created) &&
@@ -394,7 +396,7 @@ public class AuditEntry {
 
   @Override
   public int hashCode() {
-    return Objects.hash(details, message, error, taskId, termId, batchId, confidence, modifiedBy, created, modified, id);
+    return Objects.hash(details, error, batchId, termId, message, taskId, confidence, modifiedBy, created, modified, id);
   }
 
   @Override
@@ -402,11 +404,11 @@ public class AuditEntry {
     StringBuilder sb = new StringBuilder();
     sb.append("class AuditEntry {\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-    sb.append("    termId: ").append(toIndentedString(termId)).append("\n");
     sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
+    sb.append("    termId: ").append(toIndentedString(termId)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -427,5 +429,98 @@ public class AuditEntry {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `details` to the URL query string
+    if (getDetails() != null) {
+      for (String _key : getDetails().keySet()) {
+        joiner.add(String.format("%sdetails%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getDetails().get(_key), URLEncoder.encode(String.valueOf(getDetails().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `error` to the URL query string
+    if (getError() != null) {
+      joiner.add(String.format("%serror%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `batchId` to the URL query string
+    if (getBatchId() != null) {
+      joiner.add(String.format("%sbatchId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBatchId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `termId` to the URL query string
+    if (getTermId() != null) {
+      joiner.add(String.format("%stermId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTermId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `message` to the URL query string
+    if (getMessage() != null) {
+      joiner.add(String.format("%smessage%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `taskId` to the URL query string
+    if (getTaskId() != null) {
+      joiner.add(String.format("%staskId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTaskId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `confidence` to the URL query string
+    if (getConfidence() != null) {
+      joiner.add(String.format("%sconfidence%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getConfidence()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 
