@@ -5,6 +5,7 @@ import shlex
 import shutil
 import subprocess
 import sys
+import time
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -24,6 +25,18 @@ README_PATH = os.path.join(BASE_DIR, "README.md")
 LOGIN_COMMAND = "__curl_login__"
 COMMANDS = "commands"
 FILES = "files"
+
+
+def env_int(name, default, minimum=0):
+    """Read an integer environment setting with a safe fallback."""
+    try:
+        return max(minimum, int(os.environ.get(name, str(default))))
+    except ValueError:
+        return default
+
+
+RETRY_ATTEMPTS = env_int("AUTOMAP_RETRY_ATTEMPTS", 5, minimum=1)
+RETRY_DELAY_MS = env_int("AUTOMAP_RETRY_DELAY_MS", 5000)
 
 healthy_endpoints = []
 unhealthy_endpoints = []
@@ -178,24 +191,31 @@ def run_curl_command(command, token):
     try:
         args = curl_args(command, token)
         endpoint = endpoint_from_args(args)
-        print(f"Running: {endpoint}")
-        result = subprocess.run(args, cwd=BASE_DIR, capture_output=True, text=True, encoding="utf-8", errors="replace")
-        if result.returncode != 0:
-            print(f"Error executing: {redact_secrets(command)}", file=sys.stderr)
-            print_process_failure("curl", result)
-            mark_unhealthy(endpoint)
-            return endpoint, None
+        for attempt in range(1, RETRY_ATTEMPTS + 1):
+            print(f"Running: {endpoint}")
+            result = subprocess.run(args, cwd=BASE_DIR, capture_output=True, text=True, encoding="utf-8", errors="replace")
+            if result.returncode != 0:
+                print(f"Error executing: {redact_secrets(command)}", file=sys.stderr)
+                print_process_failure("curl", result)
+                mark_unhealthy(endpoint)
+                return endpoint, None
 
-        body, status_code = split_curl_output(result.stdout)
-        if not status_code.isdigit() or not 200 <= int(status_code) < 300:
-            print(f"ERROR: {endpoint} returned HTTP {status_code or 'unknown'}, expected 2xx", file=sys.stderr)
-            if body.strip():
-                print(redact_secrets(body), file=sys.stderr)
-            mark_unhealthy(endpoint)
-            return endpoint, None
+            body, status_code = split_curl_output(result.stdout)
+            if status_code == "429" and attempt < RETRY_ATTEMPTS:
+                delay_seconds = (RETRY_DELAY_MS * attempt) / 1000
+                print(f"HTTP 429 from {endpoint}; retrying in {delay_seconds:.1f}s.", file=sys.stderr)
+                time.sleep(delay_seconds)
+                continue
 
-        mark_healthy(endpoint)
-        return endpoint, body
+            if not status_code.isdigit() or not 200 <= int(status_code) < 300:
+                print(f"ERROR: {endpoint} returned HTTP {status_code or 'unknown'}, expected 2xx", file=sys.stderr)
+                if body.strip():
+                    print(redact_secrets(body), file=sys.stderr)
+                mark_unhealthy(endpoint)
+                return endpoint, None
+
+            mark_healthy(endpoint)
+            return endpoint, body
     except Exception as error:
         endpoint = redact_secrets(command)
         print(f"Exception running curl: {error}", file=sys.stderr)
