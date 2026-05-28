@@ -1,7 +1,7 @@
 {
-  "id": "863597cd-c85c-4b06-9d47-8efdc05894d3",
-  "modified": "2026-05-28T21:16:05.268+00:00",
-  "created": "2026-05-28T21:16:03.548+00:00",
+  "id": "c20a5c6c-7b78-4ab0-99f7-eff26bf35963",
+  "modified": "2026-05-28T21:23:02.324+00:00",
+  "created": "2026-05-28T21:23:00.628+00:00",
   "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
@@ -17,17 +17,17 @@
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "1f8e2370-c866-48c4-8a90-ca8777c1d32d",
-      "modified": "2026-05-28T21:16:05.243+00:00",
-      "created": "2026-05-28T21:16:03.495+00:00",
+      "id": "7cef440b-1b58-44f1-8a45-7e31458886fb",
+      "modified": "2026-05-28T21:23:02.300+00:00",
+      "created": "2026-05-28T21:23:00.585+00:00",
       "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "taskId": "863597cd-c85c-4b06-9d47-8efdc05894d3",
+      "taskId": "c20a5c6c-7b78-4ab0-99f7-eff26bf35963",
       "entityType": "procedure",
       "inputType": "string",
       "term": "chest mri",
       "mappings": [
         {
-          "id": "7b5acd4a-4cd0-46a9-a12a-6c797591926e",
+          "id": "9448456a-df02-4eaa-a2b8-3cafc8ee5d26",
           "confidence": 0.9817379822731018,
           "terminology": "http://snomed.info/sct",
           "code": "6007000",
@@ -37,7 +37,7 @@
           "endIndex": 9
         },
         {
-          "id": "21b93e27-9a6a-45c1-97f6-7f67f95dc5c5",
+          "id": "c50a3289-a910-455d-88e1-7383596a6925",
           "confidence": 0.7756428642272949,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BW33",
@@ -47,7 +47,7 @@
           "endIndex": 9
         },
         {
-          "id": "86952356-7d14-479f-9237-573d24f0a953",
+          "id": "7cf8f833-16b0-4f27-b158-9aea4d4d961c",
           "confidence": 0.7557285814285278,
           "terminology": "http://snomed.info/sct",
           "code": "62658002",
@@ -57,7 +57,7 @@
           "endIndex": 9
         },
         {
-          "id": "19b6a9f8-772e-4699-b77b-15196468f248",
+          "id": "814fa3f1-f0be-449a-9a75-9520b429002e",
           "confidence": 0.7401035579677899,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BW33YZZ",
@@ -67,7 +67,7 @@
           "endIndex": 9
         },
         {
-          "id": "bff08b35-bfcc-432a-9f8e-960cc4eb67a9",
+          "id": "8e690e4e-f77d-418a-8da2-62199bcd1f07",
           "confidence": 0.7301916664441427,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BH3GZZZ",
@@ -77,7 +77,7 @@
           "endIndex": 9
         },
         {
-          "id": "aaa6c99f-2a61-471e-bed2-4280f89ba57e",
+          "id": "b35847a1-4765-474d-9e6d-9742baa45e48",
           "confidence": 0.7277459442615509,
           "terminology": "http://snomed.info/sct",
           "code": "431766006",
@@ -87,7 +87,7 @@
           "endIndex": 9
         },
         {
-          "id": "efd3a05b-32da-44d3-b42a-40813c38a153",
+          "id": "99773dac-f6a0-4da3-a226-2668b2b62526",
           "confidence": 0.7269224541404088,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BW33YZ",
@@ -97,7 +97,7 @@
           "endIndex": 9
         },
         {
-          "id": "279f23a8-4662-40ab-b5cf-025a30a06796",
+          "id": "7067998f-4b24-4b22-80ab-05a46fe0d662",
           "confidence": 0.7263499614788056,
           "terminology": "http://snomed.info/sct",
           "code": "413815006",
@@ -107,7 +107,7 @@
           "endIndex": 9
         },
         {
-          "id": "cade78b4-dce5-4144-ba6b-0d65e65163f7",
+          "id": "0388c79c-136c-4e39-8d7e-fbc1927ee27f",
           "confidence": 0.7205919057543755,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BW33Y",
@@ -117,7 +117,7 @@
           "endIndex": 9
         },
         {
-          "id": "dd2c1b00-d018-4671-91e1-c8abd4aae1ab",
+          "id": "08a8b04e-d940-4184-a537-5c592f795a9f",
           "confidence": 0.718310300509135,
           "terminology": "http://snomed.info/sct",
           "code": "113091000",
@@ -127,7 +127,7 @@
           "endIndex": 9
         },
         {
-          "id": "626cf589-b86f-442b-8561-ebc97fa16bee",
+          "id": "552c5d15-11a6-4a98-91f6-377b3394d5c8",
           "confidence": 0.7142272810141245,
           "terminology": "http://snomed.info/sct",
           "code": "699583008",
@@ -137,7 +137,7 @@
           "endIndex": 9
         },
         {
-          "id": "60a1ed07-102b-481c-88ac-9122fa138f1c",
+          "id": "0ca972f3-40f4-4bd4-999b-2e99efc887fa",
           "confidence": 0.7081627257419109,
           "terminology": "http://www.cms.gov/Medicare/Coding/ICD10",
           "code": "BW33Y0Z",
@@ -147,7 +147,7 @@
           "endIndex": 9
         },
         {
-          "id": "4e5e2e65-c1a0-4227-9f78-a90be558b372",
+          "id": "59e7a51d-3344-4a82-8454-f3624c4961ec",
           "confidence": 0.7045226436347967,
           "terminology": "http://snomed.info/sct",
           "code": "432815006",
@@ -157,7 +157,7 @@
           "endIndex": 9
         },
         {
-          "id": "025ac249-7e22-4b9e-a4c1-219c9aef1d93",
+          "id": "206d4f6c-6792-4e77-ae12-eb12c63e59d1",
           "confidence": 0.7036875273842104,
           "terminology": "http://snomed.info/sct",
           "code": "16334561000119101",

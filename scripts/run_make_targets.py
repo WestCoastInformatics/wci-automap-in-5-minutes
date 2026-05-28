@@ -4,6 +4,11 @@ import re
 import subprocess
 import sys
 
+from process_output import configure_standard_streams
+
+
+configure_standard_streams()
+
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FAILURE_SECTION_PATTERN = re.compile(r"^Unhealthy .*\((?:count|total) \d+\):?$")

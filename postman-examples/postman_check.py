@@ -12,7 +12,10 @@ if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
 
 from automap_auth import DEFAULT_API_URL, credentials_from_args, request_access_token, token_from_env
-from process_output import redact_secrets
+from process_output import configure_standard_streams, redact_secrets
+
+
+configure_standard_streams()
 
 
 COLLECTION_FILE = "Automap-Postman-Client.json"

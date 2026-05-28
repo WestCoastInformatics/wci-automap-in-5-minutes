@@ -13,7 +13,10 @@ if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
 
 from automap_auth import DEFAULT_API_URL, require_credentials, request_access_token, token_from_env
-from process_output import print_process_failure, redact_secrets
+from process_output import configure_standard_streams, print_process_failure, redact_secrets
+
+
+configure_standard_streams()
 
 
 API_URL = os.environ.get("API_URL", DEFAULT_API_URL).rstrip("/")

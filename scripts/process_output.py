@@ -11,6 +11,19 @@ SECRET_PATTERNS = (
 )
 
 
+def configure_standard_streams():
+    """Prevent Unicode subprocess output from crashing on narrow Windows encodings."""
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is None:
+            continue
+        try:
+            reconfigure(errors="replace")
+        except (TypeError, ValueError):
+            pass
+
+
 def redact_secrets(text):
     """Remove bearer tokens and password-like values from diagnostic output."""
     redacted = text or ""

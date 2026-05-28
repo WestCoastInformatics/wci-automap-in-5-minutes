@@ -1,7 +1,7 @@
 {
-  "id": "b580fd62-ba4c-46c3-96a5-1bc663bb5d54",
-  "modified": "2026-05-28T21:16:12.598+00:00",
-  "created": "2026-05-28T21:16:11.842+00:00",
+  "id": "b91c8043-09f9-4d94-bdf8-81e638db003a",
+  "modified": "2026-05-28T21:23:09.835+00:00",
+  "created": "2026-05-28T21:23:09.072+00:00",
   "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
@@ -25,11 +25,11 @@
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "79bea67a-b600-4df8-8984-7531106e38e8",
-      "modified": "2026-05-28T21:16:12.575+00:00",
-      "created": "2026-05-28T21:16:11.798+00:00",
+      "id": "9e7340ce-df64-4bfd-8c32-d8c57aa6f2b7",
+      "modified": "2026-05-28T21:23:09.812+00:00",
+      "created": "2026-05-28T21:23:09.028+00:00",
       "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "taskId": "b580fd62-ba4c-46c3-96a5-1bc663bb5d54",
+      "taskId": "b91c8043-09f9-4d94-bdf8-81e638db003a",
       "entityType": "condition",
       "inputType": "string",
       "term": "heart attack",
@@ -45,7 +45,7 @@
       ],
       "mappings": [
         {
-          "id": "547c93dd-04c1-4c2a-9c03-50d5eafaa1ef",
+          "id": "0d619f4c-52a3-45bf-97aa-c5c69e2a8832",
           "confidence": 0.9696666666666666,
           "terminology": "http://snomed.info/sct",
           "code": "22298006",
@@ -55,7 +55,7 @@
           "endIndex": 12
         },
         {
-          "id": "bb154dc4-9dcb-4e14-810f-a113fdf69fc8",
+          "id": "252b5bb3-e98e-4448-aafe-310a58a0f2f9",
           "confidence": 0.807731363773346,
           "terminology": "http://snomed.info/sct",
           "code": "102931001",
@@ -65,7 +65,7 @@
           "endIndex": 12
         },
         {
-          "id": "c0d8dc50-bb3b-43df-bb32-5dc0eb9b56cb",
+          "id": "a22be4f8-e8e8-4a76-a82c-c70b806620ab",
           "confidence": 0.757378859202067,
           "terminology": "http://snomed.info/sct",
           "code": "247818001",
@@ -75,7 +75,7 @@
           "endIndex": 12
         },
         {
-          "id": "e347baf1-12a7-4b82-8712-faa1f3de66c0",
+          "id": "801a2681-47f5-4035-bfa1-863a9fa8cafa",
           "confidence": 0.7439010915756225,
           "terminology": "http://snomed.info/sct",
           "code": "277834005",

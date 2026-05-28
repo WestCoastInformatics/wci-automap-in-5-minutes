@@ -16,7 +16,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "5e197c0b-5fd5-401a-a00e-40996fb903f2"
+          "id" : "e4338d81-22a3-4f17-a9f6-8d7373f302e1"
         }, {
           "version" : null,
           "attributes" : { },
@@ -32,7 +32,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "8b4a982f-efa6-49e2-86b6-7deee98a2e45"
+          "id" : "8ac9b762-f69d-466e-b75d-e543564b6c73"
         }, {
           "version" : null,
           "attributes" : { },
@@ -48,7 +48,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "29cd65e2-bc82-40ba-8fb0-e71557c38530"
+          "id" : "91cc6485-5bf4-4044-86b2-a3700c2903fe"
         }, {
           "version" : null,
           "attributes" : { },
@@ -64,7 +64,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "f8e30a0b-af45-4cad-80ed-0a9c70a7114a"
+          "id" : "05da8f1d-7c39-4170-85b2-919290c7bbd8"
         }, {
           "version" : null,
           "attributes" : { },
@@ -80,7 +80,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "92a0325d-b6f6-4cd2-9048-9f43b4931e0e"
+          "id" : "d13120cf-b7b4-4c17-887d-fdabf40f6f8e"
         }, {
           "version" : null,
           "attributes" : { },
@@ -96,7 +96,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "1119b383-7823-48a6-8f9b-e9c2bd9bdc24"
+          "id" : "70bd1aa3-0800-40b8-b137-3175cf490699"
         }, {
           "version" : null,
           "attributes" : { },
@@ -112,7 +112,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "f874d748-a749-48f5-b576-c5e2d88328e7"
+          "id" : "a2093839-b5ab-46fa-a022-8c66cf8d4173"
         }, {
           "version" : null,
           "attributes" : { },
@@ -128,7 +128,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "c7f50a46-40da-42e4-92f9-74b86e8be83b"
+          "id" : "2317a123-daf3-494a-ba56-e0f1e88be949"
         }, {
           "version" : null,
           "attributes" : { },
@@ -144,7 +144,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "f4626823-edb2-4e64-bb53-0c4db92a596e"
+          "id" : "15d1111b-ce44-4ea3-ab73-554b51dd613c"
         }, {
           "version" : null,
           "attributes" : { },
@@ -160,7 +160,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "e1a40aba-57e0-44fc-8002-793564cc44b6"
+          "id" : "acc0218c-7018-4dfe-b031-079bf050e999"
         }, {
           "version" : null,
           "attributes" : { },
@@ -176,7 +176,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "1b72d27d-37f4-45a8-a6be-90def7ac1f47"
+          "id" : "0d34ce05-14cb-4a88-9ac2-3c614706baaa"
         }, {
           "version" : null,
           "attributes" : { },
@@ -192,7 +192,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "a3764766-f9da-4810-bf92-34cfd4e3521e"
+          "id" : "2fa4bf17-048c-4a31-9b12-e23684ba175e"
         }, {
           "version" : null,
           "attributes" : { },
@@ -208,7 +208,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "77c31a3c-a8f1-495c-9b96-f8acfc19cbde"
+          "id" : "7d1fec94-9a65-4880-ba5a-ba4036fd6d62"
         }, {
           "version" : null,
           "attributes" : { },
@@ -224,7 +224,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "7905ae91-65f2-4006-af43-d6e750689c4f"
+          "id" : "f06a8a9c-d17c-4823-8244-7b3dde6557f8"
         } ],
         "status" : "final",
         "message" : null,
@@ -235,13 +235,13 @@
         "context" : { },
         "term" : "chest mri",
         "terminology" : null,
-        "taskId" : "b2e05a48-d415-4608-a054-91ad7b1bfe16",
+        "taskId" : "e22f57ac-df27-4f93-ad01-34fca53b6d21",
         "entityType" : "procedure",
         "toTerminology" : null,
         "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-        "created" : "2026-05-28T21:18:08.809+00:00",
-        "modified" : "2026-05-28T21:18:22.092+00:00",
-        "id" : "af5f8d91-6d72-4e26-8c93-73d3119da0d9",
+        "created" : "2026-05-28T21:25:08.688+00:00",
+        "modified" : "2026-05-28T21:25:22.097+00:00",
+        "id" : "53656144-39b0-487c-9ca6-d41f618560ae",
         "tags" : [ ]
       } ],
       "asyncComplete" : null,
@@ -252,9 +252,9 @@
       "minConfidence" : 0.7,
       "topAnswer" : false,
       "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "created" : "2026-05-28T21:18:08.853+00:00",
-      "modified" : "2026-05-28T21:18:22.116+00:00",
-      "id" : "b2e05a48-d415-4608-a054-91ad7b1bfe16",
+      "created" : "2026-05-28T21:25:08.738+00:00",
+      "modified" : "2026-05-28T21:25:22.120+00:00",
+      "id" : "e22f57ac-df27-4f93-ad01-34fca53b6d21",
       "tags" : [ {
         "key" : "userId",
         "value" : "328f4481-2a22-4a95-afc7-a8e7c20a5928"

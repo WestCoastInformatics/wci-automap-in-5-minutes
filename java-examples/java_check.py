@@ -14,7 +14,10 @@ if SCRIPTS_DIR not in sys.path:
     sys.path.insert(0, SCRIPTS_DIR)
 
 from automap_auth import publish_credentials_from_args
-from process_output import print_process_failure
+from process_output import configure_standard_streams, print_process_failure
+
+
+configure_standard_streams()
 
 
 README_PATH = os.path.join(BASE_DIR, "README.md")

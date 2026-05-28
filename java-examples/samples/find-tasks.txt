@@ -1,5 +1,5 @@
 {
-      "total" : 70,
+      "total" : 78,
       "limit" : 10,
       "offset" : 0,
       "confidence" : null,
@@ -91,7 +91,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -192,7 +192,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -293,7 +293,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : false,
@@ -394,7 +394,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -495,7 +495,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -596,7 +596,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -697,7 +697,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -798,7 +798,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : false,
@@ -899,7 +899,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : true,
@@ -1000,7 +1000,7 @@
           "tags" : [ ]
         } ],
         "asyncComplete" : null,
-        "confidence" : 0.21241960525512696,
+        "confidence" : 0.2102219581604004,
         "context" : null,
         "maxResults" : null,
         "audit" : false,

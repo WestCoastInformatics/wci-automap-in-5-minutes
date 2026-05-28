@@ -16,7 +16,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "99f12798-52dd-4e6c-931f-38b54ab4ca77"
+          "id" : "67793343-be9e-4fbf-b18a-9cc03f981a70"
         }, {
           "version" : null,
           "attributes" : { },
@@ -32,7 +32,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "d5fb94e0-9956-4427-97d1-4ea4dfef079b"
+          "id" : "a547c5fb-6da6-41e6-8960-53aeb5e7a1bd"
         }, {
           "version" : null,
           "attributes" : { },
@@ -48,7 +48,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "1a64e219-617c-4656-948a-f742abf8f90b"
+          "id" : "d08e7c0e-c4b1-4c66-b4bc-dab90eb01a8c"
         }, {
           "version" : null,
           "attributes" : { },
@@ -64,7 +64,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "7baef202-d5cc-4e7a-8030-6e6506d39aa7"
+          "id" : "43882102-c646-4a49-847e-910528d6975b"
         }, {
           "version" : null,
           "attributes" : { },
@@ -80,7 +80,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "4ccd1c7e-51da-4da8-b54c-19740de4642a"
+          "id" : "69d12899-314d-40e3-84ca-9357dde8032b"
         }, {
           "version" : null,
           "attributes" : { },
@@ -96,7 +96,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "abd8a307-9e84-43e8-9414-bc883f659994"
+          "id" : "8cb158f3-9b05-4251-80b3-bb11b0b53ef7"
         }, {
           "version" : null,
           "attributes" : { },
@@ -112,7 +112,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "0a3e08ab-0b11-427d-8146-6ea300742268"
+          "id" : "d3c256cc-9b6d-4de0-8dbf-58e34e7fd46c"
         }, {
           "version" : null,
           "attributes" : { },
@@ -128,7 +128,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "033cd6e8-d5b4-4df0-b650-e25b6b9c190f"
+          "id" : "40fc4210-1bc3-4d6b-9635-372482a5d535"
         }, {
           "version" : null,
           "attributes" : { },
@@ -144,7 +144,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "40eca322-5d2b-4373-be5f-6d572741ab1e"
+          "id" : "ab8b8e51-fa30-4336-8117-196055adb828"
         }, {
           "version" : null,
           "attributes" : { },
@@ -160,7 +160,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "d6d760c3-7969-4785-ac81-81b5bc0fe7bf"
+          "id" : "b8431734-c537-4491-826f-ec9e459aeda0"
         }, {
           "version" : null,
           "attributes" : { },
@@ -176,7 +176,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "acf3fa6e-3292-441f-b718-210e3f405697"
+          "id" : "a2402b9f-421d-4ce7-9c24-0a4dfeb7d095"
         }, {
           "version" : null,
           "attributes" : { },
@@ -192,7 +192,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "a4962e79-35ac-46d4-9e96-965d59dabbb6"
+          "id" : "cd12d8d1-1656-459f-b1b1-4b08a199b88e"
         }, {
           "version" : null,
           "attributes" : { },
@@ -208,7 +208,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "988d2723-da33-42fc-a4ff-923ec81b153a"
+          "id" : "690ac74b-8c6f-489f-87a0-9e00cc64738e"
         }, {
           "version" : null,
           "attributes" : { },
@@ -224,7 +224,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "6cea0b9b-011f-4ac5-b208-2b7541ea4e24"
+          "id" : "2dbb2ff9-c721-40e6-b8d7-5891f50edb04"
         }, {
           "version" : null,
           "attributes" : { },
@@ -240,7 +240,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "afae5382-c2ea-42e8-aa74-46a3cff12c5c"
+          "id" : "be458c11-9ac9-425e-bc79-d523967fe94f"
         }, {
           "version" : null,
           "attributes" : { },
@@ -256,7 +256,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "04fe290c-bc55-419c-b8d0-cc2aa7891c9c"
+          "id" : "ec213891-68e6-4ddc-88a3-652b8ef0a64b"
         }, {
           "version" : null,
           "attributes" : { },
@@ -272,7 +272,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "bc4127ea-396f-42e7-8bca-3cd976e02d07"
+          "id" : "73619e36-7569-4a8c-932e-a48cfc330d76"
         }, {
           "version" : null,
           "attributes" : { },
@@ -288,7 +288,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "42818121-4ed7-40fa-bdc2-3eec799705a8"
+          "id" : "1959bfdb-73fa-4044-bafb-f2e0a679077b"
         }, {
           "version" : null,
           "attributes" : { },
@@ -304,7 +304,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "b113818e-f884-4799-b3f4-c8cbaca4761b"
+          "id" : "43fc4475-9641-4472-ba5b-b11c2fb0e2ce"
         }, {
           "version" : null,
           "attributes" : { },
@@ -320,7 +320,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "aa06e005-68e8-41a9-940f-feafd7bc6f2b"
+          "id" : "feb17755-d25a-4c98-85f4-1c78011d952c"
         }, {
           "version" : null,
           "attributes" : { },
@@ -336,7 +336,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "00e6e63b-80ff-46c1-869f-2c64ecd94eda"
+          "id" : "47dbc460-eeed-4953-b3da-7eec7c00c77e"
         }, {
           "version" : null,
           "attributes" : { },
@@ -352,7 +352,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "ee0cccce-2ebc-4c13-8c24-ab174d1c73fb"
+          "id" : "3693005a-f6c0-4bc8-8827-43bb12539604"
         }, {
           "version" : null,
           "attributes" : { },
@@ -368,7 +368,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "407d349f-9a08-4505-952a-62b0e7873689"
+          "id" : "16a0e713-d823-4d0f-bd37-777d427d52cd"
         }, {
           "version" : null,
           "attributes" : { },
@@ -384,7 +384,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "070e08e3-27e0-4352-9286-5bcf0f7999fc"
+          "id" : "a41831d1-e69f-4315-89d6-d6d15c1f0f2f"
         }, {
           "version" : null,
           "attributes" : { },
@@ -400,7 +400,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "23265511-b09a-4c1d-971a-f21603e1cf8a"
+          "id" : "1ba0def4-976e-4083-8b24-cd12a36e4546"
         }, {
           "version" : null,
           "attributes" : { },
@@ -416,7 +416,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "e69abf22-c24a-43b6-8b7d-34905a2fcca1"
+          "id" : "307aa217-f1c1-4e88-ac0a-e3bab1fdc86d"
         }, {
           "version" : null,
           "attributes" : { },
@@ -432,7 +432,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "0a8d2c98-3ce6-4b49-97f1-6a9ef5095f54"
+          "id" : "e96381c7-03a7-4038-9b48-aa135a3cca05"
         }, {
           "version" : null,
           "attributes" : { },
@@ -448,7 +448,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "6f17066a-2703-41cd-8bde-2ffe3f735cc6"
+          "id" : "2c3b73b3-044e-4865-87ba-23e51cada8c8"
         }, {
           "version" : null,
           "attributes" : { },
@@ -464,7 +464,7 @@
           "modifiedBy" : null,
           "created" : null,
           "modified" : null,
-          "id" : "1b33e14d-866e-4a61-877f-7414fb8d4f99"
+          "id" : "4f5f758e-0d0e-4e08-8909-52aba19312a6"
         } ],
         "status" : "final",
         "message" : null,
@@ -475,13 +475,13 @@
         "context" : { },
         "term" : "fever, cough, and headache",
         "terminology" : null,
-        "taskId" : "668671c5-52d5-4859-81e3-20b81b0d507a",
+        "taskId" : "7afa633f-6cc5-4a4a-936a-98030e316f32",
         "entityType" : "condition",
         "toTerminology" : null,
         "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-        "created" : "2026-05-28T21:18:26.130+00:00",
-        "modified" : "2026-05-28T21:18:44.803+00:00",
-        "id" : "385f8831-8872-4c27-875e-7ccfd9dca7af",
+        "created" : "2026-05-28T21:25:25.948+00:00",
+        "modified" : "2026-05-28T21:25:44.961+00:00",
+        "id" : "343b5f66-e43a-41a8-beae-4552c2e82f7a",
         "tags" : [ ]
       } ],
       "asyncComplete" : null,
@@ -492,9 +492,9 @@
       "minConfidence" : 0.7,
       "topAnswer" : false,
       "modifiedBy" : "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "created" : "2026-05-28T21:18:26.172+00:00",
-      "modified" : "2026-05-28T21:18:44.831+00:00",
-      "id" : "668671c5-52d5-4859-81e3-20b81b0d507a",
+      "created" : "2026-05-28T21:25:25.989+00:00",
+      "modified" : "2026-05-28T21:25:45.017+00:00",
+      "id" : "7afa633f-6cc5-4a4a-936a-98030e316f32",
       "tags" : [ {
         "key" : "userId",
         "value" : "328f4481-2a22-4a95-afc7-a8e7c20a5928"

@@ -1,7 +1,7 @@
 {
-  "id": "a986e6cb-cbbc-40da-9f82-0774be6a3037",
-  "modified": "2026-05-28T21:16:08.313+00:00",
-  "created": "2026-05-28T21:16:05.561+00:00",
+  "id": "5d15c4de-4697-4e72-8207-2bdbd7e3a915",
+  "modified": "2026-05-28T21:23:05.444+00:00",
+  "created": "2026-05-28T21:23:02.618+00:00",
   "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
@@ -17,17 +17,17 @@
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "0f6b53d0-9564-441b-a417-067403313ed3",
-      "modified": "2026-05-28T21:16:08.288+00:00",
-      "created": "2026-05-28T21:16:05.519+00:00",
+      "id": "ac5b7a67-8fa2-4a30-8823-f2c412115838",
+      "modified": "2026-05-28T21:23:05.420+00:00",
+      "created": "2026-05-28T21:23:02.562+00:00",
       "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "taskId": "a986e6cb-cbbc-40da-9f82-0774be6a3037",
+      "taskId": "5d15c4de-4697-4e72-8207-2bdbd7e3a915",
       "entityType": "condition",
       "inputType": "string",
       "term": "fever, cough, and headache",
       "mappings": [
         {
-          "id": "a407a1e7-e664-44ff-8e9a-0489367dfaa5",
+          "id": "4c7fc388-3b1b-4347-9f6e-e399a6744a37",
           "confidence": 0.9163333333333333,
           "terminology": "http://snomed.info/sct",
           "code": "386661006",
@@ -38,7 +38,7 @@
           "term": "fever"
         },
         {
-          "id": "897c31dd-5e6a-423a-9d44-e1d9b2720610",
+          "id": "e35094d2-1dac-483f-b304-f14a0d6cbafe",
           "confidence": 0.8935333333333334,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R50.8",
@@ -49,7 +49,7 @@
           "term": "fever"
         },
         {
-          "id": "7ec0d043-0198-4984-af35-908b58f87a6e",
+          "id": "08c7482d-42ed-410c-9140-6d7796039999",
           "confidence": 0.7621037339369456,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R50.9",
@@ -60,7 +60,7 @@
           "term": "fever"
         },
         {
-          "id": "32ab1f05-700a-4fb6-86b8-609371892e28",
+          "id": "6695bb24-098f-4d30-99c3-634e94c49bc1",
           "confidence": 0.7277867097854614,
           "terminology": "http://snomed.info/sct",
           "code": "271751000",
@@ -71,7 +71,7 @@
           "term": "fever"
         },
         {
-          "id": "437d0b13-8c65-4941-92cd-8143b102bab6",
+          "id": "e833d373-df77-4b6d-9d26-4773cecce38f",
           "confidence": 0.7054965695301693,
           "terminology": "http://snomed.info/sct",
           "code": "426000000",
@@ -82,7 +82,7 @@
           "term": "fever"
         },
         {
-          "id": "11660a95-3f39-4e28-ae28-c33fba366628",
+          "id": "20f64821-0963-444a-98a7-9476fcb54f32",
           "confidence": 0.7706735159556071,
           "terminology": "http://snomed.info/sct",
           "code": "95658004",
@@ -92,7 +92,7 @@
           "endIndex": 26
         },
         {
-          "id": "0f8e2410-e7e6-4375-9ca7-99bc88af4e0d",
+          "id": "fab3f309-11dc-4f08-9ef2-b157b550b536",
           "confidence": 0.7678365174929301,
           "terminology": "http://snomed.info/sct",
           "code": "466841000124105",
@@ -102,7 +102,7 @@
           "endIndex": 26
         },
         {
-          "id": "438053d7-905e-43e5-8126-2843416e9463",
+          "id": "12f3821d-0ee2-4991-9e14-2b5b7d8d6e48",
           "confidence": 0.7615792771975199,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "G44.83",
@@ -112,7 +112,7 @@
           "endIndex": 26
         },
         {
-          "id": "13a90d53-bf5d-4430-9ec1-29afbfdf2022",
+          "id": "b7f37b3e-ebe7-4afd-8f7a-d01dfc8b5f1d",
           "confidence": 0.7509204161961874,
           "terminology": "http://snomed.info/sct",
           "code": "135883003",
@@ -122,7 +122,7 @@
           "endIndex": 26
         },
         {
-          "id": "1f66fe43-fa9b-4ec3-b83a-cb06b11690ee",
+          "id": "a23f1297-08f6-4019-a31b-0aa56bf55fee",
           "confidence": 0.923,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R05",
@@ -133,7 +133,7 @@
           "term": "cough"
         },
         {
-          "id": "0f6d9b44-ff19-4be8-8f80-9709cd7d1e45",
+          "id": "ba137ca4-6bab-4877-9703-2120f12b4c9d",
           "confidence": 0.923,
           "terminology": "http://snomed.info/sct",
           "code": "49727002",
@@ -144,7 +144,7 @@
           "term": "cough"
         },
         {
-          "id": "07d7620b-8fc7-4944-b052-136e9a831c70",
+          "id": "1893df0f-81b2-49ec-b2b3-03f8aadd869a",
           "confidence": 0.9032,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R05.8",
@@ -155,7 +155,7 @@
           "term": "cough"
         },
         {
-          "id": "be828f39-fc84-4800-8f01-78676b4cb16c",
+          "id": "6d051b66-89fa-4f5f-b84c-c0ed67e0bce3",
           "confidence": 0.8171803879737854,
           "terminology": "http://snomed.info/sct",
           "code": "161922009",
@@ -166,7 +166,7 @@
           "term": "cough"
         },
         {
-          "id": "da7c03fe-acf9-4ba3-8525-0b0404124e82",
+          "id": "9cc2c125-9123-4916-b15d-9186b254c110",
           "confidence": 0.7544462990760804,
           "terminology": "http://snomed.info/sct",
           "code": "247410004",
@@ -177,7 +177,7 @@
           "term": "cough"
         },
         {
-          "id": "f0156a2f-4041-404c-a69a-fad1c533f4c0",
+          "id": "0bd6007f-f014-411c-9660-436eec77b0ff",
           "confidence": 0.7401645763715109,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R05.9",
@@ -188,7 +188,7 @@
           "term": "cough"
         },
         {
-          "id": "f5381aad-f0ff-4fa7-9441-901b0ebf5f1d",
+          "id": "aa6aaa42-54a2-4959-b5f7-e1579219cc5b",
           "confidence": 0.7368980264663696,
           "terminology": "http://snomed.info/sct",
           "code": "301236000",
@@ -199,7 +199,7 @@
           "term": "cough"
         },
         {
-          "id": "3f3ad757-08d8-4357-9c89-c61cb03fc229",
+          "id": "1e9a48d9-ef1a-482a-a3a8-4be47cca6624",
           "confidence": 0.7363870139916737,
           "terminology": "http://snomed.info/sct",
           "code": "248590003",
@@ -210,7 +210,7 @@
           "term": "cough"
         },
         {
-          "id": "0bd06989-c4b4-4ce4-ae3d-69852b2c43c5",
+          "id": "b676c560-ed28-43b7-b685-b93ed97898c1",
           "confidence": 0.7294742523829143,
           "terminology": "http://snomed.info/sct",
           "code": "300959008",
@@ -221,7 +221,7 @@
           "term": "cough"
         },
         {
-          "id": "f7e22365-c9d7-4bcf-a12f-6f9080b3efac",
+          "id": "c9287e5e-3892-4341-80cf-7d31439e44d8",
           "confidence": 0.7081594675266661,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R05.1",
@@ -232,7 +232,7 @@
           "term": "cough"
         },
         {
-          "id": "e79b04ac-16ca-41c8-9e99-95f9cb05fbb6",
+          "id": "3195c24f-81f1-459e-9cb9-3f2feef6cc56",
           "confidence": 0.9206666666666666,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R51",
@@ -243,7 +243,7 @@
           "term": "headache"
         },
         {
-          "id": "6f3d2f41-29b0-48cc-b3a1-9969dd3e2f75",
+          "id": "26396cb4-a567-472c-b360-4f20951a04db",
           "confidence": 0.9206666666666666,
           "terminology": "http://snomed.info/sct",
           "code": "25064002",
@@ -254,7 +254,7 @@
           "term": "headache"
         },
         {
-          "id": "6ca76ae5-405b-450d-bb45-53817a2cdfc1",
+          "id": "d8576614-c550-4ea1-b238-9c2872e61e2a",
           "confidence": 0.8456203784942627,
           "terminology": "http://snomed.info/sct",
           "code": "162298006",
@@ -265,7 +265,7 @@
           "term": "headache"
         },
         {
-          "id": "2454dacc-5950-4b30-a900-cc9b4d3381ed",
+          "id": "1b38b6fc-480a-4603-a39a-e6ede7ecd7a6",
           "confidence": 0.8062550813357036,
           "terminology": "http://snomed.info/sct",
           "code": "193028008",
@@ -276,7 +276,7 @@
           "term": "headache"
         },
         {
-          "id": "031d45c8-a72a-4599-af79-3afda73d6f7b",
+          "id": "a2e2cf72-b77a-4f21-84b1-9187d260752e",
           "confidence": 0.7823877425193787,
           "terminology": "http://snomed.info/sct",
           "code": "712831003",
@@ -287,7 +287,7 @@
           "term": "headache"
         },
         {
-          "id": "f306a87a-6b3c-4192-8505-55c6e6fda9e8",
+          "id": "98cb4b88-10bb-416c-9556-1f36f15ccab2",
           "confidence": 0.7721864431699116,
           "terminology": "http://snomed.info/sct",
           "code": "230461009",
@@ -298,7 +298,7 @@
           "term": "headache"
         },
         {
-          "id": "e34a7042-da9e-415b-beb1-a587890b51f5",
+          "id": "8e2cc4fb-ff4f-4d77-bc8a-873132abfc56",
           "confidence": 0.7609374621709187,
           "terminology": "http://snomed.info/sct",
           "code": "162299003",
@@ -309,7 +309,7 @@
           "term": "headache"
         },
         {
-          "id": "05aad929-1373-433a-a806-00d02eb437c7",
+          "id": "4f63a4e6-0e35-443a-ad6f-779e542f67f2",
           "confidence": 0.7494498585065207,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "R51.9",
@@ -320,7 +320,7 @@
           "term": "headache"
         },
         {
-          "id": "91b5019d-3304-4b01-b941-d1739a267043",
+          "id": "2e812ba9-55fa-4414-a6a9-c91bffaae7a7",
           "confidence": 0.7362906227111816,
           "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
           "code": "G44.1",
@@ -331,7 +331,7 @@
           "term": "headache"
         },
         {
-          "id": "0f9b3739-fcd4-44fd-a58c-d9a3cdb867e8",
+          "id": "3925e8d2-5c48-4297-9852-b32a627de27d",
           "confidence": 0.7282986435890199,
           "terminology": "http://snomed.info/sct",
           "code": "294091000119104",

@@ -1,7 +1,7 @@
 {
-  "id": "5da393be-86bf-44c0-af01-db0c99dc8b8b",
-  "modified": "2026-05-28T21:16:01.191+00:00",
-  "created": "2026-05-28T21:16:01.088+00:00",
+  "id": "1ad5827f-90a8-469d-bd8d-fed150b93226",
+  "modified": "2026-05-28T21:22:58.015+00:00",
+  "created": "2026-05-28T21:22:57.936+00:00",
   "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
@@ -17,17 +17,17 @@
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "583e4283-a269-46c9-86fb-a3294f434044",
-      "modified": "2026-05-28T21:16:01.150+00:00",
-      "created": "2026-05-28T21:16:01.036+00:00",
+      "id": "15db9567-026f-444e-a1ce-6a8e508cb8ec",
+      "modified": "2026-05-28T21:22:57.994+00:00",
+      "created": "2026-05-28T21:22:57.895+00:00",
       "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
-      "taskId": "5da393be-86bf-44c0-af01-db0c99dc8b8b",
+      "taskId": "1ad5827f-90a8-469d-bd8d-fed150b93226",
       "entityType": "bodyPart",
       "inputType": "string",
       "term": "left ear",
       "mappings": [
         {
-          "id": "ee74cd16-80f5-4fa1-b324-d07d2d64f11e",
+          "id": "7d37c152-9758-4880-a8e3-0b5b7c22c3d1",
           "confidence": 0.9773333333333333,
           "terminology": "http://snomed.info/sct",
           "code": "89644007",
@@ -37,7 +37,7 @@
           "endIndex": 8
         },
         {
-          "id": "58343a86-9c46-4cae-aa5c-dedf5174a536",
+          "id": "8affd36c-f384-4a25-9ec9-3438b3117c91",
           "confidence": 0.8488518392244976,
           "terminology": "http://snomed.info/sct",
           "code": "50460003",
@@ -47,7 +47,7 @@
           "endIndex": 8
         },
         {
-          "id": "742af996-c55a-4d3d-9ccb-56eeb19d088c",
+          "id": "7cb2b364-3980-4e7b-a65c-5d7ebf38d83b",
           "confidence": 0.8381324763298035,
           "terminology": "http://snomed.info/sct",
           "code": "772183005",
@@ -57,7 +57,7 @@
           "endIndex": 8
         },
         {
-          "id": "fa82ccfa-be05-44d3-95a2-7629d14a7134",
+          "id": "c943726e-caa9-4a79-8e5d-a0562d4c9b3c",
           "confidence": 0.8373243999481201,
           "terminology": "http://snomed.info/sct",
           "code": "73401004",
@@ -67,7 +67,7 @@
           "endIndex": 8
         },
         {
-          "id": "17f0e071-5e5a-41c8-bcb9-e078c4f79f8f",
+          "id": "d36253bb-7fb2-4b64-bb7d-8366bfef0fc1",
           "confidence": 0.8287598745028179,
           "terminology": "http://snomed.info/sct",
           "code": "49521004",

@@ -5,6 +5,11 @@ import shlex
 import subprocess
 import sys
 
+from process_output import configure_standard_streams
+
+
+configure_standard_streams()
+
 
 SEVERITIES = ("CRITICAL", "HIGH", "MEDIUM", "LOW", "UNKNOWN")
 
