@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +21,22 @@ configure_standard_streams()
 
 COLLECTION_FILE = "Automap-Postman-Client.json"
 API_URL = os.environ.get("API_URL", DEFAULT_API_URL).rstrip("/")
+
+
+def env_int(name, default, minimum=0):
+    """Read an integer environment setting with a safe fallback."""
+    try:
+        return max(minimum, int(os.environ.get(name, str(default))))
+    except ValueError:
+        return default
+
+
+NEWMAN_REQUEST_DELAY_MS = env_int(
+    "AUTOMAP_POSTMAN_DELAY_MS",
+    env_int("AUTOMAP_REQUEST_DELAY_MS", 1500),
+)
+RATE_LIMIT_RETRIES = env_int("AUTOMAP_POSTMAN_429_RETRIES", 1)
+RATE_LIMIT_RETRY_DELAY_MS = env_int("AUTOMAP_POSTMAN_429_DELAY_MS", 30000)
 
 
 def get_auth_token(auth_args):
@@ -97,9 +114,13 @@ def patch_item(item):
     extra_script = None
     if item.get("name") == "Map from a simple text string with auditing":
         extra_script = [
-            "const body = pm.response.json();",
-            "pm.collectionVariables.set('taskId', body.id);",
-            "pm.collectionVariables.set('termId', body.terms[0].id);",
+            "if (pm.response.code >= 200 && pm.response.code < 300) {",
+            "  const body = pm.response.json();",
+            "  if (body && body.id && body.terms && body.terms.length && body.terms[0].id) {",
+            "    pm.collectionVariables.set('taskId', body.id);",
+            "    pm.collectionVariables.set('termId', body.terms[0].id);",
+            "  }",
+            "}",
         ]
     item["event"] = [event for event in item.get("event", []) if event.get("listen") != "test"]
     item["event"].append(status_test_event(extra_script))
@@ -170,6 +191,18 @@ def failed_request_names(report_path):
     return failures
 
 
+def report_has_rate_limit_failure(report_path):
+    """Return whether Newman reported HTTP 429 in its JSON failure details."""
+    if not os.path.exists(report_path):
+        return False
+    try:
+        with open(report_path, "r", encoding="utf-8") as handle:
+            report = json.load(handle)
+    except json.JSONDecodeError:
+        return False
+    return any("429" in json.dumps(failure) for failure in report.get("run", {}).get("failures", []))
+
+
 def run_collection(token):
     """Run the Automap Postman collection with Newman."""
     collection_file = os.path.join(BASE_DIR, COLLECTION_FILE)
@@ -187,32 +220,47 @@ def run_collection(token):
     env = os.environ.copy()
     env.setdefault("NODE_OPTIONS", "--dns-result-order=ipv4first")
     try:
-        print(f"Running {COLLECTION_FILE} with API_URL={API_URL}")
-        result = subprocess.run(
-            command
-            + [
+        result = None
+        failures = []
+        for attempt in range(1, RATE_LIMIT_RETRIES + 2):
+            print(f"Running {COLLECTION_FILE} with API_URL={API_URL}")
+            newman_args = command + [
                 "run",
                 runtime_collection,
                 "--env-var",
                 f"API_URL={API_URL}",
+                "--delay-request",
+                str(NEWMAN_REQUEST_DELAY_MS),
                 "--reporters",
                 "cli,json",
                 "--reporter-json-export",
                 report_file,
-            ],
-            cwd=BASE_DIR,
-            env=env,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
-        if result.stdout:
-            print(redact_secrets(result.stdout), end="")
-        if result.stderr:
-            print(redact_secrets(result.stderr), file=sys.stderr, end="")
+            ]
+            result = subprocess.run(
+                newman_args,
+                cwd=BASE_DIR,
+                env=env,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+            )
+            if result.stdout:
+                print(redact_secrets(result.stdout), end="")
+            if result.stderr:
+                print(redact_secrets(result.stderr), file=sys.stderr, end="")
 
-        failures = failed_request_names(report_file)
+            failures = failed_request_names(report_file)
+            if result.returncode == 0 or not report_has_rate_limit_failure(report_file) or attempt > RATE_LIMIT_RETRIES:
+                break
+
+            delay_seconds = RATE_LIMIT_RETRY_DELAY_MS / 1000
+            print(
+                f"Newman saw HTTP 429 rate limiting; retrying collection in {delay_seconds:.1f}s.",
+                file=sys.stderr,
+            )
+            time.sleep(delay_seconds)
+
         return result.returncode, failures
     finally:
         for path in (runtime_collection, report_file):
