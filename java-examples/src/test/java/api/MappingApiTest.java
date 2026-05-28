@@ -61,6 +61,8 @@ public class MappingApiTest {
             .findAndRegisterModules()
             .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
     private static final Path SHARED_SAMPLE_DIR = Path.of("..", "curl-examples", "samples");
+    private static final int RETRY_ATTEMPTS = envInt("AUTOMAP_RETRY_ATTEMPTS", 5);
+    private static final long RETRY_DELAY_MS = envLong("AUTOMAP_RETRY_DELAY_MS", 5000L);
 
     private String accessToken;
     private MappingApi api;
@@ -326,53 +328,71 @@ public class MappingApiTest {
     }
 
     private JsonNode sendJson(String label, HttpRequest request) throws ApiException {
-        HttpResponse<String> response;
-        try {
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException error) {
-            throw new ApiException(error);
-        } catch (InterruptedException error) {
-            Thread.currentThread().interrupt();
-            throw new ApiException(error);
-        }
-
-        if (response.statusCode() / 100 != 2) {
-            throw new ApiException(
-                    response.statusCode(),
-                    label + " failed with HTTP " + response.statusCode(),
-                    response.headers(),
-                    redactSecrets(response.body()));
-        }
-
-        try {
-            JsonNode parsedBody = SAMPLE_MAPPER.readTree(response.body());
-            if (parsedBody != null && parsedBody.isTextual()) {
-                String text = parsedBody.asText().trim();
-                if (text.startsWith("{") || text.startsWith("[")) {
-                    return SAMPLE_MAPPER.readTree(text);
-                }
+        for (int attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
+            HttpResponse<String> response;
+            try {
+                response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            } catch (IOException error) {
+                throw new ApiException(error);
+            } catch (InterruptedException error) {
+                Thread.currentThread().interrupt();
+                throw new ApiException(error);
             }
-            return parsedBody;
-        } catch (JsonProcessingException error) {
-            return fail(label + " returned a non-JSON response: " + redactSecrets(response.body()), error);
+
+            if (response.statusCode() == 429 && attempt < RETRY_ATTEMPTS) {
+                pauseBeforeRetry(label, attempt, response.headers().firstValue("Retry-After").orElse(""));
+                continue;
+            }
+
+            if (response.statusCode() / 100 != 2) {
+                ApiException error = new ApiException(
+                        response.statusCode(),
+                        label + " failed with HTTP " + response.statusCode(),
+                        response.headers(),
+                        redactSecrets(response.body()));
+                return fail(apiFailureMessage(label, error), error);
+            }
+
+            try {
+                JsonNode parsedBody = SAMPLE_MAPPER.readTree(response.body());
+                if (parsedBody != null && parsedBody.isTextual()) {
+                    String text = parsedBody.asText().trim();
+                    if (text.startsWith("{") || text.startsWith("[")) {
+                        return SAMPLE_MAPPER.readTree(text);
+                    }
+                }
+                return parsedBody;
+            } catch (JsonProcessingException error) {
+                return fail(label + " returned a non-JSON response: " + redactSecrets(response.body()), error);
+            }
         }
+
+        return fail(label + " failed after retry attempts.");
     }
 
     private <T> T generated(String endpoint, ApiCall<T> call) throws ApiException {
-        try {
-            return call.execute();
-        } catch (ApiException error) {
-            if (hasCause(error, MismatchedInputException.class)) {
-                return fail(
-                        "Generated Java client could not deserialize "
-                                + endpoint
-                                + ". The endpoint response shape likely does not match the OpenAPI-generated model. "
-                                + "Cause: "
-                                + redactSecrets(rootCauseMessage(error)),
-                        error);
+        for (int attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
+            try {
+                return call.execute();
+            } catch (ApiException error) {
+                if (hasCause(error, MismatchedInputException.class)) {
+                    return fail(
+                            "Generated Java client could not deserialize "
+                                    + endpoint
+                                    + ". The endpoint response shape likely does not match the OpenAPI-generated model. "
+                                    + "Cause: "
+                                    + redactSecrets(rootCauseMessage(error)),
+                            error);
+                }
+                if (error.getCode() == 429 && attempt < RETRY_ATTEMPTS) {
+                    pauseBeforeRetry(endpoint, attempt, retryAfterHeader(error));
+                    continue;
+                }
+                return fail(apiFailureMessage(endpoint, error), error);
             }
-            throw error;
         }
+
+        return fail(endpoint + " failed after retry attempts.");
     }
 
     private boolean hasCause(Throwable error, Class<? extends Throwable> causeType) {
@@ -438,6 +458,35 @@ public class MappingApiTest {
         assertTrue(resourceType.equals(response.get("resourceType").asText()));
     }
 
+    private void pauseBeforeRetry(String label, int attempt, String retryAfter) throws ApiException {
+        long delayMillis = retryDelayMillis(attempt, retryAfter);
+        System.err.println(label + " returned HTTP 429; retrying in " + delayMillis + " ms.");
+        try {
+            Thread.sleep(delayMillis);
+        } catch (InterruptedException error) {
+            Thread.currentThread().interrupt();
+            throw new ApiException(error);
+        }
+    }
+
+    private long retryDelayMillis(int attempt, String retryAfter) {
+        if (!isBlank(retryAfter)) {
+            try {
+                return Math.max(0L, Long.parseLong(retryAfter.trim()) * 1000L);
+            } catch (NumberFormatException ignored) {
+                // Fall through to the local backoff below.
+            }
+        }
+        return Math.max(0L, RETRY_DELAY_MS * attempt);
+    }
+
+    private String retryAfterHeader(ApiException error) {
+        if (error.getResponseHeaders() == null) {
+            return "";
+        }
+        return error.getResponseHeaders().firstValue("Retry-After").orElse("");
+    }
+
     private void printSample(Object response) {
         try {
             System.out.println(SAMPLE_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(response));
@@ -453,6 +502,17 @@ public class MappingApiTest {
     private String authFailureMessage(ApiException error) {
         StringBuilder message = new StringBuilder("Automap login failed before running mapping test.");
         message.append(System.lineSeparator()).append("API_URL: ").append(baseApiClient().getBaseUri());
+        appendApiExceptionDetails(message, error);
+        return message.toString();
+    }
+
+    private String apiFailureMessage(String endpoint, ApiException error) {
+        StringBuilder message = new StringBuilder(endpoint).append(" failed.");
+        appendApiExceptionDetails(message, error);
+        return message.toString();
+    }
+
+    private void appendApiExceptionDetails(StringBuilder message, ApiException error) {
         if (error.getCode() != 0) {
             message.append(System.lineSeparator()).append("HTTP status: ").append(error.getCode());
         }
@@ -465,7 +525,6 @@ public class MappingApiTest {
         if (error.getCause() != null && !isBlank(error.getCause().getMessage())) {
             message.append(System.lineSeparator()).append("Cause: ").append(redactSecrets(error.getCause().getMessage()));
         }
-        return message.toString();
     }
 
     private String redactSecrets(String text) {
@@ -487,5 +546,29 @@ public class MappingApiTest {
         ApiClient apiClient = baseApiClient();
         apiClient.setRequestInterceptor(builder -> builder.header("Authorization", "Bearer " + accessToken));
         return apiClient;
+    }
+
+    private static int envInt(String name, int defaultValue) {
+        String value = System.getenv(name);
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Math.max(1, Integer.parseInt(value.trim()));
+        } catch (NumberFormatException ignored) {
+            return defaultValue;
+        }
+    }
+
+    private static long envLong(String name, long defaultValue) {
+        String value = System.getenv(name);
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Math.max(0L, Long.parseLong(value.trim()));
+        } catch (NumberFormatException ignored) {
+            return defaultValue;
+        }
     }
 }
