@@ -24,9 +24,10 @@ account, send email to info@westcoastinformatics.com.
 
 1. [Tutorials by Language](#tutorials-by-language)
 2. [Use Cases](#use-cases)
-3. [Resources](#resources)
-4. [Contributing](#contributing)
-5. [License](#license)
+3. [Maintenance Commands](#maintenance-commands)
+4. [Resources](#resources)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ## Tutorials by Language
 
@@ -69,6 +70,58 @@ All of the tutorials use an environment variable for the API URL of the deployme
 
 **[Back to top](#table-of-contents)**
 
+## Maintenance Commands
+
+This repo includes a root `Makefile` to refresh samples, run checks, scan dependencies, and regenerate the Java SDK demo client. The commands use the existing cURL, Java, and Postman sample groups only.
+
+Set credentials in the environment before running authenticated checks. Open a terminal, run the two commands for your operating system, and then run `make` in that same terminal window. Replace `<username>` and `<password>` with your Automap username and password, without the angle brackets.
+
+For bash or zsh:
+
+```bash
+export AUTOMAP_USER=<username>
+export AUTOMAP_PASSWORD=<password>
+```
+
+For Windows PowerShell:
+
+```powershell
+$env:AUTOMAP_USER="<username>"
+$env:AUTOMAP_PASSWORD="<password>"
+```
+
+If you already have a bearer token, set `AUTOMAP_TOKEN` or `TOKEN` instead. Existing `TERMHUB_USER`, `TERMHUB_PASSWORD`, and `TERMHUB_TOKEN` variables also work as compatibility aliases.
+
+Common commands:
+
+```bash
+make check
+make resample
+make check-curl
+make check-java
+make check-postman
+make scan
+make scan-strict
+make regenerate-java
+```
+
+`make check` runs cURL, Java, and Postman checks and prints grouped failed commands or tests at the end. `make resample` refreshes cURL and Java sample files. `make scan` runs Trivy source and Java dependency scans, saves JSON reports under `build/trivy/reports`, and prints a final summary of findings by scan area. `make scan-strict` uses the same scans but exits nonzero when Trivy reports vulnerabilities, secrets, or misconfigurations. `make regenerate-java` runs the Java SDK generator.
+
+You can override `API_URL` when you need to point checks at another deployment:
+
+```bash
+API_URL=https://automap.terminology.tools make check
+```
+
+On Windows PowerShell, set the variable before running make:
+
+```powershell
+$env:API_URL="https://automap.terminology.tools"
+make check
+```
+
+**[Back to top](#table-of-contents)**
+
 
 ## Resources
 
@@ -98,4 +151,3 @@ All of the tutorials use an environment variable for the API URL of the deployme
 See the included [`LICENSE.txt`](LICENSE.txt) file for details.
 
 **[Back to top](#table-of-contents)**
-
