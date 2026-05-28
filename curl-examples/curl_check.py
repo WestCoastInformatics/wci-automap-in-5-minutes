@@ -192,7 +192,7 @@ def run_curl_command(command, token):
         args = curl_args(command, token)
         endpoint = endpoint_from_args(args)
         for attempt in range(1, RETRY_ATTEMPTS + 1):
-            print(f"Running: {endpoint}")
+            print(f"Running: {endpoint}", flush=True)
             result = subprocess.run(args, cwd=BASE_DIR, capture_output=True, text=True, encoding="utf-8", errors="replace")
             if result.returncode != 0:
                 print(f"Error executing: {redact_secrets(command)}", file=sys.stderr)
@@ -269,7 +269,7 @@ def run_sections(sections, token):
             sample_path = os.path.join(BASE_DIR, sample_file)
             with open(sample_path, "w", encoding="utf-8") as handle:
                 handle.write(sample_output.rstrip() + "\n")
-            print(f"Updated: {sample_file}")
+            print(f"Updated: {sample_file}", flush=True)
 
 
 def report_endpoints():
@@ -287,7 +287,7 @@ def report_endpoints():
 
 
 if __name__ == "__main__":
-    print(f"Using API_URL={API_URL}")
+    print(f"Using API_URL={API_URL}", flush=True)
     check_curl_installation()
     auth_token = get_auth_token()
     readme_sections = process_markdown()

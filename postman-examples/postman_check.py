@@ -220,10 +220,10 @@ def run_collection(token):
     env = os.environ.copy()
     env.setdefault("NODE_OPTIONS", "--dns-result-order=ipv4first")
     try:
-        result = None
+        return_code = 1
         failures = []
         for attempt in range(1, RATE_LIMIT_RETRIES + 2):
-            print(f"Running {COLLECTION_FILE} with API_URL={API_URL}")
+            print(f"Running {COLLECTION_FILE} with API_URL={API_URL}", flush=True)
             newman_args = command + [
                 "run",
                 runtime_collection,
@@ -236,22 +236,23 @@ def run_collection(token):
                 "--reporter-json-export",
                 report_file,
             ]
-            result = subprocess.run(
+            process = subprocess.Popen(
                 newman_args,
                 cwd=BASE_DIR,
                 env=env,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
+                bufsize=1,
             )
-            if result.stdout:
-                print(redact_secrets(result.stdout), end="")
-            if result.stderr:
-                print(redact_secrets(result.stderr), file=sys.stderr, end="")
+            for line in process.stdout:
+                print(redact_secrets(line), end="", flush=True)
+            return_code = process.wait()
 
             failures = failed_request_names(report_file)
-            if result.returncode == 0 or not report_has_rate_limit_failure(report_file) or attempt > RATE_LIMIT_RETRIES:
+            if return_code == 0 or not report_has_rate_limit_failure(report_file) or attempt > RATE_LIMIT_RETRIES:
                 break
 
             delay_seconds = RATE_LIMIT_RETRY_DELAY_MS / 1000
@@ -261,7 +262,7 @@ def run_collection(token):
             )
             time.sleep(delay_seconds)
 
-        return result.returncode, failures
+        return return_code, failures
     finally:
         for path in (runtime_collection, report_file):
             try:

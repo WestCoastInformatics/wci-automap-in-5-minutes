@@ -12,16 +12,19 @@ SECRET_PATTERNS = (
 
 
 def configure_standard_streams():
-    """Prevent Unicode subprocess output from crashing on narrow Windows encodings."""
+    """Keep runner output live and safe on narrow Windows encodings."""
     for stream_name in ("stdout", "stderr"):
         stream = getattr(sys, stream_name, None)
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure is None:
             continue
         try:
-            reconfigure(errors="replace")
+            reconfigure(errors="replace", line_buffering=True)
         except (TypeError, ValueError):
-            pass
+            try:
+                reconfigure(errors="replace")
+            except (TypeError, ValueError):
+                pass
 
 
 def redact_secrets(text):

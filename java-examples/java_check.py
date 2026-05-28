@@ -139,7 +139,7 @@ def run_sections(sections):
     """Run Gradle commands and update corresponding sample files."""
     for section in sections:
         for sample_index, gradle_command in enumerate(section[COMMANDS]):
-            print(f"Running: {gradle_command}")
+            print(f"Running: {gradle_command}", flush=True)
             response = run_gradle_test(gradle_command)
             if response is not None and sample_index >= len(section[FILES]):
                 mark_unhealthy(gradle_command)
@@ -158,7 +158,7 @@ def run_sections(sections):
                 sample_path = os.path.join(BASE_DIR, section[FILES][sample_index])
                 with open(sample_path, "w", encoding="utf-8") as handle:
                     handle.write(sample_output)
-                print(f"Updated: {section[FILES][sample_index]}")
+                print(f"Updated: {section[FILES][sample_index]}", flush=True)
 
 
 def report_script_health():
