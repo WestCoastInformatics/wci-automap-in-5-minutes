@@ -107,6 +107,8 @@ make regenerate-java
 
 `make check` runs cURL, Java, and Postman checks and prints grouped failed commands or tests at the end. `make resample` refreshes cURL and Java sample files. `make scan` runs Trivy source and Java dependency scans, saves JSON reports under `build/trivy/reports`, and prints a final summary of findings by scan area. `make scan-strict` uses the same scans but exits nonzero when Trivy reports vulnerabilities, secrets, or misconfigurations. `make regenerate-java` runs the Java SDK generator.
 
+The Java dependency scan does not require a committed lockfile. `make scan-java` first runs `make scan-prepare-java`, which creates `java-examples/gradle.lockfile` locally with Gradle dependency locking so Trivy can inspect resolved Java dependencies. That file is ignored by Git and can be deleted at any time; the next scan recreates it.
+
 You can override `API_URL` when you need to point checks at another deployment:
 
 ```bash
