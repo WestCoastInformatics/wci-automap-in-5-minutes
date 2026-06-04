@@ -1,6 +1,10 @@
 VERSION ?= 1.0.0
 BUILD_DIR ?= ./build
+ifeq ($(OS),Windows_NT)
 PYTHON ?= python
+else
+PYTHON ?= python3
+endif
 TRIVY_FLAGS ?=
 TRIVY_REPORT_DIR ?= $(BUILD_DIR)/trivy/reports
 
