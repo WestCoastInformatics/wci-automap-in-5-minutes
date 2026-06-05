@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +30,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -36,12 +38,13 @@ import com.wci.automap.client.invoker.JSON;
 @JsonPropertyOrder({
   InputTask.JSON_PROPERTY_TERMS,
   InputTask.JSON_PROPERTY_CONTEXT,
-  InputTask.JSON_PROPERTY_TOP_ANSWER,
-  InputTask.JSON_PROPERTY_MIN_CONFIDENCE,
+  InputTask.JSON_PROPERTY_MAX_RESULTS,
   InputTask.JSON_PROPERTY_AUDIT,
+  InputTask.JSON_PROPERTY_MIN_CONFIDENCE,
+  InputTask.JSON_PROPERTY_TOP_ANSWER,
   InputTask.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class InputTask {
   public static final String JSON_PROPERTY_TERMS = "terms";
   private List<InputTerm> terms = new ArrayList<>();
@@ -49,14 +52,17 @@ public class InputTask {
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private String context;
 
-  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
-  private Boolean topAnswer = false;
+  public static final String JSON_PROPERTY_MAX_RESULTS = "maxResults";
+  private Integer maxResults;
+
+  public static final String JSON_PROPERTY_AUDIT = "audit";
+  private Boolean audit = true;
 
   public static final String JSON_PROPERTY_MIN_CONFIDENCE = "minConfidence";
   private Double minConfidence = 0.0d;
 
-  public static final String JSON_PROPERTY_AUDIT = "audit";
-  private Boolean audit = true;
+  public static final String JSON_PROPERTY_TOP_ANSWER = "topAnswer";
+  private Boolean topAnswer = false;
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   private List<Tag> tags = new ArrayList<>();
@@ -122,28 +128,53 @@ public class InputTask {
   }
 
 
-  public InputTask topAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
+  public InputTask maxResults(Integer maxResults) {
+    this.maxResults = maxResults;
     return this;
   }
 
    /**
-   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
-   * @return topAnswer
+   * Maximum number of mapped results
+   * @return maxResults
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonProperty(JSON_PROPERTY_MAX_RESULTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getTopAnswer() {
-    return topAnswer;
+  public Integer getMaxResults() {
+    return maxResults;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
+  @JsonProperty(JSON_PROPERTY_MAX_RESULTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTopAnswer(Boolean topAnswer) {
-    this.topAnswer = topAnswer;
+  public void setMaxResults(Integer maxResults) {
+    this.maxResults = maxResults;
+  }
+
+
+  public InputTask audit(Boolean audit) {
+    this.audit = audit;
+    return this;
+  }
+
+   /**
+   * Indicator of whether to use auditing (automatically false if configuration does not persist outputs)
+   * @return audit
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_AUDIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public Boolean getAudit() {
+    return audit;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_AUDIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAudit(Boolean audit) {
+    this.audit = audit;
   }
 
 
@@ -172,28 +203,28 @@ public class InputTask {
   }
 
 
-  public InputTask audit(Boolean audit) {
-    this.audit = audit;
+  public InputTask topAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
     return this;
   }
 
    /**
-   * Indicator of whether to use auditing (automatically false if configuration does not persist outputs)
-   * @return audit
+   * Indicator of whether to return the top mapped answer regardless of whether the minimum confidence threshold has been met
+   * @return topAnswer
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AUDIT)
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public Boolean getAudit() {
-    return audit;
+  public Boolean getTopAnswer() {
+    return topAnswer;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AUDIT)
+  @JsonProperty(JSON_PROPERTY_TOP_ANSWER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setAudit(Boolean audit) {
-    this.audit = audit;
+  public void setTopAnswer(Boolean topAnswer) {
+    this.topAnswer = topAnswer;
   }
 
 
@@ -244,15 +275,16 @@ public class InputTask {
     InputTask inputTask = (InputTask) o;
     return Objects.equals(this.terms, inputTask.terms) &&
         Objects.equals(this.context, inputTask.context) &&
-        Objects.equals(this.topAnswer, inputTask.topAnswer) &&
-        Objects.equals(this.minConfidence, inputTask.minConfidence) &&
+        Objects.equals(this.maxResults, inputTask.maxResults) &&
         Objects.equals(this.audit, inputTask.audit) &&
+        Objects.equals(this.minConfidence, inputTask.minConfidence) &&
+        Objects.equals(this.topAnswer, inputTask.topAnswer) &&
         Objects.equals(this.tags, inputTask.tags);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(terms, context, topAnswer, minConfidence, audit, tags);
+    return Objects.hash(terms, context, maxResults, audit, minConfidence, topAnswer, tags);
   }
 
   @Override
@@ -261,9 +293,10 @@ public class InputTask {
     sb.append("class InputTask {\n");
     sb.append("    terms: ").append(toIndentedString(terms)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
-    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
-    sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
+    sb.append("    maxResults: ").append(toIndentedString(maxResults)).append("\n");
     sb.append("    audit: ").append(toIndentedString(audit)).append("\n");
+    sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
+    sb.append("    topAnswer: ").append(toIndentedString(topAnswer)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -280,5 +313,84 @@ public class InputTask {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `terms` to the URL query string
+    if (getTerms() != null) {
+      for (int i = 0; i < getTerms().size(); i++) {
+        if (getTerms().get(i) != null) {
+          joiner.add(getTerms().get(i).toUrlQueryString(String.format("%sterms%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `context` to the URL query string
+    if (getContext() != null) {
+      joiner.add(String.format("%scontext%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContext()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `maxResults` to the URL query string
+    if (getMaxResults() != null) {
+      joiner.add(String.format("%smaxResults%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMaxResults()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `audit` to the URL query string
+    if (getAudit() != null) {
+      joiner.add(String.format("%saudit%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAudit()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `minConfidence` to the URL query string
+    if (getMinConfidence() != null) {
+      joiner.add(String.format("%sminConfidence%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMinConfidence()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `topAnswer` to the URL query string
+    if (getTopAnswer() != null) {
+      joiner.add(String.format("%stopAnswer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTopAnswer()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `tags` to the URL query string
+    if (getTags() != null) {
+      for (int i = 0; i < getTags().size(); i++) {
+        if (getTags().get(i) != null) {
+          joiner.add(getTags().get(i).toUrlQueryString(String.format("%stags%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

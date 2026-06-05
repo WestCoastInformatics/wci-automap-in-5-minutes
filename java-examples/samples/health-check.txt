@@ -1,0 +1,7 @@
+{
+      "name" : "wci-mapping-service",
+      "timestamp" : "2026-05-28T23:43:53.954+00:00",
+      "status" : true
+    }
+
+MappingApiTest > healthCheckTest()

@@ -1,8 +1,8 @@
 {
-  "id": "4e2fabe5-c616-4062-a744-07d442573b3c",
-  "modified": "2025-05-27T18:44:24.462-07:00",
-  "created": "2025-05-27T18:44:23.396-07:00",
-  "modifiedBy": "system",
+  "id": "4343a098-a5db-4b58-853c-a9b323a13053",
+  "modified": "2026-05-28T23:43:07.054+00:00",
+  "created": "2026-05-28T23:43:06.231+00:00",
+  "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
       "key": "taskTagKey1",
@@ -14,22 +14,22 @@
     },
     {
       "key": "userId",
-      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+      "value": "328f4481-2a22-4a95-afc7-a8e7c20a5928"
     },
     {
       "key": "server.version",
-      "value": "unset"
+      "value": "2.4.0.202605"
     }
   ],
   "audit": false,
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "53881f0d-5ad9-4c2e-a1e4-a5af45423d95",
-      "modified": "2025-05-27T18:44:24.330-07:00",
-      "created": "2025-05-27T18:44:23.153-07:00",
-      "modifiedBy": "system",
-      "taskId": "4e2fabe5-c616-4062-a744-07d442573b3c",
+      "id": "57a7540b-e570-403a-a06c-deeaece01ff7",
+      "modified": "2026-05-28T23:43:07.026+00:00",
+      "created": "2026-05-28T23:43:06.183+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "4343a098-a5db-4b58-853c-a9b323a13053",
       "entityType": "condition",
       "inputType": "string",
       "term": "heart attack",
@@ -45,38 +45,8 @@
       ],
       "mappings": [
         {
-          "id": "0dc7eba0-1c62-444e-8c20-664449b94418",
-          "confidence": 0.747959770278495,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "M10",
-          "name": "Gout",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "a02ffd24-598a-4c91-b1d2-dc59ef205da2",
-          "confidence": 0.7134070035931478,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "I50",
-          "name": "Heart failure",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "c540fb97-d9ca-4e50-8c18-404629db36ec",
-          "confidence": 0.7002443714598791,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "S26",
-          "name": "Injury of heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "3ea93e46-64d3-4df8-b25a-8bf52c5f4c8e",
-          "confidence": 0.965680019675233,
+          "id": "e39f71e3-ec9a-401c-a583-8a491f0f4061",
+          "confidence": 0.9696666666666666,
           "terminology": "http://snomed.info/sct",
           "code": "22298006",
           "name": "Myocardial infarction",
@@ -85,68 +55,38 @@
           "endIndex": 12
         },
         {
-          "id": "80c877d6-e02a-4eba-9299-f414442f1cdd",
-          "confidence": 0.7509408466558319,
+          "id": "7436bb7f-dc2b-4c6b-9fca-e336ee96466f",
+          "confidence": 0.807731363773346,
           "terminology": "http://snomed.info/sct",
-          "code": "225624000",
-          "name": "Panic attack",
+          "code": "102931001",
+          "name": "Fear of heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         },
         {
-          "id": "917f4e17-ad19-4b24-b6ff-efb6afe70768",
-          "confidence": 0.7468575862604179,
+          "id": "811082be-ae2b-42b7-a691-8b29ce3cefe2",
+          "confidence": 0.757378859202067,
           "terminology": "http://snomed.info/sct",
-          "code": "300895004",
-          "name": "Anxiety attack",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         },
         {
-          "id": "d1029e5a-df3c-4830-af3b-e886be7eb4b4",
-          "confidence": 0.7253100056441498,
+          "id": "e3a12b3e-3aff-438f-a1ad-fa909fada37e",
+          "confidence": 0.7439010915756225,
           "terminology": "http://snomed.info/sct",
-          "code": "29889000",
-          "name": "Rupture of heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "f4049bb8-17cc-4d46-b894-4bd2d75636b1",
-          "confidence": 0.7090196745688842,
-          "terminology": "http://snomed.info/sct",
-          "code": "233916004",
-          "name": "Heart block",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "bd9a41c5-a707-4261-b4a9-b7af874ac34d",
-          "confidence": 0.7066428479926332,
-          "terminology": "http://snomed.info/sct",
-          "code": "248657009",
-          "name": "Pounding heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "c192352c-5176-49be-b387-035f4698c93a",
-          "confidence": 0.704063023983047,
-          "terminology": "http://snomed.info/sct",
-          "code": "17414004",
-          "name": "Contusion to heart",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         }
       ],
       "status": "final",
-      "mappingCt": 10
+      "mappingCt": 4
     }
   ],
   "status": "final"

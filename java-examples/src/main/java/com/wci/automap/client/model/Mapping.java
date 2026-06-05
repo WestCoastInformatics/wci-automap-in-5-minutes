@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,16 +30,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
  * Represents a mapping from a concept in one terminology to a concept in another
  */
 @JsonPropertyOrder({
-  Mapping.JSON_PROPERTY_PRIORITY,
-  Mapping.JSON_PROPERTY_MAPSET_CODE,
-  Mapping.JSON_PROPERTY_RULE,
   Mapping.JSON_PROPERTY_CATEGORY,
   Mapping.JSON_PROPERTY_GROUP,
   Mapping.JSON_PROPERTY_ADVICE,
@@ -46,7 +45,10 @@ import com.wci.automap.client.invoker.JSON;
   Mapping.JSON_PROPERTY_TO_TERMINOLOGY,
   Mapping.JSON_PROPERTY_FROM_CODE,
   Mapping.JSON_PROPERTY_FROM_NAME,
+  Mapping.JSON_PROPERTY_MAPSET_CODE,
   Mapping.JSON_PROPERTY_FROM_TERMINOLOGY,
+  Mapping.JSON_PROPERTY_RULE,
+  Mapping.JSON_PROPERTY_PRIORITY,
   Mapping.JSON_PROPERTY_LOCAL,
   Mapping.JSON_PROPERTY_MODIFIED_BY,
   Mapping.JSON_PROPERTY_CREATED,
@@ -55,17 +57,8 @@ import com.wci.automap.client.invoker.JSON;
   Mapping.JSON_PROPERTY_ACTIVE,
   Mapping.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Mapping {
-  public static final String JSON_PROPERTY_PRIORITY = "priority";
-  private String priority;
-
-  public static final String JSON_PROPERTY_MAPSET_CODE = "mapsetCode";
-  private String mapsetCode;
-
-  public static final String JSON_PROPERTY_RULE = "rule";
-  private String rule;
-
   public static final String JSON_PROPERTY_CATEGORY = "category";
   private String category;
 
@@ -93,8 +86,17 @@ public class Mapping {
   public static final String JSON_PROPERTY_FROM_NAME = "fromName";
   private String fromName;
 
+  public static final String JSON_PROPERTY_MAPSET_CODE = "mapsetCode";
+  private String mapsetCode;
+
   public static final String JSON_PROPERTY_FROM_TERMINOLOGY = "fromTerminology";
   private String fromTerminology;
+
+  public static final String JSON_PROPERTY_RULE = "rule";
+  private String rule;
+
+  public static final String JSON_PROPERTY_PRIORITY = "priority";
+  private String priority;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
@@ -119,81 +121,6 @@ public class Mapping {
 
   public Mapping() { 
   }
-
-  public Mapping priority(String priority) {
-    this.priority = priority;
-    return this;
-  }
-
-   /**
-   * the value for the priority of this map within its group (for complex maps that use groups)
-   * @return priority
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getPriority() {
-    return priority;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PRIORITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPriority(String priority) {
-    this.priority = priority;
-  }
-
-
-  public Mapping mapsetCode(String mapsetCode) {
-    this.mapsetCode = mapsetCode;
-    return this;
-  }
-
-   /**
-   * the code of the mapset containing this mapping
-   * @return mapsetCode
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getMapsetCode() {
-    return mapsetCode;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMapsetCode(String mapsetCode) {
-    this.mapsetCode = mapsetCode;
-  }
-
-
-  public Mapping rule(String rule) {
-    this.rule = rule;
-    return this;
-  }
-
-   /**
-   * the machine-readable map rule for this mapping (for complex maps that use rules)
-   * @return rule
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RULE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getRule() {
-    return rule;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RULE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRule(String rule) {
-    this.rule = rule;
-  }
-
 
   public Mapping category(String category) {
     this.category = category;
@@ -420,6 +347,31 @@ public class Mapping {
   }
 
 
+  public Mapping mapsetCode(String mapsetCode) {
+    this.mapsetCode = mapsetCode;
+    return this;
+  }
+
+   /**
+   * the code of the mapset containing this mapping
+   * @return mapsetCode
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getMapsetCode() {
+    return mapsetCode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAPSET_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMapsetCode(String mapsetCode) {
+    this.mapsetCode = mapsetCode;
+  }
+
+
   public Mapping fromTerminology(String fromTerminology) {
     this.fromTerminology = fromTerminology;
     return this;
@@ -442,6 +394,56 @@ public class Mapping {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFromTerminology(String fromTerminology) {
     this.fromTerminology = fromTerminology;
+  }
+
+
+  public Mapping rule(String rule) {
+    this.rule = rule;
+    return this;
+  }
+
+   /**
+   * the machine-readable map rule for this mapping (for complex maps that use rules)
+   * @return rule
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RULE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getRule() {
+    return rule;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_RULE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRule(String rule) {
+    this.rule = rule;
+  }
+
+
+  public Mapping priority(String priority) {
+    this.priority = priority;
+    return this;
+  }
+
+   /**
+   * the value for the priority of this map within its group (for complex maps that use groups)
+   * @return priority
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRIORITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getPriority() {
+    return priority;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_PRIORITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPriority(String priority) {
+    this.priority = priority;
   }
 
 
@@ -640,10 +642,7 @@ public class Mapping {
       return false;
     }
     Mapping mapping = (Mapping) o;
-    return Objects.equals(this.priority, mapping.priority) &&
-        Objects.equals(this.mapsetCode, mapping.mapsetCode) &&
-        Objects.equals(this.rule, mapping.rule) &&
-        Objects.equals(this.category, mapping.category) &&
+    return Objects.equals(this.category, mapping.category) &&
         Objects.equals(this.group, mapping.group) &&
         Objects.equals(this.advice, mapping.advice) &&
         Objects.equals(this.entityType, mapping.entityType) &&
@@ -652,7 +651,10 @@ public class Mapping {
         Objects.equals(this.toTerminology, mapping.toTerminology) &&
         Objects.equals(this.fromCode, mapping.fromCode) &&
         Objects.equals(this.fromName, mapping.fromName) &&
+        Objects.equals(this.mapsetCode, mapping.mapsetCode) &&
         Objects.equals(this.fromTerminology, mapping.fromTerminology) &&
+        Objects.equals(this.rule, mapping.rule) &&
+        Objects.equals(this.priority, mapping.priority) &&
         Objects.equals(this.local, mapping.local) &&
         Objects.equals(this.modifiedBy, mapping.modifiedBy) &&
         Objects.equals(this.created, mapping.created) &&
@@ -664,16 +666,13 @@ public class Mapping {
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, mapsetCode, rule, category, group, advice, entityType, toCode, toName, toTerminology, fromCode, fromName, fromTerminology, local, modifiedBy, created, modified, id, active, attributes);
+    return Objects.hash(category, group, advice, entityType, toCode, toName, toTerminology, fromCode, fromName, mapsetCode, fromTerminology, rule, priority, local, modifiedBy, created, modified, id, active, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Mapping {\n");
-    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
-    sb.append("    mapsetCode: ").append(toIndentedString(mapsetCode)).append("\n");
-    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    advice: ").append(toIndentedString(advice)).append("\n");
@@ -683,7 +682,10 @@ public class Mapping {
     sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    fromCode: ").append(toIndentedString(fromCode)).append("\n");
     sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
+    sb.append("    mapsetCode: ").append(toIndentedString(mapsetCode)).append("\n");
     sb.append("    fromTerminology: ").append(toIndentedString(fromTerminology)).append("\n");
+    sb.append("    rule: ").append(toIndentedString(rule)).append("\n");
+    sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -706,5 +708,143 @@ public class Mapping {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `category` to the URL query string
+    if (getCategory() != null) {
+      joiner.add(String.format("%scategory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCategory()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `group` to the URL query string
+    if (getGroup() != null) {
+      joiner.add(String.format("%sgroup%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroup()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `advice` to the URL query string
+    if (getAdvice() != null) {
+      joiner.add(String.format("%sadvice%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAdvice()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `entityType` to the URL query string
+    if (getEntityType() != null) {
+      joiner.add(String.format("%sentityType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEntityType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toCode` to the URL query string
+    if (getToCode() != null) {
+      joiner.add(String.format("%stoCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toName` to the URL query string
+    if (getToName() != null) {
+      joiner.add(String.format("%stoName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toTerminology` to the URL query string
+    if (getToTerminology() != null) {
+      joiner.add(String.format("%stoTerminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `fromCode` to the URL query string
+    if (getFromCode() != null) {
+      joiner.add(String.format("%sfromCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFromCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `fromName` to the URL query string
+    if (getFromName() != null) {
+      joiner.add(String.format("%sfromName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFromName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `mapsetCode` to the URL query string
+    if (getMapsetCode() != null) {
+      joiner.add(String.format("%smapsetCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMapsetCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `fromTerminology` to the URL query string
+    if (getFromTerminology() != null) {
+      joiner.add(String.format("%sfromTerminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFromTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `rule` to the URL query string
+    if (getRule() != null) {
+      joiner.add(String.format("%srule%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRule()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `priority` to the URL query string
+    if (getPriority() != null) {
+      joiner.add(String.format("%spriority%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPriority()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

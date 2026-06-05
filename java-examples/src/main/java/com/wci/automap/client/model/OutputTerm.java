@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -31,25 +34,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
  * Represents an fully mapped term with attached mappings
  */
 @JsonPropertyOrder({
+  OutputTerm.JSON_PROPERTY_MAPPINGS,
   OutputTerm.JSON_PROPERTY_STATUS,
   OutputTerm.JSON_PROPERTY_MESSAGE,
-  OutputTerm.JSON_PROPERTY_MAPPINGS,
   OutputTerm.JSON_PROPERTY_CONFIDENCE,
   OutputTerm.JSON_PROPERTY_MAPPING_CT,
-  OutputTerm.JSON_PROPERTY_CONTEXT,
   OutputTerm.JSON_PROPERTY_CODE,
   OutputTerm.JSON_PROPERTY_INPUT_TYPE,
-  OutputTerm.JSON_PROPERTY_TASK_ID,
-  OutputTerm.JSON_PROPERTY_ENTITY_TYPE,
+  OutputTerm.JSON_PROPERTY_CONTEXT,
   OutputTerm.JSON_PROPERTY_TERM,
   OutputTerm.JSON_PROPERTY_TERMINOLOGY,
+  OutputTerm.JSON_PROPERTY_TASK_ID,
+  OutputTerm.JSON_PROPERTY_ENTITY_TYPE,
   OutputTerm.JSON_PROPERTY_TO_TERMINOLOGY,
   OutputTerm.JSON_PROPERTY_MODIFIED_BY,
   OutputTerm.JSON_PROPERTY_CREATED,
@@ -57,8 +59,11 @@ import com.wci.automap.client.invoker.JSON;
   OutputTerm.JSON_PROPERTY_ID,
   OutputTerm.JSON_PROPERTY_TAGS
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class OutputTerm {
+  public static final String JSON_PROPERTY_MAPPINGS = "mappings";
+  private List<TermMapping> mappings = new ArrayList<>();
+
   /**
    * Status of the mapping of this term.  Allowable values are detailed by the application metadata endpoint
    */
@@ -106,17 +111,11 @@ public class OutputTerm {
   public static final String JSON_PROPERTY_MESSAGE = "message";
   private String message;
 
-  public static final String JSON_PROPERTY_MAPPINGS = "mappings";
-  private List<TermMapping> mappings = new ArrayList<>();
-
   public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
   private Double confidence;
 
   public static final String JSON_PROPERTY_MAPPING_CT = "mappingCt";
   private Integer mappingCt;
-
-  public static final String JSON_PROPERTY_CONTEXT = "context";
-  private Map<String, String> context = new HashMap<>();
 
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;
@@ -164,6 +163,15 @@ public class OutputTerm {
 
   public static final String JSON_PROPERTY_INPUT_TYPE = "inputType";
   private InputTypeEnum inputType;
+
+  public static final String JSON_PROPERTY_CONTEXT = "context";
+  private Map<String, String> context = new HashMap<>();
+
+  public static final String JSON_PROPERTY_TERM = "term";
+  private String term;
+
+  public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
+  private String terminology;
 
   public static final String JSON_PROPERTY_TASK_ID = "taskId";
   private String taskId;
@@ -310,12 +318,6 @@ public class OutputTerm {
   public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
   private EntityTypeEnum entityType;
 
-  public static final String JSON_PROPERTY_TERM = "term";
-  private String term;
-
-  public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
-  private String terminology;
-
   public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
   private String toTerminology;
 
@@ -336,6 +338,39 @@ public class OutputTerm {
 
   public OutputTerm() { 
   }
+
+  public OutputTerm mappings(List<TermMapping> mappings) {
+    this.mappings = mappings;
+    return this;
+  }
+
+  public OutputTerm addMappingsItem(TermMapping mappingsItem) {
+    if (this.mappings == null) {
+      this.mappings = new ArrayList<>();
+    }
+    this.mappings.add(mappingsItem);
+    return this;
+  }
+
+   /**
+   * Computed mappings for this term
+   * @return mappings
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_MAPPINGS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public List<TermMapping> getMappings() {
+    return mappings;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_MAPPINGS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setMappings(List<TermMapping> mappings) {
+    this.mappings = mappings;
+  }
+
 
   public OutputTerm status(StatusEnum status) {
     this.status = status;
@@ -384,39 +419,6 @@ public class OutputTerm {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMessage(String message) {
     this.message = message;
-  }
-
-
-  public OutputTerm mappings(List<TermMapping> mappings) {
-    this.mappings = mappings;
-    return this;
-  }
-
-  public OutputTerm addMappingsItem(TermMapping mappingsItem) {
-    if (this.mappings == null) {
-      this.mappings = new ArrayList<>();
-    }
-    this.mappings.add(mappingsItem);
-    return this;
-  }
-
-   /**
-   * Computed mappings for this term
-   * @return mappings
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_MAPPINGS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public List<TermMapping> getMappings() {
-    return mappings;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_MAPPINGS)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMappings(List<TermMapping> mappings) {
-    this.mappings = mappings;
   }
 
 
@@ -470,39 +472,6 @@ public class OutputTerm {
   }
 
 
-  public OutputTerm context(Map<String, String> context) {
-    this.context = context;
-    return this;
-  }
-
-  public OutputTerm putContextItem(String key, String contextItem) {
-    if (this.context == null) {
-      this.context = new HashMap<>();
-    }
-    this.context.put(key, contextItem);
-    return this;
-  }
-
-   /**
-   * Additional textual context for disambiguation, including other text around the text of the term
-   * @return context
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Map<String, String> getContext() {
-    return context;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CONTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setContext(Map<String, String> context) {
-    this.context = context;
-  }
-
-
   public OutputTerm code(String code) {
     this.code = code;
     return this;
@@ -553,53 +522,36 @@ public class OutputTerm {
   }
 
 
-  public OutputTerm taskId(String taskId) {
-    this.taskId = taskId;
+  public OutputTerm context(Map<String, String> context) {
+    this.context = context;
+    return this;
+  }
+
+  public OutputTerm putContextItem(String key, String contextItem) {
+    if (this.context == null) {
+      this.context = new HashMap<>();
+    }
+    this.context.put(key, contextItem);
     return this;
   }
 
    /**
-   * Task id for this term
-   * @return taskId
+   * Additional textual context for disambiguation, including other text around the text of the term
+   * @return context
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getTaskId() {
-    return taskId;
+  public Map<String, String> getContext() {
+    return context;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonProperty(JSON_PROPERTY_CONTEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setTaskId(String taskId) {
-    this.taskId = taskId;
-  }
-
-
-  public OutputTerm entityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
-    return this;
-  }
-
-   /**
-   * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
-   * @return entityType
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public EntityTypeEnum getEntityType() {
-    return entityType;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEntityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
+  public void setContext(Map<String, String> context) {
+    this.context = context;
   }
 
 
@@ -650,6 +602,56 @@ public class OutputTerm {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTerminology(String terminology) {
     this.terminology = terminology;
+  }
+
+
+  public OutputTerm taskId(String taskId) {
+    this.taskId = taskId;
+    return this;
+  }
+
+   /**
+   * Task id for this term
+   * @return taskId
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getTaskId() {
+    return taskId;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TASK_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTaskId(String taskId) {
+    this.taskId = taskId;
+  }
+
+
+  public OutputTerm entityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
+    return this;
+  }
+
+   /**
+   * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
+   * @return entityType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public EntityTypeEnum getEntityType() {
+    return entityType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEntityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
   }
 
 
@@ -823,18 +825,18 @@ public class OutputTerm {
       return false;
     }
     OutputTerm outputTerm = (OutputTerm) o;
-    return Objects.equals(this.status, outputTerm.status) &&
+    return Objects.equals(this.mappings, outputTerm.mappings) &&
+        Objects.equals(this.status, outputTerm.status) &&
         Objects.equals(this.message, outputTerm.message) &&
-        Objects.equals(this.mappings, outputTerm.mappings) &&
         Objects.equals(this.confidence, outputTerm.confidence) &&
         Objects.equals(this.mappingCt, outputTerm.mappingCt) &&
-        Objects.equals(this.context, outputTerm.context) &&
         Objects.equals(this.code, outputTerm.code) &&
         Objects.equals(this.inputType, outputTerm.inputType) &&
-        Objects.equals(this.taskId, outputTerm.taskId) &&
-        Objects.equals(this.entityType, outputTerm.entityType) &&
+        Objects.equals(this.context, outputTerm.context) &&
         Objects.equals(this.term, outputTerm.term) &&
         Objects.equals(this.terminology, outputTerm.terminology) &&
+        Objects.equals(this.taskId, outputTerm.taskId) &&
+        Objects.equals(this.entityType, outputTerm.entityType) &&
         Objects.equals(this.toTerminology, outputTerm.toTerminology) &&
         Objects.equals(this.modifiedBy, outputTerm.modifiedBy) &&
         Objects.equals(this.created, outputTerm.created) &&
@@ -845,25 +847,25 @@ public class OutputTerm {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message, mappings, confidence, mappingCt, context, code, inputType, taskId, entityType, term, terminology, toTerminology, modifiedBy, created, modified, id, tags);
+    return Objects.hash(mappings, status, message, confidence, mappingCt, code, inputType, context, term, terminology, taskId, entityType, toTerminology, modifiedBy, created, modified, id, tags);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OutputTerm {\n");
+    sb.append("    mappings: ").append(toIndentedString(mappings)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    mappings: ").append(toIndentedString(mappings)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    mappingCt: ").append(toIndentedString(mappingCt)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
-    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
-    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    term: ").append(toIndentedString(term)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
+    sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -885,5 +887,143 @@ public class OutputTerm {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `mappings` to the URL query string
+    if (getMappings() != null) {
+      for (int i = 0; i < getMappings().size(); i++) {
+        if (getMappings().get(i) != null) {
+          joiner.add(getMappings().get(i).toUrlQueryString(String.format("%smappings%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `status` to the URL query string
+    if (getStatus() != null) {
+      joiner.add(String.format("%sstatus%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStatus()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `message` to the URL query string
+    if (getMessage() != null) {
+      joiner.add(String.format("%smessage%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessage()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `confidence` to the URL query string
+    if (getConfidence() != null) {
+      joiner.add(String.format("%sconfidence%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getConfidence()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `mappingCt` to the URL query string
+    if (getMappingCt() != null) {
+      joiner.add(String.format("%smappingCt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMappingCt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `inputType` to the URL query string
+    if (getInputType() != null) {
+      joiner.add(String.format("%sinputType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getInputType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `context` to the URL query string
+    if (getContext() != null) {
+      for (String _key : getContext().keySet()) {
+        joiner.add(String.format("%scontext%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getContext().get(_key), URLEncoder.encode(String.valueOf(getContext().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `term` to the URL query string
+    if (getTerm() != null) {
+      joiner.add(String.format("%sterm%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerm()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `taskId` to the URL query string
+    if (getTaskId() != null) {
+      joiner.add(String.format("%staskId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTaskId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `entityType` to the URL query string
+    if (getEntityType() != null) {
+      joiner.add(String.format("%sentityType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEntityType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toTerminology` to the URL query string
+    if (getToTerminology() != null) {
+      joiner.add(String.format("%stoTerminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `tags` to the URL query string
+    if (getTags() != null) {
+      for (int i = 0; i < getTags().size(); i++) {
+        if (getTags().get(i) != null) {
+          joiner.add(getTags().get(i).toUrlQueryString(String.format("%stags%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

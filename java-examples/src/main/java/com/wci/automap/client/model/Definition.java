@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,16 +30,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
  * Represents a textual definition for a concept
  */
 @JsonPropertyOrder({
-  Definition.JSON_PROPERTY_VALUE,
   Definition.JSON_PROPERTY_CODE,
   Definition.JSON_PROPERTY_LOCALE_MAP,
+  Definition.JSON_PROPERTY_VALUE,
   Definition.JSON_PROPERTY_LOCAL,
   Definition.JSON_PROPERTY_MODIFIED_BY,
   Definition.JSON_PROPERTY_CREATED,
@@ -45,16 +47,16 @@ import com.wci.automap.client.invoker.JSON;
   Definition.JSON_PROPERTY_ACTIVE,
   Definition.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Definition {
-  public static final String JSON_PROPERTY_VALUE = "value";
-  private String value;
-
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;
 
   public static final String JSON_PROPERTY_LOCALE_MAP = "localeMap";
   private Map<String, Boolean> localeMap = new HashMap<>();
+
+  public static final String JSON_PROPERTY_VALUE = "value";
+  private String value;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
@@ -79,31 +81,6 @@ public class Definition {
 
   public Definition() { 
   }
-
-  public Definition value(String value) {
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * the definition value itself
-   * @return value
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getValue() {
-    return value;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setValue(String value) {
-    this.value = value;
-  }
-
 
   public Definition code(String code) {
     this.code = code;
@@ -160,6 +137,31 @@ public class Definition {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLocaleMap(Map<String, Boolean> localeMap) {
     this.localeMap = localeMap;
+  }
+
+
+  public Definition value(String value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * the definition value itself
+   * @return value
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getValue() {
+    return value;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setValue(String value) {
+    this.value = value;
   }
 
 
@@ -350,9 +352,9 @@ public class Definition {
       return false;
     }
     Definition definition = (Definition) o;
-    return Objects.equals(this.value, definition.value) &&
-        Objects.equals(this.code, definition.code) &&
+    return Objects.equals(this.code, definition.code) &&
         Objects.equals(this.localeMap, definition.localeMap) &&
+        Objects.equals(this.value, definition.value) &&
         Objects.equals(this.local, definition.local) &&
         Objects.equals(this.modifiedBy, definition.modifiedBy) &&
         Objects.equals(this.created, definition.created) &&
@@ -364,16 +366,16 @@ public class Definition {
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, code, localeMap, local, modifiedBy, created, modified, id, active, terminology);
+    return Objects.hash(code, localeMap, value, local, modifiedBy, created, modified, id, active, terminology);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Definition {\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    localeMap: ").append(toIndentedString(localeMap)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -396,5 +398,93 @@ public class Definition {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `localeMap` to the URL query string
+    if (getLocaleMap() != null) {
+      for (String _key : getLocaleMap().keySet()) {
+        joiner.add(String.format("%slocaleMap%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getLocaleMap().get(_key), URLEncoder.encode(String.valueOf(getLocaleMap().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `value` to the URL query string
+    if (getValue() != null) {
+      joiner.add(String.format("%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

@@ -98,7 +98,7 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 
-# node-waf configuration
+# node-waf configuration, not a dependency lockfile
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
@@ -133,11 +133,16 @@ typings/
 
 # End of https://www.gitignore.io/api/osx,git
 .gradle/
+.gradle-user-home/
+java-examples/gradle.lockfile
+*/temp_token.txt
+*/temp_token.env
 
 # IntelliJ
 .idea
 *.iml
 
 out/
-*.zip.claude
+*.zip
 .claude
+scripts/__pycache__/*

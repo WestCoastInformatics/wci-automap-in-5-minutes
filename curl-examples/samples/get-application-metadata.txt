@@ -1,6 +1,6 @@
 {
   "models": {
-    "text_embedding": "hf.co/fudanjx/med-embed-models",
+    "text_embedding": "oscardp96/medcpt-query",
     "llm": "phi4"
   },
   "term.entityType": {
@@ -8,9 +8,12 @@
     "unit": "Unit",
     "condition": "Statements about the state of a patient",
     "immunization": "Vaccine administrations",
+    "substance": "Any type of food, drug class, or allergen",
+    "allergy": "Allergic (or hypersensitivity) predisposition",
     "medication": "Specific drug or medication",
     "procedure": "Actions performed by or upon a patient",
     "labResult": "Observations resulting from lab tests",
+    "device": "Medical devices used by a patient",
     "bodyPart": "Anatomical sites"
   },
   "term.status": {
@@ -21,8 +24,8 @@
     "conflict": "Term mapping detected conflice in the input code/terminology/name"
   },
   "versions": {
-    "data.version": "AUTOMAP-202503",
-    "server.version": "unset"
+    "data.version": "AUTOMAP-202509",
+    "server.version": "2.4.0.202605"
   },
   "term.inputType": {
     "boolean": "Term is Yes/No",

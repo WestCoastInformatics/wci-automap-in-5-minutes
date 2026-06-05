@@ -16,6 +16,33 @@ Run this command before the sample curl calls below as they expect $API_URL to b
 When using an API_URL that points to an instance (such as `https://automap.terminology.tools`) that
 requires authentication, the login call must first be used to obtain an access token.   
 
+Run tests automatically
+-----------------------
+
+To automatically discover and run the cURL commands listed in this README and refresh the files under `samples/`, set credentials in the environment and run:
+
+```
+python curl_check.py
+```
+
+From the project root, this is also available as `make check-curl`.
+
+To set credentials in the environment, open a terminal and run the two commands for your operating system. Replace `<username>` and `<password>` with your Automap username and password, without the angle brackets. Then run the check command in that same terminal window.
+
+```bash
+export AUTOMAP_USER=<username>
+export AUTOMAP_PASSWORD=<password>
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:AUTOMAP_USER="<username>"
+$env:AUTOMAP_PASSWORD="<password>"
+```
+
+If you already have a bearer token, set `AUTOMAP_TOKEN` or `TOKEN` instead.
+
 
 Sample cURL Calls
 -----------------
@@ -479,7 +506,7 @@ Perform mapping on a FHIR resource (e.g. Condition) and return the updated resou
 
 ```bash
 curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
- "$API_URL/api/v1/mapping/fhir" -d @samples/condition.txt | jq
+ "$API_URL/api/v1/mapping/fhir" -d @samples/condition.json | jq
 ```
 
 See sample payload data from this call in [`samples/map-fhir-resource.txt`](samples/map-fhir-resource.txt)
@@ -493,7 +520,7 @@ Perform mapping on a FHIR bundle containing multiple resources and return the up
 
 ```bash
 curl -s -H "Authorization: Bearer $token" -H "Content-type: application/json" \
- "$API_URL/api/v1/mapping/fhir" -d @samples/bundle.txt | jq
+ "$API_URL/api/v1/mapping/fhir" -d @samples/bundle.json | jq
 ```
 
 See sample payload data from this call in [`samples/map-fhir-bundle.txt`](samples/map-fhir-bundle.txt)
