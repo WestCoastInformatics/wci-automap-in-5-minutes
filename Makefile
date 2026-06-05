@@ -77,11 +77,13 @@ scan-prepare-java:
 scan-java: scan-prepare-java
 	$(PYTHON) scripts/run_trivy_scan.py --name java --path java-examples --scanners vuln --report-dir "$(TRIVY_REPORT_DIR)" --trivy-flags "$(TRIVY_FLAGS)" --skip-dir .gradle --skip-dir .gradle-user-home --skip-dir build
 
-regenerate:
+regenerate: clean
 	$(PYTHON) scripts/run_gradle.py doc/code-generator buildClients
 
-regenerate-java:
+regenerate-java: clean
 	$(PYTHON) scripts/run_gradle.py doc/code-generator buildJavaSdk
+	@echo doc/code-generator/build/libs/wci*jar
 
 clean:
 	@echo "Cleaning ${BUILD_DIR} directory if it exists"
+	$(PYTHON) scripts/run_gradle.py doc/code-generator clean
