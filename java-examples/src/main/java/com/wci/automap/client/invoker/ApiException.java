@@ -13,18 +13,14 @@
 
 package com.wci.automap.client.invoker;
 
-import java.util.Map;
-import java.util.List;
+import java.net.http.HttpHeaders;
 
-/**
- * API Exception
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 
     private int code = 0;
-    private Map<String, List<String>> responseHeaders = null;
+    private HttpHeaders responseHeaders = null;
     private String responseBody = null;
 
     public ApiException() {}
@@ -37,22 +33,22 @@ public class ApiException extends Exception {
         super(message);
     }
 
-    public ApiException(String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(String message, Throwable throwable, int code, HttpHeaders responseHeaders, String responseBody) {
         super(message, throwable);
         this.code = code;
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
     }
 
-    public ApiException(String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(String message, int code, HttpHeaders responseHeaders, String responseBody) {
         this(message, (Throwable) null, code, responseHeaders, responseBody);
     }
 
-    public ApiException(String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders) {
+    public ApiException(String message, Throwable throwable, int code, HttpHeaders responseHeaders) {
         this(message, throwable, code, responseHeaders, null);
     }
 
-    public ApiException(int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(int code, HttpHeaders responseHeaders, String responseBody) {
         this((String) null, (Throwable) null, code, responseHeaders, responseBody);
     }
 
@@ -61,7 +57,7 @@ public class ApiException extends Exception {
         this.code = code;
     }
 
-    public ApiException(int code, String message, Map<String, List<String>> responseHeaders, String responseBody) {
+    public ApiException(int code, String message, HttpHeaders responseHeaders, String responseBody) {
         this(code, message);
         this.responseHeaders = responseHeaders;
         this.responseBody = responseBody;
@@ -79,9 +75,9 @@ public class ApiException extends Exception {
     /**
      * Get the HTTP response headers.
      *
-     * @return A map of list of string
+     * @return Headers as an HttpHeaders object
      */
-    public Map<String, List<String>> getResponseHeaders() {
+    public HttpHeaders getResponseHeaders() {
         return responseHeaders;
     }
 

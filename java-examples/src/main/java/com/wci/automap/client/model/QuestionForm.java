@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -26,7 +29,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -42,7 +44,7 @@ import com.wci.automap.client.invoker.JSON;
   QuestionForm.JSON_PROPERTY_LFORMS_VERSION,
   QuestionForm.JSON_PROPERTY_CODE_SYSTEM
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class QuestionForm {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -333,5 +335,84 @@ public class QuestionForm {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `type` to the URL query string
+    if (getType() != null) {
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `codingInstructions` to the URL query string
+    if (getCodingInstructions() != null) {
+      joiner.add(String.format("%scodingInstructions%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCodingInstructions()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `copyrightNotice` to the URL query string
+    if (getCopyrightNotice() != null) {
+      joiner.add(String.format("%scopyrightNotice%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCopyrightNotice()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `items` to the URL query string
+    if (getItems() != null) {
+      for (int i = 0; i < getItems().size(); i++) {
+        if (getItems().get(i) != null) {
+          joiner.add(getItems().get(i).toUrlQueryString(String.format("%sitems%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `lformsVersion` to the URL query string
+    if (getLformsVersion() != null) {
+      joiner.add(String.format("%slformsVersion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLformsVersion()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `codeSystem` to the URL query string
+    if (getCodeSystem() != null) {
+      joiner.add(String.format("%scodeSystem%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCodeSystem()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

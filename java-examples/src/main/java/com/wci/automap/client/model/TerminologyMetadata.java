@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -29,7 +32,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -51,7 +53,7 @@ import com.wci.automap.client.invoker.JSON;
   TerminologyMetadata.JSON_PROPERTY_ID,
   TerminologyMetadata.JSON_PROPERTY_ACTIVE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class TerminologyMetadata {
   public static final String JSON_PROPERTY_TERM_TYPES = "termTypes";
   private Map<String, Metadata> termTypes = new HashMap<>();
@@ -570,5 +572,144 @@ public class TerminologyMetadata {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `termTypes` to the URL query string
+    if (getTermTypes() != null) {
+      for (String _key : getTermTypes().keySet()) {
+        if (getTermTypes().get(_key) != null) {
+          joiner.add(getTermTypes().get(_key).toUrlQueryString(String.format("%stermTypes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `languages` to the URL query string
+    if (getLanguages() != null) {
+      for (String _key : getLanguages().keySet()) {
+        if (getLanguages().get(_key) != null) {
+          joiner.add(getLanguages().get(_key).toUrlQueryString(String.format("%slanguages%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `relationshipTypes` to the URL query string
+    if (getRelationshipTypes() != null) {
+      for (String _key : getRelationshipTypes().keySet()) {
+        if (getRelationshipTypes().get(_key) != null) {
+          joiner.add(getRelationshipTypes().get(_key).toUrlQueryString(String.format("%srelationshipTypes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `additionalRelationshipTypes` to the URL query string
+    if (getAdditionalRelationshipTypes() != null) {
+      for (String _key : getAdditionalRelationshipTypes().keySet()) {
+        if (getAdditionalRelationshipTypes().get(_key) != null) {
+          joiner.add(getAdditionalRelationshipTypes().get(_key).toUrlQueryString(String.format("%sadditionalRelationshipTypes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `attributeNames` to the URL query string
+    if (getAttributeNames() != null) {
+      for (String _key : getAttributeNames().keySet()) {
+        if (getAttributeNames().get(_key) != null) {
+          joiner.add(getAttributeNames().get(_key).toUrlQueryString(String.format("%sattributeNames%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `other` to the URL query string
+    if (getOther() != null) {
+      for (String _key : getOther().keySet()) {
+        if (getOther().get(_key) != null) {
+          joiner.add(getOther().get(_key).toUrlQueryString(String.format("%sother%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `semanticTypes` to the URL query string
+    if (getSemanticTypes() != null) {
+      for (String _key : getSemanticTypes().keySet()) {
+        if (getSemanticTypes().get(_key) != null) {
+          joiner.add(getSemanticTypes().get(_key).toUrlQueryString(String.format("%ssemanticTypes%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix))));
+        }
+      }
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(getTerminology().toUrlQueryString(prefix + "terminology" + suffix));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

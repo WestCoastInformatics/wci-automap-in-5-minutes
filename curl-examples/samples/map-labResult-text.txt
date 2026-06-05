@@ -1,84 +1,733 @@
 {
-  "id": "c050069c-9f2f-49d1-a2cc-cca3e4cc582c",
-  "modified": "2025-05-27T18:51:23.593-07:00",
-  "created": "2025-05-27T18:51:21.854-07:00",
-  "modifiedBy": "system",
+  "id": "12eb9023-ca3e-4bfb-b2f6-2bc90bf61ddb",
+  "modified": "2026-05-28T23:42:35.321+00:00",
+  "created": "2026-05-28T23:42:26.532+00:00",
+  "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
       "key": "userId",
-      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+      "value": "328f4481-2a22-4a95-afc7-a8e7c20a5928"
     },
     {
       "key": "server.version",
-      "value": "unset"
+      "value": "2.4.0.202605"
     }
   ],
   "audit": false,
   "minConfidence": 0.7,
   "terms": [
     {
-      "id": "3a695798-fbfd-4460-a08f-654e50511fb2",
-      "modified": "2025-05-27T18:51:23.329-07:00",
-      "created": "2025-05-27T18:51:21.399-07:00",
-      "modifiedBy": "system",
-      "taskId": "c050069c-9f2f-49d1-a2cc-cca3e4cc582c",
+      "id": "4fb1aac6-2531-4609-b6cb-39432d297327",
+      "modified": "2026-05-28T23:42:35.227+00:00",
+      "created": "2026-05-28T23:42:26.485+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "12eb9023-ca3e-4bfb-b2f6-2bc90bf61ddb",
       "entityType": "labResult",
       "inputType": "string",
       "term": "sodium",
       "mappings": [
         {
-          "id": "29d944a8-4167-40ef-b9b7-7427f20ba4c1",
-          "confidence": 0.7821856727130644,
+          "id": "14ea43c4-e9a7-4c23-8d45-7d5dead2d2ed",
+          "confidence": 0.9583333333333334,
           "terminology": "http://loinc.org",
-          "code": "9485-4",
-          "name": "Sodium:MCnc:Pt:Water:Qn",
+          "code": "2947-0",
+          "name": "Sodium [Moles/volume] in Blood",
           "entityType": "labResult",
           "startIndex": 0,
-          "endIndex": 6
+          "endIndex": 6,
+          "context": {
+            "rank": "261"
+          }
         },
         {
-          "id": "32202d2a-8f0d-4bb0-bc01-e6bff3bb9c74",
-          "confidence": 0.7763482612484568,
+          "id": "22f3a882-a698-4720-83b4-b243fc89a242",
+          "confidence": 0.945,
           "terminology": "http://loinc.org",
-          "code": "51205-3",
-          "name": "Sodium:MCnt:Pt:Hair:Qn",
+          "code": "32717-1",
+          "name": "Sodium [Moles/volume] in Arterial blood",
           "entityType": "labResult",
           "startIndex": 0,
-          "endIndex": 6
+          "endIndex": 6,
+          "context": {
+            "rank": "299"
+          }
         },
         {
-          "id": "01e4edc8-69ef-47b5-aa4a-ab99edeb106a",
-          "confidence": 0.770741021461505,
+          "id": "84f22f79-3d25-48a9-afc1-6c6d84194e6e",
+          "confidence": 0.943,
+          "terminology": "http://loinc.org",
+          "code": "32340-2",
+          "name": "Sodium [Moles/volume] in Specimen",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "5164"
+          }
+        },
+        {
+          "id": "9943446c-46fe-4c40-9d96-e72ebfd881b1",
+          "confidence": 0.941,
+          "terminology": "http://loinc.org",
+          "code": "2950-4",
+          "name": "Sodium [Moles/volume] in Body fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "4328"
+          }
+        },
+        {
+          "id": "332a7629-c6e4-4a29-922e-cd1989cb6379",
+          "confidence": 0.934,
+          "terminology": "http://loinc.org",
+          "code": "39791-9",
+          "name": "Sodium [Moles/volume] in Venous blood",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "257"
+          }
+        },
+        {
+          "id": "1f73193f-8d2f-44ea-b7c6-602b0e56c648",
+          "confidence": 0.9303333333333333,
+          "terminology": "http://loinc.org",
+          "code": "2955-3",
+          "name": "Sodium [Moles/volume] in Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "486"
+          }
+        },
+        {
+          "id": "c4a45f3b-6cf4-49d3-bfa0-7454d2863eed",
+          "confidence": 0.93,
+          "terminology": "http://loinc.org",
+          "code": "87451-1",
+          "name": "Sodium [Mass/volume] in Specimen",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "18601"
+          }
+        },
+        {
+          "id": "02e71e1c-5eb0-492b-a113-35ed2f726597",
+          "confidence": 0.9249999999999999,
           "terminology": "http://loinc.org",
           "code": "2951-2",
-          "name": "Sodium:SCnc:Pt:Ser/Plas:Qn",
+          "name": "Sodium [Moles/volume] in Serum or Plasma",
           "entityType": "labResult",
           "startIndex": 0,
           "endIndex": 6
         },
         {
-          "id": "f1bbd768-fa51-4805-9ce1-25a0b5e76766",
-          "confidence": 0.7668598560229714,
+          "id": "554f4699-8b83-4277-a7ab-aad41183d8b7",
+          "confidence": 0.923,
           "terminology": "http://loinc.org",
-          "code": "42570-2",
-          "name": "Sodium:MSCnc:Pt:Ser/Plas:Qn",
+          "code": "2956-1",
+          "name": "Sodium [Moles/time] in 24 hour Urine",
           "entityType": "labResult",
           "startIndex": 0,
-          "endIndex": 6
+          "endIndex": 6,
+          "context": {
+            "rank": "2069"
+          }
         },
         {
-          "id": "37d5a536-e026-490a-85f7-7b2fd150c466",
-          "confidence": 0.7442639183158786,
+          "id": "13e8fced-b67f-4d64-b030-0d976f88ae11",
+          "confidence": 0.9216666666666667,
+          "terminology": "http://loinc.org",
+          "code": "15207-4",
+          "name": "Sodium [Moles/volume] in Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "5201"
+          }
+        },
+        {
+          "id": "3e17de0b-ec9d-4e21-b696-c0ae152ba5ec",
+          "confidence": 0.9209999999999999,
+          "terminology": "http://loinc.org",
+          "code": "21525-1",
+          "name": "Sodium [Moles/volume] in 24 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "2655"
+          }
+        },
+        {
+          "id": "20470fb0-7ff3-40a3-bcaa-51010c7a299e",
+          "confidence": 0.9199999999999999,
+          "terminology": "http://loinc.org",
+          "code": "35678-2",
+          "name": "Sodium [Moles/volume] in Urine collected for unspecified duration",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "4289"
+          }
+        },
+        {
+          "id": "c6e24492-2e34-4b1d-b94b-1e31396c4e69",
+          "confidence": 0.9199999999999999,
+          "terminology": "http://loinc.org",
+          "code": "39792-7",
+          "name": "Sodium [Moles/volume] in Capillary blood",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "17253"
+          }
+        },
+        {
+          "id": "825225d2-3979-4d3e-a6ce-05f2e76e004d",
+          "confidence": 0.9183333333333333,
+          "terminology": "http://loinc.org",
+          "code": "18377-2",
+          "name": "Sodium [Moles/time] in 12 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "18980"
+          }
+        },
+        {
+          "id": "a191295c-b125-4cbe-9fd1-f8458f32708f",
+          "confidence": 0.9163333333333333,
+          "terminology": "http://loinc.org",
+          "code": "41657-8",
+          "name": "Sodium [Moles/volume] in Mixed venous blood",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "3263"
+          }
+        },
+        {
+          "id": "684ff449-ea84-4776-9c80-26070c480a6c",
+          "confidence": 0.915,
+          "terminology": "http://loinc.org",
+          "code": "2948-8",
+          "name": "Sodium [Moles/volume] in Cerebral spinal fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "17065"
+          }
+        },
+        {
+          "id": "45b73825-f579-44f8-abcd-75da9feac346",
+          "confidence": 0.911,
           "terminology": "http://loinc.org",
           "code": "21527-7",
-          "name": "Sodium:MRat:24H:Urine:Qn",
+          "name": "Sodium [Mass/time] in 24 hour Urine",
           "entityType": "labResult",
           "startIndex": 0,
-          "endIndex": 6
+          "endIndex": 6,
+          "context": {
+            "rank": "9280"
+          }
+        },
+        {
+          "id": "bcb25bd2-34eb-4008-87b0-8f2c66d41616",
+          "confidence": 0.9096666666666667,
+          "terminology": "http://loinc.org",
+          "code": "21526-9",
+          "name": "Sodium [Mass/volume] in 24 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "8739"
+          }
+        },
+        {
+          "id": "a31f8cfc-4f36-47bd-81f8-0ddd3af9ec7e",
+          "confidence": 0.9083333333333333,
+          "terminology": "http://loinc.org",
+          "code": "27419-1",
+          "name": "Sodium [Moles/time] in 24 hour Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "18159"
+          }
+        },
+        {
+          "id": "d2f04b7c-2c25-4bfa-83a5-ce414bded309",
+          "confidence": 0.9066666666666666,
+          "terminology": "http://loinc.org",
+          "code": "27257-5",
+          "name": "Sodium [Moles/mass] in 24 hour Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "19896"
+          }
+        },
+        {
+          "id": "16944dd9-b3ee-4823-a329-122d92ac05be",
+          "confidence": 0.9033333333333333,
+          "terminology": "http://loinc.org",
+          "code": "2952-0",
+          "name": "Sodium [Molar amount] in 24 hour Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "15819"
+          }
+        },
+        {
+          "id": "9c2907c8-6c7f-4dd1-899c-b7bfdfe62df6",
+          "confidence": 0.8723533333333333,
+          "terminology": "http://loinc.org",
+          "code": "9485-4",
+          "name": "Sodium [Mass/volume] in Water",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "8cc992fe-fbad-49b4-a5ea-0f5b42afbec8",
+          "confidence": 0.8665333333333332,
+          "terminology": "http://loinc.org",
+          "code": "87452-9",
+          "name": "Sodium [Mass/mass] in Specimen",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "e8e9d531-c9a4-4edf-8038-699f6994dfd4",
+          "confidence": 0.8639466666666665,
+          "terminology": "http://loinc.org",
+          "code": "12907-2",
+          "name": "Sodium [Moles/volume] in Red Blood Cells",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "6ae7c84d-f7b7-4f51-a269-9534aba60417",
+          "confidence": 0.8623299999999999,
+          "terminology": "http://loinc.org",
+          "code": "17796-4",
+          "name": "Sodium [Moles/volume] in Hyperal solution",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "b81d5eab-8993-4aef-85a4-bcd18f795906",
+          "confidence": 0.8616833333333332,
+          "terminology": "http://loinc.org",
+          "code": "53122-8",
+          "name": "Sodium [Moles/time] in 1 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "56eac051-660d-45dc-80c6-8423cf9e6d30",
+          "confidence": 0.8600666666666666,
+          "terminology": "http://loinc.org",
+          "code": "2949-6",
+          "name": "Sodium [Moles/volume] in Dialysis fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "29192719-22ae-4c41-acc7-571528cea12c",
+          "confidence": 0.8597433333333333,
+          "terminology": "http://loinc.org",
+          "code": "42570-2",
+          "name": "Sodium [Mass or Moles/volume] in Serum or Plasma",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "c59f3a09-9ebc-45ac-b050-be77cc9b8341",
+          "confidence": 0.85942,
+          "terminology": "http://loinc.org",
+          "code": "13895-8",
+          "name": "Sodium [Moles/volume] in Milk",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "c2a916a1-a374-4c55-b1fd-fec3f13da363",
+          "confidence": 0.8581266666666666,
+          "terminology": "http://loinc.org",
+          "code": "58994-5",
+          "name": "Sodium [Moles/time] in 18 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "c56e8640-71bb-4493-8ed8-419389b8978e",
+          "confidence": 0.8578033333333333,
+          "terminology": "http://loinc.org",
+          "code": "44783-9",
+          "name": "Sodium [Moles/volume] (Maximum value during study) in Serum or Plasma",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "6b444aa1-7ac3-4c6a-8fd8-68b510f7098a",
+          "confidence": 0.85748,
+          "terminology": "http://loinc.org",
+          "code": "57382-4",
+          "name": "Sodium [Moles/volume] in 2 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "afa9413a-f862-437a-bb05-a9fa5f357366",
+          "confidence": 0.85748,
+          "terminology": "http://loinc.org",
+          "code": "74685-9",
+          "name": "Sodium [Moles/volume] in 4 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "a357533f-f653-43c7-9e3d-8476e4cfe10f",
+          "confidence": 0.8571566666666666,
+          "terminology": "http://loinc.org",
+          "code": "14055-8",
+          "name": "Sodium [Moles/mass] in Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "3a499711-449a-4c00-8d59-e756f8633c6a",
+          "confidence": 0.8571566666666666,
+          "terminology": "http://loinc.org",
+          "code": "57370-9",
+          "name": "Sodium [Moles/volume] in 12 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "4a568f2a-e2e0-4432-a2e8-abb0e286980a",
+          "confidence": 0.8561866666666667,
+          "terminology": "http://loinc.org",
+          "code": "2954-6",
+          "name": "Sodium [Moles/volume] in Sweat",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "cb5e2df5-0f76-4c54-bb7d-0785b6eed695",
+          "confidence": 0.8558633333333334,
+          "terminology": "http://loinc.org",
+          "code": "77139-4",
+          "name": "Sodium [Moles/volume] in Serum, Plasma or Blood",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "bfdf3349-66d1-4fda-b27c-dd8d51b2b783",
+          "confidence": 0.85554,
+          "terminology": "http://loinc.org",
+          "code": "82812-9",
+          "name": "Sodium [Mass/volume] in Red Blood Cells",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "b6c44d0c-da6d-40ce-99ea-1d72bbd1341b",
+          "confidence": 0.8552166666666667,
+          "terminology": "http://loinc.org",
+          "code": "30558-1",
+          "name": "Sodium [Moles/volume] in Total parental nutrition",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "865d6e93-ab31-4810-a85a-d8ce0048e7f0",
+          "confidence": 0.8552166666666667,
+          "terminology": "http://loinc.org",
+          "code": "18376-4",
+          "name": "Sodium [Moles/time] in 6 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "594cd6d3-2785-4ec4-b386-268c423abebc",
+          "confidence": 0.8536,
+          "terminology": "http://loinc.org",
+          "code": "50912-5",
+          "name": "Sodium [Moles/mass] in Hair",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "7ef8ec0e-bdf3-4161-9bb2-9fc8fef32c1f",
+          "confidence": 0.8523066666666667,
+          "terminology": "http://loinc.org",
+          "code": "32553-0",
+          "name": "Sodium [Molar amount] in Urine collected for unspecified duration",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "757fb48a-5927-49f8-b778-bd6241c15fb8",
+          "confidence": 0.8490733333333332,
+          "terminology": "http://loinc.org",
+          "code": "59163-6",
+          "name": "Sodium [Moles/volume] in 24 hour Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "38e1baf9-cbf1-4182-b574-e0962e010349",
+          "confidence": 0.84875,
+          "terminology": "http://loinc.org",
+          "code": "50911-7",
+          "name": "Sodium [Moles/volume] in Gastric fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "cbe91e58-154e-4382-b8e8-f4fdb17c2529",
+          "confidence": 0.8481033333333334,
+          "terminology": "http://loinc.org",
+          "code": "26763-3",
+          "name": "Sodium [Mass/time] in 2 hour Urine",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "e5364b03-c840-4843-8175-6844c589df43",
+          "confidence": 0.8471333333333334,
+          "terminology": "http://loinc.org",
+          "code": "51205-3",
+          "name": "Sodium [Mass/mass] in Hair",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "4df62c7a-b61c-4d27-b927-a07a704ce1e7",
+          "confidence": 0.8445466666666667,
+          "terminology": "http://loinc.org",
+          "code": "92572-7",
+          "name": "Sodium [Molar amount] in 24 hour Dialysis fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "7437ead0-e87a-4f8e-a6d5-6dffd8ce34fb",
+          "confidence": 0.8439,
+          "terminology": "http://loinc.org",
+          "code": "60220-1",
+          "name": "Sodium [Moles/volume] in Mother's milk",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "ca517b0f-d6b2-4d03-a55f-58e669d82b06",
+          "confidence": 0.8432533333333334,
+          "terminology": "http://loinc.org",
+          "code": "12908-0",
+          "name": "Sodium [Moles/volume] in Vitreous fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "20496f07-8553-458b-91c5-6452d0a8a004",
+          "confidence": 0.8419599999999999,
+          "terminology": "http://loinc.org",
+          "code": "2953-8",
+          "name": "Sodium [Molar amount] in 72 hour Stool",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "d2825de0-cfcd-4ee9-b4a3-2536ca435569",
+          "confidence": 0.8413133333333332,
+          "terminology": "http://loinc.org",
+          "code": "49791-7",
+          "name": "Sodium [Moles/volume] in Amniotic fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "5f3ae223-ab91-46e8-a7d4-1edc4c0ef6ae",
+          "confidence": 0.8403433333333333,
+          "terminology": "http://loinc.org",
+          "code": "56979-8",
+          "name": "Sodium [Moles/volume] in Saliva (oral fluid)",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "39e1535e-07f6-4f33-a8c4-591b10fff67d",
+          "confidence": 0.8384033333333333,
+          "terminology": "http://loinc.org",
+          "code": "49790-9",
+          "name": "Sodium [Moles/volume] in Peritoneal fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
+        },
+        {
+          "id": "5c825d43-876b-4b2d-94d9-27eab3db6493",
+          "confidence": 0.83226,
+          "terminology": "http://loinc.org",
+          "code": "39787-7",
+          "name": "Sodium [Moles/volume] in Peritoneal dialysis fluid",
+          "entityType": "labResult",
+          "startIndex": 0,
+          "endIndex": 6,
+          "context": {
+            "rank": "0"
+          }
         }
       ],
       "status": "final",
-      "mappingCt": 5
+      "mappingCt": 54
     }
   ],
   "status": "final"

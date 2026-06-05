@@ -1,52 +1,22 @@
 {
-  "total": 1,
+  "total": 81,
   "limit": 10,
   "offset": 0,
   "items": [
     {
-      "id": "39f09110-e4ad-4822-a0a7-8d1ec6e04358",
-      "confidence": 0.05118166548865182,
-      "modified": "2025-05-27T18:40:22.821-07:00",
-      "created": "2025-05-27T18:39:21.629-07:00",
+      "id": "d955b5d8-2090-452c-89ef-7c7b0da66dd6",
+      "confidence": 0.2052910566329956,
+      "modified": "2025-11-05T16:40:46.094+00:00",
+      "created": "2025-11-05T16:40:39.355+00:00",
       "modifiedBy": "system",
-      "taskId": "50a32d2f-0de3-45e3-8214-793c7b52646a",
+      "taskId": "e9ed800d-75a2-417c-a1ff-4614023ed6c7",
       "entityType": "condition",
       "inputType": "string",
       "term": "heart attack",
       "mappings": [
         {
-          "id": "63b14aa9-4fa5-4fb2-936a-49652bf6f4a3",
-          "confidence": 0.747959770278495,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "M10",
-          "name": "Gout",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "436187b7-21ec-4ba9-9cf2-4831bc8adda0",
-          "confidence": 0.7134070035931478,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "I50",
-          "name": "Heart failure",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "85d9d4a8-aab9-4295-9c36-ae49cf441fec",
-          "confidence": 0.7002443714598791,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "code": "S26",
-          "name": "Injury of heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "4dc6b277-3eb6-47dd-aff5-5bba627aeeec",
-          "confidence": 0.965680019675233,
+          "id": "a3e72927-04a8-427a-a761-b36096b9363d",
+          "confidence": 0.983,
           "terminology": "http://snomed.info/sct",
           "code": "22298006",
           "name": "Myocardial infarction",
@@ -55,68 +25,533 @@
           "endIndex": 12
         },
         {
-          "id": "f3e72f69-50d8-43e5-bdeb-deb6de9f67da",
-          "confidence": 0.7509408466558319,
+          "id": "f417e7be-e088-4c8b-b294-5831adde6f1a",
+          "confidence": 0.807731363773346,
           "terminology": "http://snomed.info/sct",
-          "code": "225624000",
-          "name": "Panic attack",
+          "code": "102931001",
+          "name": "Fear of heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         },
         {
-          "id": "2808ad94-2747-4f1a-9bd7-d3e66551d5bc",
-          "confidence": 0.7468575862604179,
+          "id": "2222e291-4aae-426d-a576-2c52dec4fa65",
+          "confidence": 0.757378859202067,
           "terminology": "http://snomed.info/sct",
-          "code": "300895004",
-          "name": "Anxiety attack",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         },
         {
-          "id": "7125b3bb-f908-4745-a6f2-b8ab90445630",
-          "confidence": 0.7253100056441498,
+          "id": "75faa69b-f028-4f96-b7a5-ea8b51171f3b",
+          "confidence": 0.7439010915756225,
           "terminology": "http://snomed.info/sct",
-          "code": "29889000",
-          "name": "Rupture of heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "3c5b6ba7-931d-4248-a363-50f5b98bf02a",
-          "confidence": 0.7090196745688842,
-          "terminology": "http://snomed.info/sct",
-          "code": "233916004",
-          "name": "Heart block",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "6b200a8f-ea10-485c-a8e6-1758da763b42",
-          "confidence": 0.7066428479926332,
-          "terminology": "http://snomed.info/sct",
-          "code": "248657009",
-          "name": "Pounding heart",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 12
-        },
-        {
-          "id": "6fb8d320-4d25-4aed-83fc-6cced378fed9",
-          "confidence": 0.704063023983047,
-          "terminology": "http://snomed.info/sct",
-          "code": "17414004",
-          "name": "Contusion to heart",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 12
         }
       ],
       "status": "final",
-      "mappingCt": 10
+      "mappingCt": 4
+    },
+    {
+      "id": "11d47fc9-5149-495d-bcf8-7b90bb3afbad",
+      "confidence": 0.2052910566329956,
+      "modified": "2025-11-05T16:41:14.900+00:00",
+      "created": "2025-11-05T16:41:08.151+00:00",
+      "modifiedBy": "system",
+      "taskId": "07a26665-6d75-497c-8645-452650f0a217",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "e2e36e2a-3203-41bd-91f6-02e5b3078de1",
+          "confidence": 0.983,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "ac9f38f6-c5e5-423b-a884-f649024e9f3c",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "4104ba8a-6351-4c56-9694-859d8b653d03",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "1742e1cb-f06b-4cb7-af4b-adb6d8ed99eb",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "2049bb13-095e-4fd4-85c0-4094ac8445f8",
+      "confidence": 0.2052910566329956,
+      "modified": "2025-11-05T16:41:16.070+00:00",
+      "created": "2025-11-05T16:41:15.224+00:00",
+      "modifiedBy": "system",
+      "taskId": "8b6592a6-bc93-4139-9068-fe86ebcf8ba3",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "83c7aad1-f236-4d3c-855a-d106a9f8a26b",
+          "confidence": 0.983,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "d63beb1d-e1a2-46ae-b267-dde3a10da273",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "03255cd2-e428-4c8d-8df3-8d4885245077",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "bf5fe9d6-11cb-4b78-a446-c284f56fe02e",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "4da554ed-fcd3-4e46-bf9f-0421b17d4bbe",
+      "confidence": 0.2052910566329956,
+      "modified": "2025-11-05T16:42:10.331+00:00",
+      "created": "2025-11-05T16:42:03.735+00:00",
+      "modifiedBy": "system",
+      "taskId": "e249129f-b729-4634-a01d-64e3499a13e7",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "0fc7b904-3090-4dcd-b1e3-9300c46f2ebf",
+          "confidence": 0.983,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "5d1a8f97-1cf4-42d2-9289-222c78295bc0",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "27bb4043-4c4b-4bad-b86d-74b86ce6376e",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "d050da1d-6f0b-4303-8e0c-f90d738ce91b",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "f106758b-e571-47a7-98b9-c6e66bc99057",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T20:58:22.215+00:00",
+      "created": "2026-05-28T20:58:15.561+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "33b835a2-66a9-4629-8459-dfa53b88a093",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "053ec149-ccf3-4b0b-bcd2-f48bf957a9ed",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "636e8882-c054-4789-8000-cbf1478d7fef",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "21fb220d-b318-4c2d-ac7c-116d67fa89ff",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "534172f9-9a04-4c95-acad-3cf5d0768801",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "4a7994ff-3b13-4804-b248-6f01b8221b3a",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T21:00:21.017+00:00",
+      "created": "2026-05-28T21:00:14.449+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "c2276508-607a-43f3-a85d-a103b1540064",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "a5e369b6-6ea4-4547-bd34-6e47ded6d036",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "e9ac7513-1145-44c7-adff-9147739518ed",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "d7c22d7f-9f4b-4526-acde-c6e2a167059e",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "a219436f-bd16-4df9-be57-7ab3e1545a29",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "5806a836-9a24-492b-b777-a5128f8e12ea",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T21:00:31.605+00:00",
+      "created": "2026-05-28T21:00:24.895+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "5f50800a-12ce-4dd3-82c5-19ed01f5840f",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "5a0cd495-5962-4289-a696-cc8fc931dfd6",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "e2988224-edd2-472b-b43e-d3b15e1442b6",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "ade3478f-aeb9-4273-b147-90106c4cce9d",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "1ce74197-a17e-4f73-9cfe-a0ca86e75500",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "7b97502f-b87f-4fc9-bbdc-90ce4028967f",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T21:01:24.887+00:00",
+      "created": "2026-05-28T21:01:24.096+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "e491b3e7-941c-448c-b5ad-cf8f90536639",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "928b3a51-dc04-43d0-be3c-0fdd81df27cd",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "4d09751f-1c56-4c13-8ed6-a1748dcd0764",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "75eb9e3a-f90a-4bb3-99c3-dd4c250c26f5",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "71344407-cea1-4e85-91f3-4d2c5687d36b",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "85d82176-0332-453c-b608-4a816f7d790a",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T21:01:42.170+00:00",
+      "created": "2026-05-28T21:01:35.518+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "7ad44acc-609e-429f-921d-674c069154b0",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "aa762d67-0bd2-4954-9426-3d355f9c5f17",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "fa0bf1f1-f207-4eec-bed3-b18f038f4144",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "3b6e939b-ca93-49d2-8f12-d9dda5f240ae",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "1940cd56-020f-46fa-8fa1-9e23bf6445b5",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
+    },
+    {
+      "id": "1629ed12-8778-4d8c-9e76-4a98f28af669",
+      "confidence": 0.2052910566329956,
+      "modified": "2026-05-28T21:02:34.037+00:00",
+      "created": "2026-05-28T21:02:33.265+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "7909f0ce-1afb-494e-b27f-4ec0307baadf",
+      "entityType": "condition",
+      "inputType": "string",
+      "term": "heart attack",
+      "mappings": [
+        {
+          "id": "6dfa3758-af82-4d48-95b1-92e099300797",
+          "confidence": 0.9696666666666666,
+          "terminology": "http://snomed.info/sct",
+          "code": "22298006",
+          "name": "Myocardial infarction",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "22859ea3-5777-4586-9f14-260b7ec31ad0",
+          "confidence": 0.807731363773346,
+          "terminology": "http://snomed.info/sct",
+          "code": "102931001",
+          "name": "Fear of heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "e035bed3-2109-4395-97cf-fe9606cb1540",
+          "confidence": 0.757378859202067,
+          "terminology": "http://snomed.info/sct",
+          "code": "247818001",
+          "name": "Fear of having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        },
+        {
+          "id": "d30efeae-4459-4601-a46e-e1594f2df58f",
+          "confidence": 0.7439010915756225,
+          "terminology": "http://snomed.info/sct",
+          "code": "277834005",
+          "name": "Anxiety about having a heart attack",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 12
+        }
+      ],
+      "status": "final",
+      "mappingCt": 4
     }
   ]
 }

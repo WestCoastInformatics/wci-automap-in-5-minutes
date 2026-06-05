@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,7 +30,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -36,9 +38,9 @@ import com.wci.automap.client.invoker.JSON;
 @JsonPropertyOrder({
   Terminology.JSON_PROPERTY_VERSION,
   Terminology.JSON_PROPERTY_SYSTEM_URI,
-  Terminology.JSON_PROPERTY_ABBREVIATION,
   Terminology.JSON_PROPERTY_SYSTEM_OID,
   Terminology.JSON_PROPERTY_EXPRESSION_ENABLED,
+  Terminology.JSON_PROPERTY_ABBREVIATION,
   Terminology.JSON_PROPERTY_NAME,
   Terminology.JSON_PROPERTY_LOCAL,
   Terminology.JSON_PROPERTY_MODIFIED_BY,
@@ -48,7 +50,7 @@ import com.wci.automap.client.invoker.JSON;
   Terminology.JSON_PROPERTY_ACTIVE,
   Terminology.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Terminology {
   public static final String JSON_PROPERTY_VERSION = "version";
   private String version;
@@ -56,14 +58,14 @@ public class Terminology {
   public static final String JSON_PROPERTY_SYSTEM_URI = "systemUri";
   private String systemUri;
 
-  public static final String JSON_PROPERTY_ABBREVIATION = "abbreviation";
-  private String abbreviation;
-
   public static final String JSON_PROPERTY_SYSTEM_OID = "systemOid";
   private String systemOid;
 
   public static final String JSON_PROPERTY_EXPRESSION_ENABLED = "expressionEnabled";
   private Boolean expressionEnabled;
+
+  public static final String JSON_PROPERTY_ABBREVIATION = "abbreviation";
+  private String abbreviation;
 
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
@@ -142,31 +144,6 @@ public class Terminology {
   }
 
 
-  public Terminology abbreviation(String abbreviation) {
-    this.abbreviation = abbreviation;
-    return this;
-  }
-
-   /**
-   * the terminology abbreviation
-   * @return abbreviation
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getAbbreviation() {
-    return abbreviation;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setAbbreviation(String abbreviation) {
-    this.abbreviation = abbreviation;
-  }
-
-
   public Terminology systemOid(String systemOid) {
     this.systemOid = systemOid;
     return this;
@@ -214,6 +191,31 @@ public class Terminology {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExpressionEnabled(Boolean expressionEnabled) {
     this.expressionEnabled = expressionEnabled;
+  }
+
+
+  public Terminology abbreviation(String abbreviation) {
+    this.abbreviation = abbreviation;
+    return this;
+  }
+
+   /**
+   * the terminology abbreviation
+   * @return abbreviation
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getAbbreviation() {
+    return abbreviation;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ABBREVIATION)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setAbbreviation(String abbreviation) {
+    this.abbreviation = abbreviation;
   }
 
 
@@ -439,9 +441,9 @@ public class Terminology {
     Terminology terminology = (Terminology) o;
     return Objects.equals(this.version, terminology.version) &&
         Objects.equals(this.systemUri, terminology.systemUri) &&
-        Objects.equals(this.abbreviation, terminology.abbreviation) &&
         Objects.equals(this.systemOid, terminology.systemOid) &&
         Objects.equals(this.expressionEnabled, terminology.expressionEnabled) &&
+        Objects.equals(this.abbreviation, terminology.abbreviation) &&
         Objects.equals(this.name, terminology.name) &&
         Objects.equals(this.local, terminology.local) &&
         Objects.equals(this.modifiedBy, terminology.modifiedBy) &&
@@ -454,7 +456,7 @@ public class Terminology {
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, systemUri, abbreviation, systemOid, expressionEnabled, name, local, modifiedBy, created, modified, id, active, attributes);
+    return Objects.hash(version, systemUri, systemOid, expressionEnabled, abbreviation, name, local, modifiedBy, created, modified, id, active, attributes);
   }
 
   @Override
@@ -463,9 +465,9 @@ public class Terminology {
     sb.append("class Terminology {\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    systemUri: ").append(toIndentedString(systemUri)).append("\n");
-    sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
     sb.append("    systemOid: ").append(toIndentedString(systemOid)).append("\n");
     sb.append("    expressionEnabled: ").append(toIndentedString(expressionEnabled)).append("\n");
+    sb.append("    abbreviation: ").append(toIndentedString(abbreviation)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
@@ -489,5 +491,108 @@ public class Terminology {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `version` to the URL query string
+    if (getVersion() != null) {
+      joiner.add(String.format("%sversion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVersion()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `systemUri` to the URL query string
+    if (getSystemUri() != null) {
+      joiner.add(String.format("%ssystemUri%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSystemUri()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `systemOid` to the URL query string
+    if (getSystemOid() != null) {
+      joiner.add(String.format("%ssystemOid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSystemOid()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `expressionEnabled` to the URL query string
+    if (getExpressionEnabled() != null) {
+      joiner.add(String.format("%sexpressionEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getExpressionEnabled()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `abbreviation` to the URL query string
+    if (getAbbreviation() != null) {
+      joiner.add(String.format("%sabbreviation%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAbbreviation()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

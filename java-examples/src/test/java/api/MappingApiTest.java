@@ -10,9 +10,21 @@
  * Do not edit the class manually.
  */
 
-
 package api;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
+import com.wci.automap.client.LoginApi;
+import com.wci.automap.client.MappingApi;
+import com.wci.automap.client.invoker.ApiClient;
 import com.wci.automap.client.invoker.ApiException;
 import com.wci.automap.client.model.AuditEntry;
 import com.wci.automap.client.model.AuthRequest;
@@ -28,464 +40,535 @@ import com.wci.automap.client.model.ResultListOutputTask;
 import com.wci.automap.client.model.ResultListOutputTerm;
 import com.wci.automap.client.model.Tag;
 import com.wci.automap.client.model.TermMapping;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Assertions;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileInputStream;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
- * API tests for MappingApi
+ * API tests for MappingApi.
  */
 public class MappingApiTest {
 
-    private final MappingApi api = new MappingApi();
+    private static final ObjectMapper SAMPLE_MAPPER = new ObjectMapper()
+            .findAndRegisterModules()
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    private static final Path SHARED_SAMPLE_DIR = Path.of("..", "curl-examples", "samples");
+    private static final int RETRY_ATTEMPTS = envInt("AUTOMAP_RETRY_ATTEMPTS", 5);
+    private static final long RETRY_DELAY_MS = envLong("AUTOMAP_RETRY_DELAY_MS", 5000L);
+
+    private String accessToken;
+    private MappingApi api;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws ApiException {
+        accessToken = requestAccessToken();
+        api = new MappingApi(authorizedClient(accessToken));
+    }
 
-        // Set up the API client with authentication
-        final String username = System.getProperty("username");
-        final String password = System.getProperty("password");
-        String accessToken = null;
-        final AuthRequest authRequest = new AuthRequest();
+    @Test
+    public void getEntityConfigTest() throws ApiException {
+        JsonNode response = getJson("/api/v1/mapping/config");
+        assertNotNull(response);
+        assertTrue(response.isArray(), "Entity config should be a JSON array.");
+        assertFalse(response.isEmpty(), "Entity config should contain at least one entity mapping rule.");
+        printSample(response);
+    }
+
+    @Test
+    public void getApplicationMetadataTest() throws ApiException {
+        JsonNode response = getJson("/api/v1/mapping/metadata");
+        assertNotNull(response);
+        assertTrue(response.isObject(), "Application metadata should be a JSON object.");
+        assertFalse(response.isEmpty(), "Application metadata should contain metadata sections.");
+        printSample(response);
+    }
+
+    @Test
+    public void getVersionInfoTest() throws ApiException {
+        JsonNode response = getJson("/api/v1/mapping/version");
+        assertNotNull(response);
+        assertTrue(response.isObject(), "Version information should be a JSON object keyed by component.");
+        assertFalse(response.isEmpty());
+        printSample(response);
+    }
+
+    @Test
+    public void healthCheckTest() throws ApiException {
+        JsonNode response = getJson("/api/v1/mapping/health");
+        assertNotNull(response);
+        assertTrue(response.isObject() || response.isBoolean(), "Health check should return a JSON health state.");
+        if (response.isObject()) {
+            assertFalse(response.isEmpty(), "Health check response should include at least one status field.");
+        }
+        printSample(response);
+    }
+
+    @Test
+    public void mapSimpleTerminologyCodeTest() throws ApiException {
+        OutputTask response = mapTerminologyCode("22298006");
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapSimpleTerminologyInactiveCodeTest() throws ApiException {
+        OutputTask response = mapTerminologyCode("194801005");
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapSimpleTerminologyInvalidCodeTest() throws ApiException {
+        OutputTask response = mapTerminologyCode("abcdef");
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapBodyPartTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("left ear", EntityTypeEnum.BODYPART));
+        assertMappedTask(response, EntityTypeEnum.BODYPART);
+        printSample(response);
+    }
+
+    @Test
+    public void mapConditionTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("heart attack", EntityTypeEnum.CONDITION));
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapLabResultTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("sodium", EntityTypeEnum.LABRESULT));
+        assertMappedTask(response, EntityTypeEnum.LABRESULT);
+        printSample(response);
+    }
+
+    @Test
+    public void mapMedicationTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("aspirin 81mg po", EntityTypeEnum.MEDICATION));
+        assertMappedTask(response, EntityTypeEnum.MEDICATION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapProcedureTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("chest mri", EntityTypeEnum.PROCEDURE));
+        assertMappedTask(response, EntityTypeEnum.PROCEDURE);
+        printSample(response);
+    }
+
+    @Test
+    public void mapConditionComplexTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("fever, cough, and headache", EntityTypeEnum.CONDITION));
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void mapNoEntityTypeTextTest() throws ApiException {
+        OutputTask response = addTask(createInputTask("chest mri", null));
+        assertMappedTask(response, null);
+        printSample(response);
+    }
+
+    @Test
+    public void mapWithTagsTextTest() throws ApiException {
+        InputTask inputTask = createInputTask("heart attack", EntityTypeEnum.CONDITION);
+        for (InputTerm term : inputTask.getTerms()) {
+            term.addTagsItem(new Tag().key("termTagKey1").value("termTagValue1"));
+            term.addTagsItem(new Tag().key("termTagKey2").value("termTagValue2"));
+        }
+        inputTask.addTagsItem(new Tag().key("taskTagKey1").value("taskTagValue1"));
+        inputTask.addTagsItem(new Tag().key("taskTagKey2").value("taskTagValue2"));
+
+        OutputTask response = addTask(inputTask);
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        assertNotNull(response.getTags());
+        assertTrue(response.getTags().size() >= 2);
+        printSample(response);
+    }
+
+    @Test
+    public void mapWithAuditTextTest() throws ApiException {
+        InputTask inputTask = createInputTask("heart attack", EntityTypeEnum.CONDITION);
+        inputTask.setAudit(true);
+
+        OutputTask response = addTask(inputTask);
+        assertMappedTask(response, EntityTypeEnum.CONDITION);
+        printSample(response);
+    }
+
+    @Test
+    public void getAuditTrailTest() throws ApiException {
+        InputTask inputTask = createInputTask("heart attack", EntityTypeEnum.CONDITION);
+        inputTask.setAudit(true);
+
+        OutputTask task = addTask(inputTask);
+        assertMappedTask(task, EntityTypeEnum.CONDITION);
+
+        OutputTerm term = task.getTerms().get(0);
+        List<AuditEntry> response = generated(
+                "GET /api/v1/mapping/task/{taskId}/term/{termId}/audit",
+                () -> api.getTaskTermAuditTrail(task.getId().toString(), term.getId().toString()));
+        assertNotNull(response);
+        assertFalse(response.isEmpty());
+        printSample(response);
+    }
+
+    @Test
+    public void findTasksTest() throws ApiException {
+        ResultListOutputTask response = generated(
+                "GET /api/v1/mapping/task",
+                () -> api.findTasks("terms.term:heart", 0, 10, null, true, null));
+        assertNotNull(response);
+        assertNotNull(response.getTotal());
+        assertNotNull(response.getItems());
+        printSample(response);
+    }
+
+    @Test
+    public void findTermsTest() throws ApiException {
+        ResultListOutputTerm response = generated(
+                "GET /api/v1/mapping/term",
+                () -> api.findTerms("term:heart", null, null, null, true, null));
+        assertNotNull(response);
+        assertNotNull(response.getTotal());
+        assertNotNull(response.getItems());
+        printSample(response);
+    }
+
+    @Test
+    public void mapFhirResourceTest() throws ApiException {
+        JsonNode response = postFhirSample("condition.json");
+        assertFhirResponse(response, "Condition");
+        printSample(response);
+    }
+
+    @Test
+    public void mapFhirBundleTest() throws ApiException {
+        JsonNode response = postFhirSample("bundle.json");
+        assertFhirResponse(response, "Bundle");
+        printSample(response);
+    }
+
+    private String requestAccessToken() throws ApiException {
+        String username = System.getProperty("username");
+        String password = System.getProperty("password");
+        if (isBlank(username) || isBlank(password)) {
+            fail("Automap Java tests require AUTOMAP_USER and AUTOMAP_PASSWORD, or ad hoc -Pusername/-Ppassword.");
+        }
+
+        AuthRequest authRequest = new AuthRequest();
         authRequest.setGrantType(GrantTypeEnum.USERNAME_PASSWORD);
         authRequest.setUsername(username);
         authRequest.setPassword(password);
 
+        AuthResponse response;
         try {
-            final LoginApi loginApi = new LoginApi();
-            final AuthResponse response = loginApi.auth(authRequest);
-            accessToken = response.getAccessToken();
-            api.getApiClient().setBearerToken(accessToken);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Assertions.fail("Failed to authenticate: " + e.getMessage());
+            response = new LoginApi(baseApiClient()).auth(authRequest);
+        } catch (ApiException error) {
+            return fail(authFailureMessage(error), error);
         }
-        api.getApiClient().setBearerToken(accessToken);
-
+        assertNotNull(response);
+        assertNotNull(response.getAccessToken());
+        return response.getAccessToken();
     }
 
-    /**
-     * Add an task to request mapping of included terms
-     * <p>
-     * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addTaskTest() throws ApiException {
-
-        final InputTerm inputTerm = new InputTerm();
-        final EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        inputTerm.setEntityType(entityType);
+    private OutputTask mapTerminologyCode(String code) throws ApiException {
+        InputTerm inputTerm = new InputTerm();
+        inputTerm.setEntityType(EntityTypeEnum.CONDITION);
         inputTerm.setTerminology("http://snomed.info/sct");
-        inputTerm.setCode("22298006");
+        inputTerm.setCode(code);
         inputTerm.setInputType(InputTypeEnum.STRING);
 
-        final InputTask inputTask = new InputTask();
+        InputTask inputTask = new InputTask();
         inputTask.addTermsItem(inputTerm);
+        return addTask(inputTask);
+    }
 
-        final OutputTask response = api.addTask(inputTask);
-        assertNotNull(response);
-        assertNotNull(response.getId());
-        assertNotNull(response.getTerms());
-        for (final OutputTerm term : response.getTerms()) {
-            assertNotNull(term.getId());
-            // assertNotNull(term.getType());
-            // assertNotNull(term.getSource());
-            // assertNotNull(term.getTermSourceCode());
-            assertEquals(entityType.toString(), term.getEntityType().toString());
-            for (final TermMapping mapping : term.getMappings()) {
-                assertNotNull(mapping.getId());
-                assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertEquals(entityType.toString(), mapping.getEntityType().toString());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
+    private OutputTask addTask(InputTask inputTask) throws ApiException {
+        return generated("POST /api/v1/mapping/task", () -> api.addTask(inputTask));
+    }
+
+    private JsonNode getJson(String path) throws ApiException {
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseApiClient().getBaseUri() + path))
+                .header("Accept", "application/json")
+                .header("Authorization", "Bearer " + accessToken)
+                .GET()
+                .build();
+        return sendJson("GET " + path, request);
+    }
+
+    private JsonNode postFhirSample(String sampleFileName) throws ApiException {
+        Path samplePath = SHARED_SAMPLE_DIR.resolve(sampleFileName);
+        String body;
+        try {
+            body = Files.readString(samplePath, StandardCharsets.UTF_8);
+        } catch (IOException error) {
+            throw new ApiException("Unable to read FHIR sample payload: " + samplePath, error, 0, null);
+        }
+
+        HttpRequest request = HttpRequest.newBuilder(URI.create(baseApiClient().getBaseUri() + "/api/v1/mapping/fhir"))
+                .header("Accept", "application/fhir+json, application/json")
+                .header("Content-Type", "application/fhir+json")
+                .header("Authorization", "Bearer " + accessToken)
+                .POST(HttpRequest.BodyPublishers.ofString(body, StandardCharsets.UTF_8))
+                .build();
+        return sendJson("POST /api/v1/mapping/fhir", request);
+    }
+
+    private JsonNode sendJson(String label, HttpRequest request) throws ApiException {
+        for (int attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
+            HttpResponse<String> response;
+            try {
+                response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            } catch (IOException error) {
+                throw new ApiException(error);
+            } catch (InterruptedException error) {
+                Thread.currentThread().interrupt();
+                throw new ApiException(error);
             }
-        }
-    }
 
-    /**
-     * Add an task to request mapping of included terms
-     * <p>
-     * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addTaskTestWithInactiveCode() throws ApiException {
+            if (response.statusCode() == 429 && attempt < RETRY_ATTEMPTS) {
+                pauseBeforeRetry(label, attempt, response.headers().firstValue("Retry-After").orElse(""));
+                continue;
+            }
 
-        final InputTerm inputTerm = new InputTerm();
-        final EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        inputTerm.setEntityType(entityType);
-        inputTerm.setTerminology("http://snomed.info/sct");
-        inputTerm.setCode("194801005");
-        inputTerm.setInputType(InputTypeEnum.STRING);
+            if (response.statusCode() / 100 != 2) {
+                ApiException error = new ApiException(
+                        response.statusCode(),
+                        label + " failed with HTTP " + response.statusCode(),
+                        response.headers(),
+                        redactSecrets(response.body()));
+                return fail(apiFailureMessage(label, error), error);
+            }
 
-        final InputTask inputTask = new InputTask();
-        inputTask.addTermsItem(inputTerm);
-
-        final OutputTask response = api.addTask(inputTask);
-        assertNotNull(response);
-        assertNotNull(response.getId());
-        assertNotNull(response.getTerms());
-        for (final OutputTerm term : response.getTerms()) {
-            assertNotNull(term.getId());
-            // assertNotNull(term.getTermType());
-            // assertNotNull(term.getTermSource());
-            // assertNotNull(term.getTermSourceCode());
-            assertEquals(entityType.toString(), term.getEntityType().toString());
-            // one of the mappings should be a no target
-            boolean foundNoTarget = false;
-            for (final TermMapping mapping : term.getMappings()) {
-                assertNotNull(mapping.getId());
-                // TODO: where is assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertEquals(entityType.toString(), mapping.getEntityType().toString());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
-                if ("no target".equalsIgnoreCase(mapping.getName())) {
-                    foundNoTarget = true;
+            try {
+                JsonNode parsedBody = SAMPLE_MAPPER.readTree(response.body());
+                if (parsedBody != null && parsedBody.isTextual()) {
+                    String text = parsedBody.asText().trim();
+                    if (text.startsWith("{") || text.startsWith("[")) {
+                        return SAMPLE_MAPPER.readTree(text);
+                    }
                 }
-            }
-            assertTrue(foundNoTarget);
-        }
-    }
-
-    /**
-     * Add an task to request mapping of included terms
-     * <p>
-     * &lt;a href&#x3D;\&quot;/examples/index.html\&quot;&gt;Click here&lt;/a&gt; for samples of request and response body.
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void addTaskTestWithInvalidCode() throws ApiException {
-
-
-        final InputTerm inputTerm = new InputTerm();
-        final EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        inputTerm.setEntityType(entityType);
-        inputTerm.setTerminology("http://snomed.info/sct");
-        inputTerm.setCode("abcdef");
-        inputTerm.setInputType(InputTypeEnum.STRING);
-
-        final InputTask inputTask = new InputTask();
-        inputTask.addTermsItem(inputTerm);
-
-        final OutputTask response = api.addTask(inputTask);
-        assertNotNull(response);
-        assertNotNull(response.getId());
-        assertNotNull(response.getTerms());
-        for (final OutputTerm term : response.getTerms()) {
-            assertNotNull(term.getId());
-            // assertNotNull(term.getTermType());
-            // assertNotNull(term.getTermSource());
-            // assertNotNull(term.getTermSourceCode());
-            for (final TermMapping mapping : term.getMappings()) {
-                assertNotNull(mapping.getId());
-                // TODO: where is assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertEquals(entityType.toString(), mapping.getEntityType().toString());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
+                return parsedBody;
+            } catch (JsonProcessingException error) {
+                return fail(label + " returned a non-JSON response: " + redactSecrets(response.body()), error);
             }
         }
+
+        return fail(label + " failed after retry attempts.");
     }
 
-    @Test
-    public void addTaskTestWithTerm() throws ApiException {
-        // Perform mapping on a text string for a condition entity type.
-        EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        InputTask inputTask = createInputTask("heart attack", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
+    private <T> T generated(String endpoint, ApiCall<T> call) throws ApiException {
+        for (int attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
+            try {
+                return call.execute();
+            } catch (ApiException error) {
+                if (hasCause(error, MismatchedInputException.class)) {
+                    return fail(
+                            "Generated Java client could not deserialize "
+                                    + endpoint
+                                    + ". The endpoint response shape likely does not match the OpenAPI-generated model. "
+                                    + "Cause: "
+                                    + redactSecrets(rootCauseMessage(error)),
+                            error);
+                }
+                if (error.getCode() == 429 && attempt < RETRY_ATTEMPTS) {
+                    pauseBeforeRetry(endpoint, attempt, retryAfterHeader(error));
+                    continue;
+                }
+                return fail(apiFailureMessage(endpoint, error), error);
+            }
         }
+
+        return fail(endpoint + " failed after retry attempts.");
     }
 
-    @Test
-    public void addTaskTestForBodyPart() throws ApiException {
-        // Perform mapping on a text string for a body part entity type.
-
-        EntityTypeEnum entityType = EntityTypeEnum.BODYPART;
-        InputTask inputTask = createInputTask("left ear", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
+    private boolean hasCause(Throwable error, Class<? extends Throwable> causeType) {
+        Throwable current = error;
+        while (current != null) {
+            if (causeType.isInstance(current)) {
+                return true;
+            }
+            current = current.getCause();
         }
+        return false;
     }
 
-    @Test
-    public void addTaskTestForLabResult() throws ApiException {
-        // Perform mapping on a text string for a lab result entity type.
-        EntityTypeEnum entityType = EntityTypeEnum.LABRESULT;
-        InputTask inputTask = createInputTask("sodium", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
+    private String rootCauseMessage(Throwable error) {
+        Throwable current = error;
+        while (current.getCause() != null) {
+            current = current.getCause();
         }
+        return current.getMessage() == null ? current.getClass().getName() : current.getMessage();
     }
 
-    @Test
-    public void addTaskTestForMedication() throws ApiException {
-        // Perform mapping on a text string for a medication entity type.
-        EntityTypeEnum entityType = EntityTypeEnum.MEDICATION;
-        InputTask inputTask = createInputTask("aspirin 81mg po", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
-        }
+    @FunctionalInterface
+    private interface ApiCall<T> {
+        T execute() throws ApiException;
     }
-
-    @Test
-    public void addTaskTestForProcedure() throws ApiException {
-        // Perform mapping on a text string for a procedure entity type.
-        EntityTypeEnum entityType = EntityTypeEnum.PROCEDURE;
-        InputTask inputTask = createInputTask("chest mri", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
-        }
-    }
-
-    @Test
-    public void addTaskTestForComplexText() throws ApiException {
-        // Perform mapping on a text string with multiple values for the condition entity type.
-        EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        InputTask inputTask = createInputTask("fever, cough, and headache", entityType);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
-        }
-    }
-
-    @Test
-    public void addTaskTestWithNoEntityType() throws ApiException {
-        // Perform mapping on a text string without specifying an entity type.
-        // This should default to CONDITION.
-        InputTask inputTask = createInputTask("chest mri", EntityTypeEnum.PROCEDURE);
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, EntityTypeEnum.PROCEDURE);
-        }
-    }
-
-    @Test
-    public void addTaskTestWithTags() throws ApiException {
-        // Perform mapping on a text string with tags.
-        EntityTypeEnum entityType = EntityTypeEnum.CONDITION;
-        InputTask inputTask = createInputTask("heart attack", entityType);
-        for(InputTerm term : inputTask.getTerms()) {
-            term.addTagsItem(new Tag().key("termTagKey1").value("termTagValue1"));
-            term.addTagsItem(new Tag().key("termTagKey2").value("termTagValue2"));
-        }
-        inputTask.addTagsItem(new Tag().key("termTagKey1").value("termTagValue1"));
-        inputTask.addTagsItem(new Tag().key("termTagKey2").value("termTagValue2"));
-
-        OutputTask task = api.addTask(inputTask);
-        assertNotNull(task);
-        assertNotNull(task.getId());
-        assertNotNull(task.getTerms());
-        for (OutputTerm term : task.getTerms()) {
-            assertTerm(term, entityType);
-            assertEquals(2, term.getTags().stream().filter(tag -> "termTagKey1".equalsIgnoreCase(tag.getKey()) || "termTagKey2".equalsIgnoreCase(tag.getKey())).count());
-        }
-        assertEquals(2, task.getTags().stream().filter(tag -> "termTagKey1".equalsIgnoreCase(tag.getKey()) || "termTagKey2".equalsIgnoreCase(tag.getKey())).count());
-    }
-
-
 
     private InputTask createInputTask(String term, EntityTypeEnum entityType) {
         InputTask inputTask = new InputTask();
         InputTerm inputTerm = new InputTerm();
         inputTerm.setTerm(term);
-        inputTerm.setEntityType(entityType);
+        if (entityType != null) {
+            inputTerm.setEntityType(entityType);
+        }
         inputTerm.setInputType(InputTypeEnum.STRING);
         inputTask.setMinConfidence(0.7);
         inputTask.addTermsItem(inputTerm);
         return inputTask;
     }
 
-    private void assertTerm(OutputTerm term, EntityTypeEnum entityType) {
-        assertNotNull(term.getId());
-        assertNotNull(term.getTerm());
-        if(entityType != null && term.getEntityType() != null) {
-            assertEquals(entityType.toString(), term.getEntityType().toString());
-        }
-        for (TermMapping mapping : term.getMappings()) {
-            assertNotNull(mapping.getId());
-            assertTrue(mapping.getConfidence() >= 0.7);
-        }
-    }
-
-    /**
-     * Find tasks matching specified parameters
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void findTasksTest() throws ApiException {
-
-        final String query = "terms.term:heart";
-        final Integer offset = 0;
-        final Integer limit = 10;
-        final String sort = null;
-        final Boolean ascending = true;
-        final ResultListOutputTask response = api.findTasks(query, offset, limit, sort, ascending, null);
-        assertNotNull(response);
-        assertNotNull(response.getTotal());
-        assertNotNull(response.getLimit());
-        assertNotNull(response.getOffset());
-        assertNotNull(response.getItems());
-
-        final List<OutputTask> tasks = response.getItems();
-        for (final OutputTask task : tasks) {
-            assertNotNull(task.getId());
-            assertNotNull(task.getConfidence());
-            assertNotNull(task.getModified());
-            assertNotNull(task.getCreated());
-            assertNotNull(task.getModifiedBy());
-            assertNotNull(task.getTags());
-            for (final Tag tag : task.getTags()) {
-                assertNotNull(tag.getKey());
-                assertNotNull(tag.getValue());
-            }
-            for (final OutputTerm term : task.getTerms()) {
-                assertNotNull(term.getId());
-                assertNotNull(term.getTerm());
-                // assertNotNull(term.getTermType());
-                // assertNotNull(term.getTermSource());
-                // assertNotNull(term.getTermSourceCode());
-                for (final TermMapping mapping : term.getMappings()) {
-                    assertNotNull(mapping.getId());
-                    assertNotNull(mapping.getConfidence());
-                    assertNotNull(mapping.getTerminology());
-                    if("no target".equalsIgnoreCase(mapping.getName())) {
-                        assertNull(mapping.getCode());
-                    } else {
-                        assertNotNull(mapping.getCode());
-                    }
-                    assertNotNull(mapping.getName());
-                    assertNotNull(mapping.getEntityType());
-                    assertNotNull(mapping.getStartIndex());
-                    assertNotNull(mapping.getEndIndex());
-                }
-            }
-        }
-    }
-
-    /**
-     * Find tasks matching specified parameters
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void findTermsTest() throws ApiException {
-        final String query = "term:heart";
-        final Integer offset = null;
-        final Integer limit = null;
-        final String sort = null;
-        final Boolean ascending = true;
-        final ResultListOutputTerm response = api.findTerms(query, offset, limit, sort, ascending, null);
-
-        assertNotNull(response);
-        assertNotNull(response.getTotal());
-        assertNotNull(response.getLimit());
-        assertNotNull(response.getOffset());
-        assertNotNull(response.getItems());
-
-        final List<OutputTerm> terms = response.getItems();
-        for (final OutputTerm term : terms) {
+    private void assertMappedTask(OutputTask task, EntityTypeEnum entityType) {
+        assertNotNull(task);
+        assertNotNull(task.getId());
+        assertNotNull(task.getTerms());
+        assertFalse(task.getTerms().isEmpty());
+        for (OutputTerm term : task.getTerms()) {
             assertNotNull(term.getId());
-            assertNotNull(term.getTerm());
-            // assertNotNull(term.getTermType());
-            // assertNotNull(term.getTermSource());
-            // assertNotNull(term.getTermSourceCode());
-            for (final TermMapping mapping : term.getMappings()) {
+            assertNotNull(term.getMappings());
+            assertFalse(term.getMappings().isEmpty());
+            if (entityType != null && term.getEntityType() != null) {
+                assertTrue(entityType.toString().equalsIgnoreCase(term.getEntityType().toString()));
+            }
+            for (TermMapping mapping : term.getMappings()) {
                 assertNotNull(mapping.getId());
-                assertNotNull(mapping.getConfidence());
-                assertNotNull(mapping.getTerminology());
-                if ("no target".equalsIgnoreCase(mapping.getName())) {
-                    assertNull(mapping.getCode());
-                } else {
-                    assertNotNull(mapping.getCode());
-                }
                 assertNotNull(mapping.getName());
-                assertNotNull(mapping.getEntityType());
-                assertNotNull(mapping.getStartIndex());
-                assertNotNull(mapping.getEndIndex());
             }
         }
     }
 
-
-    /**
-     * Get term for the specified taskId and termId
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getTaskTermTest() throws ApiException {
-        InputTask task = createInputTask("heart attack", EntityTypeEnum.CONDITION);
-        OutputTask response = api.addTask(task);
-        OutputTerm taskTerm = api.getTaskTerm(response.getId().toString(), response.getTerms().get(0).getId().toString());
-        assertNotNull(taskTerm);
-        assertEquals("heart attack", taskTerm.getTerm());
-        assertFalse(taskTerm.getMappings().isEmpty());
-        assertNotNull(taskTerm.getEntityType());
-        assertEquals(EntityTypeEnum.CONDITION.toString(), taskTerm.getEntityType().toString());
+    private void assertFhirResponse(JsonNode response, String resourceType) {
+        assertNotNull(response);
+        assertTrue(response.isObject(), "FHIR mapping should return a JSON resource.");
+        assertNotNull(response.get("resourceType"));
+        assertTrue(resourceType.equals(response.get("resourceType").asText()));
     }
 
-    /**
-     * Get audit trail for the specified taskId and termId
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void getTaskTermAuditTrailTest() throws ApiException {
-        InputTask task = createInputTask("heart attack", EntityTypeEnum.CONDITION);
-        OutputTask response = api.addTask(task);
-        List<AuditEntry> auditEntries = api.getTaskTermAuditTrail(response.getId().toString(), response.getTerms().get(0).getId().toString());
-        assertFalse(auditEntries.isEmpty());
-        task.setAudit(false); // Disable audit for the task
-        OutputTask updatedTask = api.addTask(task);
-        // Verify that the audit entries are empty for the updated task
-        List<AuditEntry> updatedAuditEntries = api.getTaskTermAuditTrail(updatedTask.getId().toString(), updatedTask.getTerms().get(0).getId().toString());
-        assertTrue(updatedAuditEntries.isEmpty());
+    private void pauseBeforeRetry(String label, int attempt, String retryAfter) throws ApiException {
+        long delayMillis = retryDelayMillis(attempt, retryAfter);
+        System.err.println(label + " returned HTTP 429; retrying in " + delayMillis + " ms.");
+        try {
+            Thread.sleep(delayMillis);
+        } catch (InterruptedException error) {
+            Thread.currentThread().interrupt();
+            throw new ApiException(error);
+        }
+    }
+
+    private long retryDelayMillis(int attempt, String retryAfter) {
+        if (!isBlank(retryAfter)) {
+            try {
+                return Math.max(0L, Long.parseLong(retryAfter.trim()) * 1000L);
+            } catch (NumberFormatException ignored) {
+                // Fall through to the local backoff below.
+            }
+        }
+        return Math.max(0L, RETRY_DELAY_MS * attempt);
+    }
+
+    private String retryAfterHeader(ApiException error) {
+        if (error.getResponseHeaders() == null) {
+            return "";
+        }
+        return error.getResponseHeaders().firstValue("Retry-After").orElse("");
+    }
+
+    private void printSample(Object response) {
+        try {
+            System.out.println(SAMPLE_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(response));
+        } catch (JsonProcessingException error) {
+            throw new IllegalStateException("Unable to serialize sample output", error);
+        }
+    }
+
+    private boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
+
+    private String authFailureMessage(ApiException error) {
+        StringBuilder message = new StringBuilder("Automap login failed before running mapping test.");
+        message.append(System.lineSeparator()).append("API_URL: ").append(baseApiClient().getBaseUri());
+        appendApiExceptionDetails(message, error);
+        return message.toString();
+    }
+
+    private String apiFailureMessage(String endpoint, ApiException error) {
+        StringBuilder message = new StringBuilder(endpoint).append(" failed.");
+        appendApiExceptionDetails(message, error);
+        return message.toString();
+    }
+
+    private void appendApiExceptionDetails(StringBuilder message, ApiException error) {
+        if (error.getCode() != 0) {
+            message.append(System.lineSeparator()).append("HTTP status: ").append(error.getCode());
+        }
+        if (!isBlank(error.getResponseBody())) {
+            message.append(System.lineSeparator()).append("HTTP response body: ").append(redactSecrets(error.getResponseBody()));
+        }
+        if (!isBlank(error.getMessage())) {
+            message.append(System.lineSeparator()).append("Error message: ").append(redactSecrets(error.getMessage()));
+        }
+        if (error.getCause() != null && !isBlank(error.getCause().getMessage())) {
+            message.append(System.lineSeparator()).append("Cause: ").append(redactSecrets(error.getCause().getMessage()));
+        }
+    }
+
+    private String redactSecrets(String text) {
+        return text
+                .replaceAll("(?i)(\"(?:access_token|refresh_token|token|password)\"\\s*:\\s*\")[^\"]+", "$1<redacted>")
+                .replaceAll("(?i)(Bearer\\s+)[^\"'\\s]+", "$1<redacted>");
+    }
+
+    private ApiClient baseApiClient() {
+        ApiClient apiClient = new ApiClient();
+        String apiUrl = System.getenv("API_URL");
+        if (!isBlank(apiUrl)) {
+            apiClient.updateBaseUri(apiUrl);
+        }
+        return apiClient;
+    }
+
+    private ApiClient authorizedClient(String accessToken) {
+        ApiClient apiClient = baseApiClient();
+        apiClient.setRequestInterceptor(builder -> builder.header("Authorization", "Bearer " + accessToken));
+        return apiClient;
+    }
+
+    private static int envInt(String name, int defaultValue) {
+        String value = System.getenv(name);
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Math.max(1, Integer.parseInt(value.trim()));
+        } catch (NumberFormatException ignored) {
+            return defaultValue;
+        }
+    }
+
+    private static long envLong(String name, long defaultValue) {
+        String value = System.getenv(name);
+        if (value == null || value.trim().isEmpty()) {
+            return defaultValue;
+        }
+        try {
+            return Math.max(0L, Long.parseLong(value.trim()));
+        } catch (NumberFormatException ignored) {
+            return defaultValue;
+        }
     }
 }

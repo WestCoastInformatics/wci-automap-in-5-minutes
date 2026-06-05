@@ -1,71 +1,45 @@
 # AutoMap in 5 Minutes: Java Tutorial
 
-This tutorial shows how to use a locally defined Java client to interact with the AutoMap API, mirroring the cURL examples provided in the project. Each cURL example has a corresponding Java/Gradle test command.
+This tutorial shows how to use Java to interact with the AutoMap API. Most examples use the generated Java client. Health checks and FHIR mapping use small raw Java HTTP helpers so the Java demonstrations stay aligned with the cURL and Postman examples while the generated response models catch up to the live response shapes.
 
 ## Prerequisites
 
-- JDK 17+ must be installed
-- Gradle (7.2+)
+- JDK 17+
+- The Gradle wrapper included in this directory
 
-The API URL for AutoMap is:
-
-`export API_URL=https://automap.terminology.tools`
-
-Run this command before the sample calls below as they expect $API_URL to be set.
-
-## Building the Code
-
-It is possible that your file permissions may not be set up correctly to run the ./gradlew commands. If you run into any errors regarding permissions, run the following command from the `java-examples` directory:
-
-```
-chmod 755 ./gradlew
-```
-
-This should explicitly set read, write, and execute permissions for running the ./gradlew commands.
-
-Once permissions are set, building the java-examples should be as simple as running the following command from this directory.
-
-```
-./gradlew clean build
-```
-
-This will invoke Gradle to build the model objects and the clients themselves and then will also run the unit tests which demonstrate use of the client to make actual API calls against AutoMap.
-
-If you only want to build (for example to run the tests separately) then run:
-
-```
-./gradlew clean build -x test
-```
-
-This will build the model objects and clients, while not running the tests.
+The default API URL is `https://automap.terminology.tools`. Override it from the project root with `API_URL=...` when using `make`, or through the generated client configuration in custom Java code.
 
 ## Authentication
 
-AutoMap API requires Bearer Token authentication. You can set up authentication in two ways:
+Set credentials in the environment before running tests. Open a terminal, run the two commands for your operating system, and then run the Gradle or `make` command in that same terminal window. Replace `<username>` and `<password>` with your Automap username and password, without the angle brackets.
 
-1. At the end of each `./gradlew test` run, add these two parameters: `-Pusername=<username> -Ppassword=<password>`.
-2. In `java-examples/build.gradle`, set your username and password in the test section:
+```bash
+export AUTOMAP_USER=<username>
+export AUTOMAP_PASSWORD=<password>
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:AUTOMAP_USER="<username>"
+$env:AUTOMAP_PASSWORD="<password>"
+```
+
+Gradle project properties `-Pusername=... -Ppassword=...` are still accepted for ad hoc local runs so older commands keep working. Prefer environment variables because command-line secrets can be visible to local process-list tools.
+
+Do not put real credentials into `build.gradle`. The Java tests fail fast when credentials are missing.
+
+## Run Tests Automatically
+
+To automatically run the Gradle test commands listed in this README and refresh sample output files:
 
 ```
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-        showStandardStreams = true
-    }
-    systemProperty 'username', project.findProperty('username') ?: 'defaultUsername'
-    systemProperty 'password', project.findProperty('password') ?: 'defaultPassword'
-}
+python java_check.py
 ```
-Replace 'defaultUsername` with your username, and 'defaultPassword' with your password.
 
+From the project root, this is also available as `make check-java`.
 
-Note that failure to properly set up this authentication <b>will result in all calls to the Termhub API failing with a 403 error.</b>
-
-### Sample Java tests
------------------
-
-The following examples can be typed into the command line of any terminal that has cURL and jq installed. It will assume that you have set your default username and password in the build.gradle (except for the login endpoint where those are explicit parameters).
+## Sample Java Tests
 
 - [Login](#login)
 - [Get entity configuration](#get-entity-configuration)
@@ -86,21 +60,22 @@ The following examples can be typed into the command line of any terminal that h
 - [Map from a simple text string with auditing and retrieve audit trail](#map-from-a-simple-text-string-with-auditing-and-retrieve-audit-trail)
 - [Find tasks](#find-tasks)
 - [Find terms](#find-terms)
+- [Map from a FHIR resource](#map-from-a-fhir-resource)
+- [Map from a FHIR bundle](#map-from-a-fhir-bundle)
 
-
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Login
 
-Login and acquire an access token for a username and password.
+Login and acquire an access token for a username and password. The test validates the token without printing it.
 
 ```
-./gradlew test --tests api.AuthApiTest.authTest
+./gradlew test --tests api.LoginApiTest.authTest
 ```
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
+See sample payload data from this call in [`samples/login.txt`](samples/login.txt)
 
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Get entity configuration
 
@@ -112,8 +87,7 @@ Return entity configuration info, including terminology bindings.
 
 See sample payload data from this call in [`samples/get-entity-configuration.txt`](samples/get-entity-configuration.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Get application metadata
 
@@ -125,12 +99,11 @@ Return application metadata, including values that can be passed as various para
 
 See sample payload data from this call in [`samples/get-application-metadata.txt`](samples/get-application-metadata.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Get version information for components of the application
 
-Return application version information and versions for various of the included components.
+Return application version information and versions for included components.
 
 ```
 ./gradlew test --tests api.MappingApiTest.getVersionInfoTest
@@ -138,13 +111,11 @@ Return application version information and versions for various of the included 
 
 See sample payload data from this call in [`samples/get-version-information.txt`](samples/get-version-information.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Health check
 
-Performs a health check on the service.  It reports a health check object that indicates "true" or "false"
-whether the service is healthy.
+Perform a health check on the service.
 
 ```
 ./gradlew test --tests api.MappingApiTest.healthCheckTest
@@ -152,13 +123,11 @@ whether the service is healthy.
 
 See sample payload data from this call in [`samples/health-check.txt`](samples/health-check.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a starting terminology and code
 
 Perform mapping to verify that a terminology and code are valid for a known entity type.
-In this example 22298006 is the code for "myocardial infarction" in SNOMEDCT.
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapSimpleTerminologyCodeTest
@@ -166,14 +135,11 @@ In this example 22298006 is the code for "myocardial infarction" in SNOMEDCT.
 
 See sample payload data from this call in [`samples/map-simple-terminology-code.txt`](samples/map-simple-terminology-code.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a starting terminology and inactive code
 
 Perform mapping on an inactive code in a terminology for a known entity type.
-In this example 194801005 is a retired code that resolves in SNOMEDCT to the active
-code for "myocardial infarction".
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapSimpleTerminologyInactiveCodeTest
@@ -181,21 +147,19 @@ code for "myocardial infarction".
 
 See sample payload data from this call in [`samples/map-simple-terminology-inactive-code.txt`](samples/map-simple-terminology-inactive-code.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a starting terminology and invalid code
 
 Perform mapping on an invalid code in a terminology for a known entity type.
-In this example, "abcdef" is an obviously bad code. The result is a map to no target.
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapSimpleTerminologyInvalidCodeTest
 ```
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
 See sample payload data from this call in [`samples/map-simple-terminology-invalid-code.txt`](samples/map-simple-terminology-invalid-code.txt)
+
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple bodyPart text string
 
@@ -207,8 +171,7 @@ Perform mapping on a text string for a body part entity type.
 
 See sample payload data from this call in [`samples/map-bodyPart-text.txt`](samples/map-bodyPart-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple condition text string
 
@@ -220,8 +183,7 @@ Perform mapping on a text string for a condition entity type.
 
 See sample payload data from this call in [`samples/map-condition-text.txt`](samples/map-condition-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple labResult text string
 
@@ -233,8 +195,7 @@ Perform mapping on a text string for a lab result entity type.
 
 See sample payload data from this call in [`samples/map-labResult-text.txt`](samples/map-labResult-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple medication text string
 
@@ -244,10 +205,9 @@ Perform mapping on a text string for a medication entity type.
 ./gradlew test --tests api.MappingApiTest.mapMedicationTextTest
 ```
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
-
 See sample payload data from this call in [`samples/map-medication-text.txt`](samples/map-medication-text.txt)
+
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple procedure text string
 
@@ -259,8 +219,7 @@ Perform mapping on a text string for a procedure entity type.
 
 See sample payload data from this call in [`samples/map-procedure-text.txt`](samples/map-procedure-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a complex text string
 
@@ -272,15 +231,11 @@ Perform mapping on a text string with multiple values for the condition entity t
 
 See sample payload data from this call in [`samples/map-conditionComplex-text.txt`](samples/map-conditionComplex-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple text string without specifying entity type
 
-Perform mapping on a text string without specifying entity type.  This type of input
-attempts to resolve against each top level entity type and produce a range of answers.
-This can be used to some extent to "figure out" what kind of things something is. In this
-case, the highest confidence answer is a "procedure".
+Perform mapping on a text string without specifying entity type.
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapNoEntityTypeTextTest
@@ -288,18 +243,11 @@ case, the highest confidence answer is a "procedure".
 
 See sample payload data from this call in [`samples/map-noEntityType-text.txt`](samples/map-noEntityType-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple text string with extra tagging information
 
-Perform mapping on a text string with tagging information in order to show how the output task
-and terms mirror "tags" passed in on the input side.  Clients can use this to mark tasks and terms
-with their own metadata and tie it back to responses. Note that the output response has task level
-tags as well as term level tags.
-
-Use cases for these tags include: (a) attaching a client id to a request, (b) attaching a client
-"source of information" to the request, or (c) attaching a client "request time" to the request.
+Perform mapping on a text string with client-provided tags.
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapWithTagsTextTest
@@ -307,14 +255,11 @@ Use cases for these tags include: (a) attaching a client id to a request, (b) at
 
 See sample payload data from this call in [`samples/map-withTags-text.txt`](samples/map-withTags-text.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Map from a simple text string with auditing
 
-Perform mapping on a text string for a condition entity type and enable auditing.
-The default value of the audit flag is "false".  When using auditing, you can call
-back to the API to retrieve the audit trail for a term.
+Perform mapping on a text string and enable auditing.
 
 ```
 ./gradlew test --tests api.MappingApiTest.mapWithAuditTextTest
@@ -322,9 +267,7 @@ back to the API to retrieve the audit trail for a term.
 
 See sample payload data from this call in [`samples/map-withAudit-text.txt`](samples/map-withAudit-text.txt)
 
-To retrieve the audit trail, you need to get the task "id" and the term "id" fields from the response
-to the prior call.  The following example has taskId and termId derived during testing but need
-to be replaced with your own values for this to work:
+Retrieve the audit trail for a term from an audited mapping task.
 
 ```
 ./gradlew test --tests api.MappingApiTest.getAuditTrailTest
@@ -332,19 +275,11 @@ to be replaced with your own values for this to work:
 
 See sample payload data from this call in [`samples/map-audit-trail.txt`](samples/map-audit-trail.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Find tasks
 
-Tasks created by making request of the service to perform mapping operations can be retrieved
-from the backend. Through parameters, you can control filtering, paging, and sorting.
-* query - allows lucene query syntax-style searching within the task model
-  * e.g. "query=heart" will find all tasks that have indexed fields matching the word "heart"
-  * e.g. "query=tags:taskTagKey1=taskTagValue1" will find all tasks that have a tag with the key "taskTagKey1" and the value "taskTagValue1"
-  * More documentation will be provided for this field in the future
-* offset/limit - start record and page size (default is offset 0 with limit 10)
-* sort/ascending - sort field and "true" for ascending and "false" for descending (default is "true")
+Find tasks matching search parameters.
 
 ```
 ./gradlew test --tests api.MappingApiTest.findTasksTest
@@ -352,19 +287,11 @@ from the backend. Through parameters, you can control filtering, paging, and sor
 
 See sample payload data from this call in [`samples/find-tasks.txt`](samples/find-tasks.txt)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
-
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
 ### Find terms
 
-Terms created by making request of the service to perform mapping operations can be retrieved
-from the backend. Through parameters, you can control filtering, paging, and sorting.
-* query - allows lucene query syntax-style searching within the task model
-  * e.g. "query=heart" will find all tasks that have indexed fields matching the word "heart"
-  * e.g. "query=tags:taskTagKey1=taskTagValue1" will find all tasks that have a tag with the key "taskTagKey1" and the value "taskTagValue1"
-  * More documentation will be provided for this field in the future
-* offset/limit - start record and page size (default is offset 0 with limit 10)
-* sort/ascending - sort field and "true" for ascending and "false" for descending (default is "true")
+Find mapped terms matching search parameters.
 
 ```
 ./gradlew test --tests api.MappingApiTest.findTermsTest
@@ -372,9 +299,32 @@ from the backend. Through parameters, you can control filtering, paging, and sor
 
 See sample payload data from this call in [`samples/find-terms.txt`](samples/find-terms.txt)
 
-## Notes
-- The test class and method names are inferred from the cURL example descriptions and should match the actual Java test implementation.
-- If you add new endpoints or cURL examples, add corresponding Java/Gradle test commands here.
-- For more details on request/response payloads, see the `samples/` directory or the API documentation.
+[Back to Top](#automap-in-5-minutes-java-tutorial)
 
-[Back to Top](#wci-automap-in-5-minutes-java-tutorial)
+### Map from a FHIR resource
+
+Perform mapping on the shared FHIR `Condition` sample payload from the cURL examples and return the updated resource with suggested codes.
+
+```
+./gradlew test --tests api.MappingApiTest.mapFhirResourceTest
+```
+
+See sample payload data from this call in [`samples/map-fhir-resource.txt`](samples/map-fhir-resource.txt)
+
+[Back to Top](#automap-in-5-minutes-java-tutorial)
+
+### Map from a FHIR bundle
+
+Perform mapping on the shared FHIR `Bundle` sample payload from the cURL examples and return the updated bundle with suggested codes.
+
+```
+./gradlew test --tests api.MappingApiTest.mapFhirBundleTest
+```
+
+See sample payload data from this call in [`samples/map-fhir-bundle.txt`](samples/map-fhir-bundle.txt)
+
+[Back to Top](#automap-in-5-minutes-java-tutorial)
+
+## SDK-only notes
+
+The generated Java client currently does not expose the service health endpoint. It does expose FHIR mapping, but the generated return type is a `String` while the live endpoint returns a FHIR JSON resource or bundle. The Java demo tests use raw Java HTTP helpers for these response-shape cases and generated SDK methods for the rest.

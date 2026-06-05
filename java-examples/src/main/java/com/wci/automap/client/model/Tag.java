@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -23,51 +26,25 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
  * Represents a key/value pair
  */
 @JsonPropertyOrder({
-  Tag.JSON_PROPERTY_VALUE,
-  Tag.JSON_PROPERTY_KEY
+  Tag.JSON_PROPERTY_KEY,
+  Tag.JSON_PROPERTY_VALUE
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Tag {
-  public static final String JSON_PROPERTY_VALUE = "value";
-  private String value;
-
   public static final String JSON_PROPERTY_KEY = "key";
   private String key;
 
+  public static final String JSON_PROPERTY_VALUE = "value";
+  private String value;
+
   public Tag() { 
   }
-
-  public Tag value(String value) {
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * the value
-   * @return value
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getValue() {
-    return value;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_VALUE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setValue(String value) {
-    this.value = value;
-  }
-
 
   public Tag key(String key) {
     this.key = key;
@@ -94,6 +71,31 @@ public class Tag {
   }
 
 
+  public Tag value(String value) {
+    this.value = value;
+    return this;
+  }
+
+   /**
+   * the value
+   * @return value
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getValue() {
+    return value;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_VALUE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setValue(String value) {
+    this.value = value;
+  }
+
+
   /**
    * Return true if this Tag object is equal to o.
    */
@@ -106,21 +108,21 @@ public class Tag {
       return false;
     }
     Tag tag = (Tag) o;
-    return Objects.equals(this.value, tag.value) &&
-        Objects.equals(this.key, tag.key);
+    return Objects.equals(this.key, tag.key) &&
+        Objects.equals(this.value, tag.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, key);
+    return Objects.hash(key, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Tag {\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,5 +138,49 @@ public class Tag {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `key` to the URL query string
+    if (getKey() != null) {
+      joiner.add(String.format("%skey%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getKey()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `value` to the URL query string
+    if (getValue() != null) {
+      joiner.add(String.format("%svalue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getValue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

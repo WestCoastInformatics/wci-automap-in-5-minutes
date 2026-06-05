@@ -1,43 +1,34 @@
 {
-  "id": "33da9408-b9b7-45eb-b1f2-db4866d69d3d",
-  "modified": "2025-05-27T18:52:14.506-07:00",
-  "created": "2025-05-27T18:52:14.351-07:00",
-  "modifiedBy": "system",
+  "id": "e40bb43a-b5ba-4b4e-8ee5-1cc1686a5787",
+  "modified": "2026-05-28T23:42:23.295+00:00",
+  "created": "2026-05-28T23:42:22.358+00:00",
+  "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
   "tags": [
     {
       "key": "userId",
-      "value": "a126cd56-96fd-4bcc-a625-b4e55c23f62c"
+      "value": "328f4481-2a22-4a95-afc7-a8e7c20a5928"
     },
     {
       "key": "server.version",
-      "value": "unset"
+      "value": "2.4.0.202605"
     }
   ],
   "audit": false,
   "terms": [
     {
-      "id": "ed01e4c2-4328-4905-bedd-c81481a67984",
-      "modified": "2025-05-27T18:52:14.398-07:00",
-      "created": "2025-05-27T18:52:14.155-07:00",
-      "modifiedBy": "system",
-      "taskId": "33da9408-b9b7-45eb-b1f2-db4866d69d3d",
+      "id": "14aa94e3-e79a-4a65-bdf7-f638160b2287",
+      "modified": "2026-05-28T23:42:23.269+00:00",
+      "created": "2026-05-28T23:42:22.309+00:00",
+      "modifiedBy": "328f4481-2a22-4a95-afc7-a8e7c20a5928",
+      "taskId": "e40bb43a-b5ba-4b4e-8ee5-1cc1686a5787",
       "entityType": "condition",
       "inputType": "string",
       "code": "194801005",
       "terminology": "http://snomed.info/sct",
       "mappings": [
         {
-          "id": "145dbcd4-f617-4844-a91d-cda39ac12cb8",
-          "confidence": 0.7,
-          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
-          "name": "No target",
-          "entityType": "condition",
-          "startIndex": 0,
-          "endIndex": 0
-        },
-        {
-          "id": "41ce52b7-201e-436f-b6a9-14d3829c6756",
-          "confidence": 0.8396877508367636,
+          "id": "e41acc4a-5299-4240-8284-40100b615f6d",
+          "confidence": 0.8306768877903621,
           "terminology": "http://snomed.info/sct",
           "code": "22298006",
           "name": "Myocardial infarction",
@@ -46,17 +37,126 @@
           "endIndex": 0
         },
         {
-          "id": "ee912ecf-199b-41d5-9349-457a9fd41b85",
+          "id": "fa7a6ac2-9c18-4841-80fe-c2cc939b01e9",
+          "confidence": 0.778738647614781,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I21.9",
+          "name": "Acute myocardial infarction, unspecified",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "50ed664d-80eb-48b5-a24b-50a7bf826f08",
+          "confidence": 0.7476417648394902,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I21.29",
+          "name": "ST elevation (STEMI) myocardial infarction involving other sites",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "19d6ccc9-aff1-41bd-84dc-8a30de6da427",
+          "confidence": 0.7198183119297029,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "code": "I22.8",
+          "name": "Subsequent ST elevation (STEMI) myocardial infarction of other sites",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "80fc6ffc-fa38-49c2-a8b1-2567629e9d1e",
+          "confidence": 0.7,
+          "terminology": "http://hl7.org/fhir/sid/icd-10-cm",
+          "name": "No target",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "60c55113-4fff-4a06-b3ee-59db152d95f0",
           "confidence": 0.7,
           "terminology": "http://snomed.info/sct",
           "name": "No target",
           "entityType": "condition",
           "startIndex": 0,
           "endIndex": 0
+        },
+        {
+          "id": "3ee86789-b08b-418f-9230-818adf49a471",
+          "confidence": 0.6826941087988058,
+          "terminology": "http://snomed.info/sct",
+          "code": "15712921000119103",
+          "name": "Acute ST segment elevation myocardial infarction of lateral wall",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "12ef1262-04fe-4329-98a3-d3ff85ba4f8b",
+          "confidence": 0.6532518482765197,
+          "terminology": "http://snomed.info/sct",
+          "code": "15712841000119100",
+          "name": "Acute ST segment elevation myocardial infarction of posterolateral wall",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "328457f1-7fab-43f6-a656-59bd4fa2ec86",
+          "confidence": 0.6382992547722974,
+          "terminology": "http://snomed.info/sct",
+          "code": "15713201000119105",
+          "name": "Acute ST segment elevation myocardial infarction of posterobasal wall",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "dfbf6cc0-e4d4-4900-bfc5-a89717d69ca8",
+          "confidence": 0.6355852316882135,
+          "terminology": "http://snomed.info/sct",
+          "code": "15713041000119103",
+          "name": "Acute ST segment elevation myocardial infarction of posterior wall",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "00d3cced-eb61-4df4-b283-fe7d25b01268",
+          "confidence": 0.6188024583095233,
+          "terminology": "http://snomed.info/sct",
+          "code": "15713161000119100",
+          "name": "Acute ST segment elevation myocardial infarction of septum",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "00e88c45-b6d9-480f-874b-4ece9cf7f8e0",
+          "confidence": 0.6122352773398082,
+          "terminology": "http://snomed.info/sct",
+          "code": "846683001",
+          "name": "Acute ST segment elevation myocardial infarction due to occlusion of intermediate artery",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
+        },
+        {
+          "id": "0f137e2b-2922-4b20-946f-d326a9151a08",
+          "confidence": 0.5756598804275989,
+          "terminology": "http://snomed.info/sct",
+          "code": "233833005",
+          "name": "Acute Q wave infarction - lateral",
+          "entityType": "condition",
+          "startIndex": 0,
+          "endIndex": 0
         }
       ],
       "status": "final",
-      "mappingCt": 1
+      "mappingCt": 11
     }
   ],
   "status": "final"

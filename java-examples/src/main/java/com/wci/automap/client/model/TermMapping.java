@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -27,48 +30,50 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
  * Represents a mapping for an input term to a coded terminology
  */
 @JsonPropertyOrder({
-  TermMapping.JSON_PROPERTY_END_INDEX,
   TermMapping.JSON_PROPERTY_VERSION,
   TermMapping.JSON_PROPERTY_ATTRIBUTES,
-  TermMapping.JSON_PROPERTY_NAME,
-  TermMapping.JSON_PROPERTY_CONTEXT,
+  TermMapping.JSON_PROPERTY_END_INDEX,
   TermMapping.JSON_PROPERTY_CODE,
-  TermMapping.JSON_PROPERTY_ENTITY_TYPE,
+  TermMapping.JSON_PROPERTY_CONTEXT,
   TermMapping.JSON_PROPERTY_TERM,
   TermMapping.JSON_PROPERTY_TERMINOLOGY,
+  TermMapping.JSON_PROPERTY_ENTITY_TYPE,
   TermMapping.JSON_PROPERTY_CONFIDENCE,
   TermMapping.JSON_PROPERTY_START_INDEX,
+  TermMapping.JSON_PROPERTY_NAME,
   TermMapping.JSON_PROPERTY_MODIFIED_BY,
   TermMapping.JSON_PROPERTY_CREATED,
   TermMapping.JSON_PROPERTY_MODIFIED,
   TermMapping.JSON_PROPERTY_ID
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class TermMapping {
-  public static final String JSON_PROPERTY_END_INDEX = "endIndex";
-  private Integer endIndex;
-
   public static final String JSON_PROPERTY_VERSION = "version";
   private String version;
 
   public static final String JSON_PROPERTY_ATTRIBUTES = "attributes";
   private Map<String, String> attributes = new HashMap<>();
 
-  public static final String JSON_PROPERTY_NAME = "name";
-  private String name;
+  public static final String JSON_PROPERTY_END_INDEX = "endIndex";
+  private Integer endIndex;
+
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
 
   public static final String JSON_PROPERTY_CONTEXT = "context";
   private Map<String, String> context = new HashMap<>();
 
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
+  public static final String JSON_PROPERTY_TERM = "term";
+  private String term;
+
+  public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
+  private String terminology;
 
   /**
    * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
@@ -212,17 +217,14 @@ public class TermMapping {
   public static final String JSON_PROPERTY_ENTITY_TYPE = "entityType";
   private EntityTypeEnum entityType;
 
-  public static final String JSON_PROPERTY_TERM = "term";
-  private String term;
-
-  public static final String JSON_PROPERTY_TERMINOLOGY = "terminology";
-  private String terminology;
-
   public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
   private Double confidence;
 
   public static final String JSON_PROPERTY_START_INDEX = "startIndex";
   private Integer startIndex;
+
+  public static final String JSON_PROPERTY_NAME = "name";
+  private String name;
 
   public static final String JSON_PROPERTY_MODIFIED_BY = "modifiedBy";
   private String modifiedBy;
@@ -238,31 +240,6 @@ public class TermMapping {
 
   public TermMapping() { 
   }
-
-  public TermMapping endIndex(Integer endIndex) {
-    this.endIndex = endIndex;
-    return this;
-  }
-
-   /**
-   * End index of text this mapping is for
-   * @return endIndex
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_END_INDEX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Integer getEndIndex() {
-    return endIndex;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_END_INDEX)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEndIndex(Integer endIndex) {
-    this.endIndex = endIndex;
-  }
-
 
   public TermMapping version(String version) {
     this.version = version;
@@ -322,28 +299,53 @@ public class TermMapping {
   }
 
 
-  public TermMapping name(String name) {
-    this.name = name;
+  public TermMapping endIndex(Integer endIndex) {
+    this.endIndex = endIndex;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * End index of text this mapping is for
+   * @return endIndex
   **/
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_END_INDEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
-  public String getName() {
-    return name;
+  public Integer getEndIndex() {
+    return endIndex;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonProperty(JSON_PROPERTY_END_INDEX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setName(String name) {
-    this.name = name;
+  public void setEndIndex(Integer endIndex) {
+    this.endIndex = endIndex;
+  }
+
+
+  public TermMapping code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * Get code
+   * @return code
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -377,56 +379,6 @@ public class TermMapping {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setContext(Map<String, String> context) {
     this.context = context;
-  }
-
-
-  public TermMapping code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * Get code
-   * @return code
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCode(String code) {
-    this.code = code;
-  }
-
-
-  public TermMapping entityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
-    return this;
-  }
-
-   /**
-   * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
-   * @return entityType
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public EntityTypeEnum getEntityType() {
-    return entityType;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEntityType(EntityTypeEnum entityType) {
-    this.entityType = entityType;
   }
 
 
@@ -480,6 +432,31 @@ public class TermMapping {
   }
 
 
+  public TermMapping entityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
+    return this;
+  }
+
+   /**
+   * Expected entity type to be mapped to.  Allowable values are detailed by the application metadata endpoint
+   * @return entityType
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public EntityTypeEnum getEntityType() {
+    return entityType;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_ENTITY_TYPE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEntityType(EntityTypeEnum entityType) {
+    this.entityType = entityType;
+  }
+
+
   public TermMapping confidence(Double confidence) {
     this.confidence = confidence;
     return this;
@@ -527,6 +504,31 @@ public class TermMapping {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setStartIndex(Integer startIndex) {
     this.startIndex = startIndex;
+  }
+
+
+  public TermMapping name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getName() {
+    return name;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -642,17 +644,17 @@ public class TermMapping {
       return false;
     }
     TermMapping termMapping = (TermMapping) o;
-    return Objects.equals(this.endIndex, termMapping.endIndex) &&
-        Objects.equals(this.version, termMapping.version) &&
+    return Objects.equals(this.version, termMapping.version) &&
         Objects.equals(this.attributes, termMapping.attributes) &&
-        Objects.equals(this.name, termMapping.name) &&
-        Objects.equals(this.context, termMapping.context) &&
+        Objects.equals(this.endIndex, termMapping.endIndex) &&
         Objects.equals(this.code, termMapping.code) &&
-        Objects.equals(this.entityType, termMapping.entityType) &&
+        Objects.equals(this.context, termMapping.context) &&
         Objects.equals(this.term, termMapping.term) &&
         Objects.equals(this.terminology, termMapping.terminology) &&
+        Objects.equals(this.entityType, termMapping.entityType) &&
         Objects.equals(this.confidence, termMapping.confidence) &&
         Objects.equals(this.startIndex, termMapping.startIndex) &&
+        Objects.equals(this.name, termMapping.name) &&
         Objects.equals(this.modifiedBy, termMapping.modifiedBy) &&
         Objects.equals(this.created, termMapping.created) &&
         Objects.equals(this.modified, termMapping.modified) &&
@@ -661,24 +663,24 @@ public class TermMapping {
 
   @Override
   public int hashCode() {
-    return Objects.hash(endIndex, version, attributes, name, context, code, entityType, term, terminology, confidence, startIndex, modifiedBy, created, modified, id);
+    return Objects.hash(version, attributes, endIndex, code, context, term, terminology, entityType, confidence, startIndex, name, modifiedBy, created, modified, id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TermMapping {\n");
-    sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    endIndex: ").append(toIndentedString(endIndex)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("    term: ").append(toIndentedString(term)).append("\n");
     sb.append("    terminology: ").append(toIndentedString(terminology)).append("\n");
+    sb.append("    entityType: ").append(toIndentedString(entityType)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    startIndex: ").append(toIndentedString(startIndex)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    modified: ").append(toIndentedString(modified)).append("\n");
@@ -698,5 +700,122 @@ public class TermMapping {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `version` to the URL query string
+    if (getVersion() != null) {
+      joiner.add(String.format("%sversion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVersion()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `endIndex` to the URL query string
+    if (getEndIndex() != null) {
+      joiner.add(String.format("%sendIndex%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEndIndex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `context` to the URL query string
+    if (getContext() != null) {
+      for (String _key : getContext().keySet()) {
+        joiner.add(String.format("%scontext%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getContext().get(_key), URLEncoder.encode(String.valueOf(getContext().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    // add `term` to the URL query string
+    if (getTerm() != null) {
+      joiner.add(String.format("%sterm%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerm()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `entityType` to the URL query string
+    if (getEntityType() != null) {
+      joiner.add(String.format("%sentityType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEntityType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `confidence` to the URL query string
+    if (getConfidence() != null) {
+      joiner.add(String.format("%sconfidence%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getConfidence()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `startIndex` to the URL query string
+    if (getStartIndex() != null) {
+      joiner.add(String.format("%sstartIndex%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getStartIndex()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

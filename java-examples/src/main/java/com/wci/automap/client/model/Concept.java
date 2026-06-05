@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -35,7 +38,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -43,11 +45,11 @@ import com.wci.automap.client.invoker.JSON;
  */
 @JsonPropertyOrder({
   Concept.JSON_PROPERTY_CODE,
-  Concept.JSON_PROPERTY_SUFFICIENTLY_DEFINED,
   Concept.JSON_PROPERTY_ATOMS,
   Concept.JSON_PROPERTY_DEFINITIONS,
   Concept.JSON_PROPERTY_AXIOMS,
   Concept.JSON_PROPERTY_SEMANTIC_TYPES,
+  Concept.JSON_PROPERTY_SUFFICIENTLY_DEFINED,
   Concept.JSON_PROPERTY_CONFIDENCE,
   Concept.JSON_PROPERTY_LOCAL,
   Concept.JSON_PROPERTY_MODIFIED_BY,
@@ -59,13 +61,10 @@ import com.wci.automap.client.invoker.JSON;
   Concept.JSON_PROPERTY_NAME,
   Concept.JSON_PROPERTY_ATTRIBUTES
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class Concept {
   public static final String JSON_PROPERTY_CODE = "code";
   private String code;
-
-  public static final String JSON_PROPERTY_SUFFICIENTLY_DEFINED = "sufficientlyDefined";
-  private Boolean sufficientlyDefined;
 
   public static final String JSON_PROPERTY_ATOMS = "atoms";
   private List<Atom> atoms = new ArrayList<>();
@@ -78,6 +77,9 @@ public class Concept {
 
   public static final String JSON_PROPERTY_SEMANTIC_TYPES = "semanticTypes";
   private Set<String> semanticTypes = new LinkedHashSet<>();
+
+  public static final String JSON_PROPERTY_SUFFICIENTLY_DEFINED = "sufficientlyDefined";
+  private Boolean sufficientlyDefined;
 
   public static final String JSON_PROPERTY_CONFIDENCE = "confidence";
   private Double confidence;
@@ -134,31 +136,6 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(String code) {
     this.code = code;
-  }
-
-
-  public Concept sufficientlyDefined(Boolean sufficientlyDefined) {
-    this.sufficientlyDefined = sufficientlyDefined;
-    return this;
-  }
-
-   /**
-   * indicates whether the concept is specified with logical necessary and sufficient conditions.  Generally not important except for description-logic based terminologies where this is important.
-   * @return sufficientlyDefined
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_SUFFICIENTLY_DEFINED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public Boolean getSufficientlyDefined() {
-    return sufficientlyDefined;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_SUFFICIENTLY_DEFINED)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSufficientlyDefined(Boolean sufficientlyDefined) {
-    this.sufficientlyDefined = sufficientlyDefined;
   }
 
 
@@ -292,6 +269,31 @@ public class Concept {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSemanticTypes(Set<String> semanticTypes) {
     this.semanticTypes = semanticTypes;
+  }
+
+
+  public Concept sufficientlyDefined(Boolean sufficientlyDefined) {
+    this.sufficientlyDefined = sufficientlyDefined;
+    return this;
+  }
+
+   /**
+   * indicates whether the concept is specified with logical necessary and sufficient conditions.  Generally not important except for description-logic based terminologies where this is important.
+   * @return sufficientlyDefined
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_SUFFICIENTLY_DEFINED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public Boolean getSufficientlyDefined() {
+    return sufficientlyDefined;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_SUFFICIENTLY_DEFINED)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setSufficientlyDefined(Boolean sufficientlyDefined) {
+    this.sufficientlyDefined = sufficientlyDefined;
   }
 
 
@@ -566,11 +568,11 @@ public class Concept {
     }
     Concept concept = (Concept) o;
     return Objects.equals(this.code, concept.code) &&
-        Objects.equals(this.sufficientlyDefined, concept.sufficientlyDefined) &&
         Objects.equals(this.atoms, concept.atoms) &&
         Objects.equals(this.definitions, concept.definitions) &&
         Objects.equals(this.axioms, concept.axioms) &&
         Objects.equals(this.semanticTypes, concept.semanticTypes) &&
+        Objects.equals(this.sufficientlyDefined, concept.sufficientlyDefined) &&
         Objects.equals(this.confidence, concept.confidence) &&
         Objects.equals(this.local, concept.local) &&
         Objects.equals(this.modifiedBy, concept.modifiedBy) &&
@@ -585,7 +587,7 @@ public class Concept {
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, sufficientlyDefined, atoms, definitions, axioms, semanticTypes, confidence, local, modifiedBy, created, modified, id, active, terminology, name, attributes);
+    return Objects.hash(code, atoms, definitions, axioms, semanticTypes, sufficientlyDefined, confidence, local, modifiedBy, created, modified, id, active, terminology, name, attributes);
   }
 
   @Override
@@ -593,11 +595,11 @@ public class Concept {
     StringBuilder sb = new StringBuilder();
     sb.append("class Concept {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    sufficientlyDefined: ").append(toIndentedString(sufficientlyDefined)).append("\n");
     sb.append("    atoms: ").append(toIndentedString(atoms)).append("\n");
     sb.append("    definitions: ").append(toIndentedString(definitions)).append("\n");
     sb.append("    axioms: ").append(toIndentedString(axioms)).append("\n");
     sb.append("    semanticTypes: ").append(toIndentedString(semanticTypes)).append("\n");
+    sb.append("    sufficientlyDefined: ").append(toIndentedString(sufficientlyDefined)).append("\n");
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
@@ -623,5 +625,144 @@ public class Concept {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `atoms` to the URL query string
+    if (getAtoms() != null) {
+      for (int i = 0; i < getAtoms().size(); i++) {
+        if (getAtoms().get(i) != null) {
+          joiner.add(getAtoms().get(i).toUrlQueryString(String.format("%satoms%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `definitions` to the URL query string
+    if (getDefinitions() != null) {
+      for (int i = 0; i < getDefinitions().size(); i++) {
+        if (getDefinitions().get(i) != null) {
+          joiner.add(getDefinitions().get(i).toUrlQueryString(String.format("%sdefinitions%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `axioms` to the URL query string
+    if (getAxioms() != null) {
+      for (int i = 0; i < getAxioms().size(); i++) {
+        if (getAxioms().get(i) != null) {
+          joiner.add(getAxioms().get(i).toUrlQueryString(String.format("%saxioms%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `semanticTypes` to the URL query string
+    if (getSemanticTypes() != null) {
+      int i = 0;
+      for (String _item : getSemanticTypes()) {
+        joiner.add(String.format("%ssemanticTypes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix),
+            URLEncoder.encode(String.valueOf(_item), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+      i++;
+    }
+
+    // add `sufficientlyDefined` to the URL query string
+    if (getSufficientlyDefined() != null) {
+      joiner.add(String.format("%ssufficientlyDefined%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSufficientlyDefined()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `confidence` to the URL query string
+    if (getConfidence() != null) {
+      joiner.add(String.format("%sconfidence%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getConfidence()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `attributes` to the URL query string
+    if (getAttributes() != null) {
+      for (String _key : getAttributes().keySet()) {
+        joiner.add(String.format("%sattributes%s%s=%s", prefix, suffix,
+            "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
+            getAttributes().get(_key), URLEncoder.encode(String.valueOf(getAttributes().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      }
+    }
+
+    return joiner.toString();
+  }
 }
 

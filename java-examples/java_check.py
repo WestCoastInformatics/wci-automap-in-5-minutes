@@ -1,100 +1,169 @@
 import os
 import re
+import shlex
 import subprocess
 import sys
 
-"""This script reads the README.md file, extracts java commands and corresponding sample files, executes the java commands, checks that said commands run properly, and updates the sample files with the output."""
+"""Read README.md, run listed Gradle test commands, and refresh sample files."""
 
 healthy_scripts = []
 unhealthy_scripts = []
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPTS_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "scripts"))
+if SCRIPTS_DIR not in sys.path:
+    sys.path.insert(0, SCRIPTS_DIR)
+
+from automap_auth import publish_credentials_from_args
+from process_output import configure_standard_streams, print_process_failure
+
+
+configure_standard_streams()
+
+
+README_PATH = os.path.join(BASE_DIR, "README.md")
+GRADLE_USER_HOME = os.path.join(BASE_DIR, ".gradle-user-home")
+COMMANDS = "commands"
+FILES = "files"
+
+
+def mark_healthy(command):
+    """Track a successful Gradle command without duplicating summary entries."""
+    if command not in healthy_scripts:
+        healthy_scripts.append(command)
+
+
+def mark_unhealthy(command):
+    """Track a failed Gradle command and remove any earlier healthy entry."""
+    if command in healthy_scripts:
+        healthy_scripts.remove(command)
+    if command not in unhealthy_scripts:
+        unhealthy_scripts.append(command)
+
 
 def check_java_installation():
+    """Verify Java is available before running Gradle sample tests."""
     try:
-        subprocess.run(["java", "--version"], capture_output=True, check=True)
-    except subprocess.CalledProcessError:
+        subprocess.run(["java", "--version"], capture_output=True, check=True, text=True, encoding="utf-8", errors="replace")
+    except (FileNotFoundError, subprocess.CalledProcessError):
         print("Java is not installed or not accessible.", file=sys.stderr)
         sys.exit(1)
 
-def execute_java(command):
-    """Runs a java gradlew test command and returns the raw output."""
+
+def run_gradle_test(command):
+    """Run a Java Gradle test command and return the raw output."""
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        os.makedirs(GRADLE_USER_HOME, exist_ok=True)
+        gradle_env = os.environ.copy()
+        gradle_env.setdefault("GRADLE_USER_HOME", GRADLE_USER_HOME)
+
+        gradle_args = shlex.split(command, posix=sys.platform != "win32")
+        if gradle_args and gradle_args[0] in ("./gradlew", "gradlew"):
+            if sys.platform == "win32":
+                gradle_args[0] = "gradlew.bat" if os.path.exists(os.path.join(BASE_DIR, "gradlew.bat")) else "gradlew"
+            else:
+                gradle_args[0] = "./gradlew"
+        if "--rerun-tasks" not in gradle_args:
+            gradle_args.append("--rerun-tasks")
+
+        result = subprocess.run(
+            gradle_args,
+            cwd=BASE_DIR,
+            env=gradle_env,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
         if result.returncode == 0:
-            healthy_scripts.append(command)
-            return result.stdout
-        else:
-            unhealthy_scripts.append(command)
-            print(f"Error executing: {command}", file=sys.stderr)
-            print(f"gradlew error: {result.stderr}", file=sys.stderr)
-            return None
-    except Exception as e:
-        print(f"Exception running gradlew: {e}", file=sys.stderr)
+            mark_healthy(command)
+            return result.stdout + result.stderr
+
+        mark_unhealthy(command)
+        print(f"Error executing: {command}", file=sys.stderr)
+        print_process_failure("gradlew", result)
+        return None
+    except Exception as error:
+        print(f"Exception running gradlew: {error}", file=sys.stderr)
+        mark_unhealthy(command)
         return None
 
+
 def process_markdown():
-    """Parses README.md, extracts java commands and corresponding sample files."""
-    if not os.path.exists("README.md"):
-        print("Error: README.md not found.")
+    """Parse README.md and extract Gradle test commands with sample files."""
+    if not os.path.exists(README_PATH):
+        print("Error: README.md not found.", file=sys.stderr)
         sys.exit(1)
 
-    with open("README.md", 'r', encoding='utf-8') as f:
-        lines = f.readlines()
+    with open(README_PATH, "r", encoding="utf-8") as handle:
+        lines = handle.readlines()
 
     sections = []
-    # set up each section with commands and corresponding files
-    current_section = {"javas": [], "files": []}
+    current_section = {COMMANDS: [], FILES: []}
     in_section = False
 
     for line in lines:
-        # each section that has java commands and corresponding sample files starts with "### "
         if line.startswith("### ") and not in_section:
-            current_section = {"javas": [], "files": []}
+            current_section = {COMMANDS: [], FILES: []}
             in_section = True
             continue
 
-        # sections end with a "[Back to Top]"
         if line.startswith("[Back to Top]") and in_section:
             in_section = False
-            if current_section["javas"]:
+            if current_section[COMMANDS]:
                 sections.append(current_section)
+            current_section = {COMMANDS: [], FILES: []}
             continue
 
         if in_section:
-            # found a java command
-            if line.startswith("./gradlew test"):
-                java_command = line.strip()
-                current_section["javas"].append(java_command[2:])
+            java_match = re.match(r"^`?(\./gradlew test[^`]*)`?$", line.strip())
+            if java_match:
+                current_section[COMMANDS].append(java_match.group(1))
 
-            # all sample files are in the samples directory, so look for that
-            file_matches = re.findall(r'`samples/([^`]+)`', line)
+            file_matches = re.findall(r"`samples/([^`]+)`", line)
             for match in file_matches:
-                current_section["files"].append(f"samples/{match}")
+                current_section[FILES].append(f"samples/{match}")
 
-    if current_section["javas"]:
+    if in_section and current_section[COMMANDS]:
         sections.append(current_section)
 
     return sections
 
-def extract_test_stdout(output):
+
+def extract_standard_output(output):
+    """Extract sample response text from Gradle's STANDARD_OUT blocks."""
     lines = re.findall(r"STANDARD_OUT\s+(.*?)\s+PASSED", output, re.DOTALL)
     return "".join(line for line in lines)
 
+
 def run_sections(sections):
-    """Executes java commands and updates corresponding sample files."""
+    """Run Gradle commands and update corresponding sample files."""
     for section in sections:
-        file_index = 0
-        for java_cmd in section["javas"]:
-            print(f"Running: {java_cmd}")
-            response = execute_java(java_cmd)
-            # ignore extra responses if there are more responses in a section than sample files
-            if response and file_index < len(section["files"]):
-                with open(section["files"][file_index], 'w', encoding='utf-8') as f:
-                   f.write(extract_test_stdout(response))
-                print(f"Updated: {section['files'][file_index]}")
-                file_index += 1
+        for sample_index, gradle_command in enumerate(section[COMMANDS]):
+            print(f"Running: {gradle_command}", flush=True)
+            response = run_gradle_test(gradle_command)
+            if response is not None and sample_index >= len(section[FILES]):
+                mark_unhealthy(gradle_command)
+                print(f"No sample file configured in README for {gradle_command}.", file=sys.stderr)
+                continue
+            if response is not None:
+                sample_output = extract_standard_output(response)
+                if not sample_output.strip():
+                    mark_unhealthy(gradle_command)
+                    print(
+                        f"No sample output captured for {gradle_command}; "
+                        f"not updating {section[FILES][sample_index]}.",
+                        file=sys.stderr,
+                    )
+                    continue
+                sample_path = os.path.join(BASE_DIR, section[FILES][sample_index])
+                with open(sample_path, "w", encoding="utf-8") as handle:
+                    handle.write(sample_output)
+                print(f"Updated: {section[FILES][sample_index]}", flush=True)
+
 
 def report_script_health():
-    if(unhealthy_scripts):
+    """Print a health summary for all Gradle tests exercised in the run."""
+    if unhealthy_scripts:
         print("Healthy scripts (count {}): ".format(len(healthy_scripts))) if healthy_scripts else None
         for script in healthy_scripts:
             print(script)
@@ -102,13 +171,13 @@ def report_script_health():
         for script in unhealthy_scripts:
             print(script)
     else:
-        print("\nAll scripts executed successfully.")
+        print("\nAll scripts executed successfully and all test endpoints are healthy.")
+
 
 if __name__ == "__main__":
-    if(len(sys.argv) > 1):
-        print("This script ignores any command line arguments. Usage: python java_check.py")
+    publish_credentials_from_args(sys.argv[1:])
     check_java_installation()
-    sections = process_markdown()
-    run_sections(sections)
+    readme_sections = process_markdown()
+    run_sections(readme_sections)
     report_script_health()
-
+    sys.exit(1 if unhealthy_scripts else 0)

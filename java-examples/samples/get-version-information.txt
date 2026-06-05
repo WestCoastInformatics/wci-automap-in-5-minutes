@@ -1,0 +1,16 @@
+{
+      "CPT" : "2024",
+      "CVX" : "latest",
+      "ICD10CM" : "2025",
+      "ICD10PCS" : "2025",
+      "LNC" : "278",
+      "NDC" : "latest",
+      "RXNORM" : "20AA_240903F",
+      "SNOMEDCT" : "2024_09_01",
+      "UCUM" : "latest",
+      "data.version" : "AUTOMAP-202509",
+      "notarget.version" : "20250501",
+      "server.version" : "2.4.0.202605"
+    }
+
+MappingApiTest > getVersionInfoTest()

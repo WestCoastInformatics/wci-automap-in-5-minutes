@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -28,7 +31,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -38,9 +40,9 @@ import com.wci.automap.client.invoker.JSON;
   ConceptTreePosition.JSON_PROPERTY_CHILDREN,
   ConceptTreePosition.JSON_PROPERTY_CONCEPT,
   ConceptTreePosition.JSON_PROPERTY_LEVEL,
+  ConceptTreePosition.JSON_PROPERTY_CODE,
   ConceptTreePosition.JSON_PROPERTY_ANCESTOR_PATH,
   ConceptTreePosition.JSON_PROPERTY_CHILD_CT,
-  ConceptTreePosition.JSON_PROPERTY_CODE,
   ConceptTreePosition.JSON_PROPERTY_ADDITIONAL_TYPE,
   ConceptTreePosition.JSON_PROPERTY_LOCAL,
   ConceptTreePosition.JSON_PROPERTY_MODIFIED_BY,
@@ -51,7 +53,7 @@ import com.wci.automap.client.invoker.JSON;
   ConceptTreePosition.JSON_PROPERTY_NAME,
   ConceptTreePosition.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ConceptTreePosition {
   public static final String JSON_PROPERTY_CHILDREN = "children";
   private List<ConceptTreePosition> children = new ArrayList<>();
@@ -62,14 +64,14 @@ public class ConceptTreePosition {
   public static final String JSON_PROPERTY_LEVEL = "level";
   private Integer level;
 
+  public static final String JSON_PROPERTY_CODE = "code";
+  private String code;
+
   public static final String JSON_PROPERTY_ANCESTOR_PATH = "ancestorPath";
   private String ancestorPath;
 
   public static final String JSON_PROPERTY_CHILD_CT = "childCt";
   private Integer childCt;
-
-  public static final String JSON_PROPERTY_CODE = "code";
-  private String code;
 
   public static final String JSON_PROPERTY_ADDITIONAL_TYPE = "additionalType";
   private String additionalType;
@@ -184,6 +186,31 @@ public class ConceptTreePosition {
   }
 
 
+  public ConceptTreePosition code(String code) {
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * the code in the specified terminology
+   * @return code
+  **/
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+  public String getCode() {
+    return code;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(String code) {
+    this.code = code;
+  }
+
+
   public ConceptTreePosition ancestorPath(String ancestorPath) {
     this.ancestorPath = ancestorPath;
     return this;
@@ -231,31 +258,6 @@ public class ConceptTreePosition {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setChildCt(Integer childCt) {
     this.childCt = childCt;
-  }
-
-
-  public ConceptTreePosition code(String code) {
-    this.code = code;
-    return this;
-  }
-
-   /**
-   * the code in the specified terminology
-   * @return code
-  **/
-  @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
-  public String getCode() {
-    return code;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCode(String code) {
-    this.code = code;
   }
 
 
@@ -499,9 +501,9 @@ public class ConceptTreePosition {
     return Objects.equals(this.children, conceptTreePosition.children) &&
         Objects.equals(this.concept, conceptTreePosition.concept) &&
         Objects.equals(this.level, conceptTreePosition.level) &&
+        Objects.equals(this.code, conceptTreePosition.code) &&
         Objects.equals(this.ancestorPath, conceptTreePosition.ancestorPath) &&
         Objects.equals(this.childCt, conceptTreePosition.childCt) &&
-        Objects.equals(this.code, conceptTreePosition.code) &&
         Objects.equals(this.additionalType, conceptTreePosition.additionalType) &&
         Objects.equals(this.local, conceptTreePosition.local) &&
         Objects.equals(this.modifiedBy, conceptTreePosition.modifiedBy) &&
@@ -515,7 +517,7 @@ public class ConceptTreePosition {
 
   @Override
   public int hashCode() {
-    return Objects.hash(children, concept, level, ancestorPath, childCt, code, additionalType, local, modifiedBy, created, modified, id, active, name, terminology);
+    return Objects.hash(children, concept, level, code, ancestorPath, childCt, additionalType, local, modifiedBy, created, modified, id, active, name, terminology);
   }
 
   @Override
@@ -525,9 +527,9 @@ public class ConceptTreePosition {
     sb.append("    children: ").append(toIndentedString(children)).append("\n");
     sb.append("    concept: ").append(toIndentedString(concept)).append("\n");
     sb.append("    level: ").append(toIndentedString(level)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    ancestorPath: ").append(toIndentedString(ancestorPath)).append("\n");
     sb.append("    childCt: ").append(toIndentedString(childCt)).append("\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    additionalType: ").append(toIndentedString(additionalType)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
@@ -552,5 +554,119 @@ public class ConceptTreePosition {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `children` to the URL query string
+    if (getChildren() != null) {
+      for (int i = 0; i < getChildren().size(); i++) {
+        if (getChildren().get(i) != null) {
+          joiner.add(getChildren().get(i).toUrlQueryString(String.format("%schildren%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+        }
+      }
+    }
+
+    // add `concept` to the URL query string
+    if (getConcept() != null) {
+      joiner.add(getConcept().toUrlQueryString(prefix + "concept" + suffix));
+    }
+
+    // add `level` to the URL query string
+    if (getLevel() != null) {
+      joiner.add(String.format("%slevel%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLevel()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `ancestorPath` to the URL query string
+    if (getAncestorPath() != null) {
+      joiner.add(String.format("%sancestorPath%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAncestorPath()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `childCt` to the URL query string
+    if (getChildCt() != null) {
+      joiner.add(String.format("%schildCt%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getChildCt()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `additionalType` to the URL query string
+    if (getAdditionalType() != null) {
+      joiner.add(String.format("%sadditionalType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAdditionalType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 

@@ -13,6 +13,9 @@
 
 package com.wci.automap.client.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
@@ -25,7 +28,6 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.wci.automap.client.invoker.JSON;
 
 
 /**
@@ -36,13 +38,13 @@ import com.wci.automap.client.invoker.JSON;
   ConceptRelationship.JSON_PROPERTY_TO_ACTIVE,
   ConceptRelationship.JSON_PROPERTY_TO_VALUE,
   ConceptRelationship.JSON_PROPERTY_GROUP,
-  ConceptRelationship.JSON_PROPERTY_TO_CODE,
-  ConceptRelationship.JSON_PROPERTY_TO_NAME,
-  ConceptRelationship.JSON_PROPERTY_TO_TERMINOLOGY,
   ConceptRelationship.JSON_PROPERTY_ASSERTED_DIRECTION,
   ConceptRelationship.JSON_PROPERTY_HIERARCHICAL,
   ConceptRelationship.JSON_PROPERTY_ADDITIONAL_TYPE,
   ConceptRelationship.JSON_PROPERTY_DEFINING,
+  ConceptRelationship.JSON_PROPERTY_TO_CODE,
+  ConceptRelationship.JSON_PROPERTY_TO_NAME,
+  ConceptRelationship.JSON_PROPERTY_TO_TERMINOLOGY,
   ConceptRelationship.JSON_PROPERTY_LOCAL,
   ConceptRelationship.JSON_PROPERTY_MODIFIED_BY,
   ConceptRelationship.JSON_PROPERTY_CREATED,
@@ -52,7 +54,7 @@ import com.wci.automap.client.invoker.JSON;
   ConceptRelationship.JSON_PROPERTY_TERMINOLOGY_ID,
   ConceptRelationship.JSON_PROPERTY_TERMINOLOGY
 })
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-03T12:31:07.733622100-08:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T10:46:19.010911900-07:00[America/Los_Angeles]", comments = "Generator version: 7.5.0")
 public class ConceptRelationship {
   public static final String JSON_PROPERTY_TYPE = "type";
   private String type;
@@ -66,15 +68,6 @@ public class ConceptRelationship {
   public static final String JSON_PROPERTY_GROUP = "group";
   private String group;
 
-  public static final String JSON_PROPERTY_TO_CODE = "toCode";
-  private String toCode;
-
-  public static final String JSON_PROPERTY_TO_NAME = "toName";
-  private String toName;
-
-  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
-  private String toTerminology;
-
   public static final String JSON_PROPERTY_ASSERTED_DIRECTION = "assertedDirection";
   private Boolean assertedDirection;
 
@@ -86,6 +79,15 @@ public class ConceptRelationship {
 
   public static final String JSON_PROPERTY_DEFINING = "defining";
   private Boolean defining;
+
+  public static final String JSON_PROPERTY_TO_CODE = "toCode";
+  private String toCode;
+
+  public static final String JSON_PROPERTY_TO_NAME = "toName";
+  private String toName;
+
+  public static final String JSON_PROPERTY_TO_TERMINOLOGY = "toTerminology";
+  private String toTerminology;
 
   public static final String JSON_PROPERTY_LOCAL = "local";
   private Boolean local;
@@ -214,81 +216,6 @@ public class ConceptRelationship {
   }
 
 
-  public ConceptRelationship toCode(String toCode) {
-    this.toCode = toCode;
-    return this;
-  }
-
-   /**
-   * the code of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
-   * @return toCode
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TO_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getToCode() {
-    return toCode;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TO_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToCode(String toCode) {
-    this.toCode = toCode;
-  }
-
-
-  public ConceptRelationship toName(String toName) {
-    this.toName = toName;
-    return this;
-  }
-
-   /**
-   * the name of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
-   * @return toName
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TO_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getToName() {
-    return toName;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TO_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToName(String toName) {
-    this.toName = toName;
-  }
-
-
-  public ConceptRelationship toTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
-    return this;
-  }
-
-   /**
-   * the terminology of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
-   * @return toTerminology
-  **/
-  @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getToTerminology() {
-    return toTerminology;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setToTerminology(String toTerminology) {
-    this.toTerminology = toTerminology;
-  }
-
-
   public ConceptRelationship assertedDirection(Boolean assertedDirection) {
     this.assertedDirection = assertedDirection;
     return this;
@@ -386,6 +313,81 @@ public class ConceptRelationship {
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDefining(Boolean defining) {
     this.defining = defining;
+  }
+
+
+  public ConceptRelationship toCode(String toCode) {
+    this.toCode = toCode;
+    return this;
+  }
+
+   /**
+   * the code of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
+   * @return toCode
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TO_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getToCode() {
+    return toCode;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TO_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setToCode(String toCode) {
+    this.toCode = toCode;
+  }
+
+
+  public ConceptRelationship toName(String toName) {
+    this.toName = toName;
+    return this;
+  }
+
+   /**
+   * the name of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
+   * @return toName
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TO_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getToName() {
+    return toName;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TO_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setToName(String toName) {
+    this.toName = toName;
+  }
+
+
+  public ConceptRelationship toTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
+    return this;
+  }
+
+   /**
+   * the terminology of the concept this relationship is to (the right-hand side). If this is not used, the relationship will have a &#39;toValue&#39;
+   * @return toTerminology
+  **/
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+  public String getToTerminology() {
+    return toTerminology;
+  }
+
+
+  @JsonProperty(JSON_PROPERTY_TO_TERMINOLOGY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setToTerminology(String toTerminology) {
+    this.toTerminology = toTerminology;
   }
 
 
@@ -605,13 +607,13 @@ public class ConceptRelationship {
         Objects.equals(this.toActive, conceptRelationship.toActive) &&
         Objects.equals(this.toValue, conceptRelationship.toValue) &&
         Objects.equals(this.group, conceptRelationship.group) &&
-        Objects.equals(this.toCode, conceptRelationship.toCode) &&
-        Objects.equals(this.toName, conceptRelationship.toName) &&
-        Objects.equals(this.toTerminology, conceptRelationship.toTerminology) &&
         Objects.equals(this.assertedDirection, conceptRelationship.assertedDirection) &&
         Objects.equals(this.hierarchical, conceptRelationship.hierarchical) &&
         Objects.equals(this.additionalType, conceptRelationship.additionalType) &&
         Objects.equals(this.defining, conceptRelationship.defining) &&
+        Objects.equals(this.toCode, conceptRelationship.toCode) &&
+        Objects.equals(this.toName, conceptRelationship.toName) &&
+        Objects.equals(this.toTerminology, conceptRelationship.toTerminology) &&
         Objects.equals(this.local, conceptRelationship.local) &&
         Objects.equals(this.modifiedBy, conceptRelationship.modifiedBy) &&
         Objects.equals(this.created, conceptRelationship.created) &&
@@ -624,7 +626,7 @@ public class ConceptRelationship {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, toActive, toValue, group, toCode, toName, toTerminology, assertedDirection, hierarchical, additionalType, defining, local, modifiedBy, created, modified, id, active, terminologyId, terminology);
+    return Objects.hash(type, toActive, toValue, group, assertedDirection, hierarchical, additionalType, defining, toCode, toName, toTerminology, local, modifiedBy, created, modified, id, active, terminologyId, terminology);
   }
 
   @Override
@@ -635,13 +637,13 @@ public class ConceptRelationship {
     sb.append("    toActive: ").append(toIndentedString(toActive)).append("\n");
     sb.append("    toValue: ").append(toIndentedString(toValue)).append("\n");
     sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    toCode: ").append(toIndentedString(toCode)).append("\n");
-    sb.append("    toName: ").append(toIndentedString(toName)).append("\n");
-    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    assertedDirection: ").append(toIndentedString(assertedDirection)).append("\n");
     sb.append("    hierarchical: ").append(toIndentedString(hierarchical)).append("\n");
     sb.append("    additionalType: ").append(toIndentedString(additionalType)).append("\n");
     sb.append("    defining: ").append(toIndentedString(defining)).append("\n");
+    sb.append("    toCode: ").append(toIndentedString(toCode)).append("\n");
+    sb.append("    toName: ").append(toIndentedString(toName)).append("\n");
+    sb.append("    toTerminology: ").append(toIndentedString(toTerminology)).append("\n");
     sb.append("    local: ").append(toIndentedString(local)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
@@ -665,5 +667,134 @@ public class ConceptRelationship {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `type` to the URL query string
+    if (getType() != null) {
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toActive` to the URL query string
+    if (getToActive() != null) {
+      joiner.add(String.format("%stoActive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toValue` to the URL query string
+    if (getToValue() != null) {
+      joiner.add(String.format("%stoValue%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToValue()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `group` to the URL query string
+    if (getGroup() != null) {
+      joiner.add(String.format("%sgroup%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getGroup()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `assertedDirection` to the URL query string
+    if (getAssertedDirection() != null) {
+      joiner.add(String.format("%sassertedDirection%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAssertedDirection()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `hierarchical` to the URL query string
+    if (getHierarchical() != null) {
+      joiner.add(String.format("%shierarchical%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHierarchical()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `additionalType` to the URL query string
+    if (getAdditionalType() != null) {
+      joiner.add(String.format("%sadditionalType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAdditionalType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `defining` to the URL query string
+    if (getDefining() != null) {
+      joiner.add(String.format("%sdefining%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDefining()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toCode` to the URL query string
+    if (getToCode() != null) {
+      joiner.add(String.format("%stoCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toName` to the URL query string
+    if (getToName() != null) {
+      joiner.add(String.format("%stoName%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToName()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `toTerminology` to the URL query string
+    if (getToTerminology() != null) {
+      joiner.add(String.format("%stoTerminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getToTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `local` to the URL query string
+    if (getLocal() != null) {
+      joiner.add(String.format("%slocal%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLocal()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modifiedBy` to the URL query string
+    if (getModifiedBy() != null) {
+      joiner.add(String.format("%smodifiedBy%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModifiedBy()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `created` to the URL query string
+    if (getCreated() != null) {
+      joiner.add(String.format("%screated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `modified` to the URL query string
+    if (getModified() != null) {
+      joiner.add(String.format("%smodified%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getModified()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `id` to the URL query string
+    if (getId() != null) {
+      joiner.add(String.format("%sid%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `active` to the URL query string
+    if (getActive() != null) {
+      joiner.add(String.format("%sactive%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getActive()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminologyId` to the URL query string
+    if (getTerminologyId() != null) {
+      joiner.add(String.format("%sterminologyId%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminologyId()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    // add `terminology` to the URL query string
+    if (getTerminology() != null) {
+      joiner.add(String.format("%sterminology%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTerminology()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+    }
+
+    return joiner.toString();
+  }
 }
 
