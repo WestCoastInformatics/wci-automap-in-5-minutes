@@ -122,6 +122,39 @@ $env:API_URL="https://automap.terminology.tools"
 make check
 ```
 
+## Configuration by environment (when running locally)
+
+Some configuration can be tuned when launching the docker image in order to alter default behaviors.
+
+### Tuning max memory the server can use
+
+`JAVA_OPTS` environment setting is passed in to the run script.  This allows you to specify a bigger max memory size, e.g.
+
+```
+JAVA_OPTS=-Xmx8G
+```
+
+### Tuning the executor service thread pool size
+
+Change `THREAD_POOL_MAX_SIZE` to allow greater level of inherent parallelization.  Be careful about how this may interact with Postgres "max connections" allowed.
+
+```
+thread.pool.core.size=${THREAD_POOL_CORE_SIZE:4}
+thread.pool.max.size=${THREAD_POOL_MAX_SIZE:32}
+thread.pool.queue.size=${THREAD_POOL_QUEUE_SIZE:100000}
+```
+
+### Tuning auditing behavior
+
+Individual requests support an audit flag at the task level that can be set to `true` or `false`. If not specified, it defaults to however the server is configured, which is `true` by default. That system-wide default can also be changed by setting enviornment variable `AUDIT_FLAG` to false when launching the server.
+
+
+```
+pipeline.persist=${AUDIT_FLAG:true}
+```
+
+
+
 **[Back to top](#table-of-contents)**
 
 
